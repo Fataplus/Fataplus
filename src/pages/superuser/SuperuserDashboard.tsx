@@ -6,13 +6,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { superuserApiRequest } from "@/services/superuserApi";
-import { 
-  Database, 
-  Users, 
-  Settings, 
-  LogOut, 
-  Server, 
-  Shield, 
+import {
+  Database,
+  Users,
+  Settings,
+  LogOut,
+  Server,
+  Shield,
   AlertTriangle,
   Loader2
 } from "lucide-react";
@@ -29,15 +29,16 @@ const SuperuserDashboard = () => {
     const fetchSystemInfo = async () => {
       try {
         setLoading(true);
-        
-        // Fetch system info
-        const info = await superuserApiRequest("health");
-        setSystemInfo(info);
-        
-        // Fetch collections
-        const collectionsData = await superuserApiRequest("collections");
-        setCollections(collectionsData.items || []);
-        
+
+        // Fetch health info using PocketBase's built-in health endpoint
+        const healthResponse = await fetch(`${pb.baseUrl}/api/health`);
+        const healthData = await healthResponse.json();
+        setSystemInfo(healthData);
+
+        // Fetch collections using the PocketBase SDK
+        const collectionsData = await pb.collections.getFullList();
+        setCollections(collectionsData || []);
+
       } catch (error) {
         console.error("Error fetching superuser data:", error);
         toast({
@@ -87,7 +88,7 @@ const SuperuserDashboard = () => {
               <h3 className="text-sm font-medium text-yellow-800">Superuser Mode Active</h3>
               <div className="mt-2 text-sm text-yellow-700">
                 <p>
-                  You are currently operating with full administrative privileges. 
+                  You are currently operating with full administrative privileges.
                   Any changes made here will directly affect the PocketBase database.
                   Use caution when making changes.
                 </p>
@@ -116,7 +117,7 @@ const SuperuserDashboard = () => {
               Settings
             </TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="overview">
             <Card>
               <CardHeader>
@@ -157,7 +158,7 @@ const SuperuserDashboard = () => {
               </CardFooter>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="collections">
             <Card>
               <CardHeader>
@@ -191,7 +192,7 @@ const SuperuserDashboard = () => {
                           ))}
                       </div>
                     </div>
-                    
+
                     <div className="rounded-md border">
                       <div className="bg-muted px-4 py-2 font-medium">
                         Custom Collections
@@ -215,7 +216,7 @@ const SuperuserDashboard = () => {
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="users">
             <Card>
               <CardHeader>
@@ -233,7 +234,7 @@ const SuperuserDashboard = () => {
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="settings">
             <Card>
               <CardHeader>

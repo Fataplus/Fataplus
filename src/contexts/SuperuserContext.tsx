@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { 
-  superuserSignIn, 
-  superuserSignOut, 
+import {
+  superuserSignIn,
+  superuserSignOut,
   validateSuperuserToken,
   SuperuserAuthResponse
 } from "@/services/superuserApi";
@@ -38,19 +38,20 @@ export const SuperuserProvider: React.FC<SuperuserProviderProps> = ({ children }
       try {
         setIsLoading(true);
         const isValid = await validateSuperuserToken();
-        
+
         if (!isValid) {
           setSuperuser(null);
         } else {
-          // If token is valid, we should get the superuser data
-          // For now, we'll just set a placeholder
+          // If token is valid, decode it to get the superuser data
           const token = localStorage.getItem("pocketbase_superuser_token") || "";
+          const tokenData = JSON.parse(atob(token));
+
           setSuperuser({
             token,
             admin: {
-              id: "authenticated",
+              id: tokenData.id,
               avatar: "",
-              email: "admin@example.com", // This will be updated when we implement proper profile fetching
+              email: tokenData.email,
             },
           });
         }
