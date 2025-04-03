@@ -13,6 +13,25 @@ const rl = readline.createInterface({
 const POCKETBASE_URL = 'https://backend.fata.plus';
 const COLLECTIONS_CONFIG = [
   {
+    name: 'orders',
+    type: 'base',
+    schema: [
+      { name: 'user', type: 'relation', options: { collectionId: 'users' }, required: true },
+      { name: 'items', type: 'json', required: true },
+      { name: 'totalAmount', type: 'number', required: true, min: 0 },
+      { name: 'status', type: 'select', options: { values: ['pending', 'processing', 'completed', 'cancelled', 'refunded'] }, required: true, default: 'pending' },
+      { name: 'paymentMethod', type: 'select', options: { values: ['credit_card', 'mobile_money', 'cash_on_delivery', 'bank_transfer'] }, required: true },
+      { name: 'paymentId', type: 'text' },
+      { name: 'shippingAddress', type: 'json', required: true },
+      { name: 'notes', type: 'text' }
+    ],
+    listRule: '@request.auth.id != "" && (user = @request.auth.id || @request.auth.userType = "admin")',
+    viewRule: '@request.auth.id != "" && (user = @request.auth.id || @request.auth.userType = "admin")',
+    createRule: '@request.auth.id != ""',
+    updateRule: '@request.auth.id != "" && (user = @request.auth.id || @request.auth.userType = "admin")',
+    deleteRule: '@request.auth.id != "" && @request.auth.userType = "admin"'
+  },
+  {
     name: 'products',
     type: 'base',
     schema: [
@@ -132,12 +151,12 @@ const authenticate = async (email, password) => {
         password
       })
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Authentication failed: ${errorData.message}`);
     }
-    
+
     const authData = await response.json();
     return authData.token;
   } catch (error) {
@@ -154,12 +173,12 @@ const getCollections = async (token) => {
         'Authorization': token
       }
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Failed to get collections: ${errorData.message}`);
     }
-    
+
     const data = await response.json();
     return data.items || [];
   } catch (error) {
@@ -179,12 +198,12 @@ const createCollection = async (token, collectionConfig) => {
       },
       body: JSON.stringify(collectionConfig)
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Failed to create collection: ${errorData.message}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
@@ -197,33 +216,35 @@ const createCollection = async (token, collectionConfig) => {
 const updateUsersCollection = async (token) => {
   try {
     console.log('Updating users collection with custom fields...');
-    
+
     // Get the users collection
     const response = await fetch(`${POCKETBASE_URL}/api/collections/users`, {
       headers: {
         'Authorization': token
       }
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Failed to get users collection: ${errorData.message}`);
     }
-    
+
     const usersCollection = await response.json();
-    
+
     // Define the custom fields to add
     const customFields = [
       { name: 'name', type: 'text', required: true },
       { name: 'avatar', type: 'file', options: { maxSelect: 1, mimeTypes: ['image/jpeg', 'image/png', 'image/svg+xml', 'image/gif', 'image/webp'] } },
       { name: 'location', type: 'text' },
       { name: 'userType', type: 'select', options: { values: ['farmer', 'seller', 'learner', 'admin'] }, required: true, default: 'farmer' },
-      { name: 'plan', type: 'select', options: { values: ['free', 'premium'] }, required: true, default: 'free' }
+      { name: 'plan', type: 'select', options: { values: ['free', 'premium'] }, required: true, default: 'free' },
+      { name: 'onboardingCompleted', type: 'bool', default: false },
+      { name: 'preferences', type: 'json' }
     ];
-    
+
     // Add custom fields to the schema
     const updatedSchema = [...usersCollection.schema];
-    
+
     // Check if fields already exist
     for (const field of customFields) {
       const existingField = updatedSchema.find(f => f.name === field.name);
@@ -231,7 +252,7 @@ const updateUsersCollection = async (token) => {
         updatedSchema.push(field);
       }
     }
-    
+
     // Update the collection
     const updateResponse = await fetch(`${POCKETBASE_URL}/api/collections/users`, {
       method: 'PATCH',
@@ -243,12 +264,12 @@ const updateUsersCollection = async (token) => {
         schema: updatedSchema
       })
     });
-    
+
     if (!updateResponse.ok) {
       const errorData = await updateResponse.json();
       throw new Error(`Failed to update users collection: ${errorData.message}`);
     }
-    
+
     console.log('Users collection updated successfully!');
   } catch (error) {
     console.error('Error updating users collection:', error);
@@ -273,12 +294,12 @@ const createUser = async (email, password, name, userType, plan) => {
         plan
       })
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(`Failed to create user: ${errorData.message}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
@@ -298,26 +319,26 @@ const createCollections = async () => {
           console.log('Authenticating...');
           const token = await authenticate(email, password);
           console.log('Authentication successful!');
-          
+
           // Update users collection with custom fields
           await updateUsersCollection(token);
-          
+
           // Get existing collections
           const existingCollections = await getCollections(token);
-          
+
           // Create collections
           console.log('Creating collections...');
-          
+
           for (const collectionConfig of COLLECTIONS_CONFIG) {
             try {
               // Check if collection already exists
               const exists = existingCollections.some(c => c.name === collectionConfig.name);
-              
+
               if (exists) {
                 console.log(`Collection "${collectionConfig.name}" already exists. Skipping...`);
                 continue;
               }
-              
+
               // Create the collection
               console.log(`Creating collection "${collectionConfig.name}"...`);
               await createCollection(token, collectionConfig);
@@ -326,9 +347,9 @@ const createCollections = async () => {
               console.error(`Error creating collection "${collectionConfig.name}":`, error);
             }
           }
-          
+
           console.log('All collections created successfully!');
-          
+
           // Create a test admin user if needed
           rl.question('Do you want to create a test admin user? (y/n): ', async (answer) => {
             if (answer.toLowerCase() === 'y') {
@@ -343,12 +364,12 @@ const createCollections = async () => {
                       'admin',
                       'premium'
                     );
-                    
+
                     console.log('Admin user created successfully!');
                     console.log('Email:', userEmail);
                     console.log('Name:', user.name);
                     console.log('User Type:', user.userType);
-                    
+
                     rl.close();
                   } catch (error) {
                     console.error('Error creating admin user:', error);

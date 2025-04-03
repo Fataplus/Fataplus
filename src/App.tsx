@@ -8,11 +8,15 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { SuperuserProvider } from "@/contexts/SuperuserContext";
 import AdminRoute from "@/components/auth/AdminRoute";
 import SuperuserRoute from "@/components/auth/SuperuserRoute";
+import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
 import Index from "./pages/Index";
 import LearnPage from "./pages/LearnPage";
 import ShopPage from "./pages/ShopPage";
 import CommunityPage from "./pages/CommunityPage";
 import AccountPage from "./pages/AccountPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrdersPage from "./pages/OrdersPage";
+import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import NotFound from "./pages/NotFound";
 
 // Admin pages
@@ -39,13 +43,17 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
-          <Routes>
+            <OnboardingFlow />
+            <Routes>
             {/* Main app routes */}
             <Route path="/" element={<Index />} />
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/account" element={<AccountPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/orders" element={<OrdersPage />} />
+            <Route path="/orders/:orderId" element={<OrderConfirmationPage />} />
 
             {/* Admin routes */}
             <Route path="/admin/login" element={<AdminLogin />} />

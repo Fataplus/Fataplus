@@ -8,6 +8,7 @@ interface AuthContextType {
   profile: User | null;
   isLoading: boolean;
   error: Error | null;
+  updateUserProfile: (updatedUser: any) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -70,8 +71,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // No cleanup needed for PocketBase auth change listener
   }, []);
 
+  // Function to update user profile
+  const updateUserProfile = (updatedUser: any) => {
+    setUser(updatedUser);
+
+    // Also update profile if it exists
+    if (profile && updatedUser) {
+      setProfile({
+        ...profile,
+        ...updatedUser
+      });
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, profile, isLoading, error }}>
+    <AuthContext.Provider value={{ user, profile, isLoading, error, updateUserProfile }}>
       {children}
     </AuthContext.Provider>
   );

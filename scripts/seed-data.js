@@ -82,7 +82,7 @@ const SAMPLE_DATA = {
       category: 'honey'
     }
   ],
-  
+
   // Sample courses
   courses: [
     {
@@ -122,7 +122,7 @@ const SAMPLE_DATA = {
       category: 'climate'
     }
   ],
-  
+
   // Sample community posts
   posts: [
     {
@@ -164,13 +164,13 @@ const SAMPLE_DATA = {
 const createTestUser = async (pb, email, password, name, userType, plan) => {
   try {
     console.log(`Creating test user: ${name} (${userType})...`);
-    
+
     // Check if user already exists
     try {
       const users = await pb.collection('users').getList(1, 1, {
         filter: `email="${email}"`
       });
-      
+
       if (users.items.length > 0) {
         console.log(`User ${email} already exists. Using existing user.`);
         return users.items[0];
@@ -178,7 +178,7 @@ const createTestUser = async (pb, email, password, name, userType, plan) => {
     } catch (error) {
       // Continue if error (likely means no users found)
     }
-    
+
     // Create the user
     const user = await pb.collection('users').create({
       email,
@@ -186,9 +186,15 @@ const createTestUser = async (pb, email, password, name, userType, plan) => {
       passwordConfirm: password,
       name,
       userType,
-      plan
+      plan,
+      onboardingCompleted: false,
+      preferences: JSON.stringify({
+        notifications: true,
+        darkMode: false,
+        language: 'en'
+      })
     });
-    
+
     console.log(`User created: ${user.name} (${user.id})`);
     return user;
   } catch (error) {
@@ -201,32 +207,32 @@ const createTestUser = async (pb, email, password, name, userType, plan) => {
 const seedProducts = async (pb, sellerId, sellerName) => {
   try {
     console.log('Seeding products...');
-    
+
     for (const product of SAMPLE_DATA.products) {
       try {
         // Check if product already exists
         const products = await pb.collection('products').getList(1, 1, {
           filter: `name="${product.name}" && seller="${sellerId}"`
         });
-        
+
         if (products.items.length > 0) {
           console.log(`Product "${product.name}" already exists. Skipping...`);
           continue;
         }
-        
+
         // Create the product
         const newProduct = await pb.collection('products').create({
           ...product,
           seller: sellerId,
           sellerName: sellerName
         });
-        
+
         console.log(`Product created: ${newProduct.name}`);
       } catch (error) {
         console.error(`Error creating product "${product.name}":`, error);
       }
     }
-    
+
     console.log('Products seeding completed!');
   } catch (error) {
     console.error('Error seeding products:', error);
@@ -237,28 +243,28 @@ const seedProducts = async (pb, sellerId, sellerName) => {
 const seedCourses = async (pb, adminId) => {
   try {
     console.log('Seeding courses...');
-    
+
     for (const course of SAMPLE_DATA.courses) {
       try {
         // Check if course already exists
         const courses = await pb.collection('courses').getList(1, 1, {
           filter: `title="${course.title}"`
         });
-        
+
         if (courses.items.length > 0) {
           console.log(`Course "${course.title}" already exists. Skipping...`);
           continue;
         }
-        
+
         // Create the course
         const newCourse = await pb.collection('courses').create(course);
-        
+
         console.log(`Course created: ${newCourse.title}`);
       } catch (error) {
         console.error(`Error creating course "${course.title}":`, error);
       }
     }
-    
+
     console.log('Courses seeding completed!');
   } catch (error) {
     console.error('Error seeding courses:', error);
@@ -269,31 +275,31 @@ const seedCourses = async (pb, adminId) => {
 const seedPosts = async (pb, authorId) => {
   try {
     console.log('Seeding community posts...');
-    
+
     for (const post of SAMPLE_DATA.posts) {
       try {
         // Check if post already exists (approximate check)
         const posts = await pb.collection('posts').getList(1, 1, {
           filter: `author="${authorId}" && content="${post.content.substring(0, 50)}..."`
         });
-        
+
         if (posts.items.length > 0) {
           console.log(`Similar post already exists. Skipping...`);
           continue;
         }
-        
+
         // Create the post
         const newPost = await pb.collection('posts').create({
           ...post,
           author: authorId
         });
-        
+
         console.log(`Post created: ${newPost.id}`);
       } catch (error) {
         console.error(`Error creating post:`, error);
       }
     }
-    
+
     console.log('Community posts seeding completed!');
   } catch (error) {
     console.error('Error seeding posts:', error);
@@ -309,12 +315,12 @@ const seedData = async () => {
         try {
           // Initialize PocketBase
           const pb = new PocketBase(POCKETBASE_URL);
-          
+
           // Authenticate as admin
           console.log('Authenticating...');
           const authData = await pb.admins.authWithPassword(email, password);
           console.log('Authentication successful!');
-          
+
           // Create test users
           const adminUser = await createTestUser(
             pb,
@@ -324,7 +330,7 @@ const seedData = async () => {
             'admin',
             'premium'
           );
-          
+
           const farmerUser = await createTestUser(
             pb,
             'farmer@example.com',
@@ -333,7 +339,7 @@ const seedData = async () => {
             'farmer',
             'free'
           );
-          
+
           const sellerUser = await createTestUser(
             pb,
             'seller@example.com',
@@ -342,7 +348,7 @@ const seedData = async () => {
             'seller',
             'premium'
           );
-          
+
           const learnerUser = await createTestUser(
             pb,
             'learner@example.com',
@@ -351,23 +357,23 @@ const seedData = async () => {
             'learner',
             'free'
           );
-          
+
           // Seed products (as seller)
           await seedProducts(pb, sellerUser.id, sellerUser.name);
-          
+
           // Seed courses (as admin)
           await seedCourses(pb, adminUser.id);
-          
+
           // Seed community posts (as farmer)
           await seedPosts(pb, farmerUser.id);
-          
+
           console.log('\nData seeding completed successfully!');
           console.log('\nTest users created:');
           console.log('- Admin: admin@example.com / Admin123!');
           console.log('- Farmer: farmer@example.com / Farmer123!');
           console.log('- Seller: seller@example.com / Seller123!');
           console.log('- Learner: learner@example.com / Learner123!');
-          
+
           rl.close();
         } catch (error) {
           console.error('Error:', error);
