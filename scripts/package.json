@@ -1,0 +1,15 @@
+{
+  "name": "pocketbase-collection-creator",
+  "version": "1.0.0",
+  "description": "Script to automatically create collections in PocketBase",
+  "main": "create-collections.js",
+  "type": "module",
+  "scripts": {
+    "create": "node create-collections.js",
+    "create-api": "node create-collections-api.js"
+  },
+  "dependencies": {
+    "pocketbase": "^0.21.1",
+    "node-fetch": "^3.3.2"
+  }
+}
