@@ -15,7 +15,8 @@ import {
   Download,
   ChevronRight,
   Bell,
-  LayoutDashboard
+  LayoutDashboard,
+  Shield
 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { useAuth } from "@/contexts/AuthContext";
@@ -195,6 +196,18 @@ const AccountPage = () => {
                 </div>
                 <Switch id="dark-mode" />
               </div>
+              <button
+                className="flex items-center justify-between w-full p-4 hover:bg-muted/30"
+                onClick={() => navigate("/superuser/login")}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="bg-red-100 p-2 rounded-full">
+                    <Shield className="h-5 w-5 text-red-800" />
+                  </div>
+                  <span>Superuser Access</span>
+                </div>
+                <ChevronRight className="h-5 w-5 text-muted-foreground" />
+              </button>
             </div>
           </CardContent>
         </Card>

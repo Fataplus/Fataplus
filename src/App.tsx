@@ -5,7 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { SuperuserProvider } from "@/contexts/SuperuserContext";
 import AdminRoute from "@/components/auth/AdminRoute";
+import SuperuserRoute from "@/components/auth/SuperuserRoute";
 import Index from "./pages/Index";
 import LearnPage from "./pages/LearnPage";
 import ShopPage from "./pages/ShopPage";
@@ -23,15 +25,20 @@ import CommunityManagement from "./pages/admin/CommunityManagement";
 import SettingsPage from "./pages/admin/SettingsPage";
 import ProfilePage from "./pages/admin/ProfilePage";
 
+// Superuser pages
+import SuperuserLogin from "./pages/superuser/SuperuserLogin";
+import SuperuserDashboard from "./pages/superuser/SuperuserDashboard";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <SuperuserProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
           <Routes>
             {/* Main app routes */}
             <Route path="/" element={<Index />} />
@@ -50,11 +57,16 @@ const App = () => (
             <Route path="/admin/settings" element={<AdminRoute><SettingsPage /></AdminRoute>} />
             <Route path="/admin/profile" element={<AdminRoute><ProfilePage /></AdminRoute>} />
 
+            {/* Superuser routes */}
+            <Route path="/superuser/login" element={<SuperuserLogin />} />
+            <Route path="/superuser" element={<SuperuserRoute><SuperuserDashboard /></SuperuserRoute>} />
+
             {/* Fallback route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </TooltipProvider>
+        </TooltipProvider>
+      </SuperuserProvider>
     </AuthProvider>
   </QueryClientProvider>
 );
