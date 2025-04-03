@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "create": "node create-collections.js",
-    "create-api": "node create-collections-api.js"
+    "create-api": "node create-collections-api.js",
+    "seed": "node seed-data.js"
   },
   "dependencies": {
     "pocketbase": "^0.21.1",

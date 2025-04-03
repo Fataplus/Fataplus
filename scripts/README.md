@@ -21,7 +21,9 @@ This tool automatically creates collections in your PocketBase database without 
 
 ## Usage
 
-### Using the PocketBase SDK
+### 1. Create Collections
+
+#### Using the PocketBase SDK
 
 This method uses the official PocketBase JavaScript SDK to create collections:
 
@@ -29,13 +31,27 @@ This method uses the official PocketBase JavaScript SDK to create collections:
 npm run create
 ```
 
-### Using the REST API
+#### Using the REST API
 
 This method uses direct REST API calls to create collections, which might be more reliable in some cases:
 
 ```
 npm run create-api
 ```
+
+### 2. Seed Data
+
+After creating the collections, you can populate them with sample data:
+
+```
+npm run seed
+```
+
+This will create:
+- Test users with different roles (admin, farmer, seller, learner)
+- Sample products
+- Sample courses
+- Sample community posts
 
 ## What the Script Does
 
