@@ -121,6 +121,35 @@ To enable automatic deployments with GitHub Actions, add these secrets to your G
 - VERCEL_PROJECT_ID: Your Vercel project ID
 - VITE_POCKETBASE_URL: Your PocketBase URL
 
+## Automated Deployment
+
+This project includes automated deployment scripts to streamline the development workflow:
+
+### Using the Deploy Script
+
+To automatically commit, push, and deploy your changes, run:
+
+```bash
+npm run deploy
+```
+
+This script will:
+1. Add all changes to git
+2. Commit with a timestamp
+3. Push to GitHub
+4. Deploy to Vercel
+
+### Pre-commit Hooks
+
+The project uses Husky to run pre-commit checks:
+
+- Linting: Ensures code quality
+- Type checking: Prevents TypeScript errors
+
+### GitHub Actions
+
+The `.github/workflows/auto-deploy.yml` workflow automatically deploys to Vercel when changes are pushed to the main branch.
+
 ## Custom Domain Setup
 
 To use a custom domain with your Vercel deployment:
