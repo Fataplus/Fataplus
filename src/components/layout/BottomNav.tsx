@@ -1,13 +1,25 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Book, ShoppingCart, MessageSquare, User, Home } from "lucide-react";
+import { Book, ShoppingCart, MessageSquare, User, Home, Settings } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
 
 const BottomNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, profile } = useAuth();
   const [activeTab, setActiveTab] = useState(location.pathname);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is an admin
+    if (profile?.userType === "admin") {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    }
+  }, [profile]);
 
   const tabs = [
     { path: "/", label: "Home", icon: Home },
@@ -15,6 +27,8 @@ const BottomNav = () => {
     { path: "/shop", label: "Shop", icon: ShoppingCart },
     { path: "/community", label: "Community", icon: MessageSquare },
     { path: "/account", label: "Account", icon: User },
+    // Only show admin tab for admin users
+    ...(isAdmin ? [{ path: "/admin", label: "Admin", icon: Settings }] : []),
   ];
 
   const handleTabClick = (path: string) => {
