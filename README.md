@@ -1,8 +1,10 @@
 # FataPlus - Agricultural Marketplace Platform
 
-![FataPlus Logo](public/assets/logo.svg)
-
 FataPlus is a comprehensive agricultural marketplace platform designed to connect farmers, sellers, and buyers in Madagascar. The platform enables sustainable agriculture through technology, providing tools for trade, knowledge sharing, and community building.
+
+## Project Structure
+
+The project has been reorganized and cleaned up. The main application is now in the `fataplus-nextjs` directory, which contains a Next.js application deployed to Vercel.
 
 ## Core Functions
 
@@ -28,140 +30,43 @@ FataPlus is a comprehensive agricultural marketplace platform designed to connec
 ### 📱 Progressive Web App
 - **Offline Support**: Use core features without internet connection
 - **Installable**: Add to home screen for app-like experience
-- **Background Sync**: Queue actions when offline for later execution
-- **Push Notifications**: Stay updated with important events
-
-### 👤 User Management
-- **Role-based Access**: Different interfaces for farmers, buyers, and admins
-- **Profile Management**: Customize profiles with relevant information
-- **Authentication**: Secure login with email/password and social options
-- **Preferences**: Personalize the experience based on user needs
 
 ## Technology Stack
 
-### Frontend
-- **React**: Component-based UI library for building interactive interfaces
-- **TypeScript**: Static typing for improved code quality and developer experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Shadcn UI**: High-quality UI components built with Radix UI and Tailwind
-- **Vite**: Next-generation frontend build tool for faster development
-- **PWA**: Progressive Web App capabilities with service workers
-- **React Router**: Client-side routing for single-page application
-- **React Query**: Data fetching, caching, and state management
-- **Zod**: TypeScript-first schema validation
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: PocketBase with PostgreSQL
+- **Authentication**: PocketBase Authentication
+- **Deployment**: Vercel
+- **CI/CD**: GitHub Actions
 
-### Backend
-- **PocketBase**: Open-source backend with built-in authentication and database
-- **WebSockets**: Real-time communication for live updates
-- **RESTful API**: Structured API endpoints for data operations
-- **JWT Authentication**: Secure token-based authentication
+## Getting Started
 
-### Data Management
-- **Data Migration Tools**: Structured database schema evolution
-- **Data Archiving System**: Efficient management of historical data
-- **Validation Hooks**: Server-side data validation and business rules
-- **Offline Storage**: IndexedDB for local data persistence
+1. Navigate to the `fataplus-nextjs` directory:
+   ```bash
+   cd fataplus-nextjs
+   ```
 
-### DevOps & Infrastructure
-- **Turborepo**: Monorepo management for optimized builds
-- **Vercel**: Deployment platform with CI/CD integration
-- **GitHub Actions**: Automated workflows for testing and deployment
-- **ESLint & Prettier**: Code quality and formatting tools
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Architecture
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-FataPlus follows a modern architecture pattern:
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-- **Monorepo Structure**: Organized into apps and packages
-  - `apps/web`: Main application
-  - `apps/docs`: Documentation site
-  - `packages/ui`: Shared UI components
-  - `packages/utils`: Utility functions
-  - `packages/types`: TypeScript type definitions
-
-- **State Management**: Combination of React Query for server state and React Context for UI state
-- **API Layer**: Abstracted service layer for communicating with PocketBase
-- **Component Design**: Atomic design principles with composable components
-- **Responsive Design**: Mobile-first approach for all device sizes
-
-## Performance Optimizations
-
-- **Code Splitting**: Lazy loading of components and routes
-- **Asset Optimization**: Compressed images and optimized assets
-- **Caching Strategies**: Intelligent caching for API responses
-- **Prefetching**: Strategic prefetching of critical resources
-- **Turborepo Caching**: Reuse of build artifacts for faster builds
-
-## Security Features
-
-- **Input Validation**: Client and server-side validation
-- **Authentication**: Secure token-based authentication
-- **Authorization**: Role-based access control
-- **Data Encryption**: Secure storage of sensitive information
-- **CSRF Protection**: Cross-site request forgery prevention
-
-## Accessibility
-
-- **WCAG Compliance**: Following Web Content Accessibility Guidelines
-- **Keyboard Navigation**: Full keyboard support for all interactions
-- **Screen Reader Support**: Semantic HTML and ARIA attributes
-- **Color Contrast**: Ensuring readable text with sufficient contrast
-- **Responsive Design**: Usable on all device sizes and orientations
-
-## Internationalization
-
-- **Multi-language Support**: Interface in English, French, and Malagasy
-- **RTL Support**: Ready for right-to-left languages
-- **Localized Content**: Region-specific information and resources
-- **Date and Number Formatting**: Locale-aware formatting
-
-## Analytics & Monitoring
-
-- **Usage Analytics**: Track user behavior and feature adoption
-- **Performance Monitoring**: Measure and optimize application performance
-- **Error Tracking**: Capture and report client-side errors
-- **User Feedback**: In-app mechanisms for collecting user feedback
-
-## Database Setup
-
-This project uses PocketBase as the database and authentication provider.
-
-### Production
-
-For production, the PocketBase instance is hosted at:
-
-- **Application Name**: Fataplus
-- **Application URL**: https://backend.fata.plus
-- **Admin UI**: https://backend.fata.plus/_/
-
-### Environment Variables
-
-This project uses environment variables for configuration. Create a `.env` file in the root directory based on the `.env.example` template.
-
-```bash
-# Copy the example environment file
-cp .env.example .env
-
-# Edit the .env file with your credentials
-nano .env
-```
-
-Required environment variables for scripts:
-
-- `POCKETBASE_URL`: URL of your PocketBase instance
-- `ADMIN_EMAIL`: Admin email for PocketBase authentication
-- `ADMIN_PASSWORD`: Admin password for PocketBase authentication
-
-Additional variables for specific scripts:
-
-- `API_KEY`: API key for scripts that use API authentication
-- `SUPER_ADMIN_EMAIL` and `SUPER_ADMIN_PASSWORD`: For creating new admin users
-- `NEW_ADMIN_EMAIL` and `NEW_ADMIN_PASSWORD`: For the new admin user to be created
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-This project is deployed using Vercel with Turborepo integration:
+The application is deployed to Vercel at [https://fataplus-2d91nt6op-fataplus.vercel.app](https://fataplus-2d91nt6op-fataplus.vercel.app).
 
-- **Main App**: https://app.fata.plus
-- **Documentation**: https://app.fata.plus/docs
-- **Backend**: https://backend.fata.plus
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

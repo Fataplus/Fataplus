@@ -1,0 +1,78 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "type": "auth",
+      "schema": [
+        {"name": "name", "type": "text", "required": true},
+        {"name": "avatar", "type": "file"},
+        {"name": "location", "type": "text"},
+        {"name": "userType", "type": "select", "options": {"values": ["farmer", "seller", "learner", "admin"]}, "required": true, "default": "farmer"},
+        {"name": "plan", "type": "select", "options": {"values": ["free", "premium"]}, "required": true, "default": "free"}
+      ]
+    },
+    {
+      "name": "products",
+      "schema": [
+        {"name": "name", "type": "text", "required": true},
+        {"name": "price", "type": "number", "required": true, "min": 0},
+        {"name": "description", "type": "text"},
+        {"name": "seller", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": false}, "required": true},
+        {"name": "sellerName", "type": "text", "required": true},
+        {"name": "location", "type": "text", "required": true},
+        {"name": "imageUrl", "type": "file"},
+        {"name": "category", "type": "text", "required": true}
+      ]
+    },
+    {
+      "name": "courses",
+      "schema": [
+        {"name": "title", "type": "text", "required": true},
+        {"name": "description", "type": "text", "required": true},
+        {"name": "lessons", "type": "number", "required": true, "min": 1},
+        {"name": "imageUrl", "type": "file"},
+        {"name": "category", "type": "text", "required": true}
+      ]
+    },
+    {
+      "name": "userCourses",
+      "schema": [
+        {"name": "user", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": true}, "required": true},
+        {"name": "course", "type": "relation", "options": {"collectionId": "courses", "cascadeDelete": true}, "required": true},
+        {"name": "completedLessons", "type": "number", "required": true, "default": 0, "min": 0}
+      ]
+    },
+    {
+      "name": "posts",
+      "schema": [
+        {"name": "author", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": true}, "required": true},
+        {"name": "content", "type": "text", "required": true},
+        {"name": "imageUrl", "type": "file"},
+        {"name": "postType", "type": "select", "options": {"values": ["general", "question", "marketplace"]}, "required": true, "default": "general"}
+      ]
+    },
+    {
+      "name": "comments",
+      "schema": [
+        {"name": "post", "type": "relation", "options": {"collectionId": "posts", "cascadeDelete": true}, "required": true},
+        {"name": "author", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": true}, "required": true},
+        {"name": "content", "type": "text", "required": true}
+      ]
+    },
+    {
+      "name": "likes",
+      "schema": [
+        {"name": "post", "type": "relation", "options": {"collectionId": "posts", "cascadeDelete": true}, "required": true},
+        {"name": "user", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": true}, "required": true}
+      ]
+    },
+    {
+      "name": "cartItems",
+      "schema": [
+        {"name": "user", "type": "relation", "options": {"collectionId": "users", "cascadeDelete": true}, "required": true},
+        {"name": "product", "type": "relation", "options": {"collectionId": "products", "cascadeDelete": true}, "required": true},
+        {"name": "quantity", "type": "number", "required": true, "default": 1, "min": 1}
+      ]
+    }
+  ]
+}

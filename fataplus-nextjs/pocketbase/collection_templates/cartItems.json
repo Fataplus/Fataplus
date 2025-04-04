@@ -1,0 +1,35 @@
+{
+  "name": "cartItems",
+  "type": "base",
+  "schema": [
+    {
+      "name": "user",
+      "type": "relation",
+      "required": true,
+      "options": {
+        "collectionId": "_pb_users_auth_",
+        "cascadeDelete": true,
+        "maxSelect": 1
+      }
+    },
+    {
+      "name": "product",
+      "type": "relation",
+      "required": true,
+      "options": {
+        "collectionId": "products",
+        "cascadeDelete": true,
+        "maxSelect": 1
+      }
+    },
+    {
+      "name": "quantity",
+      "type": "number",
+      "required": true,
+      "options": {
+        "min": 1,
+        "default": 1
+      }
+    }
+  ]
+}

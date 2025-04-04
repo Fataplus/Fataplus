@@ -1,0 +1,78 @@
+{
+  "id": "likes_id",
+  "listRule": "",
+  "viewRule": "",
+  "createRule": "",
+  "updateRule": "",
+  "deleteRule": "",
+  "name": "likes",
+  "type": "base",
+  "fields": [
+    {
+      "autogeneratePattern": "[a-z0-9]{15}",
+      "hidden": false,
+      "id": "text3208210256",
+      "max": 15,
+      "min": 15,
+      "name": "id",
+      "pattern": "^[a-z0-9]+$",
+      "presentable": false,
+      "primaryKey": true,
+      "required": true,
+      "system": true,
+      "type": "text"
+    },
+    {
+      "hidden": false,
+      "id": "relation724990082",
+      "name": "post",
+      "options": {
+        "collectionId": "posts_id",
+        "cascadeDelete": true,
+        "maxSelect": 1,
+        "displayFields": []
+      },
+      "presentable": false,
+      "required": true,
+      "system": false,
+      "type": "relation"
+    },
+    {
+      "hidden": false,
+      "id": "relation724990083",
+      "name": "user",
+      "options": {
+        "collectionId": "_pb_users_auth_",
+        "cascadeDelete": true,
+        "maxSelect": 1,
+        "displayFields": []
+      },
+      "presentable": false,
+      "required": true,
+      "system": false,
+      "type": "relation"
+    },
+    {
+      "hidden": false,
+      "id": "autodate2990389176",
+      "name": "created",
+      "onCreate": true,
+      "onUpdate": false,
+      "presentable": false,
+      "system": false,
+      "type": "autodate"
+    },
+    {
+      "hidden": false,
+      "id": "autodate3332085495",
+      "name": "updated",
+      "onCreate": true,
+      "onUpdate": true,
+      "presentable": false,
+      "system": false,
+      "type": "autodate"
+    }
+  ],
+  "indexes": [],
+  "system": false
+}

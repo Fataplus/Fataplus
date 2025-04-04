@@ -1,0 +1,293 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "type": "auth",
+      "system": false,
+      "listRule": "id = @request.auth.id",
+      "viewRule": "id = @request.auth.id",
+      "createRule": "",
+      "updateRule": "id = @request.auth.id",
+      "deleteRule": "id = @request.auth.id",
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "avatar",
+          "type": "file",
+          "mimeTypes": [
+            "image/jpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/gif",
+            "image/webp"
+          ],
+          "maxSelect": 1
+        },
+        {
+          "name": "location",
+          "type": "text"
+        },
+        {
+          "name": "userType",
+          "type": "select",
+          "options": {
+            "values": ["farmer", "seller", "learner", "admin"]
+          },
+          "required": true,
+          "default": "farmer"
+        },
+        {
+          "name": "plan",
+          "type": "select",
+          "options": {
+            "values": ["free", "premium"]
+          },
+          "required": true,
+          "default": "free"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "required": true,
+          "min": 0
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "seller",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "sellerName",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "imageUrl",
+          "type": "file",
+          "maxSelect": 1
+        },
+        {
+          "name": "category",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "courses",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lessons",
+          "type": "number",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "imageUrl",
+          "type": "file",
+          "maxSelect": 1
+        },
+        {
+          "name": "category",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "userCourses",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "user",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "course",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "courses",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "completedLessons",
+          "type": "number",
+          "required": true,
+          "default": 0,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "posts",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "author",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "content",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "imageUrl",
+          "type": "file",
+          "maxSelect": 1
+        },
+        {
+          "name": "postType",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": ["general", "question", "marketplace"]
+          },
+          "default": "general"
+        }
+      ]
+    },
+    {
+      "name": "comments",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "post",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "posts",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "author",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "content",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "likes",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "post",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "posts",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "user",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "cartItems",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "name": "user",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "product",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "products",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "quantity",
+          "type": "number",
+          "required": true,
+          "default": 1,
+          "min": 1
+        }
+      ]
+    }
+  ]
+}
