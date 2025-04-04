@@ -1,90 +1,130 @@
-# FataPlus - Agricultural Super App
+# FataPlus - Agricultural Marketplace Platform
 
-## Project info
+![FataPlus Logo](public/assets/logo.svg)
 
-**URL**: https://lovable.dev/projects/a9149304-b64f-44d4-b66a-e061066f109d
+FataPlus is a comprehensive agricultural marketplace platform designed to connect farmers, sellers, and buyers in Madagascar. The platform enables sustainable agriculture through technology, providing tools for trade, knowledge sharing, and community building.
 
-## How can I edit this code?
+## Core Functions
 
-There are several ways of editing your application.
+### 🌱 Marketplace
+- **Product Listings**: Farmers can showcase and sell their agricultural products
+- **Search & Filters**: Find products by category, location, price, and more
+- **Order Management**: Track orders from placement to delivery
+- **Payment Integration**: Secure payment processing with multiple options
+- **Rating System**: Build trust through user reviews and ratings
 
-**Use Lovable**
+### 👨‍🌾 Community
+- **Discussion Forums**: Share knowledge and best practices
+- **Real-time Updates**: Instant notifications for new posts and interactions
+- **Q&A Platform**: Ask questions and get answers from experienced farmers
+- **Marketplace Announcements**: Post buying/selling intentions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a9149304-b64f-44d4-b66a-e061066f109d) and start prompting.
+### 📚 Learning Resources
+- **Farming Techniques**: Educational content on sustainable farming
+- **Market Insights**: Data on pricing trends and demand
+- **Weather Information**: Localized weather forecasts for farming decisions
+- **Crop Calendars**: Seasonal planting and harvesting guides
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📱 Progressive Web App
+- **Offline Support**: Use core features without internet connection
+- **Installable**: Add to home screen for app-like experience
+- **Background Sync**: Queue actions when offline for later execution
+- **Push Notifications**: Stay updated with important events
 
-**Use your preferred IDE**
+### 👤 User Management
+- **Role-based Access**: Different interfaces for farmers, buyers, and admins
+- **Profile Management**: Customize profiles with relevant information
+- **Authentication**: Secure login with email/password and social options
+- **Preferences**: Personalize the experience based on user needs
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technology Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
+- **React**: Component-based UI library for building interactive interfaces
+- **TypeScript**: Static typing for improved code quality and developer experience
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Shadcn UI**: High-quality UI components built with Radix UI and Tailwind
+- **Vite**: Next-generation frontend build tool for faster development
+- **PWA**: Progressive Web App capabilities with service workers
+- **React Router**: Client-side routing for single-page application
+- **React Query**: Data fetching, caching, and state management
+- **Zod**: TypeScript-first schema validation
 
-Follow these steps:
+### Backend
+- **PocketBase**: Open-source backend with built-in authentication and database
+- **WebSockets**: Real-time communication for live updates
+- **RESTful API**: Structured API endpoints for data operations
+- **JWT Authentication**: Secure token-based authentication
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Data Management
+- **Data Migration Tools**: Structured database schema evolution
+- **Data Archiving System**: Efficient management of historical data
+- **Validation Hooks**: Server-side data validation and business rules
+- **Offline Storage**: IndexedDB for local data persistence
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### DevOps & Infrastructure
+- **Turborepo**: Monorepo management for optimized builds
+- **Vercel**: Deployment platform with CI/CD integration
+- **GitHub Actions**: Automated workflows for testing and deployment
+- **ESLint & Prettier**: Code quality and formatting tools
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Architecture
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+FataPlus follows a modern architecture pattern:
 
-**Edit a file directly in GitHub**
+- **Monorepo Structure**: Organized into apps and packages
+  - `apps/web`: Main application
+  - `apps/docs`: Documentation site
+  - `packages/ui`: Shared UI components
+  - `packages/utils`: Utility functions
+  - `packages/types`: TypeScript type definitions
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **State Management**: Combination of React Query for server state and React Context for UI state
+- **API Layer**: Abstracted service layer for communicating with PocketBase
+- **Component Design**: Atomic design principles with composable components
+- **Responsive Design**: Mobile-first approach for all device sizes
 
-**Use GitHub Codespaces**
+## Performance Optimizations
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Code Splitting**: Lazy loading of components and routes
+- **Asset Optimization**: Compressed images and optimized assets
+- **Caching Strategies**: Intelligent caching for API responses
+- **Prefetching**: Strategic prefetching of critical resources
+- **Turborepo Caching**: Reuse of build artifacts for faster builds
 
-## What technologies are used for this project?
+## Security Features
 
-This project is built with:
+- **Input Validation**: Client and server-side validation
+- **Authentication**: Secure token-based authentication
+- **Authorization**: Role-based access control
+- **Data Encryption**: Secure storage of sensitive information
+- **CSRF Protection**: Cross-site request forgery prevention
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-- PocketBase (Database & Authentication)
-- React Query
-- React Router
+## Accessibility
+
+- **WCAG Compliance**: Following Web Content Accessibility Guidelines
+- **Keyboard Navigation**: Full keyboard support for all interactions
+- **Screen Reader Support**: Semantic HTML and ARIA attributes
+- **Color Contrast**: Ensuring readable text with sufficient contrast
+- **Responsive Design**: Usable on all device sizes and orientations
+
+## Internationalization
+
+- **Multi-language Support**: Interface in English, French, and Malagasy
+- **RTL Support**: Ready for right-to-left languages
+- **Localized Content**: Region-specific information and resources
+- **Date and Number Formatting**: Locale-aware formatting
+
+## Analytics & Monitoring
+
+- **Usage Analytics**: Track user behavior and feature adoption
+- **Performance Monitoring**: Measure and optimize application performance
+- **Error Tracking**: Capture and report client-side errors
+- **User Feedback**: In-app mechanisms for collecting user feedback
 
 ## Database Setup
 
 This project uses PocketBase as the database and authentication provider.
-
-### Local Development
-
-Follow these steps to set up your local development database:
-
-1. Download PocketBase from [pocketbase.io](https://pocketbase.io/)
-2. Run the setup script to initialize PocketBase with the correct schema:
-
-```sh
-./scripts/setup-pocketbase.sh
-```
-
-3. Access the PocketBase admin UI at http://127.0.0.1:8090/_/
-4. Create an admin account
-5. Update your environment variables in `.env.local` with your PocketBase URL:
-
-```sh
-VITE_POCKETBASE_URL=http://127.0.0.1:8090
-```
 
 ### Production
 
@@ -94,66 +134,10 @@ For production, the PocketBase instance is hosted at:
 - **Application URL**: https://backend.fata.plus
 - **Admin UI**: https://backend.fata.plus/_/
 
-The production environment variables are configured in `.env.production`:
+## Deployment
 
-```sh
-VITE_POCKETBASE_URL=https://backend.fata.plus
-```
+This project is deployed using Vercel with Turborepo integration:
 
-## Deployment with Vercel
-
-This project is configured for deployment with Vercel and includes CI/CD workflows:
-
-1. Sign up for a Vercel account at [vercel.com](https://vercel.com)
-2. Install the Vercel CLI: `npm i -g vercel`
-3. Login to Vercel: `vercel login`
-4. Link your project: `vercel link`
-5. Add your environment variables to Vercel:
-   - VITE_POCKETBASE_URL
-6. Deploy your project: `vercel --prod`
-
-### GitHub Actions Integration
-
-To enable automatic deployments with GitHub Actions, add these secrets to your GitHub repository:
-
-- VERCEL_TOKEN: Your Vercel API token
-- VERCEL_ORG_ID: Your Vercel organization ID
-- VERCEL_PROJECT_ID: Your Vercel project ID
-- VITE_POCKETBASE_URL: Your PocketBase URL
-
-## Automated Deployment
-
-This project includes automated deployment scripts to streamline the development workflow:
-
-### Using the Deploy Script
-
-To automatically commit, push, and deploy your changes, run:
-
-```bash
-npm run deploy
-```
-
-This script will:
-1. Add all changes to git
-2. Commit with a timestamp
-3. Push to GitHub
-4. Deploy to Vercel
-
-### Pre-commit Hooks
-
-The project uses Husky to run pre-commit checks:
-
-- Linting: Ensures code quality
-- Type checking: Prevents TypeScript errors
-
-### GitHub Actions
-
-The `.github/workflows/auto-deploy.yml` workflow automatically deploys to Vercel when changes are pushed to the main branch.
-
-## Custom Domain Setup
-
-To use a custom domain with your Vercel deployment:
-
-1. Go to your project settings in Vercel
-2. Navigate to the Domains section
-3. Add your custom domain and follow the verification steps
+- **Main App**: https://app.fata.plus
+- **Documentation**: https://app.fata.plus/docs
+- **Backend**: https://backend.fata.plus
