@@ -1,11 +1,11 @@
-# PocketBase Collection Creator
+# PocketBase Setup for FataPlus
 
 This tool automatically creates collections in your PocketBase database without having to add them one by one through the admin UI.
 
 ## Prerequisites
 
 - Node.js 14 or higher
-- PocketBase admin credentials
+- PocketBase admin credentials (email: fenohery@fata.plus, password: 2025Fefe!)
 
 ## Installation
 
@@ -16,108 +16,123 @@ This tool automatically creates collections in your PocketBase database without 
 
 2. Install dependencies:
    ```
-   npm install
+   npm install node-fetch
    ```
 
 ## Usage
 
 ### 1. Create Collections
 
-#### Using the PocketBase SDK
+Run the schema setup script to create all the necessary collections:
 
-This method uses the official PocketBase JavaScript SDK to create collections:
-
-```
-npm run create
+```bash
+node pocketbase-schema.js
 ```
 
-#### Using the REST API
-
-This method uses direct REST API calls to create collections, which might be more reliable in some cases:
-
-```
-npm run create-api
-```
+This script will create all the collections needed for the FataPlus application.
 
 ### 2. Seed Data
 
 After creating the collections, you can populate them with sample data:
 
-```
-npm run seed
+```bash
+node pocketbase-seed.js
 ```
 
 This will create:
-- Test users with different roles (admin, farmer, seller, learner)
-- Sample products
-- Sample courses
-- Sample community posts
+- Categories for products
+- Basic application settings
 
-## What the Script Does
+## What the Scripts Do
 
+### pocketbase-schema.js
 1. Authenticates with your PocketBase instance using admin credentials
-2. Updates the users collection with custom fields (name, avatar, location, userType, plan)
+2. Updates the users collection with custom fields (name, avatar, location, bio, role, isGuest)
 3. Creates the following collections if they don't already exist:
    - products
-   - courses
-   - userCourses
+   - orders
    - posts
    - comments
    - likes
-   - cartItems
-4. Optionally creates a test admin user
+   - notifications
+   - categories
+   - settings
+
+### pocketbase-seed.js
+1. Authenticates with your PocketBase instance using admin credentials
+2. Seeds the categories collection with initial product categories
+3. Seeds the settings collection with basic application settings
 
 ## Collection Schema
 
 The script creates collections with the following schema:
 
-### Products
+### Users Collection
 - name (text, required)
-- price (number, required, min: 0)
-- description (text)
-- seller (relation to users, required)
-- sellerName (text, required)
-- location (text, required)
-- imageUrl (file)
-- category (text, required)
+- avatar (file)
+- location (text)
+- bio (text)
+- role (select: admin, farmer, buyer, seller)
+- isGuest (boolean)
 
-### Courses
-- title (text, required)
+### Products Collection
+- name (text, required)
 - description (text, required)
-- lessons (number, required, min: 1)
-- imageUrl (file)
+- price (number, required)
+- images (file, multiple)
 - category (text, required)
+- seller (relation to users, required)
+- location (text)
+- stock (number, required)
+- isActive (boolean, required)
 
-### UserCourses
+### Orders Collection
 - user (relation to users, required)
-- course (relation to courses, required)
-- completedLessons (number, required, default: 0, min: 0)
+- items (json, required)
+- totalAmount (number, required)
+- status (select: pending, processing, completed, cancelled, refunded)
+- paymentMethod (text, required)
+- shippingAddress (json, required)
 
-### Posts
+### Posts Collection
 - author (relation to users, required)
 - content (text, required)
 - imageUrl (file)
-- postType (select: general, question, marketplace, required, default: general)
+- postType (select: general, question, marketplace)
+- likes (number)
+- comments (number)
 
-### Comments
-- post (relation to posts, required, cascadeDelete: true)
+### Comments Collection
+- post (relation to posts, required)
 - author (relation to users, required)
 - content (text, required)
 
-### Likes
-- post (relation to posts, required, cascadeDelete: true)
+### Likes Collection
+- post (relation to posts, required)
 - user (relation to users, required)
 
-### CartItems
+### Notifications Collection
 - user (relation to users, required)
-- product (relation to products, required, cascadeDelete: true)
-- quantity (number, required, default: 1, min: 1)
+- type (select: post_like, post_comment, order_update, new_post, system)
+- message (text, required)
+- relatedId (text)
+- isRead (boolean, required)
+
+### Categories Collection
+- name (text, required)
+- description (text)
+- icon (text)
+
+### Settings Collection
+- key (text, required)
+- value (json, required)
+- description (text)
 
 ## Customization
 
 You can modify the collection configurations in the script files:
-- `create-collections.js` - For the SDK method
-- `create-collections-api.js` - For the REST API method
+- `pocketbase-schema.js` - For creating the collections
+- `pocketbase-seed.js` - For seeding initial data
 
 ## Troubleshooting
 
