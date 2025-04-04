@@ -42,9 +42,12 @@ const MainLayout = ({ children, title }: MainLayoutProps) => {
                       <User className="h-5 w-5" />
                     </Button>
                   </Link>
-                  <Button variant="ghost" size="icon" onClick={logout}>
-                    <LogOut className="h-5 w-5" />
-                  </Button>
+                  {/* Only show logout button for authenticated users (not guest users) */}
+                  {user.email && (
+                    <Button variant="ghost" size="icon" onClick={logout}>
+                      <LogOut className="h-5 w-5" />
+                    </Button>
+                  )}
                 </>
               ) : (
                 <Link to="/login">
