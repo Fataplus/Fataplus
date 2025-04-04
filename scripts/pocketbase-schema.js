@@ -1,19 +1,30 @@
 /**
  * PocketBase Schema Setup Script
- * 
+ *
  * This script creates all the necessary collections for the FataPlus application.
  * Run this script with Node.js to set up your PocketBase instance.
- * 
+ *
  * Usage:
- * node pocketbase-schema.js
+ * ADMIN_EMAIL=your-email@example.com ADMIN_PASSWORD=your-password node pocketbase-schema.js
  */
 
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 // Configuration
-const POCKETBASE_URL = 'https://backend.fata.plus';
-const ADMIN_EMAIL = 'fenohery@fata.plus';
-const ADMIN_PASSWORD = '2025Fefe!';
+const POCKETBASE_URL = process.env.POCKETBASE_URL || 'https://backend.fata.plus';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+// Validate required environment variables
+if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
+  console.error('Error: Missing required environment variables.');
+  console.error('Required variables: ADMIN_EMAIL, ADMIN_PASSWORD');
+  process.exit(1);
+}
 
 // Collections to create
 const collections = [
@@ -57,7 +68,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Products collection
   {
     name: 'products',
@@ -121,7 +132,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Orders collection
   {
     name: 'orders',
@@ -165,7 +176,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Posts collection (for community)
   {
     name: 'posts',
@@ -220,7 +231,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Comments collection
   {
     name: 'comments',
@@ -250,7 +261,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Likes collection
   {
     name: 'likes',
@@ -275,7 +286,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Notifications collection
   {
     name: 'notifications',
@@ -317,7 +328,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Categories collection
   {
     name: 'categories',
@@ -339,7 +350,7 @@ const collections = [
       }
     ]
   },
-  
+
   // Settings collection
   {
     name: 'settings',
@@ -366,6 +377,9 @@ const collections = [
 // Function to authenticate with PocketBase
 async function authenticate() {
   try {
+    console.log('Attempting to authenticate with PocketBase...');
+    console.log(`URL: ${POCKETBASE_URL}/api/admins/auth-with-password`);
+
     const response = await fetch(`${POCKETBASE_URL}/api/admins/auth-with-password`, {
       method: 'POST',
       headers: {
@@ -377,12 +391,21 @@ async function authenticate() {
       }),
     });
 
+    const responseText = await response.text();
+    console.log('Response status:', response.status);
+    console.log('Response text:', responseText);
+
     if (!response.ok) {
       throw new Error(`Authentication failed: ${response.statusText}`);
     }
 
-    const data = await response.json();
-    return data.token;
+    try {
+      const data = JSON.parse(responseText);
+      return data.token;
+    } catch (e) {
+      console.error('Error parsing JSON response:', e);
+      throw new Error('Invalid JSON response from server');
+    }
   } catch (error) {
     console.error('Authentication error:', error);
     throw error;
@@ -435,16 +458,16 @@ async function createCollection(token, collection) {
 async function setupCollections() {
   try {
     console.log('Starting PocketBase schema setup...');
-    
+
     // Authenticate
     const token = await authenticate();
     console.log('Authentication successful.');
-    
+
     // Create collections
     for (const collection of collections) {
       await createCollection(token, collection);
     }
-    
+
     console.log('PocketBase schema setup completed successfully!');
   } catch (error) {
     console.error('Schema setup failed:', error);

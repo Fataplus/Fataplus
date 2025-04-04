@@ -5,8 +5,6 @@
   "installCommand": "npm install",
   "framework": "vite",
   "rewrites": [
-    { "source": "/docs", "destination": "https://fataplus-docs.vercel.app" },
-    { "source": "/docs/(.*)", "destination": "https://fataplus-docs.vercel.app/$1" },
     { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [

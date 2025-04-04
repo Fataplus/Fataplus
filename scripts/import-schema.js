@@ -1,9 +1,14 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
 import readline from 'readline';
+import path from 'path';
 
 const POCKETBASE_URL = 'https://backend.fata.plus';
-const SCHEMA_PATH = './pocketbase/pb_schema.json';
+
+// You can change this to use any of the schema files
+// Options: 'pb_schema.json', 'minimal_schema.json', 'fixed_schema.json', 'complete_schema.json'
+const SCHEMA_FILENAME = 'minimal_schema.json';
+const SCHEMA_PATH = path.join(process.cwd(), 'pocketbase', SCHEMA_FILENAME);
 
 // Create readline interface for user input
 const rl = readline.createInterface({
@@ -48,14 +53,17 @@ async function importSchema() {
           console.log('Authentication successful!');
 
           // Import the schema
-          console.log('Importing schema...');
+          console.log(`Importing schema from ${SCHEMA_FILENAME}...`);
           const importResponse = await fetch(`${POCKETBASE_URL}/api/collections/import`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
               'Authorization': token
             },
-            body: JSON.stringify(schema)
+            body: JSON.stringify({
+              collections: schema.collections,
+              deleteMissing: false
+            })
           });
 
           if (!importResponse.ok) {

@@ -1,19 +1,30 @@
 /**
  * PocketBase Seed Script
- * 
+ *
  * This script adds initial data to the PocketBase collections.
  * Run this script with Node.js after setting up the schema.
- * 
+ *
  * Usage:
- * node pocketbase-seed.js
+ * ADMIN_EMAIL=your-email@example.com ADMIN_PASSWORD=your-password node pocketbase-seed.js
  */
 
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 // Configuration
-const POCKETBASE_URL = 'https://backend.fata.plus';
-const ADMIN_EMAIL = 'fenohery@fata.plus';
-const ADMIN_PASSWORD = '2025Fefe!';
+const POCKETBASE_URL = process.env.POCKETBASE_URL || 'https://backend.fata.plus';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+// Validate required environment variables
+if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
+  console.error('Error: Missing required environment variables.');
+  console.error('Required variables: ADMIN_EMAIL, ADMIN_PASSWORD');
+  process.exit(1);
+}
 
 // Initial data to seed
 const seedData = {
@@ -55,7 +66,7 @@ const seedData = {
       icon: 'tool'
     }
   ],
-  
+
   // Settings
   settings: [
     {
@@ -111,7 +122,7 @@ async function authenticate() {
 async function seedCollection(token, collectionName, items) {
   try {
     console.log(`Seeding ${collectionName} collection...`);
-    
+
     for (const item of items) {
       const response = await fetch(`${POCKETBASE_URL}/api/collections/${collectionName}/records`, {
         method: 'POST',
@@ -129,7 +140,7 @@ async function seedCollection(token, collectionName, items) {
         continue;
       }
     }
-    
+
     console.log(`${collectionName} collection seeded successfully.`);
   } catch (error) {
     console.error(`Error seeding ${collectionName} collection:`, error);
@@ -141,16 +152,16 @@ async function seedCollection(token, collectionName, items) {
 async function seedAllCollections() {
   try {
     console.log('Starting PocketBase data seeding...');
-    
+
     // Authenticate
     const token = await authenticate();
     console.log('Authentication successful.');
-    
+
     // Seed collections
     for (const [collectionName, items] of Object.entries(seedData)) {
       await seedCollection(token, collectionName, items);
     }
-    
+
     console.log('PocketBase data seeding completed successfully!');
   } catch (error) {
     console.error('Data seeding failed:', error);

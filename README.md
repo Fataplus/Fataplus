@@ -134,6 +134,30 @@ For production, the PocketBase instance is hosted at:
 - **Application URL**: https://backend.fata.plus
 - **Admin UI**: https://backend.fata.plus/_/
 
+### Environment Variables
+
+This project uses environment variables for configuration. Create a `.env` file in the root directory based on the `.env.example` template.
+
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit the .env file with your credentials
+nano .env
+```
+
+Required environment variables for scripts:
+
+- `POCKETBASE_URL`: URL of your PocketBase instance
+- `ADMIN_EMAIL`: Admin email for PocketBase authentication
+- `ADMIN_PASSWORD`: Admin password for PocketBase authentication
+
+Additional variables for specific scripts:
+
+- `API_KEY`: API key for scripts that use API authentication
+- `SUPER_ADMIN_EMAIL` and `SUPER_ADMIN_PASSWORD`: For creating new admin users
+- `NEW_ADMIN_EMAIL` and `NEW_ADMIN_PASSWORD`: For the new admin user to be created
+
 ## Deployment
 
 This project is deployed using Vercel with Turborepo integration:

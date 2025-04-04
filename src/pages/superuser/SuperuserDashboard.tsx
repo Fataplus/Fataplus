@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { superuserApiRequest } from "@/services/superuserApi";
+import { pb } from "@/integrations/pocketbase/client";
 import {
   Database,
   Users,
@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const SuperuserDashboard = () => {
-  const { superuser, signOut } = useSuperuser();
+  const { signOut } = useSuperuser();
   const navigate = useNavigate();
   const { toast } = useToast();
   const [loading, setLoading] = useState(true);

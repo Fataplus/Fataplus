@@ -10,7 +10,7 @@
     "seed": "node seed-data.js"
   },
   "dependencies": {
-    "pocketbase": "^0.21.1",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "pocketbase": "^0.21.1"
   }
 }

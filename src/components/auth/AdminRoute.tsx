@@ -22,7 +22,7 @@ const AdminRoute = ({ children }: AdminRouteProps) => {
         }
 
         // Check if the user has admin privileges
-        if (profile?.userType === "admin") {
+        if ((user && user.userType === 'admin') || (profile?.userType === "admin")) {
           setIsAdmin(true);
         } else {
           setIsAdmin(false);
