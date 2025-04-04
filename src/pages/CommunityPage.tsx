@@ -1,4 +1,5 @@
-import React, MainLayout from "@/components/layout/MainLayout";
+import React, { useState, useEffect } from "react";
+import MainLayout from "@/components/layout/MainLayout";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,8 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRealtimeSubscription, RealtimeEvent } from "@/services/realtimeService";
 import { pb } from "@/integrations/pocketbase/client";
 import { useAuth } from "@/contexts/AuthContext";
-import { useToast } from "@/hooks/use-toast";
-import { Avatar, AvatarFallbhc karIe } from "@/components/ui/avatar";
+import { useToast } from "@/components/ui/use-toast";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import RealtimeIndicator from "@/components/realtime/RealtimeIndicator";
 import { formatDistanceToNow } from "date-fns";
@@ -20,46 +21,134 @@ const CommunityPage = () => {
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("all");
-  const [activeTab, setActiveTab] = useState("all");
-  const [sut   e Smn}]leSea'ost',
+  const [submitting, setSubmitting] = useState(false);
+
+  const { user } = useAuth();
+  const { toast } = useToast();
+
+  // Subscribe to realtime updates for posts
+  const { isConnected } = useRealtimeSubscription({
+    collection: 'posts',
+    callback: (event: RealtimeEvent) => {
+      if (event.action === 'create') {
+        // Add new post to the list
+        setPosts(prevPosts => [event.record, ...prevPosts]);
+        toast({
+          title: 'New post',
+          description: 'Someone just posted in the community',
+          duration: 3000
+        });
+      } else if (event.action === 'update') {
+        // Update existing post
+        setPosts(prevPosts =>
+          prevPosts.map(post =>
+            post.id === event.record.id ? event.record : post
+          )
+        );
+      } else if (event.action === 'delete') {
+        // Remove deleted post
+        setPosts(prevPosts =>
+          prevPosts.filter(post => post.id !== event.record.id)
+        );
+      }
+    }
+  });
+
+  // Fetch posts on component mount or tab change
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+
+        let filter = '';
+        if (activeTab === 'questions') {
+          filter = 'postType="question"';
+        } else if (activeTab === 'marketplace') {
+          filter = 'postType="marketplace"';
+        } else if (activeTab === 'general') {
+          filter = 'postType="general"';
+        }
+
+        const response = await pb.collection('posts').getList(1, 50, {
+          sort: '-created',
+          filter,
+          expand: 'author'
+        });
+
+        setPosts(response.items);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        toast({
+          title: 'Error',
+          description: 'Failed to load community posts',
           variant: 'destructive'
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, [activeTab, toast]);
+
+  // Handle tab change
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+  };
+
+  // Handle post submission
+  const handlePostSubmit = async () => {
+    if (!user) {
+      toast({
+        title: 'Authentication required',
+        description: 'Please log in to post in the community',
+        variant: 'destructive'
       });
       return;
-      }
-    
+    }
+
+    if (!newPostContent.trim()) {
+      toast({
+        title: 'Empty post',
+        description: 'Please enter some content for your post',
+        variant: 'destructive'
+      });
+      return;
+    }
+
     try {
       setSubmitting(true);
-      
+
       // Determine post type based on content
       let postType = 'general';
       if (newPostContent.includes('?')) {
         postType = 'question';
-      } else if (newPostContent.toLowerCase().includes('sell') || 
-                newPostContent.toLowerCase().includes('buy') || 
-                newPostContent.toLowerCase().includes('price') || 
+      } else if (newPostContent.toLowerCase().includes('sell') ||
+                newPostContent.toLowerCase().includes('buy') ||
+                newPostContent.toLowerCase().includes('price') ||
                 newPostContent.toLowerCase().includes('market')) {
         postType = 'marketplace';
       }
-       
-      // Create post 
+
+      // Create post
       await pb.collection('posts').create({
         author: user.id,
         content: newPostContent,
         postType
       });
-       
+
       // Clear input
       setNewPostContent('');
-      
+
       toast({
         title: 'Post created',
-          description: 'Your post has been published to the community',
-        duration: 3000 or tab change
+        description: 'Your post has been published to the community',
+        duration: 3000
       });
     } catch (error) {
       console.error('Error creating post:', error);
       toast({
-                title: 'Error',
+        title: 'Error',
         description: 'Failed to create post. Please try again.',
         variant: 'destructive'
       });
@@ -67,46 +156,46 @@ const CommunityPage = () => {
       setSubmitting(false);
     }
   };
-  
-          // Handle like post
+
+  // Handle like post
   const handleLikePost = async (postId: string) => {
     if (!user) {
       toast({
         title: 'Authentication required',
         description: 'Please log in to like posts',
-                variant: 'destructive'
+        variant: 'destructive'
       });
       return;
     }
-    
+
     try {
       // Check if user already liked the post
       const existingLikes = await pb.collection('likes').getList(1, 1, {
         filter: `post="${postId}" && user="${user.id}"`
       });
-      
+
       if (existingLikes.items.length > 0) {
         // User already liked the post, remove the like
-            await pb.collection('likes').delete(existingLikes.items[0].id);
-        
+        await pb.collection('likes').delete(existingLikes.items[0].id);
+
         toast({
-            title: 'Like removed',
+          title: 'Like removed',
           description: 'You have removed your like from this post',
           duration: 2000
         });
       } else {
-          // User hasn't liked the post yet, add a like
+        // User hasn't liked the post yet, add a like
         await pb.collection('likes').create({
           post: postId,
           user: user.id
         });
-        
+
         toast({
           title: 'Post liked',
           description: 'You have liked this post',
           duration: 2000
         });
-          }
+      }
     } catch (error) {
       console.error('Error liking post:', error);
       toast({
@@ -115,31 +204,31 @@ const CommunityPage = () => {
         variant: 'destructive'
       });
     }
-      };
+  };
 
   // Filter posts based on search query
-        const filteredPosts = posts.filter(post => {
+  const filteredPosts = posts.filter(post => {
     const content = post.content?.toLowerCase() || '';
     const authorName = post.expand?.author?.name?.toLowerCase() || '';
     const authorLocation = post.expand?.author?.location?.toLowerCase() || '';
     const query = searchQuery.toLowerCase();
-     
-    return content.includes(query) || authorName.includes(query ) || authorLocation.includes(query);
-  }); 
+
+    return content.includes(query) || authorName.includes(query) || authorLocation.includes(query);
+  });
 
   return (
     <MainLayout title="Community">
-            <div className="container mx-auto py-6">
+      <div className="container mx-auto py-6">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl font-bold">Community</h1>
           <RealtimeIndicator className="w-auto" />
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
-                {/* Left sidebar */}
+          {/* Left sidebar */}
           <div className="w-full md:w-1/4 space-y-4">
             <Card>
-                    <CardContent className="p-4">
+              <CardContent className="p-4">
                 <h3 className="text-lg font-semibold mb-2">Community</h3>
                 <p className="text-sm text-gray-500 mb-4">Connect with farmers, share knowledge, and ask questions.</p>
                 <Button className="w-full" onClick={() => document.getElementById("new-post")?.focus()}>
@@ -156,7 +245,7 @@ const CommunityPage = () => {
                   <li className="text-sm hover:text-primary cursor-pointer">Pest Control</li>
                   <li className="text-sm hover:text-primary cursor-pointer">Irrigation</li>
                   <li className="text-sm hover:text-primary cursor-pointer">Sustainable Farming</li>
-                    <li className="text-sm hover:text-primary cursor-pointer">Market Prices</li>
+                  <li className="text-sm hover:text-primary cursor-pointer">Market Prices</li>
                   <li className="text-sm hover:text-primary cursor-pointer">Equipment</li>
                 </ul>
               </CardContent>
@@ -167,17 +256,17 @@ const CommunityPage = () => {
           <div className="w-full md:w-3/4 space-y-4">
             {/* Search and filters */}
             <div className="flex items-center gap-2">
-                  <div className="relative flex-1">
+              <div className="relative flex-1">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
                 <Input
                   type="search"
                   placeholder="Search posts..."
                   className="pl-8"
-                        value={searchQuery}
+                  value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-                    </div>
+            </div>
 
             {/* New post */}
             <Card>
@@ -189,10 +278,10 @@ const CommunityPage = () => {
                   value={newPostContent}
                   onChange={(e) => setNewPostContent(e.target.value)}
                   disabled={!user || submitting}
-                        />
+                />
                 <div className="flex justify-end">
-                  <Button 
-                    onClick={handlePostSubmit} 
+                  <Button
+                    onClick={handlePostSubmit}
                     disabled={!newPostContent.trim() || !user || submitting}
                   >
                     {submitting ? (
@@ -212,106 +301,96 @@ const CommunityPage = () => {
                 )}
               </CardContent>
             </Card>
-    
+
             {/* Post filters */}
             <Tabs defaultValue="all" onValueChange={handleTabChange}>
               <TabsList className="w-full justify-start">
-  r Tbraue>All Posts</TabsTrigger>
-    <Ma nLayo        ="CommTTiey">al">General</TabsTrigger>
-      <  vLctsNam="carx-ao p-6">
-<di clssNme="flex jusify-betweenitm-enr mb-4">
-          <h1 classNam =" ext-2xl font-bold">Comm  ity</h1>   <div className="flex items-center justify-center h-40">
-          <R al imvI>dca  r cl  sName="w-au o" /> ) : filteredPosts.length === 0 ? (
-        </d v>me="text-center py-10">
+                <TabsTrigger value="all">All Posts</TabsTrigger>
+                <TabsTrigger value="questions">Questions</TabsTrigger>
+                <TabsTrigger value="marketplace">Marketplace</TabsTrigger>
+                <TabsTrigger value="general">General</TabsTrigger>
+              </TabsList>
 
-        <  v casNtNamu="flextflex-edlgmd:rlex-u"woga -6"> found. Be the first to post!</p>
-        < {/* Lif> sdba  */              {filteredPosts.map((post) => (
-          <div cla sNam ="w-f ll  d:w-1/4 spac -y-4">iv className="flex items-start gap-2 mb-3">
-         <ra<Card>{post.expand?.author?.avatar} alt={post.expand?.author?.name} />
-              < ardC       /AaasName="p-4">
-                <h3 c a sNam ="text-lg     -="mtboeiemb-2">Community</h3>and?.author?.name || 'Unknown User'}</h3>
-                <p classNam ="text- m  ext-gray-500 mb-4">   <ecp sith farmNa=, shar" k-owsetge,5and ask qu   i  na</a>Unknown Location'} · 
-                <Butto  classNam =" -full"  n lick={() => d cum   {gepElcmentByIdd"new-post" ??foomDiN}>new Date(post.created), { addSuffix: true }) : 'Unknown time'}
-                  <Plus className="mr-2 h-4 w-4"  >        P         {/* Post type badge */}
-                </B t  n>
-              </Card      <>adge variant="outline" className="bg-blue-50 text-blue-700 hover:bg-blue-50">
-            </Card>                       Question
+              {loading ? (
+                <div className="flex items-center justify-center h-40">
+                  <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                  <span className="ml-2">Loading posts...</span>
+                </div>
+              ) : filteredPosts.length === 0 ? (
+                <div className="text-center py-10">
+                  <p className="text-muted-foreground">No posts found. Be the first to post!</p>
+                </div>
+              ) : (
+                <TabsContent value={activeTab} className="space-y-4 mt-4">
+                  {filteredPosts.map((post) => (
+                    <Card key={post.id}>
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-2 mb-3">
+                          <Avatar>
+                            <AvatarImage src={post.expand?.author?.avatar} alt={post.expand?.author?.name} />
+                            <AvatarFallback>{post.expand?.author?.name?.charAt(0) || '?'}</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <h3 className="font-medium">{post.expand?.author?.name || 'Unknown User'}</h3>
+                            <p className="text-xs text-gray-500">
+                              {post.expand?.author?.location || 'Unknown Location'} ·
+                              {post.created ? formatDistanceToNow(new Date(post.created), { addSuffix: true }) : 'Unknown time'}
+                            </p>
+                          </div>
+
+                          {/* Post type badge */}
+                          <div className="ml-auto">
+                            {post.postType === 'question' && (
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 hover:bg-blue-50">
+                                <MessageSquare className="mr-1 h-3 w-3" />
+                                Question
                               </Badge>
-            < ard>                              <Badge variant="outline" className="bg-green-50 text-green-700 hover:bg-green-50">
-              <CardCon  n   lassN m ="p-4">  Marketplace
-               /<B3 clasdNam>="txt-lg fot-semiboldmb-2">Toc</3>
-             < l className="sp ce-y-2">      )}
-                  <li  las Nam ="t xt-sm h ve :text-p imayurso-po">Cp Man gemen </li>           <p className="mb-4">{post.content}</p>
-                  <l  classN mo=".exr-sm h&ver:(x-prima curso -po   er">P  t Con  ol</l<> className="mb-4 rounded-md overflow-hidden">
-                  <li clas Name="t x -s  hover: ex -primary cursor-po  ter">Irri  tion</ i>
-                   l             text-sm hover:tex -prim ry crorpiter">Susabl Faming</li
-                   l             t  mpsm hovcr:lsxt-prm"ary curhor-poiw-4r">Ma"ket Prices</li
-                   li               <ssm hover:teat-primary>cursor-ppioseresEquip e}t</l<>
-                paul
-               /C rdCon   t>
-            </Card>
-          </ iv>
+                            )}
+                            {post.postType === 'marketplace' && (
+                              <Badge variant="outline" className="bg-green-50 text-green-700 hover:bg-green-50">
+                                <ShoppingBag className="mr-1 h-3 w-3" />
+                                Marketplace
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
 
-          {/* Ma n  onten  */}
-          <divbutton>fllmd:w-34 space-y-4"
-                       and f l ers    <span>{post.comments || 0}</span>
-                            flex items-cente  gap-2">
-              <div classNam ="re</buttoflex1
-                                <button className2.5"flex2.5items-center g:tay-500primary">
-                                  <Share2 className="h-4 w-4" />
-                  ty e="search"
-                  p               <span>Share</span>
-                  className="pl-8"
-                                </button>
-                              </div>
-                />ontent>
-              < div         </Card>
-                      ))}
+                        <p className="mb-4">{post.content}</p>
+
+                        {post.imageUrl && (
+                          <div className="mb-4 rounded-md overflow-hidden">
+                            <img src={post.imageUrl} alt="Post attachment" className="w-full h-auto" />
+                          </div>
+                        )}
+
+                        <div className="flex items-center gap-4 text-sm text-gray-500">
+                          <button
+                            className="flex items-center gap-1 hover:text-primary"
+                            onClick={() => handleLikePost(post.id)}
+                          >
+                            <ThumbsUp className="h-4 w-4" />
+                            <span>{post.likes || 0}</span>
+                          </button>
+                          <button className="flex items-center gap-1 hover:text-primary">
+                            <MessageCircle className="h-4 w-4" />
+                            <span>{post.comments || 0}</span>
+                          </button>
+                          <button className="flex items-center gap-1 hover:text-primary">
+                            <Share2 className="h-4 w-4" />
+                            <span>Share</span>
+                          </button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </TabsContent>
-                  )}
-                <
-              </div>
-        </di    v>
-      </div>    id="new-ost"
-                  p
-    </MainLayo    className="mb-4 min-h-[100px]"
-                  ut>
-  );    
-};    dibld{!user|| subttig}
-    
-export defau    lt CommunityPage;d
-    
-                    onClck={hdlePsSubmt}
-                    dable={!newsCntent.trim() || !ser || submiig}
-                        {sbmiig ? (      <>
-                        <Loader2 clasNammr-2 h-4 w-4 animate-pin />        Pstg...
-                      </>
-                    ) : (
-                      ''
-                    )}
-                  </Bton></v>
-                {!user && (
-                  <p clasNm"txt-x text-mued-foregrud mt-2 tex-ce">Youneedtobeloggedintopostinthecmmuniy.    p    )}            filer    onVaueChng{handleTaChange}    justfytart            place       <TabsTriggervalue="general">GeneralTrgger    /sLi
-  oai  flex item-nter justifcenter h-0  <Load2 claNae="h-8 w-8 nimate-pin ext-primary"/spnclassNam"ml-2">Loading s..</span</div>
-          ) : filteePss.lgh==0?(
-tceney10ptextfoegr">No posts ond.B te frst to post!p/):(
-      TabsContentvalue={ativeTab} cspacey-4 t-4
-                  filteredPsmp((pst) => (
-                    Card key={ost.id}<CardContentclassName="p-4">
-                     satb3AvAvatarImage src={pot.exd?.author?.avatar} alt={pot.exand?.uthor?.ame} /AvatarFallbck.expand?auhor?.na?.chart(0) || '?'AvatarFallbckAatar  h3font-mediu.expand?authr?.am || 'Unknow User'h3      < className="text-x tex-gry-500">
-   {post.expnd?.ho?.locati||'UnknonLoao'} ·    cretd ?formDianeToNw(ew Da(pos.retd), { addSuix:ru }) :'Unknw tim'}
-   p    </div> {/* Potypbdge */}divmlauto  potTye==='question'&&(
-Badge varian="utlie"bg-bu-50xtblu-700 hov:bblue-50      Squamr-1 33      Quei
-                             Bdge    )}
-                            {pos.pstType === 'marketplace' && (      Badge varian="utlie"bg-gren-50xtgre-700 hov:bgreen-50      oppingBgmr-1 33      Mktlce</Badge>
-)}
-iv    
-p"mb-4>{os.ont}</p
-                         {pos.iagUl &&(        divmb-4 rudedverlw-hidde"          img src={ost.imageUrl} alt="Post attachment"wfullha /
-      iv 
-ivflex items-center ga4sm tx-gay-500      <uflis-cenr gap1 hve:txt-piary
-        Clic={()=>handlLkePs(pst.id)}        humUpcassNamh-4 w-4 /  sp>{pos.liks ||0}</p      </u          buttonlex iemscergp-1 hove:tx-rimry"            MessageCircleh4wsp>{pos.comms || 0}</span    uonbuttonflex tes-centegap-1 hv:text                  Sh2h w-4 /n>Shae<sa  </button>
-/      /CrdCnt
-  /C
-))}  /TabsCtn
-              )}Tabsiviv
+              )}
+            </Tabs>
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
+};
+
+export default CommunityPage;
