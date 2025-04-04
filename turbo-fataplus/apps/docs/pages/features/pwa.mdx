@@ -1,0 +1,100 @@
+# Progressive Web App (PWA)
+
+FataPlus is built as a Progressive Web App (PWA), which means it can be installed on users' devices and used offline.
+
+## PWA Features
+
+- **Installable**: Users can add FataPlus to their home screen
+- **Offline Support**: Core functionality works without an internet connection
+- **Background Sync**: Changes made offline are synchronized when back online
+- **Push Notifications**: Users receive notifications about important events
+- **App-like Experience**: Full-screen mode and native-like interactions
+
+## How It Works
+
+FataPlus uses service workers to cache assets and API responses, enabling offline functionality. When a user is offline:
+
+1. The app loads from the cache
+2. Data is stored in IndexedDB
+3. Actions are queued for later synchronization
+4. When the user comes back online, queued actions are processed
+
+## Implementation Details
+
+### Service Worker
+
+The service worker is registered in `main.tsx`:
+
+```typescript
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(error => {
+      console.log('SW registration failed: ', error);
+    });
+  });
+}
+```
+
+### Manifest File
+
+The web app manifest (`manifest.json`) defines how the app appears when installed:
+
+```json
+{
+  "name": "FataPlus",
+  "short_name": "FataPlus",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+```
+
+### Offline Data Strategy
+
+FataPlus uses a "cache-first" strategy for assets and an "offline-first" approach for data:
+
+1. **Assets**: HTML, CSS, JavaScript, and images are cached during installation
+2. **API Requests**: Responses are cached and served when offline
+3. **User Actions**: Stored in IndexedDB and synchronized when online
+
+## Testing Offline Mode
+
+To test offline functionality:
+
+1. Open the application in Chrome
+2. Open DevTools (F12)
+3. Go to the Network tab
+4. Check the "Offline" checkbox
+5. Use the application and observe its behavior
+
+## Limitations
+
+While FataPlus works offline, some features have limitations:
+
+- **Images**: Only previously viewed images are available offline
+- **Real-time Updates**: Not available when offline
+- **Payments**: Cannot be processed offline
+
+## Best Practices
+
+When developing for FataPlus, follow these PWA best practices:
+
+1. **Responsive Design**: Ensure the UI works on all device sizes
+2. **Performance**: Keep bundle sizes small and optimize loading times
+3. **Offline UX**: Clearly indicate when the app is offline
+4. **Error Handling**: Gracefully handle network failures

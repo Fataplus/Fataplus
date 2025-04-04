@@ -1,0 +1,77 @@
+# Configuration
+
+This guide explains how to configure FataPlus for your specific needs.
+
+## Environment Variables
+
+FataPlus uses environment variables for configuration. Here's a list of available variables:
+
+### Web Application (apps/web)
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `VITE_POCKETBASE_URL` | URL of your PocketBase instance | `http://localhost:8090` |
+| `VITE_APP_NAME` | Name of the application | `FataPlus` |
+| `VITE_APP_URL` | URL of the application | `http://localhost:3000` |
+| `VITE_API_URL` | URL of the API | `http://localhost:8090` |
+
+### Documentation (apps/docs)
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `NEXT_PUBLIC_APP_URL` | URL of the main application | `http://localhost:3000` |
+
+## Tailwind Configuration
+
+FataPlus uses Tailwind CSS for styling. You can customize the theme in the `tailwind.config.js` file in each application:
+
+```js
+// apps/web/tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#10b981',
+          // Add your custom color palette
+        },
+        // Add more custom colors
+      },
+      // Add more theme customizations
+    },
+  },
+  // ...
+};
+```
+
+## PocketBase Schema
+
+FataPlus requires specific collections in PocketBase. You can set up these collections using the migration scripts:
+
+```bash
+cd scripts/data-migration
+node migration-manager.js
+```
+
+When prompted, select `run` to apply all migrations.
+
+## Feature Flags
+
+FataPlus supports feature flags to enable or disable specific features. You can configure these in the `apps/web/src/config/features.ts` file:
+
+```typescript
+export const features = {
+  realtime: true,
+  offlineMode: true,
+  payments: false,
+  analytics: false,
+};
+```
+
+## Next Steps
+
+After configuring FataPlus, you can:
+
+1. [Set up PocketBase](/getting-started/pocketbase-setup)
+2. [Start developing](/getting-started/development)
+3. [Deploy to production](/deployment/vercel)

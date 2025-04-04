@@ -1,0 +1,157 @@
+# Real-time Updates
+
+FataPlus uses WebSockets to provide real-time updates for various features, enhancing the user experience with instant notifications and live data.
+
+## Real-time Features
+
+- **Community Posts**: See new posts without refreshing
+- **Notifications**: Receive instant notifications for likes, comments, and orders
+- **Order Status**: Get live updates when order status changes
+- **Chat**: Communicate with other users in real-time
+
+## Implementation
+
+FataPlus uses PocketBase's built-in real-time API, which is based on WebSockets. The implementation consists of:
+
+### 1. Real-time Service
+
+The `realtimeService.ts` file provides:
+
+```typescript
+// src/services/realtimeService.ts
+import { pb } from '@/integrations/pocketbase/client';
+
+// Custom hook for subscribing to real-time updates
+export const useRealtimeSubscription = (
+  subscription: RealtimeSubscription | RealtimeSubscription[]
+) => {
+  // Implementation details...
+};
+
+// Function to manually connect to real-time updates
+export const connectToRealtime = () => {
+  if (!pb.realtime.isConnected) {
+    pb.realtime.connect();
+    return true;
+  }
+  return false;
+};
+
+// More helper functions...
+```
+
+### 2. PocketBase Hooks
+
+Server-side hooks in PocketBase handle events and broadcast notifications:
+
+```javascript
+// scripts/pb_hooks/realtime-notifications.js
+onRecordAfterCreateRequest((e) => {
+  if (e.collection.name !== 'posts') {
+    return;
+  }
+  
+  // Get the created post
+  const post = e.record;
+  
+  // Broadcast to all clients
+  $app.dao().expandRecord(post, ['author'], null);
+  
+  // Send notification to all users
+  broadcastNotification('posts/created', {
+    post: serializeRecord(post),
+    message: `New post by ${post.expand?.author?.name || 'Unknown User'}`
+  });
+});
+```
+
+### 3. Notifications Provider
+
+The `NotificationsProvider` component manages notifications:
+
+```tsx
+// src/components/realtime/NotificationsProvider.tsx
+export const NotificationsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  
+  // Subscribe to notifications
+  useEffect(() => {
+    if (!user) return;
+    
+    // Subscribe to user-specific notifications
+    const userSubscription = pb.collection('users').subscribe(user.id, (data) => {
+      // Handle notifications
+    });
+    
+    // More subscription logic...
+    
+    return () => {
+      // Cleanup subscriptions
+    };
+  }, [user, toast]);
+  
+  // More implementation details...
+  
+  return (
+    <NotificationsContext.Provider value={{ /* ... */ }}>
+      {children}
+    </NotificationsContext.Provider>
+  );
+};
+```
+
+## Connection Status
+
+FataPlus provides a visual indicator of the real-time connection status:
+
+```tsx
+// src/components/realtime/RealtimeIndicator.tsx
+const RealtimeIndicator = ({ className }: RealtimeIndicatorProps) => {
+  const [connected, setConnected] = useState(false);
+  
+  // Check connection status periodically
+  useEffect(() => {
+    const checkConnection = () => {
+      setConnected(isRealtimeConnected());
+    };
+    
+    // Initial check
+    checkConnection();
+    
+    // Set up interval to check connection status
+    const interval = setInterval(checkConnection, 5000);
+    
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  
+  // More implementation details...
+};
+```
+
+## Offline Behavior
+
+When a user goes offline:
+
+1. The real-time connection is automatically closed
+2. A visual indicator shows the disconnected status
+3. When the user comes back online, the connection is re-established
+4. Missed updates are fetched and applied
+
+## Performance Considerations
+
+Real-time updates can impact performance. FataPlus implements these optimizations:
+
+1. **Selective Subscriptions**: Only subscribe to relevant collections
+2. **Throttling**: Limit the frequency of updates
+3. **Batching**: Group multiple updates together
+4. **Cleanup**: Unsubscribe when components unmount
+
+## Testing Real-time Features
+
+To test real-time functionality:
+
+1. Open the application in two different browsers or devices
+2. Make changes in one browser (e.g., create a post)
+3. Observe the updates appearing in the other browser
