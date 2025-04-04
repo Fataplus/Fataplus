@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fataplus-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fataplus
+      POSTGRES_PASSWORD: fataplus_password
+      POSTGRES_DB: fataplus
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fataplus"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: fataplus-pocketbase
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8090:8090"
+    volumes:
+      - pocketbase_data:/pb_data
+      - ./pocketbase/pb_config.json:/pb/pb_config.json
+      - ./pocketbase/pb_migrations:/pb/pb_migrations
+    environment:
+      PG_USERNAME: fataplus
+      PG_PASSWORD: fataplus_password
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DATABASE: fataplus
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-}
+
+volumes:
+  postgres_data:
+  pocketbase_data:
