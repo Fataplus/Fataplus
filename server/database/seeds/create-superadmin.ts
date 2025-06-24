@@ -42,15 +42,17 @@ export async function createSuperAdmin(adminData: SuperAdminData) {
     // Create superadmin user
     const insertStmt = sqlite.prepare(`
       INSERT INTO users (
-        id, email, name, role, password_hash, is_verified, 
-        created_at, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        id, email, first_name, last_name, phone, role, password, 
+        email_verified, created_at, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `)
     
     insertStmt.run(
       userId,
       adminData.email,
-      `${adminData.firstName} ${adminData.lastName}`,
+      adminData.firstName,
+      adminData.lastName,
+      adminData.phone || null,
       'superadmin',
       hashedPassword,
       1, // Auto-verified

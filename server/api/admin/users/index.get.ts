@@ -21,8 +21,8 @@ export default defineEventHandler(async (event) => {
       let params: any[] = []
       
       if (search) {
-        whereConditions.push('(name LIKE ? OR email LIKE ?)')
-        params.push(`%${search}%`, `%${search}%`)
+        whereConditions.push('(first_name LIKE ? OR last_name LIKE ? OR email LIKE ?)')
+        params.push(`%${search}%`, `%${search}%`, `%${search}%`)
       }
       
       if (role) {
@@ -40,7 +40,7 @@ export default defineEventHandler(async (event) => {
 
       // Get users
       const usersQuery = `
-        SELECT id, email, name, role, is_verified, last_login_at, created_at, updated_at
+        SELECT id, email, first_name, last_name, role, email_verified, last_login_at, created_at, updated_at
         FROM users 
         ${whereClause}
         ORDER BY created_at DESC 
@@ -54,7 +54,8 @@ export default defineEventHandler(async (event) => {
         data: {
           users: users.map(user => ({
             ...user,
-            isVerified: !!user.is_verified,
+            name: `${user.first_name} ${user.last_name}`,
+            isVerified: !!user.email_verified,
             lastLoginAt: user.last_login_at ? new Date(user.last_login_at) : null,
             createdAt: new Date(user.created_at),
             updatedAt: new Date(user.updated_at)

@@ -39,7 +39,7 @@ export async function verifyToken(event: H3Event): Promise<AuthUser | null> {
     const sqlite = new Database('./server/database/sqlite.db')
     try {
       const user = sqlite.prepare(
-        'SELECT id, email, name, role, is_verified FROM users WHERE id = ?'
+        'SELECT id, email, first_name, last_name, role, email_verified FROM users WHERE id = ?'
       ).get(decoded.userId)
       
       if (!user) {
@@ -49,9 +49,9 @@ export async function verifyToken(event: H3Event): Promise<AuthUser | null> {
       return {
         id: user.id,
         email: user.email,
-        name: user.name,
+        name: `${user.first_name} ${user.last_name}`,
         role: user.role,
-        isVerified: !!user.is_verified
+        isVerified: !!user.email_verified
       }
     } finally {
       sqlite.close()

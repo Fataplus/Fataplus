@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
     try {
       // Get target user
       const targetUser = sqlite.prepare(
-        'SELECT id, email, name, role FROM users WHERE id = ?'
+        'SELECT id, email, first_name, last_name, role FROM users WHERE id = ?'
       ).get(userId)
       
       if (!targetUser) {
@@ -77,7 +77,7 @@ export default defineEventHandler(async (event) => {
 
       // Get updated user
       const updatedUser = sqlite.prepare(
-        'SELECT id, email, name, role, is_verified, created_at, updated_at FROM users WHERE id = ?'
+        'SELECT id, email, first_name, last_name, role, email_verified, created_at, updated_at FROM users WHERE id = ?'
       ).get(userId)
 
       // Log the role change
@@ -89,7 +89,8 @@ export default defineEventHandler(async (event) => {
         data: {
           user: {
             ...updatedUser,
-            isVerified: !!updatedUser.is_verified,
+            name: `${updatedUser.first_name} ${updatedUser.last_name}`,
+            isVerified: !!updatedUser.email_verified,
             createdAt: new Date(updatedUser.created_at),
             updatedAt: new Date(updatedUser.updated_at)
           }

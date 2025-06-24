@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
 
       // Get recent registrations
       const recentRegistrations = sqlite.prepare(`
-        SELECT id, email, name, role, created_at 
+        SELECT id, email, first_name, last_name, role, created_at 
         FROM users 
         ORDER BY created_at DESC 
         LIMIT 10
@@ -67,6 +67,7 @@ export default defineEventHandler(async (event) => {
           },
           recentRegistrations: recentRegistrations.map(user => ({
             ...user,
+            name: `${user.first_name} ${user.last_name}`,
             createdAt: new Date(user.created_at)
           })),
           systemHealth,
