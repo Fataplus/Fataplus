@@ -13,6 +13,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'EmptyState': typeof import("../shared/components/ui/EmptyState.vue")['default']
+    'FlowbiteCard': typeof import("../shared/components/ui/FlowbiteCard.vue")['default']
     'LoadingSpinner': typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
     'AppHeader': typeof import("../components/AppHeader.vue")['default']
     'BottomNavigation': typeof import("../components/BottomNavigation.vue")['default']
@@ -41,6 +42,7 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyEmptyState': LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
+    'LazyFlowbiteCard': LazyComponent<typeof import("../shared/components/ui/FlowbiteCard.vue")['default']>
     'LazyLoadingSpinner': LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/AppHeader.vue")['default']>
     'LazyBottomNavigation': LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
@@ -75,6 +77,7 @@ declare module 'vue' {
 }
 
 export const EmptyState: typeof import("../shared/components/ui/EmptyState.vue")['default']
+export const FlowbiteCard: typeof import("../shared/components/ui/FlowbiteCard.vue")['default']
 export const LoadingSpinner: typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
 export const BottomNavigation: typeof import("../components/BottomNavigation.vue")['default']
@@ -103,6 +106,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyEmptyState: LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
+export const LazyFlowbiteCard: LazyComponent<typeof import("../shared/components/ui/FlowbiteCard.vue")['default']>
 export const LazyLoadingSpinner: LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/AppHeader.vue")['default']>
 export const LazyBottomNavigation: LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
