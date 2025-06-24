@@ -1,60 +1,28 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <!-- Navigation Header -->
-    <AppHeader />
+  <div class="min-h-screen bg-gray-50">
+    <!-- Very simple header -->
+    <header class="bg-white shadow border-b">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <h1 class="text-2xl font-bold text-green-600">🌱 Fataplus</h1>
+      </div>
+    </header>
     
-    <!-- Notification Toast Container -->
-    <AppNotifications />
-    
-    <!-- Main Content -->
-    <main class="flex-1">
+    <!-- Main content -->
+    <main>
       <NuxtPage />
     </main>
-    
-    <!-- Footer -->
-    <AppFooter />
-    
-    <!-- Modals -->
-    <AuthModal />
-    <CartSidebar />
-    <AIAssistant />
   </div>
 </template>
 
 <script setup lang="ts">
-// Configuration de l'application
+// Basic app configuration
 useHead({
   titleTemplate: '%s - Fataplus',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'theme-color', content: '#16a34a' }
-  ],
-  link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' }
   ]
 })
-
-// Initialisation des stores
-const { initializeAuth } = useAuthStore()
-const { initializeCart } = useCartStore()
-const { initializeNotifications } = useNotificationStore()
-
-// Initialisation de l'application
-onMounted(async () => {
-  await initializeAuth()
-  await initializeCart()
-  await initializeNotifications()
-})
-
-// Configuration du mode sombre
-const colorMode = useColorMode()
-
-// Gestion des notifications push
-if (process.client && 'serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-}
 </script>
 
 <style>
