@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-06-24',
+  compatibilityDate: '2024-12-14',
   
   // 🚀 Performance: Disable heavy dev tools for faster builds
   devtools: {
@@ -54,11 +54,8 @@ export default defineNuxtConfig({
     }
   },
 
-  // Configuration Nitro pour l'API
+  // Configuration Nitro pour l'API  
   nitro: {
-    experimental: {
-      wasm: true
-    },
     esbuild: {
       options: {
         target: 'es2022'
@@ -116,6 +113,7 @@ export default defineNuxtConfig({
     {
       path: '~/shared/components',
       pathPrefix: false,
+      extensions: ['vue']
     }
   ],
 

@@ -13,10 +13,10 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'EmptyState': typeof import("../shared/components/ui/EmptyState.vue")['default']
-    'FlowbiteCard': typeof import("../shared/components/ui/FlowbiteCard.vue")['default']
     'LoadingSpinner': typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
     'AppHeader': typeof import("../components/AppHeader.vue")['default']
     'BottomNavigation': typeof import("../components/BottomNavigation.vue")['default']
+    'FlowbiteCard': typeof import("../components/FlowbiteCard.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -42,10 +42,10 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyEmptyState': LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
-    'LazyFlowbiteCard': LazyComponent<typeof import("../shared/components/ui/FlowbiteCard.vue")['default']>
     'LazyLoadingSpinner': LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/AppHeader.vue")['default']>
     'LazyBottomNavigation': LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
+    'LazyFlowbiteCard': LazyComponent<typeof import("../components/FlowbiteCard.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
     'LazyNuxtLayout': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
     'LazyNuxtErrorBoundary': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
@@ -77,10 +77,10 @@ declare module 'vue' {
 }
 
 export const EmptyState: typeof import("../shared/components/ui/EmptyState.vue")['default']
-export const FlowbiteCard: typeof import("../shared/components/ui/FlowbiteCard.vue")['default']
 export const LoadingSpinner: typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
 export const BottomNavigation: typeof import("../components/BottomNavigation.vue")['default']
+export const FlowbiteCard: typeof import("../components/FlowbiteCard.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -106,10 +106,10 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyEmptyState: LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
-export const LazyFlowbiteCard: LazyComponent<typeof import("../shared/components/ui/FlowbiteCard.vue")['default']>
 export const LazyLoadingSpinner: LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/AppHeader.vue")['default']>
 export const LazyBottomNavigation: LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
+export const LazyFlowbiteCard: LazyComponent<typeof import("../components/FlowbiteCard.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

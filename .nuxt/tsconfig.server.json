@@ -119,7 +119,7 @@
   "include": [
     "./types/nitro-nuxt.d.ts",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
-    "../node_modules/@nuxt/devtools/runtime/server",
+    "../node_modules/@nuxthub/core/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./types/nitro.d.ts",
     "../**/*",
@@ -129,7 +129,7 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@nuxt/devtools/node_modules",
+    "../node_modules/@nuxthub/core/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"
   ]
