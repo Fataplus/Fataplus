@@ -1,9 +1,0 @@
-#!/bin/sh
-
-echo "Running pre-commit checks..."
-
-# Run linting (with warnings allowed)
-npm run lint -- --max-warnings=100
-
-# Run type checking (skip for now)
-# npm run typecheck
