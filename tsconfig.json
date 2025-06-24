@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./"],
+      "@/*": ["./"],
+      "@@/*": ["./"],
+      "~~/*": ["./"],
+      "#modules/*": ["./modules/*"],
+      "#shared/*": ["./shared/*"],
+      "#integrations/*": ["./integrations/*"],
+      "#types": ["./types/index.ts"],
+      "#marketplace/*": ["./modules/marketplace/*"],
+      "#learning/*": ["./modules/learning/*"],
+      "#community/*": ["./modules/community/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    "**/*.js",
+    "modules/**/*",
+    "shared/**/*",
+    "integrations/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".nuxt",
+    ".output"
+  ]
+} 

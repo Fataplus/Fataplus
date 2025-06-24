@@ -1,0 +1,156 @@
+{
+  "app": {
+    "name": "Fataplus",
+    "tagline": "Fambolena malagasy mifandray",
+    "description": "Sehatra natokana ho an'ny fambolena eto Madagasikara : tsena, fianarana, vondrom-piarahamonina"
+  },
+  
+  "navigation": {
+    "home": "Fandraisana",
+    "marketplace": "Tsena",
+    "learning": "Fianarana",
+    "community": "Vondrom-piarahamonina",
+    "ai_assistant": "Mpanampy IA",
+    "login": "Hiditra",
+    "register": "Hisoratra anarana",
+    "profile": "Mombamomba",
+    "orders": "Baiko",
+    "courses": "Fianarana",
+    "favorites": "Tiako",
+    "settings": "Fikirakirana",
+    "help": "Fanampiana",
+    "logout": "Hivoaka"
+  },
+  
+  "auth": {
+    "login": {
+      "title": "Hiditra amin'ny kaontinao",
+      "subtitle": "Midira amin'ny toeranao manokana",
+      "email": "Adiresy email",
+      "password": "Teny miafina",
+      "remember": "Tsarovy aho",
+      "forgot_password": "Hadino ny teny miafina?",
+      "submit": "Hiditra",
+      "no_account": "Tsy manana kaonty?",
+      "create_account": "Mamorona kaonty"
+    },
+    "register": {
+      "title": "Mamorona kaonty",
+      "subtitle": "Miditra amin'ny vondrom-piarahamonina Fataplus",
+      "first_name": "Anarana voalohany",
+      "last_name": "Fanampiny",
+      "email": "Adiresy email",
+      "phone": "Telefaona",
+      "password": "Teny miafina",
+      "confirm_password": "Hamarino ny teny miafina",
+      "role": "Izaho dia",
+      "roles": {
+        "farmer": "Tantsaha",
+        "buyer": "Mpividy",
+        "mentor": "Mpampianatra",
+        "trainer": "Mpanazatra"
+      },
+      "terms": "Ekeko ny fepetra fampiasana",
+      "submit": "Mamorona ny kaontiko",
+      "already_account": "Efa manana kaonty?",
+      "login_here": "Hiditra"
+    }
+  },
+  
+  "marketplace": {
+    "title": "Tsena",
+    "subtitle": "Hahita ny vokatra vaovao avy amin'ny tantsaha",
+    "search_placeholder": "Mitady vokatra...",
+    "categories": "Sokajy",
+    "product": {
+      "price": "Vidiny",
+      "in_stock": "Misy am-pahana",
+      "out_of_stock": "Tsy misy am-pahana",
+      "quantity": "Isa",
+      "add_to_cart": "Apetraho ao amin'ny harona",
+      "buy_now": "Vidio ankehitriny",
+      "seller": "Mpivarotra",
+      "organic": "Bio",
+      "description": "Famaritana"
+    },
+    "cart": {
+      "title": "Harona",
+      "empty": "Tsy misy na inona na inona ao amin'ny haronanao",
+      "subtotal": "Fitambaran'ny vidiny",
+      "total": "Totaliny",
+      "checkout": "Hanome baiko"
+    }
+  },
+  
+  "learning": {
+    "title": "Fianarana",
+    "subtitle": "Amboary ny fahaizanao momba ny fambolena",
+    "my_courses": "Ny fianarako",
+    "browse_courses": "Hijery",
+    "free": "Maimaim-poana",
+    "paid": "Andoavam-bola",
+    "beginner": "Vao manomboka",
+    "intermediate": "Antonony",
+    "advanced": "Avo lenta",
+    "course": {
+      "duration": "Faharetana",
+      "lessons": "lesona",
+      "students": "mpianatra",
+      "instructor": "Mpampianatra",
+      "enroll": "Hisoratra anarana",
+      "start": "Hanomboka",
+      "continue": "Hanohy",
+      "completed": "Vita"
+    }
+  },
+  
+  "community": {
+    "title": "Vondrom-piarahamonina",
+    "subtitle": "Mifandray amin'ny tantsaha hafa",
+    "forums": "Fifanakalozan-kevitra",
+    "messages": "Hafatra",
+    "events": "Hetsika",
+    "mentors": "Mpampianatra",
+    "reply": "Hamaly",
+    "like": "Tiako",
+    "share": "Mizara",
+    "follow": "Manaraka"
+  },
+  
+  "ai": {
+    "title": "Mpanampy IA",
+    "subtitle": "Mpanoro hevitra mahay momba ny fambolena",
+    "placeholder": "Apetraho ny fanontanianao...",
+    "send": "Alefa",
+    "thinking": "Misaina aho...",
+    "error": "Miala tsiny, nisy hadisoana"
+  },
+  
+  "common": {
+    "yes": "Eny",
+    "no": "Tsia",
+    "ok": "OK",
+    "cancel": "Ajanona",
+    "close": "Hidio",
+    "loading": "Eo am-piandrasana...",
+    "error": "Hadisoana",
+    "success": "Nahomby",
+    "search": "Mitady",
+    "edit": "Ovao",
+    "delete": "Fafao",
+    "save": "Tehirizo",
+    "next": "Manaraka",
+    "previous": "Taloha",
+    "back": "Miverina",
+    "submit": "Alefa",
+    "send": "Alefa"
+  },
+  
+  "errors": {
+    "404": "Pejy tsy hita",
+    "500": "Hadisoana amin'ny server",
+    "network": "Hadisoana amin'ny tambajotram-pifandraisana",
+    "unknown": "Hadisoana tsy fantatra",
+    "try_again": "Andramo indray"
+  }
+} 
