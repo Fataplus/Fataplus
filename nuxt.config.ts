@@ -11,11 +11,13 @@ export default defineNuxtConfig({
     }
   },
   
-  // Only essential modules
+  // Essential modules + NuxtHub
   modules: [
-    '@nuxtjs/tailwindcss'
-    // Pinia completely removed
+    '@nuxtjs/tailwindcss',
+    '@nuxthub/core'
   ],
+
+  // NuxtHub will be configured automatically
 
   // Configuration CSS
   css: ['~/assets/css/main.css'],

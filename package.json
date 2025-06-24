@@ -22,7 +22,8 @@
     "db:generate": "drizzle-kit generate:sqlite",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "deploy": "wrangler pages deploy dist/"
+    "deploy": "nuxthub deploy",
+    "deploy:wrangler": "wrangler pages deploy dist/"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

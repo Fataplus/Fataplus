@@ -111,3 +111,8 @@ pids
 # Cloudflare Workers
 wrangler.toml
 .dev.vars
+
+.data
+# GroFresh and UI inspiration files
+UI&Idea-Box/
+vendor/
