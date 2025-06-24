@@ -3,11 +3,12 @@ import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-24',
+  
+  // 🚀 Performance: Disable heavy dev tools for faster builds
   devtools: {
-    enabled: true,
-
+    enabled: false, // Disabled for faster development builds
     timeline: {
-      enabled: true
+      enabled: false
     }
   },
   
@@ -118,10 +119,14 @@ export default defineNuxtConfig({
     }
   ],
 
-  // Vite configuration for better module resolution
+  // 🚀 Vite Performance Optimizations
   vite: {
     define: {
       global: 'globalThis'
+    },
+    // Optimize dependencies for faster builds
+    optimizeDeps: {
+      include: ['vue', 'vue-router']
     }
   },
 

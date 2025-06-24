@@ -1,0 +1,29 @@
+# Exclude large directories from Nuxt file watching and processing
+UI&Idea-Box/
+node_modules/
+.git/
+.nuxt/
+.output/
+dist/
+
+# Exclude specific file types that don't need processing
+*.log
+*.tmp
+*.temp
+**/*.zip
+**/*.rar
+**/*.tar.gz
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Exclude backup files
+*.bak
+*.backup 
