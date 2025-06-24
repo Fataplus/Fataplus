@@ -11,6 +11,7 @@ declare global {
   const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['cachedEventHandler']
   const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['cachedFunction']
   const callNodeListener: typeof import('../../node_modules/h3')['callNodeListener']
+  const canManageUser: typeof import('../../server/utils/auth-middleware')['canManageUser']
   const clearResponseHeaders: typeof import('../../node_modules/h3')['clearResponseHeaders']
   const clearSession: typeof import('../../node_modules/h3')['clearSession']
   const createApp: typeof import('../../node_modules/h3')['createApp']
@@ -44,6 +45,7 @@ declare global {
   const fromPlainHandler: typeof import('../../node_modules/h3')['fromPlainHandler']
   const fromWebHandler: typeof import('../../node_modules/h3')['fromWebHandler']
   const getCookie: typeof import('../../node_modules/h3')['getCookie']
+  const getCurrentUser: typeof import('../../server/utils/auth-middleware')['getCurrentUser']
   const getHeader: typeof import('../../node_modules/h3')['getHeader']
   const getHeaders: typeof import('../../node_modules/h3')['getHeaders']
   const getMethod: typeof import('../../node_modules/h3')['getMethod']
@@ -91,6 +93,10 @@ declare global {
   const readRawBody: typeof import('../../node_modules/h3')['readRawBody']
   const readValidatedBody: typeof import('../../node_modules/h3')['readValidatedBody']
   const removeResponseHeader: typeof import('../../node_modules/h3')['removeResponseHeader']
+  const requireAdmin: typeof import('../../server/utils/auth-middleware')['requireAdmin']
+  const requireAuth: typeof import('../../server/utils/auth-middleware')['requireAuth']
+  const requireRole: typeof import('../../server/utils/auth-middleware')['requireRole']
+  const requireSuperAdmin: typeof import('../../server/utils/auth-middleware')['requireSuperAdmin']
   const runTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task')['runTask']
   const sanitizeStatusCode: typeof import('../../node_modules/h3')['sanitizeStatusCode']
   const sanitizeStatusMessage: typeof import('../../node_modules/h3')['sanitizeStatusMessage']
@@ -125,6 +131,7 @@ declare global {
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config')['useRuntimeConfig']
   const useSession: typeof import('../../node_modules/h3')['useSession']
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage')['useStorage']
+  const verifyToken: typeof import('../../server/utils/auth-middleware')['verifyToken']
   const writeEarlyHints: typeof import('../../node_modules/h3')['writeEarlyHints']
 }
 // for type re-export
@@ -132,6 +139,9 @@ declare global {
   // @ts-ignore
   export type { HubHooks } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/base/server/utils/hooks.js'
   import('/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/base/server/utils/hooks.js')
+  // @ts-ignore
+  export type { AuthUser, AuthenticatedEvent } from '../../server/utils/auth-middleware'
+  import('../../server/utils/auth-middleware')
 }
 export { useNitroApp } from 'nitropack/runtime/internal/app';
 export { useRuntimeConfig, useAppConfig } from 'nitropack/runtime/internal/config';
@@ -148,3 +158,4 @@ export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHead
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
 export { defineAppConfig } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
 export { hubHooks, onHubReady } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/base/server/utils/hooks';
+export { verifyToken, requireAuth, requireRole, requireAdmin, requireSuperAdmin, canManageUser, getCurrentUser } from '/Users/fefe/Documents/Fataplus/server/utils/auth-middleware';

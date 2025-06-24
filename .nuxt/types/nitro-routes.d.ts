@@ -6,6 +6,15 @@ declare module "nitropack/types" {
     '/api/admin/stats': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/stats.get').default>>>>
     }
+    '/api/admin/system/roles': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/system/roles.get').default>>>>
+    }
+    '/api/admin/users/:id/role': {
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/users/[id]/role.patch').default>>>>
+    }
+    '/api/admin/users': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/users/index.get').default>>>>
+    }
     '/api/auth/login': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/login.post').default>>>>
     }
@@ -26,6 +35,7 @@ declare module "nitropack/types" {
     }
     '/api/_hub': {
       'head': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/index.head').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/cors.dev').default>>>>
     }
     '/api/_hub/manifest': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/manifest.get').default>>>>

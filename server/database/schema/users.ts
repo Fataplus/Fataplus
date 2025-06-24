@@ -5,7 +5,7 @@ export const users = sqliteTable('users', {
   id: text('id').primaryKey().$defaultFn(() => createId()),
   email: text('email').notNull().unique(),
   name: text('name').notNull(),
-  role: text('role', { enum: ['admin', 'farmer', 'vendor', 'user'] }).notNull().default('user'),
+  role: text('role', { enum: ['superadmin', 'admin', 'farmer', 'vendor', 'user'] }).notNull().default('user'),
   passwordHash: text('password_hash').notNull(),
   isVerified: integer('is_verified', { mode: 'boolean' }).notNull().default(false),
   emailVerificationToken: text('email_verification_token'),

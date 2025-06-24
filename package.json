@@ -22,6 +22,7 @@
     "db:generate": "drizzle-kit generate:sqlite",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
+    "create-superadmin": "tsx scripts/create-superadmin.ts",
     "deploy": "nuxthub deploy",
     "deploy:wrangler": "wrangler pages deploy dist/"
   },
@@ -49,6 +50,7 @@
     "happy-dom": "^12.10.3",
     "nuxt": "^3.8.4",
     "prettier": "^3.1.1",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0",
     "vue-tsc": "^2.2.10"
