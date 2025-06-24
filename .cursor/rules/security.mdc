@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Security, Compliance & Accessibility Rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Fine-grained permissions and roles (admin, seller, learner, delivery, mentor, etc.).
+- GDPR compliance, data privacy, secure storage (Nextcloud, Paperless).
+- Strong authentication (2FA).
+- Backups, monitoring, action logging.
+- Accessibility (WCAG), responsive design, inclusive UX (language, tech level, disabilities).
+
+# Security Guidelines
+
+## Authentication & Authorization
+- JWT tokens with proper expiration
+- Refresh token rotation
+- Role-based access control (RBAC)
+- Multi-factor authentication support
+- Session management and timeout
+
+## Input Validation
+- Server-side validation for all inputs
+- Zod schemas for type-safe validation
+- XSS prevention with proper sanitization
+- SQL injection prevention with parameterized queries
+- File upload validation and scanning
+
+## Data Protection
+- Encrypt sensitive data at rest
+- Use HTTPS for all communications
+- Implement proper CORS policies
+- Data anonymization for analytics
+- GDPR compliance for EU users
+
+## API Security
+- Rate limiting to prevent abuse
+- API key management and rotation
+- Request/response logging
+- Input sanitization and validation
+- Error handling without information leakage
+
+## File Security
+- Secure file upload handling
+- Virus scanning for uploaded files
+- Content type validation
+- File size limitations
+- Secure file storage and access
+
+## Security Headers
+```javascript
+// Required security headers
+{
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '1; mode=block',
+  'Strict-Transport-Security': 'max-age=63072000',
+  'Content-Security-Policy': 'default-src \'self\'',
+  'Referrer-Policy': 'strict-origin-when-cross-origin'
+}
+```
+
+## Environment Variables
+- Never commit secrets to version control
+- Use different secrets for each environment
+- Rotate secrets regularly
+- Use secret management services
+- Validate required environment variables at startup
+
+## Third-Party Integrations
+- Regular security audits of dependencies
+- Keep dependencies updated
+- Use trusted sources only
+- Implement proper API key management
+- Monitor third-party service status

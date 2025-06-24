@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Learning & LMS Rules
+globs:
+  - "modules/lms/**/*"
+  - "components/lms/**/*"
+  - "pages/learning/**/*"
+alwaysApply: true
+---
+
+- Implement a dynamic LMS: courses as Notion-like blocks, videos, docs, quizzes, collections.
+- AI-powered learning assistant: document upload, synthesis, Q&A, quiz generation, note organization, citation.
+- Personalized learning paths, progress tracking, badges, and gamification (Duolingo-style).
+- Interactive quizzes, auto-correction, AI explanations.
+- AI recommendations for courses/resources based on user profile and activity.
+- Multimedia support: video, podcast, PDF, forums, interactive content.
+- Integrate with Outline Wiki, Nextcloud, DocuSeal.
+- Mobile-optimized, offline/online support.
+- Allow experts/advanced users to create, share, and track modules.
+- Notifications for progress, reminders, and community challenges.

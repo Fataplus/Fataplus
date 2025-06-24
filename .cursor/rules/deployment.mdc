@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Deployment & Availability Rules
+globs:
+  - "deploy/**/*"
+  - ".github/workflows/**/*"
+  - "cloudflare/**/*"
+alwaysApply: true
+---
+
+- Web: NuxtHub/Cloudflare, edge rendering, CDN, auto-scaling, instant rollback, HTTPS, preview deployments, real-time logs, custom domains.
+- Mobile: FlutterFlow, Play Store/App Store, real-time sync, push notifications, offline access to key resources.
+- Ensure service continuity (cloud, edge, fallback to my.fata.plus server if needed).

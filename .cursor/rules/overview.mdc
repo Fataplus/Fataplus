@@ -1,0 +1,59 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Fataplus Platform – Project Overview & Architecture
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Fataplus is a digital platform for agriculture in Madagascar, connecting farmers, buyers, trainers, and partners.
+- The platform is built with NuxtHub (Nuxt 3, Vue 3, TypeScript) on Cloudflare for web, and FlutterFlow for mobile.
+- Key pillars: Marketplace, Learning (LMS), Community, Internal Apps Integration, and AI-powered features.
+- Prioritize modular, scalable, and maintainable code. Use composables, feature-based folders, and strict TypeScript.
+- All features must be accessible, responsive, and support offline/edge-first usage.
+
+# Fataplus Platform - Development Overview
+
+## Architecture Principles
+
+- **Domain-Driven Design**: Organize code by business domains (marketplace, learning, community)
+- **Modular Monorepo**: Each domain module is self-contained with its own components, stores, types
+- **Strict TypeScript**: All code must be typed, no `any` types allowed
+- **Accessibility First**: All components must follow WCAG 2.1 AA standards
+- **Mobile-First**: Responsive design with mobile-first approach
+- **Security by Design**: Input validation, XSS protection, CSRF protection
+
+## Folder Structure
+
+```
+modules/
+├── marketplace/    # E-commerce functionality
+├── learning/       # LMS and AI-powered learning
+└── community/      # Social features and networking
+
+shared/             # Cross-domain utilities
+├── components/ui/  # Reusable UI components
+├── composables/    # Shared composables
+├── types/          # Shared type definitions
+└── utils/          # Utility functions
+
+integrations/       # External service integrations
+├── dolibarr/       # ERP integration
+├── nextcloud/      # File management
+├── docuseal/       # Document signing
+├── outline/        # Knowledge base
+└── stripe/         # Payment processing
+```
+
+## Code Standards
+
+- Use TypeScript strict mode
+- Follow Vue 3 Composition API patterns
+- Use Pinia for state management
+- Implement proper error handling
+- Write comprehensive tests (unit, integration, E2E)
+- Document all public APIs

@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Règles Backend
+
+- Utiliser TypeScript strict
+- API RESTful sous /api
+- Authentification JWT obligatoire
+- Logging centralisé
+---
+description: Fataplus Backend Rules (NuxtHub, Cloudflare, API)
+globs:
+  - "server/**/*"
+  - "api/**/*"
+  - "modules/backend/**/*"
+  - "cloudflare/**/*"
+alwaysApply: true
+---
+
+- Use NuxtHub server features and Cloudflare Workers for backend logic.
+- Expose RESTful and/or GraphQL APIs for frontend and mobile clients.
+- Organize backend code by domain (marketplace, lms, community, integrations).
+- Enforce authentication (SSO if possible) and fine-grained role-based access control.
+- Validate all incoming data on the server.
+- Integrate with external/internal services (Dolibarr, Nextcloud, DocuSeal, Paperless, SOGo, Outline, ONLYOFFICE).
+- Implement real-time features (order tracking, notifications) using WebSockets or server-sent events.
+- Log all critical actions and errors; enable monitoring and alerting.
+- Ensure GDPR compliance, secure data storage, and strong authentication (2FA).
+- Provide API endpoints for future automation (e.g., n8n workflows).
+- Write unit and integration tests for all backend logic.

@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Internal Apps & Integrations Rules
+globs:
+  - "modules/integrations/**/*"
+  - "services/integrations/**/*"
+alwaysApply: true
+---
+
+- Direct interface with Cloudron apps: central Fataplus access to ERP (Dolibarr), Nextcloud, DocuSeal, Paperless, SOGo, Outline, ONLYOFFICE, etc.
+- Unified authentication (SSO if possible).
+- Sync user, document, order, and training data.
+- Provide API access for future extensions and automation (e.g., n8n).
+- Central dashboard for managing internal apps and services.

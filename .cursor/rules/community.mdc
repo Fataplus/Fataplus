@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Community & Collaboration Rules
+globs:
+  - "modules/community/**/*"
+  - "components/community/**/*"
+  - "pages/community/**/*"
+alwaysApply: true
+---
+
+# Community Domain Rules
+
+## User Profiles
+- Comprehensive farmer profiles with farm details
+- Public/private profile settings
+- Profile verification system
+- Skills and expertise showcase
+- Location-based networking
+
+## Messaging System
+- Real-time chat with Pusher integration
+- Group messaging for communities
+- File sharing capabilities
+- Message moderation and reporting
+- Offline message sync
+
+## Events & Networking
+- Agricultural events calendar
+- Local meetup organization
+- Workshop and training announcements
+- Event registration and attendance tracking
+- Post-event feedback and ratings
+
+## Forums & Discussions
+- Category-based discussion forums
+- Question and answer system
+- Expert verification and badges
+- Content moderation tools
+- Search and filtering capabilities
+
+## Matchmaking & Collaboration
+- Farmer-to-farmer connections
+- Expertise-based matching
+- Collaborative project creation
+- Mentorship program matching
+- Business partnership opportunities
+
+## Notifications
+- Real-time push notifications
+- Email notification preferences
+- SMS alerts for critical updates
+- In-app notification center
+- Notification history and management
+
+## Code Structure
+```
+modules/community/
+├── components/
+│   ├── UserProfile.vue
+│   ├── ChatInterface.vue
+│   ├── EventCard.vue
+│   └── ForumPost.vue
+├── stores/
+│   ├── users.ts
+│   ├── messages.ts
+│   ├── events.ts
+│   └── forums.ts
+├── types/
+│   ├── user.ts
+│   ├── message.ts
+│   ├── event.ts
+│   └── forum.ts
+└── composables/
+    ├── useUsers.ts
+    ├── useMessaging.ts
+    └── useEvents.ts
+```

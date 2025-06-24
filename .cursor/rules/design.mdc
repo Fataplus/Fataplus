@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Design & UX Guidelines
+globs:
+  - "components/**/*"
+  - "layouts/**/*"
+  - "pages/**/*"
+alwaysApply: true
+---
+
+- NuxtUI
+- Clear, modern interface tailored to Malagasy users (farmers, youth, partners).
+- Simple navigation, quick access to key features.
+- Interactive onboarding, tutorials, dynamic FAQ.
+- User feedback at every step (success, errors, progress).
+- Gamification, encouragement, reminders.
+- Consistent branding with Fataplus identity (colors, logo, icons).

@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: AI Features Rules
+globs:
+  - "modules/ai/**/*"
+  - "services/ai/**/*"
+alwaysApply: true
+---
+
+- Smart search across all content (products, courses, docs, community).
+- Auto-generation of content: summaries, quizzes, practical sheets, FAQs.
+- Personalized suggestions: products, courses, contacts, events.
+- Predictive analytics: market trends, training needs, agricultural alerts.
+- Contextual chatbot: 24/7 support, dynamic FAQ, personalized advice, user guidance.
+- Multilingual conversational AI (FR/MG).

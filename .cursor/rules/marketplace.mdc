@@ -1,0 +1,78 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Marketplace & E-commerce Rules
+globs:
+  - "modules/marketplace/**/*"
+  - "components/marketplace/**/*"
+  - "pages/marketplace/**/*"
+alwaysApply: true
+---
+
+# Marketplace Domain Rules
+
+## Product Management
+- Products must have proper categorization (seeds, tools, fertilizers, equipment)
+- Support for multiple product variants (size, weight, quantity)
+- Multi-language product descriptions (French/Malagasy)
+- Image optimization for fast loading
+- Inventory tracking with real-time updates
+
+## Order Processing
+- Real-time order status tracking
+- Integration with delivery services
+- Payment processing with Stripe
+- Order confirmation emails
+- Invoice generation with Dolibarr
+
+## Vendor Management
+- Vendor verification process
+- Rating and review system
+- Commission calculation
+- Payout management
+- Performance analytics
+
+## Search & Filtering
+- Elasticsearch integration for fast search
+- Category-based filtering
+- Price range filtering
+- Location-based results
+- AI-powered product recommendations
+
+## Code Structure
+```
+modules/marketplace/
+├── components/
+│   ├── ProductCard.vue
+│   ├── CartSummary.vue
+│   └── OrderTracking.vue
+├── stores/
+│   ├── products.ts
+│   ├── cart.ts
+│   └── orders.ts
+├── types/
+│   ├── product.ts
+│   ├── order.ts
+│   └── vendor.ts
+└── composables/
+    ├── useProducts.ts
+    ├── useCart.ts
+    └── useOrders.ts
+```
+
+- Implement a multi-category product catalog (fruits, vegetables, processed goods, etc.).
+- Support multi-store, multi-branch, and centralized admin management.
+- Admin panel must allow management of products, prices, stock, orders, users, and roles.
+- Real-time order tracking, push/email/SMS notifications, and dynamic delivery pricing (by weight, distance, zone).
+- Integrate multiple payment gateways (cash, digital, offline, PayPal, mobile money, etc.).
+- POS support for direct sales.
+- Employee and delivery management with self-registration and permission validation.
+- Analytics and reporting: sales, stock, customers, top products.
+- Promotions: coupons, banners, flash sales, category discounts.
+- Product and delivery rating system.
+- Support dark/light mode and at least French/Malagasy languages.
+- Integrate with Dolibarr (ERP), Nextcloud, DocuSeal, Paperless, SOGo, Outline Wiki.
+- Enforce transaction security and fine-grained permissions.

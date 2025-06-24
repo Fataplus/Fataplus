@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: General Coding Standards for Fataplus
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Use TypeScript everywhere, strict mode enabled.
+- Modular, testable, and clean code.
+- Use composables and feature-based structure.
+- Write docstrings and comments for all methods.
+- Use ESLint, Prettier, and Vitest for linting, formatting, and testing.
+- All code must be accessible, maintainable, and scalable.

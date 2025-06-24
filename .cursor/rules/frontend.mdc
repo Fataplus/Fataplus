@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Fataplus Frontend Rules (Nuxt 3, Vue 3, TypeScript)
+globs:
+  - "components/**/*"
+  - "pages/**/*"
+  - "layouts/**/*"
+  - "modules/frontend/**/*"
+alwaysApply: true
+---
+
+- Use Nuxt 3, Nuxt-UI,  Vue 3, and TypeScript for all frontend code. 
+- Organize code by feature: group related components, composables, and stores.
+- Use file-based routing and composables for logic reuse.
+- All UI must be responsive, accessible (WCAG), and support dark/light mode.
+- Support multi-language (FR/MG minimum) using Nuxt i18n.
+- Use Pinia for state management.
+- Integrate with backend APIs via composables/services.
+- Use ESLint and Prettier for linting and formatting.
+- Prioritize modular, testable, and maintainable code.
+- Follow Fataplus branding and UX guidelines: clear navigation, feedback, gamification, and onboarding.
+- Integrate with external services (Dolibarr, Nextcloud, DocuSeal, etc.) via API.
+- All user input must be validated on the client side.
