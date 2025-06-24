@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Fataplus Database Rules (NuxtHub, Cloudflare D1, KV, R2)
+globs:
+  - "database/**/*"
+  - "server/database/**/*"
+  - "modules/database/**/*"
+alwaysApply: true
+---
+
+- Use Cloudflare D1 for SQL data, KV for key-value storage, and R2 for file/blob storage.
+- Design normalized, scalable schemas for marketplace, LMS, community, and user data.
+- Use migrations for schema changes; document all migrations.
+- Enforce referential integrity and use indexes for performance.
+- Store sensitive data encrypted at rest.
+- Integrate with external data sources (Dolibarr, Nextcloud, etc.) via sync jobs or APIs.
+- Regularly back up all databases and test restore procedures.
+- Ensure all data access is logged and auditable.
+- Provide APIs for querying and updating data, with strict validation and access control.
+- Document all database models and relationships.

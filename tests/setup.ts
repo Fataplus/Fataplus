@@ -1,24 +1,31 @@
 import { vi } from 'vitest'
-import { config } from '@vue/test-utils'
+
+// Mock localStorage for testing
+Object.defineProperty(window, 'localStorage', {
+  value: {
+    getItem: vi.fn(() => null),
+    setItem: vi.fn(),
+    removeItem: vi.fn(),
+    clear: vi.fn(),
+  },
+  writable: true,
+})
+
+// Mock fetch
+global.fetch = vi.fn()
 
 // Mock Nuxt composables
 vi.mock('#app', () => ({
   useNuxtApp: () => ({
-    $i18n: {
-      t: (key: string) => key,
-      locale: { value: 'fr' },
+    $router: {
+      push: vi.fn(),
+      replace: vi.fn(),
     },
   }),
   navigateTo: vi.fn(),
   useRoute: () => ({
     params: {},
     query: {},
-    path: '/',
-  }),
-  useRouter: () => ({
-    push: vi.fn(),
-    replace: vi.fn(),
-    back: vi.fn(),
   }),
   useRuntimeConfig: () => ({
     public: {
@@ -27,20 +34,18 @@ vi.mock('#app', () => ({
   }),
 }))
 
-// Mock Pinia
-vi.mock('pinia', () => ({
-  createPinia: () => ({}),
-  defineStore: vi.fn(),
-  setActivePinia: vi.fn(),
+// Mock our simplified auth composable
+vi.mock('~/composables/useAuth', () => ({
+  useAuth: () => ({
+    user: null,
+    isAuthenticated: false,
+    isLoading: false,
+    login: vi.fn(),
+    logout: vi.fn(),
+    register: vi.fn(),
+    initializeAuth: vi.fn(),
+  }),
 }))
-
-// Global test configuration
-config.global.mocks = {
-  $t: (key: string) => key,
-  $i18n: {
-    locale: 'fr',
-  },
-}
 
 // Mock window.matchMedia for responsive components
 Object.defineProperty(window, 'matchMedia', {

@@ -1,16 +1,15 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <!-- Very simple header -->
-    <header class="bg-white shadow border-b">
-      <div class="max-w-7xl mx-auto px-4 py-4">
-        <h1 class="text-2xl font-bold text-green-600">🌱 Fataplus</h1>
-      </div>
-    </header>
+    <!-- Use the updated AppHeader component -->
+    <AppHeader />
     
-    <!-- Main content -->
-    <main>
+    <!-- Main content with bottom padding for mobile navigation -->
+    <main class="pb-20 md:pb-0">
       <NuxtPage />
     </main>
+    
+    <!-- Bottom Navigation for Mobile -->
+    <BottomNavigation />
   </div>
 </template>
 

@@ -1,15 +1,21 @@
-import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, createError, getRouterParam, getResponseStatusText } from 'file:///Users/fefe/Documents/Fataplus/node_modules/h3/dist/index.mjs';
+import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import './timing.js';globalThis.__timing__.logStart('Nitro Start');import { tmpdir } from 'node:os';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, createError, getRouterParam, getHeader, getResponseStatusText } from 'file:///Users/fefe/Documents/Fataplus/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
-import nodeCrypto from 'node:crypto';
+import nodeCrypto, { randomUUID } from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/fefe/Documents/Fataplus/node_modules/@vue/shared/dist/shared.cjs.js';
+import * as bcrypt from 'file:///Users/fefe/Documents/Fataplus/node_modules/bcryptjs/index.js';
+import * as jwt from 'file:///Users/fefe/Documents/Fataplus/node_modules/jsonwebtoken/index.js';
+import Database from 'file:///Users/fefe/Documents/Fataplus/node_modules/better-sqlite3/lib/index.js';
+import { sql, eq } from 'file:///Users/fefe/Documents/Fataplus/node_modules/drizzle-orm/index.js';
+import { drizzle } from 'file:///Users/fefe/Documents/Fataplus/node_modules/drizzle-orm/better-sqlite3/index.js';
+import { sqliteTable, integer, text, real, blob } from 'file:///Users/fefe/Documents/Fataplus/node_modules/drizzle-orm/sqlite-core/index.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/fefe/Documents/Fataplus/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, joinRelativeURL } from 'file:///Users/fefe/Documents/Fataplus/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///Users/fefe/Documents/Fataplus/node_modules/vue/server-renderer/index.mjs';
 import destr, { destr as destr$1 } from 'file:///Users/fefe/Documents/Fataplus/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///Users/fefe/Documents/Fataplus/node_modules/hookable/dist/index.mjs';
+import { createDebugger, createHooks } from 'file:///Users/fefe/Documents/Fataplus/node_modules/hookable/dist/index.mjs';
 import { createFetch, Headers as Headers$1 } from 'file:///Users/fefe/Documents/Fataplus/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/fefe/Documents/Fataplus/node_modules/node-mock-http/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///Users/fefe/Documents/Fataplus/node_modules/unstorage/dist/index.mjs';
@@ -645,23 +651,23 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "stripePublishableKey": "",
-    "pusherKey": "",
-    "pusherCluster": "",
+    "stripePublishableKey": "pk_test_your-stripe-publishable-key",
+    "pusherKey": "your-pusher-key",
+    "pusherCluster": "your-pusher-cluster",
     "apiBase": "/api",
     "cloudronUrl": "https://my.fata.plus"
   },
-  "authSecret": "",
-  "databaseUrl": "",
-  "openaiApiKey": "",
-  "stripeSecretKey": "",
-  "emailHost": "",
-  "emailUser": "",
-  "emailPassword": "",
-  "pusherAppId": "",
-  "pusherKey": "",
-  "pusherSecret": "",
-  "pusherCluster": ""
+  "authSecret": "fataplus-super-secret-key-2025-madagascar-agriculture",
+  "databaseUrl": "./server/database/sqlite.db",
+  "openaiApiKey": "sk-your-openai-api-key-here",
+  "stripeSecretKey": "sk_test_your-stripe-secret-key",
+  "emailHost": "smtp.gmail.com",
+  "emailUser": "your-email@gmail.com",
+  "emailPassword": "your-email-password",
+  "pusherAppId": "your-pusher-app-id",
+  "pusherKey": "your-pusher-key",
+  "pusherSecret": "your-pusher-secret",
+  "pusherCluster": "your-pusher-cluster"
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1035,7 +1041,7 @@ const _fUXFABzzamlSvNXhw39351AeZ40sOsPVdNIMu6kuN0 = (function(nitro) {
 
 const rootDir = "/Users/fefe/Documents/Fataplus";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"description","content":"Plateforme dédiée à l'agriculture à Madagascar : marché, formation, communauté"},{"name":"keywords","content":"agriculture, madagascar, marché, formation, communauté, IA"},{"property":"og:title","content":"Fataplus - Agriculture Madagascar"},{"property":"og:description","content":"Plateforme dédiée à l'agriculture à Madagascar"},{"property":"og:image","content":"/og-image.jpg"},{"property":"og:url","content":"https://fataplus.mg"},{"name":"twitter:card","content":"summary_large_image"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width, initial-scale=1","title":"Fataplus - Agriculture Madagascar"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"description","content":"Plateforme dédiée à l'agriculture à Madagascar : marché, formation, communauté"},{"name":"keywords","content":"agriculture, madagascar, marché, formation, communauté, IA"},{"property":"og:title","content":"Fataplus - Agriculture Madagascar"},{"property":"og:description","content":"Plateforme dédiée à l'agriculture à Madagascar"},{"property":"og:image","content":"/og-image.jpg"},{"property":"og:url","content":"https://fataplus.mg"},{"name":"twitter:card","content":"summary_large_image"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"theme-color","content":"#16a34a"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width, initial-scale=1","title":"Fataplus - Agriculture Numérique Madagascar"};
 
 const appRootTag = "div";
 
@@ -1121,9 +1127,47 @@ function onConsoleLog(callback) {
   consola$1.wrapConsole();
 }
 
+function defineNitroPlugin(def) {
+  return def;
+}
+
+const _0R5TCYKPDeuFz7x0WbWi8XT7V_QkTXiGVJnddnbIdA = defineNitroPlugin((nitro) => {
+  createDebugger(nitro.hooks, { tag: "nitro-runtime" });
+});
+
+const globalTiming = globalThis.__timing__ || {
+  start: () => 0,
+  end: () => 0,
+  metrics: []
+};
+const timingMiddleware = eventHandler((event) => {
+  const start = globalTiming.start();
+  const _end = event.node.res.end;
+  event.node.res.end = function(chunk, encoding, cb) {
+    const metrics = [
+      ["Generate", globalTiming.end(start)],
+      ...globalTiming.metrics
+    ];
+    const serverTiming = metrics.map((m) => `-;dur=${m[1]};desc="${encodeURIComponent(m[0])}"`).join(", ");
+    if (!event.node.res.headersSent) {
+      event.node.res.setHeader("Server-Timing", serverTiming);
+    }
+    _end.call(event.node.res, chunk, encoding, cb);
+    return this;
+  }.bind(event.node.res);
+});
+const _WAOXKfHMR_w1LoFOCwn1GT98WcfrN9q5GYhh9Dq8 = defineNitroPlugin((nitro) => {
+  nitro.h3App.stack.unshift({
+    route: "/",
+    handler: timingMiddleware
+  });
+});
+
 const plugins = [
   _fUXFABzzamlSvNXhw39351AeZ40sOsPVdNIMu6kuN0,
-_Y9yGgrirk9MeFBdhHFCCwz3eubSmKj_LLhDt1mY4_RU
+_Y9yGgrirk9MeFBdhHFCCwz3eubSmKj_LLhDt1mY4_RU,
+_0R5TCYKPDeuFz7x0WbWi8XT7V_QkTXiGVJnddnbIdA,
+_WAOXKfHMR_w1LoFOCwn1GT98WcfrN9q5GYhh9Dq8
 ];
 
 const VueResolver = (_, value) => {
@@ -1444,9 +1488,19 @@ async function getIslandContext(event) {
   return ctx;
 }
 
+const _lazy_VCSwL7 = () => Promise.resolve().then(function () { return login_post$1; });
+const _lazy_t9Ad1s = () => Promise.resolve().then(function () { return logout_post$1; });
+const _lazy_OKmOp_ = () => Promise.resolve().then(function () { return me_get$1; });
+const _lazy_PP2Nj7 = () => Promise.resolve().then(function () { return profile_patch$1; });
+const _lazy_Me9SrR = () => Promise.resolve().then(function () { return register_post$1; });
 const _lazy_Rh8nlF = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
+  { route: '/api/auth/login', handler: _lazy_VCSwL7, lazy: true, middleware: false, method: "post" },
+  { route: '/api/auth/logout', handler: _lazy_t9Ad1s, lazy: true, middleware: false, method: "post" },
+  { route: '/api/auth/me', handler: _lazy_OKmOp_, lazy: true, middleware: false, method: "get" },
+  { route: '/api/auth/profile', handler: _lazy_PP2Nj7, lazy: true, middleware: false, method: "patch" },
+  { route: '/api/auth/register', handler: _lazy_Me9SrR, lazy: true, middleware: false, method: "post" },
   { route: '/__nuxt_error', handler: _lazy_Rh8nlF, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_Rh8nlF, lazy: true, middleware: false, method: undefined }
@@ -1777,6 +1831,620 @@ const styles$1 = /*#__PURE__*/Object.freeze({
   default: styles
 });
 
+const login_post = defineEventHandler(async (event) => {
+  try {
+    const { email, password } = await readBody(event);
+    if (!email || !password) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Email et mot de passe requis"
+      });
+    }
+    const sqlite = new Database("./server/database/sqlite.db");
+    const user = sqlite.prepare("SELECT * FROM users WHERE email = ?").get(email);
+    sqlite.close();
+    if (!user) {
+      throw createError({
+        statusCode: 401,
+        statusMessage: "Email ou mot de passe incorrect"
+      });
+    }
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      throw createError({
+        statusCode: 401,
+        statusMessage: "Email ou mot de passe incorrect"
+      });
+    }
+    const config = useRuntimeConfig();
+    const token = jwt.sign(
+      { userId: user.id, email: user.email },
+      config.authSecret,
+      { expiresIn: "7d" }
+    );
+    const { password: _, ...userWithoutPassword } = user;
+    return {
+      data: {
+        user: userWithoutPassword,
+        token,
+        autoLogin: true
+      }
+    };
+  } catch (error) {
+    throw createError({
+      statusCode: error.statusCode || 500,
+      statusMessage: error.statusMessage || "Erreur serveur"
+    });
+  }
+});
+
+const login_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: login_post
+});
+
+const logout_post = defineEventHandler(async (event) => {
+  return {
+    success: true,
+    message: "D\xE9connexion r\xE9ussie"
+  };
+});
+
+const logout_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: logout_post
+});
+
+function generateId$1() {
+  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+}
+const users = sqliteTable("users", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  email: text("email").unique().notNull(),
+  username: text("username").unique(),
+  password: text("password"),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  phone: text("phone"),
+  avatar: text("avatar"),
+  bio: text("bio"),
+  location: text("location"),
+  role: text("role", { enum: ["admin", "farmer", "buyer", "mentor", "trainer", "delivery"] }).notNull().default("farmer"),
+  status: text("status", { enum: ["active", "inactive", "banned"] }).notNull().default("active"),
+  emailVerified: integer("email_verified", { mode: "boolean" }).default(false),
+  twoFactorEnabled: integer("two_factor_enabled", { mode: "boolean" }).default(false),
+  preferences: text("preferences", { mode: "json" }),
+  lastLoginAt: integer("last_login_at", { mode: "timestamp" }),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const userProfiles = sqliteTable("user_profiles", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  farmSize: real("farm_size"),
+  farmType: text("farm_type"),
+  crops: text("crops", { mode: "json" }),
+  experience: integer("experience"),
+  certifications: text("certifications", { mode: "json" }),
+  skills: text("skills", { mode: "json" }),
+  languages: text("languages", { mode: "json" }),
+  socialLinks: text("social_links", { mode: "json" }),
+  badges: text("badges", { mode: "json" }),
+  points: integer("points").default(0),
+  level: integer("level").default(1),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const categories = sqliteTable("categories", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  name: text("name").notNull(),
+  slug: text("slug").unique().notNull(),
+  description: text("description"),
+  image: text("image"),
+  parentId: text("parent_id").references(() => categories.id),
+  sortOrder: integer("sort_order").default(0),
+  isActive: integer("is_active", { mode: "boolean" }).default(true),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const products = sqliteTable("products", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  sellerId: text("seller_id").notNull().references(() => users.id),
+  categoryId: text("category_id").notNull().references(() => categories.id),
+  name: text("name").notNull(),
+  slug: text("slug").unique().notNull(),
+  description: text("description"),
+  shortDescription: text("short_description"),
+  images: text("images", { mode: "json" }),
+  price: real("price").notNull(),
+  comparePrice: real("compare_price"),
+  cost: real("cost"),
+  sku: text("sku"),
+  barcode: text("barcode"),
+  trackQuantity: integer("track_quantity", { mode: "boolean" }).default(true),
+  quantity: integer("quantity").default(0),
+  allowBackorder: integer("allow_backorder", { mode: "boolean" }).default(false),
+  weight: real("weight"),
+  dimensions: text("dimensions", { mode: "json" }),
+  origin: text("origin"),
+  harvestDate: integer("harvest_date", { mode: "timestamp" }),
+  expiryDate: integer("expiry_date", { mode: "timestamp" }),
+  organic: integer("organic", { mode: "boolean" }).default(false),
+  certifications: text("certifications", { mode: "json" }),
+  nutrients: text("nutrients", { mode: "json" }),
+  status: text("status", { enum: ["draft", "active", "inactive", "archived"] }).default("draft"),
+  featured: integer("featured", { mode: "boolean" }).default(false),
+  seoTitle: text("seo_title"),
+  seoDescription: text("seo_description"),
+  tags: text("tags", { mode: "json" }),
+  rating: real("rating").default(0),
+  reviewCount: integer("review_count").default(0),
+  salesCount: integer("sales_count").default(0),
+  viewCount: integer("view_count").default(0),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const productVariants = sqliteTable("product_variants", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  productId: text("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  sku: text("sku"),
+  price: real("price").notNull(),
+  comparePrice: real("compare_price"),
+  quantity: integer("quantity").default(0),
+  weight: real("weight"),
+  image: text("image"),
+  attributes: text("attributes", { mode: "json" }),
+  isActive: integer("is_active", { mode: "boolean" }).default(true),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const carts = sqliteTable("carts", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").references(() => users.id),
+  sessionId: text("session_id"),
+  items: text("items", { mode: "json" }),
+  subtotal: real("subtotal").default(0),
+  tax: real("tax").default(0),
+  shipping: real("shipping").default(0),
+  total: real("total").default(0),
+  currency: text("currency").default("MGA"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const orders = sqliteTable("orders", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  orderNumber: text("order_number").unique().notNull(),
+  userId: text("user_id").notNull().references(() => users.id),
+  status: text("status", {
+    enum: ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"]
+  }).notNull().default("pending"),
+  paymentStatus: text("payment_status", {
+    enum: ["pending", "paid", "failed", "refunded", "partially_refunded"]
+  }).notNull().default("pending"),
+  paymentMethod: text("payment_method", {
+    enum: ["cash", "mobile_money", "bank_transfer", "card", "crypto"]
+  }),
+  items: text("items", { mode: "json" }),
+  subtotal: real("subtotal").notNull(),
+  tax: real("tax").default(0),
+  shipping: real("shipping").default(0),
+  discount: real("discount").default(0),
+  total: real("total").notNull(),
+  currency: text("currency").default("MGA"),
+  shippingAddress: text("shipping_address", { mode: "json" }),
+  billingAddress: text("billing_address", { mode: "json" }),
+  deliveryMethod: text("delivery_method", { enum: ["home", "pickup", "relay"] }).default("home"),
+  deliveryDate: integer("delivery_date", { mode: "timestamp" }),
+  deliverySlot: text("delivery_slot"),
+  notes: text("notes"),
+  trackingNumber: text("tracking_number"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const reviews = sqliteTable("reviews", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id),
+  productId: text("product_id").references(() => products.id),
+  orderId: text("order_id").references(() => orders.id),
+  rating: integer("rating").notNull(),
+  title: text("title"),
+  comment: text("comment"),
+  images: text("images", { mode: "json" }),
+  helpful: integer("helpful").default(0),
+  verified: integer("verified", { mode: "boolean" }).default(false),
+  status: text("status", { enum: ["pending", "approved", "rejected"] }).default("pending"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const courses = sqliteTable("courses", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  instructorId: text("instructor_id").notNull().references(() => users.id),
+  title: text("title").notNull(),
+  slug: text("slug").unique().notNull(),
+  description: text("description"),
+  shortDescription: text("short_description"),
+  thumbnail: text("thumbnail"),
+  trailer: text("trailer"),
+  level: text("level", { enum: ["beginner", "intermediate", "advanced"] }).default("beginner"),
+  language: text("language").default("fr"),
+  duration: integer("duration"),
+  price: real("price").default(0),
+  currency: text("currency").default("MGA"),
+  tags: text("tags", { mode: "json" }),
+  objectives: text("objectives", { mode: "json" }),
+  requirements: text("requirements", { mode: "json" }),
+  targetAudience: text("target_audience", { mode: "json" }),
+  status: text("status", { enum: ["draft", "published", "archived"] }).default("draft"),
+  featured: integer("featured", { mode: "boolean" }).default(false),
+  certificate: integer("certificate", { mode: "boolean" }).default(false),
+  rating: real("rating").default(0),
+  reviewCount: integer("review_count").default(0),
+  enrollmentCount: integer("enrollment_count").default(0),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const lessons = sqliteTable("lessons", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  courseId: text("course_id").notNull().references(() => courses.id, { onDelete: "cascade" }),
+  title: text("title").notNull(),
+  slug: text("slug").notNull(),
+  description: text("description"),
+  content: text("content"),
+  type: text("type", { enum: ["video", "text", "quiz", "assignment", "live"] }).notNull(),
+  videoUrl: text("video_url"),
+  duration: integer("duration"),
+  resources: text("resources", { mode: "json" }),
+  sortOrder: integer("sort_order").default(0),
+  isPreview: integer("is_preview", { mode: "boolean" }).default(false),
+  isRequired: integer("is_required", { mode: "boolean" }).default(true),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const quizzes = sqliteTable("quizzes", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  lessonId: text("lesson_id").references(() => lessons.id, { onDelete: "cascade" }),
+  courseId: text("course_id").references(() => courses.id, { onDelete: "cascade" }),
+  title: text("title").notNull(),
+  description: text("description"),
+  questions: text("questions", { mode: "json" }),
+  timeLimit: integer("time_limit"),
+  passingScore: integer("passing_score").default(70),
+  maxAttempts: integer("max_attempts").default(3),
+  showResults: integer("show_results", { mode: "boolean" }).default(true),
+  shuffleQuestions: integer("shuffle_questions", { mode: "boolean" }).default(false),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const enrollments = sqliteTable("enrollments", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id),
+  courseId: text("course_id").notNull().references(() => courses.id),
+  status: text("status", { enum: ["active", "completed", "cancelled", "expired"] }).default("active"),
+  progress: integer("progress").default(0),
+  currentLessonId: text("current_lesson_id").references(() => lessons.id),
+  completedLessons: text("completed_lessons", { mode: "json" }),
+  startedAt: integer("started_at", { mode: "timestamp" }),
+  completedAt: integer("completed_at", { mode: "timestamp" }),
+  certificateIssued: integer("certificate_issued", { mode: "boolean" }).default(false),
+  paymentId: text("payment_id"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const forums = sqliteTable("forums", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  name: text("name").notNull(),
+  slug: text("slug").unique().notNull(),
+  description: text("description"),
+  icon: text("icon"),
+  color: text("color"),
+  parentId: text("parent_id").references(() => forums.id),
+  sortOrder: integer("sort_order").default(0),
+  isPrivate: integer("is_private", { mode: "boolean" }).default(false),
+  requiresApproval: integer("requires_approval", { mode: "boolean" }).default(false),
+  postCount: integer("post_count").default(0),
+  memberCount: integer("member_count").default(0),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const forumPosts = sqliteTable("forum_posts", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  forumId: text("forum_id").notNull().references(() => forums.id),
+  userId: text("user_id").notNull().references(() => users.id),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  images: text("images", { mode: "json" }),
+  tags: text("tags", { mode: "json" }),
+  isPinned: integer("is_pinned", { mode: "boolean" }).default(false),
+  isLocked: integer("is_locked", { mode: "boolean" }).default(false),
+  viewCount: integer("view_count").default(0),
+  likeCount: integer("like_count").default(0),
+  replyCount: integer("reply_count").default(0),
+  lastReplyAt: integer("last_reply_at", { mode: "timestamp" }),
+  lastReplyUserId: text("last_reply_user_id").references(() => users.id),
+  status: text("status", { enum: ["published", "draft", "hidden", "deleted"] }).default("published"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const forumReplies = sqliteTable("forum_replies", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  postId: text("post_id").notNull().references(() => forumPosts.id, { onDelete: "cascade" }),
+  userId: text("user_id").notNull().references(() => users.id),
+  content: text("content").notNull(),
+  images: text("images", { mode: "json" }),
+  parentId: text("parent_id").references(() => forumReplies.id),
+  likeCount: integer("like_count").default(0),
+  status: text("status", { enum: ["published", "hidden", "deleted"] }).default("published"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const messages = sqliteTable("messages", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  senderId: text("sender_id").notNull().references(() => users.id),
+  receiverId: text("receiver_id").notNull().references(() => users.id),
+  subject: text("subject"),
+  content: text("content").notNull(),
+  attachments: text("attachments", { mode: "json" }),
+  isRead: integer("is_read", { mode: "boolean" }).default(false),
+  readAt: integer("read_at", { mode: "timestamp" }),
+  parentMessageId: text("parent_message_id").references(() => messages.id),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const notifications = sqliteTable("notifications", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id),
+  type: text("type").notNull(),
+  title: text("title").notNull(),
+  message: text("message").notNull(),
+  data: text("data", { mode: "json" }),
+  isRead: integer("is_read", { mode: "boolean" }).default(false),
+  readAt: integer("read_at", { mode: "timestamp" }),
+  actionUrl: text("action_url"),
+  channels: text("channels", { mode: "json" }),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const aiConversations = sqliteTable("ai_conversations", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id),
+  title: text("title"),
+  context: text("context"),
+  messages: text("messages", { mode: "json" }),
+  metadata: text("metadata", { mode: "json" }),
+  isActive: integer("is_active", { mode: "boolean" }).default(true),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const documents = sqliteTable("documents", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").notNull().references(() => users.id),
+  name: text("name").notNull(),
+  originalName: text("original_name"),
+  type: text("type"),
+  size: integer("size"),
+  url: text("url"),
+  content: text("content"),
+  embedding: blob("embedding"),
+  metadata: text("metadata", { mode: "json" }),
+  tags: text("tags", { mode: "json" }),
+  isPublic: integer("is_public", { mode: "boolean" }).default(false),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+const analytics = sqliteTable("analytics", {
+  id: text("id").primaryKey().$defaultFn(() => generateId$1()),
+  userId: text("user_id").references(() => users.id),
+  sessionId: text("session_id"),
+  event: text("event").notNull(),
+  page: text("page"),
+  data: text("data", { mode: "json" }),
+  userAgent: text("user_agent"),
+  ip: text("ip"),
+  timestamp: integer("timestamp", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`)
+});
+
+const schema = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  aiConversations: aiConversations,
+  analytics: analytics,
+  carts: carts,
+  categories: categories,
+  courses: courses,
+  documents: documents,
+  enrollments: enrollments,
+  forumPosts: forumPosts,
+  forumReplies: forumReplies,
+  forums: forums,
+  lessons: lessons,
+  messages: messages,
+  notifications: notifications,
+  orders: orders,
+  productVariants: productVariants,
+  products: products,
+  quizzes: quizzes,
+  reviews: reviews,
+  userProfiles: userProfiles,
+  users: users
+});
+
+const sqlite = new Database("./server/database/sqlite.db");
+const db = drizzle(sqlite, { schema });
+
+const me_get = defineEventHandler(async (event) => {
+  try {
+    const authHeader = getHeader(event, "authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      throw createError({
+        statusCode: 401,
+        statusMessage: "Token d'authentification requis"
+      });
+    }
+    const token = authHeader.split(" ")[1];
+    const config = useRuntimeConfig();
+    const decoded = jwt.verify(token, config.authSecret);
+    const user = await db.select().from(users).where(eq(users.id, decoded.userId)).get();
+    if (!user) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Utilisateur non trouv\xE9"
+      });
+    }
+    const { password, ...userWithoutPassword } = user;
+    return {
+      data: userWithoutPassword
+    };
+  } catch (error) {
+    throw createError({
+      statusCode: error.statusCode || 401,
+      statusMessage: error.statusMessage || "Token invalide"
+    });
+  }
+});
+
+const me_get$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: me_get
+});
+
+const profile_patch = defineEventHandler(async (event) => {
+  try {
+    const authHeader = getHeader(event, "authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      throw createError({
+        statusCode: 401,
+        statusMessage: "Token d'authentification requis"
+      });
+    }
+    const token = authHeader.split(" ")[1];
+    const config = useRuntimeConfig();
+    const decoded = jwt.verify(token, config.authSecret);
+    const updates = await readBody(event);
+    delete updates.password;
+    delete updates.id;
+    delete updates.email;
+    delete updates.role;
+    const updatedUser = await db.update(users).set({
+      ...updates,
+      updated_at: (/* @__PURE__ */ new Date()).getTime()
+    }).where(eq(users.id, decoded.userId)).returning().get();
+    if (!updatedUser) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Utilisateur non trouv\xE9"
+      });
+    }
+    const { password, ...userWithoutPassword } = updatedUser;
+    return {
+      data: userWithoutPassword
+    };
+  } catch (error) {
+    throw createError({
+      statusCode: error.statusCode || 500,
+      statusMessage: error.statusMessage || "Erreur lors de la mise \xE0 jour"
+    });
+  }
+});
+
+const profile_patch$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: profile_patch
+});
+
+function generateId() {
+  return randomUUID().replace(/-/g, "");
+}
+const register_post = defineEventHandler(async (event) => {
+  try {
+    console.log("Registration attempt started");
+    const { email, password, firstName, lastName, phone, role = "farmer" } = await readBody(event);
+    console.log("Registration data received:", { email, firstName, lastName, role });
+    if (!email || !password || !firstName || !lastName) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Tous les champs obligatoires doivent \xEAtre remplis"
+      });
+    }
+    console.log("Opening database connection");
+    const sqlite = new Database("./server/database/sqlite.db");
+    try {
+      console.log("Checking for existing user with email:", email);
+      const existingUser = sqlite.prepare("SELECT id FROM users WHERE email = ?").get(email);
+      if (existingUser) {
+        console.log("User already exists");
+        throw createError({
+          statusCode: 409,
+          statusMessage: "Un compte avec cet email existe d\xE9j\xE0"
+        });
+      }
+      console.log("Hashing password");
+      const hashedPassword = await bcrypt.hash(password, 12);
+      console.log("Generating user ID");
+      const userId = generateId();
+      console.log("Generated user ID:", userId);
+      console.log("Preparing insert statement");
+      const insertStmt = sqlite.prepare(`
+        INSERT INTO users (id, email, password, first_name, last_name, phone, role) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `);
+      console.log("Executing insert with data:", { userId, email, firstName, lastName, phone, role });
+      insertStmt.run(
+        userId,
+        email,
+        hashedPassword,
+        firstName,
+        lastName,
+        phone || null,
+        role
+      );
+      console.log("Insert completed");
+      console.log("Fetching created user");
+      const newUser = sqlite.prepare("SELECT * FROM users WHERE id = ?").get(userId);
+      console.log("User created successfully:", newUser ? "yes" : "no");
+      if (!newUser) {
+        throw createError({
+          statusCode: 500,
+          statusMessage: "Erreur lors de la cr\xE9ation du compte"
+        });
+      }
+      console.log("Generating JWT token");
+      const config = useRuntimeConfig();
+      const token = jwt.sign(
+        { userId: newUser.id, email: newUser.email },
+        config.authSecret,
+        { expiresIn: "7d" }
+      );
+      const { password: _, ...userWithoutPassword } = newUser;
+      console.log("Registration successful");
+      return {
+        success: true,
+        data: {
+          user: userWithoutPassword,
+          token,
+          autoLogin: true
+        }
+      };
+    } catch (dbError) {
+      console.error("Database error during registration:", dbError);
+      throw dbError;
+    } finally {
+      console.log("Closing database connection");
+      sqlite.close();
+    }
+  } catch (error) {
+    console.error("Registration error:", error);
+    throw createError({
+      statusCode: error.statusCode || 500,
+      statusMessage: error.statusMessage || "Erreur lors de l'inscription"
+    });
+  }
+});
+
+const register_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: register_post
+});
+
 function renderPayloadResponse(ssrContext) {
   return {
     body: stringify(splitPayload(ssrContext).payload, ssrContext._payloadReducers) ,
@@ -1966,5 +2634,5 @@ function renderHTMLDocument(html) {
 const renderer$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: renderer
-});
+});;globalThis.__timing__.logEnd('Nitro Start');
 //# sourceMappingURL=index.mjs.map
