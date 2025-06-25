@@ -18,23 +18,28 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 🔍 Run ESLint
-        run: npm run lint
+        run: pnpm run lint
 
       - name: 🏗️ Type check
-        run: npm run build
+        run: pnpm run build
 
       - name: 🔒 Security audit
-        run: npm audit --audit-level moderate
+        run: pnpm audit --audit-level moderate
         continue-on-error: true
 
   # 🧪 Testing Suite
@@ -49,20 +54,25 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 🏗️ Build project
-        run: npm run build
+        run: pnpm run build
 
       - name: 🧪 Run ${{ matrix.test-type }} tests
-        run: npm run test:${{ matrix.test-type }}
+        run: pnpm run test:${{ matrix.test-type }}
         env:
           # Test environment variables
           AUTH_SECRET: ${{ secrets.AUTH_SECRET || 'test-secret-key-for-ci' }}
@@ -77,23 +87,28 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 📥 Install Playwright
-        run: npx playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
 
       - name: 🏗️ Build project
-        run: npm run build
+        run: pnpm run build
 
       - name: 🎭 Run E2E tests
-        run: npm run test:e2e
+        run: pnpm run test:e2e
         env:
           AUTH_SECRET: ${{ secrets.AUTH_SECRET || 'test-secret-key-for-ci' }}
           DATABASE_URL: ':memory:'
@@ -117,17 +132,22 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 🏗️ Build for production
-        run: npm run build
+        run: pnpm run build
         env:
           AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
           NUXT_SECURITY_CSRF_COOKIE_NAME: '__HOST-nuxt-security.csrf'
@@ -154,17 +174,22 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 🚀 Deploy to NuxtHub
-        run: npm run deploy
+        run: pnpm run deploy
         env:
           NUXT_HUB_PROJECT_SECRET_KEY: ${{ secrets.NUXT_HUB_PROJECT_SECRET_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -189,17 +214,22 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: 🔍 Deploy Preview
-        run: npm run deploy:preview
+        run: pnpm run deploy:preview
         env:
           NUXT_HUB_PROJECT_SECRET_KEY: ${{ secrets.NUXT_HUB_PROJECT_SECRET_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
