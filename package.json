@@ -30,6 +30,7 @@
     "deploy:wrangler": "wrangler pages deploy dist/"
   },
   "devDependencies": {
+    "@nuxt/content": "^3.6.1",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/ui": "^2.11.1",
