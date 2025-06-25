@@ -1,18 +1,19 @@
 ---
 title: "Marché de la Vanille : Tendances Décembre 2024"
-description: "Analyse des prix et tendances du marché de la vanille à Madagascar pour la fin 2024."
-author: "Marie Rasoa"
-category: "market-updates"
+description: Analyse des prix et tendances du marché de la vanille à Madagascar
+  pour la fin 2024.
+author: Marie Rasoa
+category: market-updates
 tags:
-  - "vanille"
-  - "prix"
-  - "export"
-  - "SAVA"
+  - vanille
+  - prix
+  - export
+  - SAVA
 featured: true
-image: "/images/articles/vanilla-market-2024.jpg"
-region: "SAVA"
-readTime: "8 min de lecture"
-language: "fr"
+image: /images/articles/vanilla-market-2024.jpg
+region: SAVA
+readTime: 8 min de lecture
+language: fr
 publishedAt: 2024-12-16
 ---
 
@@ -91,6 +92,6 @@ Le marché de la vanille malgache entre dans une phase de maturité avec des pri
 
 ---
 
-_Source : Données collectées auprès de 25 exportateurs et 150 producteurs de la région SAVA._
+*Source : Données collectées auprès de 25 exportateurs et 150 producteurs de la région SAVA.*
 
-_Contact : marie.rasoa@fataplus.mg - Analyste marché chez Fataplus_
+*Contact : <marie.rasoa@fataplus.mg> - Analyste marché chez Fataplus*

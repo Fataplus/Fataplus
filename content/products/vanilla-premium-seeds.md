@@ -1,26 +1,27 @@
 ---
-title: "Graines de Vanille Premium SAVA"
-description: "Graines de vanille de haute qualité provenant de la région SAVA, parfaites pour la plantation en climat tropical humide."
+title: Graines de Vanille Premium SAVA
+description: Graines de vanille de haute qualité provenant de la région SAVA,
+  parfaites pour la plantation en climat tropical humide.
 price: 25000
-category: "seeds"
-vendor: "Coopérative SAVA"
+category: seeds
+vendor: Coopérative SAVA
 stock: 150
-region: "SAVA"
+region: SAVA
 featured: true
 images:
-  - "/images/products/vanilla-seeds-1.jpg"
-  - "/images/products/vanilla-seeds-2.jpg"
+  - /images/products/vanilla-seeds-1.jpg
+  - /images/products/vanilla-seeds-2.jpg
 tags:
-  - "vanille"
-  - "graines"
-  - "SAVA"
-  - "premium"
+  - vanille
+  - graines
+  - SAVA
+  - premium
 specifications:
-  purity: "95%"
-  germination_rate: "85%"
-  origin: "Sambava, SAVA"
-  packaging: "Sachet de 100 graines"
-availability: "in-stock"
+  purity: 95%
+  germination_rate: 85%
+  origin: Sambava, SAVA
+  packaging: Sachet de 100 graines
+availability: in-stock
 publishedAt: 2024-12-16
 ---
 

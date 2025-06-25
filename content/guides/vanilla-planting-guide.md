@@ -1,24 +1,24 @@
 ---
-title: "Guide de Plantation de la Vanille"
-description: "Guide complet pour réussir la plantation de vanille dans la région SAVA"
-category: "planting"
-crop: "vanilla"
-difficulty: "medium"
-season: "rainy"
-region: "SAVA"
+title: Guide de Plantation de la Vanille
+description: Guide complet pour réussir la plantation de vanille dans la région SAVA
+category: planting
+crop: vanilla
+difficulty: medium
+season: rainy
+region: SAVA
 tools:
-  - "Bêche"
-  - "Sécateur"
-  - "Arrosoir"
-  - "Paillis"
+  - Bêche
+  - Sécateur
+  - Arrosoir
+  - Paillis
 materials:
-  - "Plants de vanille"
-  - "Tuteurs (bambou ou bois)"
-  - "Compost organique"
-  - "Paillis naturel"
-duration: "1 journée de plantation + suivi mensuel"
+  - Plants de vanille
+  - Tuteurs (bambou ou bois)
+  - Compost organique
+  - Paillis naturel
+duration: 1 journée de plantation + suivi mensuel
 featured: true
-language: "fr"
+language: fr
 publishedAt: 2024-12-16
 ---
 
@@ -26,7 +26,7 @@ publishedAt: 2024-12-16
 
 ## Introduction
 
-La vanille (_Vanilla planifolia_) est l'une des cultures les plus précieuses de Madagascar. Ce guide vous accompagne dans toutes les étapes de plantation pour maximiser vos chances de succès.
+La vanille (*Vanilla planifolia*) est l'une des cultures les plus précieuses de Madagascar. Ce guide vous accompagne dans toutes les étapes de plantation pour maximiser vos chances de succès.
 
 ## Période optimale de plantation
 
@@ -140,4 +140,4 @@ La vanille (_Vanilla planifolia_) est l'une des cultures les plus précieuses de
 
 ---
 
-_Guide élaboré par l'équipe agronomique Fataplus en collaboration avec les producteurs SAVA_
+*Guide élaboré par l'équipe agronomique Fataplus en collaboration avec les producteurs SAVA*
