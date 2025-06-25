@@ -14,6 +14,7 @@ type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}
 interface _GlobalComponents {
       'EmptyState': typeof import("../shared/components/ui/EmptyState.vue")['default']
     'LoadingSpinner': typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
+    'AgricultureAssistant': typeof import("../components/AI/AgricultureAssistant.vue")['default']
     'AppHeader': typeof import("../components/AppHeader.vue")['default']
     'BottomNavigation': typeof import("../components/BottomNavigation.vue")['default']
     'FlowbiteCard': typeof import("../components/FlowbiteCard.vue")['default']
@@ -43,6 +44,7 @@ interface _GlobalComponents {
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyEmptyState': LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
     'LazyLoadingSpinner': LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
+    'LazyAgricultureAssistant': LazyComponent<typeof import("../components/AI/AgricultureAssistant.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/AppHeader.vue")['default']>
     'LazyBottomNavigation': LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
     'LazyFlowbiteCard': LazyComponent<typeof import("../components/FlowbiteCard.vue")['default']>
@@ -78,6 +80,7 @@ declare module 'vue' {
 
 export const EmptyState: typeof import("../shared/components/ui/EmptyState.vue")['default']
 export const LoadingSpinner: typeof import("../shared/components/ui/LoadingSpinner.vue")['default']
+export const AgricultureAssistant: typeof import("../components/AI/AgricultureAssistant.vue")['default']
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
 export const BottomNavigation: typeof import("../components/BottomNavigation.vue")['default']
 export const FlowbiteCard: typeof import("../components/FlowbiteCard.vue")['default']
@@ -107,6 +110,7 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyEmptyState: LazyComponent<typeof import("../shared/components/ui/EmptyState.vue")['default']>
 export const LazyLoadingSpinner: LazyComponent<typeof import("../shared/components/ui/LoadingSpinner.vue")['default']>
+export const LazyAgricultureAssistant: LazyComponent<typeof import("../components/AI/AgricultureAssistant.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/AppHeader.vue")['default']>
 export const LazyBottomNavigation: LazyComponent<typeof import("../components/BottomNavigation.vue")['default']>
 export const LazyFlowbiteCard: LazyComponent<typeof import("../components/FlowbiteCard.vue")['default']>

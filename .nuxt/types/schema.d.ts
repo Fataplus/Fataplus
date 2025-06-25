@@ -39,7 +39,7 @@ declare module 'nuxt/schema' {
     ["tailwindcss"]: typeof import("@nuxtjs/tailwindcss").default extends NuxtModule<infer O> ? O : Record<string, any>
     /**
      * Configuration for `@nuxthub/core`
-     * @see https://hub.nuxt.com
+     * @see https://www.npmjs.com/package/@nuxthub/core
      */
     ["hub"]: typeof import("@nuxthub/core").default extends NuxtModule<infer O> ? O : Record<string, any>
     /**
@@ -56,7 +56,7 @@ declare module 'nuxt/schema' {
     ["tailwindcss"]?: typeof import("@nuxtjs/tailwindcss").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     /**
      * Configuration for `@nuxthub/core`
-     * @see https://hub.nuxt.com
+     * @see https://www.npmjs.com/package/@nuxthub/core
      */
     ["hub"]?: typeof import("@nuxthub/core").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     /**
@@ -100,15 +100,9 @@ declare module 'nuxt/schema' {
 
       dir: string,
 
-      workers: boolean,
-
-      ai: boolean,
-
       analytics: boolean,
 
       blob: boolean,
-
-      browser: boolean,
 
       cache: boolean,
 
@@ -116,41 +110,17 @@ declare module 'nuxt/schema' {
 
       kv: boolean,
 
-      vectorize: any,
-
-      databaseMigrationsDirs: Array<string>,
-
-      databaseQueriesPaths: Array<any>,
-
       version: string,
 
       env: string,
 
       openapi: boolean,
 
-      bindings: {
-         observability: {
-            logs: boolean,
-         },
-
-         hyperdrive: any,
-
-         compatibilityFlags: any,
-      },
-
-      cloudflareAccess: {
-         clientId: any,
-
-         clientSecret: any,
-      },
-
-      openAPIRoute: string,
+      ai: boolean,
    },
   }
   interface PublicRuntimeConfig {
    apiBase: string,
-
-   hub: any,
   }
 }
 declare module 'vue' {

@@ -103,6 +103,9 @@
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
+      "#hub/openapi": [
+        "#internal/nitro/routes/openapi"
+      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -113,7 +116,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/29d90599-7b2c-4034-beaf-04d10032ac5f.json"
+        "./manifest/meta/dev.json"
       ],
       "#components": [
         "./components"
@@ -159,6 +162,8 @@
     "./nuxt.d.ts",
     "../node_modules/@nuxtjs/tailwindcss/runtime",
     "../node_modules/@nuxtjs/tailwindcss/dist/runtime",
+    "../node_modules/nitro-cloudflare-dev/runtime",
+    "../node_modules/nitro-cloudflare-dev/dist/runtime",
     "../node_modules/@nuxthub/core/runtime",
     "../node_modules/@nuxthub/core/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
@@ -171,13 +176,17 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/nitro-cloudflare-dev/node_modules",
     "../node_modules/@nuxthub/core/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxtjs/tailwindcss/dist/runtime/server",
+    "../node_modules/nitro-cloudflare-dev/runtime/server",
+    "../node_modules/nitro-cloudflare-dev/dist/runtime/server",
     "../node_modules/@nuxthub/core/runtime/server",
     "../node_modules/@nuxthub/core/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
-    "../node_modules/@nuxt/telemetry/dist/runtime/server"
+    "../node_modules/@nuxt/telemetry/dist/runtime/server",
+    "../.output"
   ]
 }
