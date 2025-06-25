@@ -22,6 +22,15 @@
         
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <NuxtLink 
+            to="/assistant-ia"
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transition-all duration-300 transform hover:scale-105 animate-pulse"
+          >
+            <span class="mr-2">🤖</span>
+            Assistant IA Agriculture
+            <i class="ri-ai-generate ml-2"></i>
+          </NuxtLink>
+          
+          <NuxtLink 
             to="/marketplace"
             class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900 transition-all duration-300 transform hover:scale-105"
           >

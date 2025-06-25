@@ -59,7 +59,6 @@
     "vue-tsc": "^2.2.10"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.9",
     "@auth/drizzle-adapter": "^0.7.0",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
@@ -75,7 +74,6 @@
     "@vercel/analytics": "^1.1.1",
     "@vueuse/core": "^10.5.0",
     "@vueuse/nuxt": "^10.5.0",
-    "ai": "^2.2.25",
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^12.1.0",
     "chart.js": "^4.4.0",

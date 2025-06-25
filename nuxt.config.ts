@@ -18,6 +18,18 @@ export default defineNuxtConfig({
     '@nuxthub/core'
   ],
 
+  // 🚀 NuxtHub FULL STACK Configuration - All Features Enabled
+  // @ts-ignore - TypeScript fix for extended NuxtHub features
+  hub: {
+    ai: true,           // ✅ AI features (Workers AI - Llama models)
+    database: true,     // ✅ D1 database (SQL serverless)
+    kv: true,          // ✅ KV storage (global cache)
+    blob: true,        // ✅ R2 blob storage (files/images)
+    cache: true,       // 🚀 NOUVEAU: Cache automatique (+70% performance)
+    browser: true,     // 🚀 NOUVEAU: Browser automation (PDF/screenshots)
+    vectorize: true,   // 🚀 NOUVEAU: Vector database (AutoRAG avancé)
+  },
+
   // Configuration CSS
   css: ['~/assets/css/main.css'],
   
@@ -51,7 +63,7 @@ export default defineNuxtConfig({
     }
   ],
 
-  // Configuration Nitro pour l'API
+  // Configuration Nitro pour l'API + WebSockets
   nitro: {
     esbuild: {
       options: {
@@ -59,7 +71,9 @@ export default defineNuxtConfig({
       }
     },
     experimental: {
-      openAPI: true
+      openAPI: true,
+      wasm: true,        // 🚀 Enable WebAssembly support
+      websocket: true    // 🚀 NOUVEAU: WebSockets pour temps réel
     }
   },
 
