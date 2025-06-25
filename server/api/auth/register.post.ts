@@ -10,15 +10,68 @@ function generateId(): string {
 
 export default defineEventHandler(async (event) => {
   try {
-    console.log('Registration attempt started')
-    const { email, password, firstName, lastName, phone, role = 'farmer' } = await readBody(event)
-    console.log('Registration data received:', { email, firstName, lastName, role })
+    const body = await readBody(event)
+    const { 
+      email, 
+      password, 
+      firstName, 
+      lastName, 
+      phone, 
+      role = 'farmer',
+      // Farmer-specific fields
+      region,
+      district, 
+      commune,
+      farmSize,
+      crops,
+      experience,
+      interests
+    } = body
+
+    console.log('Registration data received:', { 
+      email, 
+      firstName, 
+      lastName, 
+      role, 
+      region, 
+      district, 
+      commune,
+      farmSize,
+      crops: crops?.length 
+    })
 
     // Validation
     if (!email || !password || !firstName || !lastName) {
       throw createError({
         statusCode: 400,
-        statusMessage: 'Tous les champs obligatoires doivent être remplis'
+        statusMessage: 'Email, password, first name, and last name are required'
+      })
+    }
+
+    // Farmer-specific validation
+    if (role === 'farmer') {
+      if (!region || !district || !commune) {
+        throw createError({
+          statusCode: 400,
+          statusMessage: 'Region, district, and commune are required for farmers'
+        })
+      }
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'Invalid email format'
+      })
+    }
+
+    // Password validation
+    if (password.length < 8) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'Password must be at least 8 characters long'
       })
     }
 
@@ -34,7 +87,7 @@ export default defineEventHandler(async (event) => {
         console.log('User already exists')
         throw createError({
           statusCode: 409,
-          statusMessage: 'Un compte avec cet email existe déjà'
+          statusMessage: 'User with this email already exists'
         })
       }
 
@@ -65,6 +118,38 @@ export default defineEventHandler(async (event) => {
       )
       console.log('Insert completed')
 
+      // Create user profile for farmers with agricultural data
+      if (role === 'farmer') {
+        const profileId = randomUUID().replace(/-/g, '')
+        
+        const insertProfileStmt = sqlite.prepare(`
+          INSERT INTO user_profiles (
+            id, user_id, first_name, last_name, phone, region, district, commune,
+            farm_size, crops, experience, interests, is_public, created_at, updated_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `)
+        
+        insertProfileStmt.run(
+          profileId,
+          userId,
+          firstName,
+          lastName,
+          phone || null,
+          region,
+          district,
+          commune,
+          farmSize || null,
+          crops ? JSON.stringify(crops) : null,
+          experience || null,
+          interests ? JSON.stringify(interests) : null,
+          1, // is_public - farmers public by default for community
+          Date.now(),
+          Date.now()
+        )
+
+        console.log('✅ Farmer profile created with agricultural data')
+      }
+
       // Get the created user
       console.log('Fetching created user')
       const newUser = sqlite.prepare('SELECT * FROM users WHERE id = ?').get(userId)
@@ -92,8 +177,21 @@ export default defineEventHandler(async (event) => {
       console.log('Registration successful')
       return {
         success: true,
+        message: role === 'farmer' 
+          ? 'Compte agriculteur créé avec succès! Bienvenue dans la communauté Fataplus! 🌾'
+          : 'User registered successfully',
         data: {
-          user: userWithoutPassword,
+          user: {
+            id: newUser.id,
+            email: newUser.email,
+            name: `${newUser.first_name} ${newUser.last_name}`,
+            role: newUser.role,
+            isVerified: Boolean(newUser.email_verified),
+            isFarmer: role === 'farmer',
+            hasProfile: role === 'farmer',
+            region: role === 'farmer' ? region : null,
+            createdAt: new Date(newUser.created_at)
+          },
           token,
           autoLogin: true
         }
@@ -109,7 +207,7 @@ export default defineEventHandler(async (event) => {
     console.error('Registration error:', error)
     throw createError({
       statusCode: error.statusCode || 500,
-      statusMessage: error.statusMessage || 'Erreur lors de l\'inscription'
+      statusMessage: error.statusMessage || 'Registration failed'
     })
   }
 }) 

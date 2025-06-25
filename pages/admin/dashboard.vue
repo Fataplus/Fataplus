@@ -35,52 +35,167 @@
 
     <!-- Main Content -->
     <div class="p-6">
-      <!-- Statistics Cards -->
+      <!-- Farmer-Focused Metrics -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div class="flex items-center">
-            <div class="p-3 bg-green-100 dark:bg-green-900 rounded-full">
-              <i class="ri-shopping-cart-line text-green-600 text-xl"></i>
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Agriculteurs Actifs
+              </p>
+              <p class="text-2xl font-bold text-green-600">
+                {{ stats.farmers || 0 }}
+              </p>
             </div>
-            <div class="ml-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ totalOrders }}</h3>
-              <p class="text-gray-600 dark:text-gray-300">Total Commandes</p>
+            <div class="bg-green-100 rounded-lg p-3">
+              <i class="ri-plant-line text-2xl text-green-600"></i>
+            </div>
+          </div>
+          <div class="mt-2 text-sm text-gray-500">
+            <span class="text-green-600">+{{ stats.newFarmersThisMonth || 0 }}</span>
+            ce mois
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Régions Couvertes
+              </p>
+              <p class="text-2xl font-bold text-blue-600">
+                {{ stats.regions || 0 }}
+              </p>
+            </div>
+            <div class="bg-blue-100 rounded-lg p-3">
+              <i class="ri-map-pin-line text-2xl text-blue-600"></i>
+            </div>
+          </div>
+          <div class="mt-2 text-sm text-gray-500">
+            SAVA, Alaotra, Analamanga...
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Questions AI Assistant
+              </p>
+              <p class="text-2xl font-bold text-orange-600">
+                {{ stats.aiQuestions || 0 }}
+              </p>
+            </div>
+            <div class="bg-orange-100 rounded-lg p-3">
+              <i class="ri-robot-line text-2xl text-orange-600"></i>
+            </div>
+          </div>
+          <div class="mt-2 text-sm text-gray-500">
+            <span class="text-orange-600">+{{ stats.aiQuestionsToday || 0 }}</span>
+            aujourd'hui
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Cultures Populaires
+              </p>
+              <p class="text-2xl font-bold text-purple-600">
+                {{ stats.topCrops?.length || 0 }}
+              </p>
+            </div>
+            <div class="bg-purple-100 rounded-lg p-3">
+              <i class="ri-seedling-line text-2xl text-purple-600"></i>
+            </div>
+          </div>
+          <div class="mt-2 text-sm text-gray-500">
+            Riz, Vanille, Girofle
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Farmer Distribution -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            <i class="ri-map-2-line mr-2"></i>
+            Distribution par Région
+          </h3>
+          <div class="space-y-3">
+            <div v-for="region in stats.regionDistribution" :key="region.name" class="flex items-center justify-between">
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ region.name }}</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-sm text-gray-600 dark:text-gray-400 mr-2">{{ region.farmers }}</span>
+                <div class="w-16 bg-gray-200 rounded-full h-2">
+                  <div 
+                    class="bg-green-500 h-2 rounded-full" 
+                    :style="`width: ${region.percentage}%`"
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div class="flex items-center">
-            <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-              <i class="ri-money-dollar-circle-line text-blue-600 text-xl"></i>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            <i class="ri-line-chart-line mr-2"></i>
+            Croissance Communauté
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+              <div>
+                <p class="text-sm font-medium text-green-800">Nouveaux agriculteurs</p>
+                <p class="text-xs text-green-600">Cette semaine</p>
+              </div>
+              <span class="text-2xl font-bold text-green-600">+{{ stats.newFarmersThisWeek || 0 }}</span>
             </div>
-            <div class="ml-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ formatCurrency(totalRevenue) }}</h3>
-              <p class="text-gray-600 dark:text-gray-300">Revenus Totaux</p>
+            
+            <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+              <div>
+                <p class="text-sm font-medium text-blue-800">Profils complétés</p>
+                <p class="text-xs text-blue-600">Taux de complétion</p>
+              </div>
+              <span class="text-2xl font-bold text-blue-600">{{ stats.profileCompletionRate || 0 }}%</span>
+            </div>
+            
+            <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+              <div>
+                <p class="text-sm font-medium text-orange-800">Interactions AI</p>
+                <p class="text-xs text-orange-600">Moyenne par agriculteur</p>
+              </div>
+              <span class="text-2xl font-bold text-orange-600">{{ stats.avgAiInteractions || 0 }}</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div class="flex items-center">
-            <div class="p-3 bg-orange-100 dark:bg-orange-900 rounded-full">
-              <i class="ri-box-line text-orange-600 text-xl"></i>
+      <!-- Recent Farmer Activity -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-8">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <i class="ri-history-line mr-2"></i>
+          Activité Récente des Agriculteurs
+        </h3>
+        <div class="space-y-3">
+          <div v-for="activity in recentFarmerActivity" :key="activity.id" class="flex items-center p-3 border border-gray-200 rounded-lg">
+            <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <i :class="activity.icon" class="text-green-600"></i>
             </div>
-            <div class="ml-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ totalProducts }}</h3>
-              <p class="text-gray-600 dark:text-gray-300">Produits</p>
+            <div class="ml-4 flex-1">
+              <p class="text-sm font-medium text-gray-900 dark:text-white">
+                {{ activity.farmerName }}
+              </p>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                {{ activity.action }} - {{ activity.location }}
+              </p>
             </div>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <div class="flex items-center">
-            <div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-full">
-              <i class="ri-user-line text-purple-600 text-xl"></i>
-            </div>
-            <div class="ml-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ totalCustomers }}</h3>
-              <p class="text-gray-600 dark:text-gray-300">Clients</p>
+            <div class="text-xs text-gray-500">
+              {{ activity.timeAgo }}
             </div>
           </div>
         </div>

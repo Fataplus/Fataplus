@@ -1,186 +1,309 @@
 <template>
-  <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+  <div class="min-h-screen bg-gradient-to-br from-green-50 to-primary-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl w-full space-y-8">
+      <!-- Header -->
       <div class="text-center">
-        <h1 class="text-3xl font-bold text-green-600">🌱 Fataplus</h1>
+        <NuxtLink to="/" class="inline-flex items-center text-3xl font-bold text-primary-600">
+          <span class="text-4xl mr-2">🌱</span>
+          Fataplus
+        </NuxtLink>
         <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
-          Créer votre compte
+          Rejoignez la communauté agricole
         </h2>
         <p class="mt-2 text-sm text-gray-600">
-          Ou
-          <NuxtLink 
-            to="/auth/login"
-            class="font-medium text-green-600 hover:text-green-500 transition"
-          >
-            connectez-vous à votre compte existant
-          </NuxtLink>
+          Connectez-vous avec les agriculteurs de Madagascar
         </p>
       </div>
-    </div>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <!-- Registration Form -->
+      <div class="bg-white shadow-xl rounded-lg p-8">
         <form @submit.prevent="handleRegister" class="space-y-6">
-          <!-- Error message -->
-          <div v-if="error" class="bg-red-50 border border-red-200 rounded-md p-4">
-            <div class="flex">
-              <div class="ml-3">
-                <h3 class="text-sm font-medium text-red-800">
-                  Erreur d'inscription
-                </h3>
-                <div class="mt-2 text-sm text-red-700">
-                  {{ error }}
-                </div>
-              </div>
+          <!-- User Type Selection -->
+          <div class="text-center mb-6">
+            <p class="text-lg font-medium text-gray-900 mb-4">Je suis :</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <button
+                type="button"
+                @click="selectedRole = 'farmer'"
+                :class="[
+                  'p-4 border-2 rounded-lg transition-all duration-200',
+                  selectedRole === 'farmer' 
+                    ? 'border-green-500 bg-green-50 text-green-700' 
+                    : 'border-gray-200 hover:border-gray-300'
+                ]"
+              >
+                <div class="text-3xl mb-2">🌾</div>
+                <div class="font-semibold">Agriculteur</div>
+                <div class="text-sm text-gray-500">Je cultive la terre</div>
+              </button>
+              
+              <button
+                type="button"
+                @click="selectedRole = 'vendor'"
+                :class="[
+                  'p-4 border-2 rounded-lg transition-all duration-200',
+                  selectedRole === 'vendor' 
+                    ? 'border-orange-500 bg-orange-50 text-orange-700' 
+                    : 'border-gray-200 hover:border-gray-300'
+                ]"
+              >
+                <div class="text-3xl mb-2">🏪</div>
+                <div class="font-semibold">Vendeur</div>
+                <div class="text-sm text-gray-500">Je vends des produits</div>
+              </button>
+              
+              <button
+                type="button"
+                @click="selectedRole = 'user'"
+                :class="[
+                  'p-4 border-2 rounded-lg transition-all duration-200',
+                  selectedRole === 'user' 
+                    ? 'border-blue-500 bg-blue-50 text-blue-700' 
+                    : 'border-gray-200 hover:border-gray-300'
+                ]"
+              >
+                <div class="text-3xl mb-2">👤</div>
+                <div class="font-semibold">Acheteur</div>
+                <div class="text-sm text-gray-500">Je recherche des produits</div>
+              </button>
             </div>
           </div>
 
-          <!-- Success message -->
-          <div v-if="success" class="bg-green-50 border border-green-200 rounded-md p-4">
-            <div class="flex">
-              <div class="ml-3">
-                <h3 class="text-sm font-medium text-green-800">
-                  Inscription réussie !
-                </h3>
-                <div class="mt-2 text-sm text-green-700">
-                  Votre compte a été créé avec succès. Vous pouvez maintenant vous connecter.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- First Name -->
-          <div>
-            <label for="firstName" class="block text-sm font-medium text-gray-700">
-              Prénom
-            </label>
-            <div class="mt-1">
+          <!-- Personal Information -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-gray-700">
+                Prénom *
+              </label>
               <input
                 id="firstName"
                 v-model="form.firstName"
                 type="text"
                 required
-                autocomplete="given-name"
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="Jean"
-              />
+                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="Votre prénom"
+              >
             </div>
-          </div>
-
-          <!-- Last Name -->
-          <div>
-            <label for="lastName" class="block text-sm font-medium text-gray-700">
-              Nom
-            </label>
-            <div class="mt-1">
+            
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-gray-700">
+                Nom *
+              </label>
               <input
                 id="lastName"
                 v-model="form.lastName"
                 type="text"
                 required
-                autocomplete="family-name"
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="Dupont"
-              />
+                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="Votre nom de famille"
+              >
             </div>
           </div>
 
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <div class="mt-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">
+                Email *
+              </label>
               <input
                 id="email"
                 v-model="form.email"
                 type="email"
                 required
-                autocomplete="email"
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="jean@example.com"
-              />
+                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="votre@email.com"
+              >
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700">
+                Téléphone
+              </label>
+              <input
+                id="phone"
+                v-model="form.phone"
+                type="tel"
+                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="+261 XX XX XXX XX"
+              >
             </div>
           </div>
 
-          <!-- Password -->
           <div>
             <label for="password" class="block text-sm font-medium text-gray-700">
-              Mot de passe
+              Mot de passe *
             </label>
-            <div class="mt-1">
-              <input
-                id="password"
-                v-model="form.password"
-                type="password"
-                required
-                autocomplete="new-password"
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="••••••••"
-              />
-            </div>
-            <p class="mt-1 text-xs text-gray-500">
-              Au moins 8 caractères avec une majuscule, une minuscule et un chiffre
-            </p>
-          </div>
-
-          <!-- Confirm Password -->
-          <div>
-            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">
-              Confirmer le mot de passe
-            </label>
-            <div class="mt-1">
-              <input
-                id="confirmPassword"
-                v-model="form.confirmPassword"
-                type="password"
-                required
-                autocomplete="new-password"
-                class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="••••••••"
-              />
-            </div>
-          </div>
-
-          <!-- Terms and conditions -->
-          <div class="flex items-center">
             <input
-              id="acceptTerms"
-              v-model="form.acceptTerms"
-              type="checkbox"
+              id="password"
+              v-model="form.password"
+              type="password"
               required
-              class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-            />
-            <label for="acceptTerms" class="ml-2 block text-sm text-gray-900">
-              J'accepte les 
-              <a href="#" class="font-medium text-green-600 hover:text-green-500 transition">
-                conditions d'utilisation
-              </a>
-              et la
-              <a href="#" class="font-medium text-green-600 hover:text-green-500 transition">
-                politique de confidentialité
-              </a>
-            </label>
+              class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              placeholder="Au moins 8 caractères"
+            >
           </div>
 
-          <!-- Submit button -->
-          <div>
+          <!-- Farmer-specific fields -->
+          <div v-if="selectedRole === 'farmer'" class="space-y-6">
+            <div class="border-t pt-6">
+              <h3 class="text-lg font-medium text-gray-900 mb-4">
+                <i class="ri-map-pin-line mr-2"></i>
+                Informations géographiques
+              </h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label for="region" class="block text-sm font-medium text-gray-700">
+                    Région *
+                  </label>
+                  <select
+                    id="region"
+                    v-model="form.region"
+                    required
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    @change="updateDistricts"
+                  >
+                    <option value="">Sélectionner une région</option>
+                    <option v-for="region in madagascarRegions" :key="region.name" :value="region.name">
+                      {{ region.name }}
+                    </option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="district" class="block text-sm font-medium text-gray-700">
+                    District *
+                  </label>
+                  <select
+                    id="district"
+                    v-model="form.district"
+                    required
+                    :disabled="!form.region"
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100"
+                  >
+                    <option value="">Sélectionner un district</option>
+                    <option v-for="district in availableDistricts" :key="district" :value="district">
+                      {{ district }}
+                    </option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="commune" class="block text-sm font-medium text-gray-700">
+                    Commune *
+                  </label>
+                  <input
+                    id="commune"
+                    v-model="form.commune"
+                    type="text"
+                    required
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    placeholder="Votre commune"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="text-lg font-medium text-gray-900 mb-4">
+                <i class="ri-plant-line mr-2"></i>
+                Informations agricoles
+              </h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="farmSize" class="block text-sm font-medium text-gray-700">
+                    Taille de l'exploitation
+                  </label>
+                  <select
+                    id="farmSize"
+                    v-model="form.farmSize"
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  >
+                    <option value="">Sélectionner la taille</option>
+                    <option value="< 1 hectare">Moins de 1 hectare</option>
+                    <option value="1-5 hectares">1 à 5 hectares</option>
+                    <option value="5-20 hectares">5 à 20 hectares</option>
+                    <option value="> 20 hectares">Plus de 20 hectares</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="experience" class="block text-sm font-medium text-gray-700">
+                    Expérience agricole
+                  </label>
+                  <select
+                    id="experience"
+                    v-model="form.experience"
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  >
+                    <option value="">Sélectionner l'expérience</option>
+                    <option value="Débutant">Débutant (moins de 2 ans)</option>
+                    <option value="Intermédiaire">Intermédiaire (2-10 ans)</option>
+                    <option value="Expérimenté">Expérimenté (plus de 10 ans)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Cultures principales
+                </label>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  <label v-for="crop in madagascarCrops" :key="crop" class="flex items-center">
+                    <input
+                      type="checkbox"
+                      :value="crop"
+                      v-model="form.crops"
+                      class="mr-2 text-primary-600 focus:ring-primary-500"
+                    >
+                    <span class="text-sm">{{ crop }}</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms and Submit -->
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <input
+                id="terms"
+                v-model="form.acceptTerms"
+                type="checkbox"
+                required
+                class="mr-2 text-primary-600 focus:ring-primary-500"
+              >
+              <label for="terms" class="text-sm text-gray-600">
+                J'accepte les 
+                <NuxtLink to="/legal/terms" class="text-primary-600 hover:text-primary-700">
+                  conditions d'utilisation
+                </NuxtLink>
+                et la 
+                <NuxtLink to="/legal/privacy" class="text-primary-600 hover:text-primary-700">
+                  politique de confidentialité
+                </NuxtLink>
+              </label>
+            </div>
+
             <button
               type="submit"
-              :disabled="isLoading"
-              class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
+              :disabled="loading"
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                <svg v-if="isLoading" class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <svg v-else class="h-5 w-5 text-green-500 group-hover:text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-                </svg>
-              </span>
-              {{ isLoading ? 'Création...' : 'Créer mon compte' }}
+              <i v-if="loading" class="ri-loader-4-line animate-spin mr-2"></i>
+              <i v-else class="ri-plant-line mr-2"></i>
+              {{ loading ? 'Création du compte...' : 'Créer mon compte agriculteur' }}
             </button>
+
+            <div class="text-center">
+              <p class="text-sm text-gray-600">
+                Déjà membre ?
+                <NuxtLink to="/auth/login" class="font-medium text-primary-600 hover:text-primary-700">
+                  Se connecter
+                </NuxtLink>
+              </p>
+            </div>
           </div>
         </form>
       </div>
@@ -189,69 +312,118 @@
 </template>
 
 <script setup lang="ts">
-// Use our simplified auth composable
-const { register, isLoading } = useAuth()
+// Page metadata
+definePageMeta({
+  layout: false
+})
 
-// Form data
-const form = reactive({
+// Reactive data
+const selectedRole = ref('farmer') // Default to farmer
+const loading = ref(false)
+const availableDistricts = ref([])
+
+const form = ref({
   firstName: '',
   lastName: '',
   email: '',
+  phone: '',
   password: '',
-  confirmPassword: '',
+  region: '',
+  district: '',
+  commune: '',
+  farmSize: '',
+  experience: '',
+  crops: [],
   acceptTerms: false
 })
 
-// State
-const error = ref('')
-const success = ref(false)
+// Madagascar regions and districts data
+const madagascarRegions = ref([
+  {
+    name: 'SAVA',
+    districts: ['Sambava', 'Antalaha', 'Vohemar', 'Andapa']
+  },
+  {
+    name: 'Alaotra-Mangoro',
+    districts: ['Ambatondrazaka', 'Amparafaravola', 'Andilamena', 'Anosibe An\'ala', 'Moramanga']
+  },
+  {
+    name: 'Analamanga',
+    districts: ['Antananarivo-Avaradrano', 'Antananarivo-Atsimondrano', 'Antananarivo-Renivohitra', 'Ambohidratrimo', 'Ankazobe', 'Anjozorobe']
+  },
+  {
+    name: 'Atsinanana',
+    districts: ['Tamatave I', 'Tamatave II', 'Brickaville', 'Fenerive Est', 'Mahanoro', 'Marolambo', 'Vatomandry']
+  },
+  {
+    name: 'Boeny',
+    districts: ['Mahajanga I', 'Mahajanga II', 'Ambato-Boeny', 'Kandreho', 'Marovoay', 'Mitsinjo', 'Soalala']
+  }
+])
+
+// Madagascar major crops
+const madagascarCrops = ref([
+  'Riz', 'Vanille', 'Girofle', 'Litchi', 'Café', 'Cacao',
+  'Maïs', 'Manioc', 'Patate douce', 'Haricot', 'Arachide',
+  'Canne à sucre', 'Ylang-ylang', 'Poivre', 'Cannelle'
+])
+
+// Update districts when region changes
+const updateDistricts = () => {
+  const selectedRegion = madagascarRegions.value.find(r => r.name === form.value.region)
+  availableDistricts.value = selectedRegion ? selectedRegion.districts : []
+  form.value.district = '' // Reset district selection
+}
 
 // Handle registration
 const handleRegister = async () => {
+  loading.value = true
+  
   try {
-    error.value = ''
-    success.value = false
-    
-    // Basic validation
-    if (form.password !== form.confirmPassword) {
-      error.value = 'Les mots de passe ne correspondent pas'
-      return
+    const registrationData = {
+      email: form.value.email,
+      password: form.value.password,
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
+      phone: form.value.phone,
+      role: selectedRole.value
     }
-    
-    if (form.password.length < 8) {
-      error.value = 'Le mot de passe doit contenir au moins 8 caractères'
-      return
+
+    // Add farmer-specific data
+    if (selectedRole.value === 'farmer') {
+      Object.assign(registrationData, {
+        region: form.value.region,
+        district: form.value.district,
+        commune: form.value.commune,
+        farmSize: form.value.farmSize,
+        experience: form.value.experience,
+        crops: form.value.crops,
+        interests: form.value.crops // Use crops as interests for now
+      })
     }
-    
-    if (!form.acceptTerms) {
-      error.value = 'Vous devez accepter les conditions d\'utilisation'
-      return
-    }
-    
-    await register({
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      password: form.password
+
+    const { data } = await $fetch('/api/auth/register', {
+      method: 'POST',
+      body: registrationData
     })
+
+    if (data.success) {
+      // Show success message
+      alert(data.message || 'Compte créé avec succès!')
+      
+      // Redirect based on role
+      if (selectedRole.value === 'farmer') {
+        navigateTo('/auth/login?message=farmer-welcome')
+      } else {
+        navigateTo('/auth/login?message=success')
+      }
+    }
     
-    success.value = true
-    
-    // Redirect to login after a delay
-    setTimeout(() => {
-      navigateTo('/auth/login')
-    }, 2000)
-    
-  } catch (err: any) {
-    error.value = err.message || 'Une erreur est survenue lors de l\'inscription'
+  } catch (error: any) {
+    console.error('Registration failed:', error)
+    alert(error.data?.message || 'Erreur lors de la création du compte')
+  } finally {
+    loading.value = false
   }
 }
-
-// Page meta
-useHead({
-  title: 'Inscription - Fataplus',
-  meta: [
-    { name: 'description', content: 'Créez votre compte Fataplus pour accéder à notre plateforme' }
-  ]
-})
 </script> 
