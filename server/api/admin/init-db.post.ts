@@ -6,8 +6,29 @@ export default defineEventHandler(async (event) => {
     // Simple initialization endpoint for production
     console.log('🔧 Initializing database for production...')
     
-    // Get NuxtHub database in production
-    const db = hubDatabase()
+    // Get database - use NuxtHub in production, local SQLite in development
+    let db: any
+    
+    if (process.env.NODE_ENV === 'production') {
+      // Import NuxtHub database at runtime
+      const { hubDatabase } = await import('@nuxthub/core/runtime')
+      db = hubDatabase()
+    } else {
+      // Development: Use local SQLite
+      const Database = await import('better-sqlite3')
+      const sqlite = new Database.default('./server/database/sqlite.db')
+      db = {
+        exec: (sql: string) => sqlite.exec(sql),
+        prepare: (sql: string) => ({
+          bind: (...params: any[]) => ({
+            first: () => sqlite.prepare(sql).get(...params),
+            run: () => sqlite.prepare(sql).run(...params)
+          }),
+          get: (...params: any[]) => sqlite.prepare(sql).get(...params),
+          run: (...params: any[]) => sqlite.prepare(sql).run(...params)
+        })
+      }
+    }
     
     // Create users table if it doesn't exist
     await db.exec(`
