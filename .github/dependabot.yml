@@ -1,0 +1,91 @@
+version: 2
+updates:
+  # 📦 NPM Dependencies - Main Priority
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Indian/Antananarivo"  # Madagascar timezone
+    open-pull-requests-limit: 5
+    target-branch: "main"
+    reviewers:
+      - "Fataplus"
+    assignees:
+      - "Fataplus"
+    commit-message:
+      prefix: "⬆️ deps:"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automerge"
+    # 🎯 Security updates have higher priority
+    allow:
+      - dependency-type: "all"
+    # 🔄 Auto-merge strategy for patch/minor updates
+    groups:
+      nuxt-ecosystem:
+        patterns:
+          - "nuxt*"
+          - "@nuxt/*"
+          - "@nuxthub/*"
+          - "h3"
+          - "nitro*"
+        update-types:
+          - "patch"
+          - "minor"
+      
+      vue-ecosystem:
+        patterns:
+          - "vue*"
+          - "@vue/*"
+        update-types:
+          - "patch"
+          - "minor"
+          
+      typescript-ecosystem:
+        patterns:
+          - "typescript"
+          - "@typescript-eslint/*"
+          - "@types/*"
+        update-types:
+          - "patch"
+          - "minor"
+          
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "security"
+
+  # 🐳 Docker Dependencies (if any)
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "10:00"
+      timezone: "Indian/Antananarivo"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "⬆️ docker:"
+    labels:
+      - "docker"
+      - "dependencies"
+
+  # 📋 GitHub Actions Dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "11:00"
+      timezone: "Indian/Antananarivo"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "⬆️ ci:"
+    labels:
+      - "github-actions"
+      - "ci-cd"
+      - "dependencies" 
