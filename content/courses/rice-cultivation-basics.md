@@ -1,42 +1,43 @@
 ---
 title: "Culture du Riz : Techniques de Base"
-description: "Apprenez les techniques fondamentales de la culture du riz adaptées au climat de Madagascar."
-instructor: "Dr. Rakoto Andriamahefa"
-level: "beginner"
-duration: "6 semaines"
-category: "crop-management"
-language: "fr"
+description: Apprenez les techniques fondamentales de la culture du riz adaptées
+  au climat de Madagascar.
+instructor: Dr. Rakoto Andriamahefa
+level: beginner
+duration: 6 semaines
+category: crop-management
+language: fr
 price: 0
 featured: true
-thumbnail: "/images/courses/rice-cultivation.jpg"
+thumbnail: /images/courses/rice-cultivation.jpg
 objectives:
-  - "Comprendre les différentes variétés de riz adaptées à Madagascar"
-  - "Maîtriser les techniques de préparation du sol"
-  - "Apprendre les méthodes d'irrigation efficaces"
-  - "Gérer les parasites et maladies du riz"
-  - "Optimiser la récolte et le stockage"
+  - Comprendre les différentes variétés de riz adaptées à Madagascar
+  - Maîtriser les techniques de préparation du sol
+  - Apprendre les méthodes d'irrigation efficaces
+  - Gérer les parasites et maladies du riz
+  - Optimiser la récolte et le stockage
 prerequisites:
-  - "Aucune expérience préalable requise"
-  - "Accès à une rizière ou terrain adapté (optionnel)"
+  - Aucune expérience préalable requise
+  - Accès à une rizière ou terrain adapté (optionnel)
 modules:
-  - title: "Introduction à la riziculture"
-    duration: "1 semaine"
-    content: "Bases théoriques et variétés de riz"
-  - title: "Préparation du terrain"
-    duration: "1 semaine"
-    content: "Labour, nivellement, aménagement des casiers"
-  - title: "Semis et repiquage"
-    duration: "1 semaine"
-    content: "Techniques de semis direct et repiquage"
-  - title: "Gestion de l'eau"
-    duration: "1 semaine"
-    content: "Irrigation, drainage, contrôle du niveau d'eau"
-  - title: "Protection des cultures"
-    duration: "1 semaine"
-    content: "Lutte contre les parasites et maladies"
-  - title: "Récolte et post-récolte"
-    duration: "1 semaine"
-    content: "Techniques de récolte, séchage, stockage"
+  - title: Introduction à la riziculture
+    duration: 1 semaine
+    content: Bases théoriques et variétés de riz
+  - title: Préparation du terrain
+    duration: 1 semaine
+    content: Labour, nivellement, aménagement des casiers
+  - title: Semis et repiquage
+    duration: 1 semaine
+    content: Techniques de semis direct et repiquage
+  - title: Gestion de l'eau
+    duration: 1 semaine
+    content: Irrigation, drainage, contrôle du niveau d'eau
+  - title: Protection des cultures
+    duration: 1 semaine
+    content: Lutte contre les parasites et maladies
+  - title: Récolte et post-récolte
+    duration: 1 semaine
+    content: Techniques de récolte, séchage, stockage
 certificate: true
 publishedAt: 2024-12-15
 ---

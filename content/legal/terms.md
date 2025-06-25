@@ -1,9 +1,9 @@
 ---
-title: "Conditions Générales d'Utilisation"
-type: "terms"
+title: Conditions Générales d'Utilisation
+type: terms
 version: "1.0"
 effectiveDate: 2024-12-16
-language: "fr"
+language: fr
 lastUpdated: 2024-12-16
 ---
 
@@ -11,7 +11,7 @@ lastUpdated: 2024-12-16
 
 ## Article 1 : Objet
 
-Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les modalités et conditions d'utilisation de la plateforme Fataplus, accessible à l'adresse [fataplus.mg].
+Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les modalités et conditions d'utilisation de la plateforme Fataplus, accessible à l'adresse [fataplus.mg] .
 
 ## Article 2 : Définitions
 
@@ -136,11 +136,10 @@ Les présentes CGU sont soumises au droit malgache. Tout litige sera porté deva
 
 Pour toute question relative aux CGU :
 
-- **Email** : legal@fataplus.mg
+- **Email** : <legal@fataplus.mg>
 - **Adresse** : Fataplus, Antananarivo, Madagascar
 - **Téléphone** : +261 XX XX XXX XX
 
 ---
 
-_Dernière mise à jour : 16 décembre 2024_
-_Version 1.0 - Effective à partir du 16 décembre 2024_
+*Dernière mise à jour : 16 décembre 2024Version 1.0 - Effective à partir du 16 décembre 2024*
