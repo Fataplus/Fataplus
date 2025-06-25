@@ -113,7 +113,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/ea264232-a61e-448b-9e83-53b7a405cbba.json"
+        "./manifest/meta/29d90599-7b2c-4034-beaf-04d10032ac5f.json"
       ],
       "#components": [
         "./components"
@@ -133,7 +133,7 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "strict": false,
+    "strict": true,
     "noUncheckedIndexedAccess": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,

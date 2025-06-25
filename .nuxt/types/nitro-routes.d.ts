@@ -3,11 +3,17 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/admin/init-db': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/init-db.post').default>>>>
+    }
     '/api/admin/stats': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/stats.get').default>>>>
     }
     '/api/admin/system/roles': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/system/roles.get').default>>>>
+    }
+    '/api/admin/test-hub': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/test-hub.get').default>>>>
     }
     '/api/admin/users/:id/role': {
       'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/admin/users/[id]/role.patch').default>>>>
@@ -30,21 +36,11 @@ declare module "nitropack/types" {
     '/api/auth/register': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/register.post').default>>>>
     }
-    '/api/_hub/**:feature': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/[...feature]').default>>>>
-    }
-    '/api/_hub': {
-      'head': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/index.head').default>>>>
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/cors.dev').default>>>>
-    }
-    '/api/_hub/manifest': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/manifest.get').default>>>>
-    }
-    '/api/_hub/sync-variables': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/base/server/api/_hub/sync-variables.post').default>>>>
-    }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
+    }
+    '/api/_hub': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/cors.dev').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>

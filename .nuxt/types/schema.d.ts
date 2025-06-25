@@ -79,26 +79,6 @@ declare module 'nuxt/schema' {
 
    authSecret: string,
 
-   databaseUrl: string,
-
-   openaiApiKey: string,
-
-   stripeSecretKey: string,
-
-   emailHost: string,
-
-   emailUser: string,
-
-   emailPassword: string,
-
-   pusherAppId: string,
-
-   pusherKey: string,
-
-   pusherSecret: string,
-
-   pusherCluster: string,
-
    nitro: {
       envPrefix: string,
    },
@@ -163,18 +143,12 @@ declare module 'nuxt/schema' {
 
          clientSecret: any,
       },
+
+      openAPIRoute: string,
    },
   }
   interface PublicRuntimeConfig {
-   stripePublishableKey: string,
-
-   pusherKey: string,
-
-   pusherCluster: string,
-
    apiBase: string,
-
-   cloudronUrl: string,
 
    hub: any,
   }

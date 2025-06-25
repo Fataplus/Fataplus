@@ -512,8 +512,8 @@ function _calculatePosition(to, scrollBehaviorType, position) {
   return { left: 0, top: 0, behavior: scrollBehaviorType };
 }
 const configRouterOptions = {
-  scrollBehaviorType: "smooth",
-  hashMode: false
+  hashMode: false,
+  scrollBehaviorType: "auto"
 };
 const routerOptions = {
   ...configRouterOptions,
