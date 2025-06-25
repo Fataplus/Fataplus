@@ -18,8 +18,6 @@ export default defineNuxtConfig({
     '@nuxthub/core'
   ],
 
-  // NuxtHub will be configured automatically
-
   // Configuration CSS
   css: ['~/assets/css/main.css'],
   
@@ -31,77 +29,13 @@ export default defineNuxtConfig({
 
   // Configuration des variables d'environnement
   runtimeConfig: {
-    // Privées (côté serveur)
-    authSecret: process.env['NUXT_AUTH_SECRET'] || 'fataplus-super-secret-key-2025-madagascar-agriculture',
-    databaseUrl: process.env['DATABASE_URL'] || './server/database/sqlite.db',
-    openaiApiKey: process.env['OPENAI_API_KEY'],
-    stripeSecretKey: process.env['STRIPE_SECRET_KEY'],
-    emailHost: process.env['EMAIL_HOST'],
-    emailUser: process.env['EMAIL_USER'],
-    emailPassword: process.env['EMAIL_PASSWORD'],
-    pusherAppId: process.env['PUSHER_APP_ID'],
-    pusherKey: process.env['PUSHER_KEY'],
-    pusherSecret: process.env['PUSHER_SECRET'],
-    pusherCluster: process.env['PUSHER_CLUSTER'],
+    // Private keys (only available on the server-side)
+    authSecret: process.env['AUTH_SECRET'] || 'your-super-secret-auth-key-here',
     
-    // Publiques (côté client)
+    // Public keys (exposed to the client-side)
     public: {
-      stripePublishableKey: process.env['NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY'],
-      pusherKey: process.env['NUXT_PUBLIC_PUSHER_KEY'],
-      pusherCluster: process.env['NUXT_PUBLIC_PUSHER_CLUSTER'],
-      apiBase: process.env['NUXT_PUBLIC_API_BASE'] || '/api',
-      cloudronUrl: process.env['NUXT_PUBLIC_CLOUDRON_URL'] || 'https://my.fata.plus'
+      apiBase: '/api'
     }
-  },
-
-  // Configuration Nitro pour l'API  
-  nitro: {
-    esbuild: {
-      options: {
-        target: 'es2022'
-      }
-    }
-  },
-
-  // Configuration du routage
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth'
-    }
-  },
-
-  // Configuration des métadonnées
-  app: {
-    head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      title: 'Fataplus - Agriculture Numérique Madagascar',
-      meta: [
-        { name: 'description', content: 'Plateforme dédiée à l\'agriculture à Madagascar : marché, formation, communauté' },
-        { name: 'keywords', content: 'agriculture, madagascar, marché, formation, communauté, IA' },
-        { property: 'og:title', content: 'Fataplus - Agriculture Madagascar' },
-        { property: 'og:description', content: 'Plateforme dédiée à l\'agriculture à Madagascar' },
-        { property: 'og:image', content: '/og-image.jpg' },
-        { property: 'og:url', content: 'https://fataplus.mg' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#16a34a' }
-      ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
-      ]
-    }
-  },
-
-  // Enhanced auto-import configuration for all composables
-  imports: {
-    dirs: [
-      'composables',
-      'composables/**',
-      'utils',
-      'utils/**'
-    ]
   },
 
   // Auto-import components
@@ -117,25 +51,19 @@ export default defineNuxtConfig({
     }
   ],
 
-  // 🚀 Vite Performance Optimizations
-  vite: {
-    define: {
-      global: 'globalThis'
-    },
-    // Optimize dependencies for faster builds
-    optimizeDeps: {
-      include: ['vue', 'vue-router']
+  // Configuration Nitro pour l'API
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'es2022'
+      }
     }
   },
 
-  // Enhanced TypeScript configuration
-  typescript: {
-    strict: false, // Temporarily disabled to avoid blocking issues
-    typeCheck: false // Disabled to speed up development
-  },
-
-  // Configuration de build pour la production
-  build: {
-    transpile: ['@headlessui/vue']
+  // Build optimizations 
+  vite: {
+    esbuild: {
+      target: 'es2022'
+    }
   }
 })
