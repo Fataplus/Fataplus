@@ -57,6 +57,9 @@ export default defineNuxtConfig({
       options: {
         target: 'es2022'
       }
+    },
+    experimental: {
+      openAPI: true
     }
   },
 
