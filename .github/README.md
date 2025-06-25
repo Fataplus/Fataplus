@@ -51,6 +51,7 @@ Our CI/CD pipeline automatically:
 | `AUTH_SECRET` | JWT authentication secret | Authentication |
 | `CLOUDFLARE_API_TOKEN` | Cloudflare API access | Deployment |
 | `NUXT_HUB_PROJECT_SECRET_KEY` | NuxtHub project auth | Deployment |
+| `CLOUDINARY_URL` | Cloudinary image service | Image uploads |
 
 ## 🧪 **Testing Strategy**
 

@@ -43,6 +43,11 @@ openssl rand -base64 32
 - **Value**: Your NuxtHub project secret key
 - **Used for**: NuxtHub project authentication
 
+### 4. 🎨 **CLOUDINARY_URL**
+- **Name**: `CLOUDINARY_URL`
+- **Value**: `cloudinary://117237553857868:NuL2vSW7KgYMG51NU-XQzZInFVk@fefe-design`
+- **Used for**: Image upload and management in production
+
 #### How to get NuxtHub Project Secret:
 1. Go to [NuxtHub Admin Panel](https://admin.hub.nuxt.com)
 2. Select your `fataplus-app` project
