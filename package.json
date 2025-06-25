@@ -15,6 +15,8 @@
     "format:check": "prettier --check .",
     "typecheck": "nuxt typecheck",
     "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "test:e2e": "playwright test",
@@ -24,6 +26,7 @@
     "db:studio": "drizzle-kit studio",
     "create-superadmin": "tsx scripts/create-superadmin.ts",
     "deploy": "nuxthub deploy",
+    "deploy:preview": "nuxthub deploy --preview",
     "deploy:wrangler": "wrangler pages deploy dist/"
   },
   "devDependencies": {
@@ -60,6 +63,7 @@
     "@auth/drizzle-adapter": "^0.7.0",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
+    "@nuxthub/core": "^0.5.18",
     "@nuxtjs/cloudinary": "^1.0.0",
     "@nuxtjs/i18n": "^8.0.0",
     "@nuxtjs/seo": "^2.0.0-rc.8",
