@@ -90,6 +90,7 @@ declare global {
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin')['nitroPlugin']
   const onHubReady: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks')['onHubReady']
   const parseCookies: typeof import('../../node_modules/h3')['parseCookies']
+  const parseMarkdown: typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/parser')['parseMarkdown']
   const promisifyNodeListener: typeof import('../../node_modules/h3')['promisifyNodeListener']
   const proxyHubAnalytics: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/analytics')['proxyHubAnalytics']
   const proxyHubBlob: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob')['proxyHubBlob']
@@ -97,6 +98,10 @@ declare global {
   const proxyHubDatabase: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/database')['proxyHubDatabase']
   const proxyHubKV: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv')['proxyHubKV']
   const proxyRequest: typeof import('../../node_modules/h3')['proxyRequest']
+  const queryCollection: typeof import('../../node_modules/@nuxt/content/dist/runtime/nitro')['queryCollection']
+  const queryCollectionItemSurroundings: typeof import('../../node_modules/@nuxt/content/dist/runtime/nitro')['queryCollectionItemSurroundings']
+  const queryCollectionNavigation: typeof import('../../node_modules/@nuxt/content/dist/runtime/nitro')['queryCollectionNavigation']
+  const queryCollectionSearchSections: typeof import('../../node_modules/@nuxt/content/dist/runtime/nitro')['queryCollectionSearchSections']
   const readBody: typeof import('../../node_modules/h3')['readBody']
   const readFormData: typeof import('../../node_modules/h3')['readFormData']
   const readMultipartFormData: typeof import('../../node_modules/h3')['readMultipartFormData']
@@ -129,6 +134,7 @@ declare global {
   const setResponseHeaders: typeof import('../../node_modules/h3')['setResponseHeaders']
   const setResponseStatus: typeof import('../../node_modules/h3')['setResponseStatus']
   const splitCookiesString: typeof import('../../node_modules/h3')['splitCookiesString']
+  const stringifyMarkdown: typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/stringify')['stringifyMarkdown']
   const toEventHandler: typeof import('../../node_modules/h3')['toEventHandler']
   const toNodeListener: typeof import('../../node_modules/h3')['toNodeListener']
   const toPlainHandler: typeof import('../../node_modules/h3')['toPlainHandler']
@@ -175,6 +181,9 @@ export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils'
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
 export { defineAppConfig } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
+export { queryCollection, queryCollectionSearchSections, queryCollectionNavigation, queryCollectionItemSurroundings } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxt/content/dist/runtime/nitro';
+export { parseMarkdown } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/parser';
+export { stringifyMarkdown } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/stringify';
 export { hubAnalytics, proxyHubAnalytics } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/analytics';
 export { requireNuxtHubAuthorization } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/auth';
 export { hubBlob, proxyHubBlob, ensureBlob } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob';

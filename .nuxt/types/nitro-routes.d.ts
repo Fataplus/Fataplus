@@ -113,14 +113,11 @@ declare module "nitropack/types" {
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }
-    '/_openapi.json': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nitropack/dist/runtime/internal/routes/openapi').default>>>>
+    '/__nuxt_content/:collection/sql_dump.txt': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/presets/cloudflare/database-handler').default>>>>
     }
-    '/_scalar': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nitropack/dist/runtime/internal/routes/scalar').default>>>>
-    }
-    '/_swagger': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nitropack/dist/runtime/internal/routes/swagger').default>>>>
+    '/__nuxt_content/:collection/query': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/api/query.post').default>>>>
     }
   }
 }

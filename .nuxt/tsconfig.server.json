@@ -107,10 +107,31 @@
         "../node_modules/nuxt/dist/core/runtime/nitro/utils/paths"
       ],
       "#hub/openapi": [
-        "./#internal/nitro/routes/openapi"
+        "../node_modules/@nuxthub/core/dist/runtime/templates/openapi"
+      ],
+      "#content/components": [
+        "./content/components"
+      ],
+      "#content/manifest": [
+        "./content/manifest"
+      ],
+      "#mdc-configs": [
+        "./mdc-configs"
+      ],
+      "#mdc-highlighter": [
+        "./mdc-highlighter"
+      ],
+      "#mdc-imports": [
+        "./mdc-imports"
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables/v3"
+      ],
+      "#content/adapter": [
+        "./db0/connectors/cloudflare-d1"
+      ],
+      "#content/local-adapter": [
+        "./db0/connectors/better-sqlite3"
       ]
     },
     "lib": [
@@ -120,10 +141,12 @@
     ]
   },
   "include": [
+    "./content/types.d.ts",
     "./types/nitro-nuxt.d.ts",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
-    "../node_modules/nitro-cloudflare-dev/runtime/server",
     "../node_modules/@nuxthub/core/runtime/server",
+    "../node_modules/@nuxtjs/mdc/runtime/server",
+    "../node_modules/@nuxt/content/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./types/nitro.d.ts",
     "../**/*",
@@ -133,8 +156,9 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/nitro-cloudflare-dev/node_modules",
     "../node_modules/@nuxthub/core/node_modules",
+    "../node_modules/@nuxtjs/mdc/node_modules",
+    "../node_modules/@nuxt/content/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"
   ]

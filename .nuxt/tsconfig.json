@@ -104,7 +104,22 @@
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#hub/openapi": [
-        "#internal/nitro/routes/openapi"
+        "../node_modules/@nuxthub/core/dist/runtime/templates/openapi"
+      ],
+      "#content/components": [
+        "./content/components"
+      ],
+      "#content/manifest": [
+        "./content/manifest"
+      ],
+      "#mdc-configs": [
+        "./mdc-configs"
+      ],
+      "#mdc-highlighter": [
+        "./mdc-highlighter"
+      ],
+      "#mdc-imports": [
+        "./mdc-imports"
       ],
       "#vue-router": [
         "../node_modules/vue-router"
@@ -166,6 +181,10 @@
     "../node_modules/nitro-cloudflare-dev/dist/runtime",
     "../node_modules/@nuxthub/core/runtime",
     "../node_modules/@nuxthub/core/dist/runtime",
+    "../node_modules/@nuxtjs/mdc/runtime",
+    "../node_modules/@nuxtjs/mdc/dist/runtime",
+    "../node_modules/@nuxt/content/runtime",
+    "../node_modules/@nuxt/content/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
     "../node_modules/@nuxt/telemetry/dist/runtime",
     ".."
@@ -178,6 +197,8 @@
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
     "../node_modules/nitro-cloudflare-dev/node_modules",
     "../node_modules/@nuxthub/core/node_modules",
+    "../node_modules/@nuxtjs/mdc/node_modules",
+    "../node_modules/@nuxt/content/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxtjs/tailwindcss/dist/runtime/server",
@@ -185,6 +206,10 @@
     "../node_modules/nitro-cloudflare-dev/dist/runtime/server",
     "../node_modules/@nuxthub/core/runtime/server",
     "../node_modules/@nuxthub/core/dist/runtime/server",
+    "../node_modules/@nuxtjs/mdc/runtime/server",
+    "../node_modules/@nuxtjs/mdc/dist/runtime/server",
+    "../node_modules/@nuxt/content/runtime/server",
+    "../node_modules/@nuxt/content/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../node_modules/@nuxt/telemetry/dist/runtime/server",
     "../.output"
