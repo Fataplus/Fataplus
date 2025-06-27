@@ -24,6 +24,7 @@ if (!("global" in globalThis)) {
 }
 const appLayoutTransition = false;
 const nuxtLinkDefaults = { "componentName": "NuxtLink" };
+const asyncDataDefaults = { "value": null, "errorValue": null, "deep": true };
 const appId = "nuxt-app";
 function getNuxtAppCtx(id = appId) {
   return getContext(id, {
@@ -380,12 +381,20 @@ async function getRouteRules(arg) {
     return defu({}, ..._routeRulesMatcher2.matchAll(path).reverse());
   }
 }
-const __nuxt_page_meta$2 = {
+const __nuxt_page_meta$4 = {
   layout: "admin",
   title: "Admin Dashboard"
 };
-const __nuxt_page_meta$1 = {
+const __nuxt_page_meta$3 = {
   layout: false
+};
+const __nuxt_page_meta$2 = {
+  title: "Formation Agricole",
+  description: "Formations spécialisées en agriculture pour Madagascar"
+};
+const __nuxt_page_meta$1 = {
+  title: "Communauté Agricole",
+  description: "Rejoignez la communauté des agriculteurs de Madagascar"
 };
 const __nuxt_page_meta = {
   title: "Marché Agricole",
@@ -395,7 +404,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-8QezOza4.js")
+    component: () => import("./_nuxt/index-BYYJ_Ptc.js")
   },
   {
     name: "auth-login",
@@ -405,7 +414,7 @@ const _routes = [
   {
     name: "admin",
     path: "/admin",
-    meta: __nuxt_page_meta$2 || {},
+    meta: __nuxt_page_meta$4 || {},
     component: () => import("./_nuxt/index-6-EB4dRO.js")
   },
   {
@@ -416,13 +425,25 @@ const _routes = [
   {
     name: "auth-register",
     path: "/auth/register",
-    meta: __nuxt_page_meta$1 || {},
+    meta: __nuxt_page_meta$3 || {},
     component: () => import("./_nuxt/register-NabNvdV_.js")
+  },
+  {
+    name: "learning",
+    path: "/learning",
+    meta: __nuxt_page_meta$2 || {},
+    component: () => import("./_nuxt/index-CTd3yx6C.js")
   },
   {
     name: "admin-dashboard",
     path: "/admin/dashboard",
     component: () => import("./_nuxt/dashboard-BlUsbcUK.js")
+  },
+  {
+    name: "community",
+    path: "/community",
+    meta: __nuxt_page_meta$1 || {},
+    component: () => import("./_nuxt/index-BVlRwAsP.js")
   },
   {
     name: "admin-users",
@@ -434,7 +455,7 @@ const _routes = [
     name: "marketplace",
     path: "/marketplace",
     meta: __nuxt_page_meta || {},
-    component: () => import("./_nuxt/index-BiSD4fMw.js")
+    component: () => import("./_nuxt/index-DqnYnh0x.js")
   },
   {
     name: "admin-products",
@@ -572,8 +593,8 @@ const globalMiddleware = [
   manifest_45route_45rule
 ];
 const namedMiddleware = {
-  admin: () => import("./_nuxt/admin-Cztk0oqc.js"),
-  superadmin: () => import("./_nuxt/superadmin-CwXp2Dk7.js")
+  admin: () => import("./_nuxt/admin-CthVF-ZD.js"),
+  superadmin: () => import("./_nuxt/superadmin-y81na3Xj.js")
 };
 const plugin = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
@@ -1849,9 +1870,11 @@ export {
   entry$1 as default,
   appLayoutTransition as e,
   _wrapInTransition as f,
-  defineNuxtRouteMiddleware as g,
+  asyncDataDefaults as g,
   createError as h,
+  defineNuxtRouteMiddleware as i,
   navigateTo as n,
+  tryUseNuxtApp as t,
   useHead as u
 };
 //# sourceMappingURL=server.mjs.map

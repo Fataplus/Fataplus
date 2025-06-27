@@ -13,7 +13,7 @@
               Découvrez les meilleurs produits agricoles de Madagascar
             </p>
           </div>
-          
+
           <!-- Search and Filter Actions -->
           <div class="flex items-center space-x-4">
             <div class="relative">
@@ -22,8 +22,10 @@
                 type="text"
                 placeholder="Rechercher des produits..."
                 class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              >
-              <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+              />
+              <i
+                class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              ></i>
             </div>
           </div>
         </div>
@@ -37,45 +39,58 @@
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
           Produits en Vedette
         </h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
           <!-- Product Cards -->
           <div
             v-for="product in featuredProducts"
             :key="product.id"
             class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
           >
-            <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg">
+            <div
+              class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg"
+            >
               <img
-                :src="product.image || product.images?.[0] || '/images/placeholder-product.jpg'"
+                :src="
+                  product.image ||
+                  product.images?.[0] ||
+                  '/images/placeholder-product.jpg'
+                "
                 :alt="product.name"
                 class="h-48 w-full object-cover object-center group-hover:opacity-75"
-              >
+              />
             </div>
-            
+
             <div class="p-4">
               <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                 {{ product.name }}
               </h3>
-              
-              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+
+              <p
+                class="mt-1 text-sm text-gray-500 dark:text-gray-400 line-clamp-2"
+              >
                 {{ product.description }}
               </p>
-              
+
               <div class="mt-4 flex items-center justify-between">
                 <div class="flex items-center">
                   <span class="text-lg font-bold text-primary-600">
                     {{ formatPrice(product.price) }}
                   </span>
                 </div>
-                
+
                 <div class="flex items-center space-x-2">
-                  <span :class="getStockClass(product.stock)" class="text-sm font-medium">
+                  <span
+                    :class="getStockClass(product.stock)"
+                    class="text-sm font-medium"
+                  >
                     {{ getStockLabel(product.stock) }}
                   </span>
                 </div>
               </div>
-              
+
               <div class="mt-4 flex items-center justify-between">
                 <div class="flex items-center">
                   <div class="flex items-center">
@@ -85,7 +100,7 @@
                     </span>
                   </div>
                 </div>
-                
+
                 <button
                   @click="addToCart(product)"
                   :disabled="product.stock === 0"
@@ -105,7 +120,7 @@
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
           Catégories Populaires
         </h2>
-        
+
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           <div
             v-for="category in popularCategories"
@@ -113,7 +128,9 @@
             class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center hover:shadow-md transition-shadow cursor-pointer"
           >
             <div class="text-3xl mb-2">{{ category.icon }}</div>
-            <h3 class="font-medium text-gray-900 dark:text-white">{{ category.name }}</h3>
+            <h3 class="font-medium text-gray-900 dark:text-white">
+              {{ category.name }}
+            </h3>
           </div>
         </div>
       </div>
@@ -122,84 +139,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useProducts } from '~/modules/marketplace/composables/useProducts'
+import { ref } from "vue";
+import { useProducts } from "~/modules/marketplace/composables/useProducts";
 
 // Meta
 definePageMeta({
-  title: 'Marché Agricole',
-  description: 'Découvrez les meilleurs produits agricoles de Madagascar'
-})
+  title: "Marché Agricole",
+  description: "Découvrez les meilleurs produits agricoles de Madagascar",
+});
 
 // Composables
-const { formatPrice, getStockLabel, getStockClass } = useProducts()
+const { formatPrice, getStockLabel, getStockClass } = useProducts();
+const { getFeaturedProducts, getProducts } = useFataplusContent();
 
 // Reactive data
-const searchQuery = ref('')
+const searchQuery = ref("");
 
-// Featured products (mock data)
-const featuredProducts = ref([
-  {
-    id: '1',
-    name: 'Riz Rouge de Lac Alaotra',
-    description: 'Riz rouge traditionnel de Madagascar, riche en nutriments',
-    price: 8500,
-    stock: 25,
-    rating: 4.8,
-    reviewCount: 156,
-    image: '/images/products/riz-rouge.jpg',
-    category: 'Céréales'
-  },
-  {
-    id: '2',
-    name: 'Vanille de Sambava',
-    description: 'Vanille premium de la région SAVA, qualité export',
-    price: 45000,
-    stock: 12,
-    rating: 4.9,
-    reviewCount: 89,
-    image: '/images/products/vanille.jpg',
-    category: 'Épices'
-  },
-  {
-    id: '3',
-    name: 'Litchis Frais',
-    description: 'Litchis fraîchement cueillis des Hautes Terres',
-    price: 6000,
-    stock: 0,
-    rating: 4.6,
-    reviewCount: 203,
-    image: '/images/products/litchis.jpg',
-    category: 'Fruits'
-  },
-  {
-    id: '4',
-    name: 'Haricots Rouges',
-    description: 'Haricots rouges bio, cultivés sans pesticides',
-    price: 4500,
-    stock: 38,
-    rating: 4.7,
-    reviewCount: 124,
-    image: '/images/products/haricots.jpg',
-    category: 'Légumineuses'
-  }
-])
+// Real data from Nuxt Content
+const { data: featuredProducts } = await useLazyAsyncData(
+  "featured-products",
+  () => getFeaturedProducts(8)
+);
 
-// Popular categories
+// Popular categories - could also come from content later
 const popularCategories = ref([
-  { id: '1', name: 'Céréales', icon: '🌾' },
-  { id: '2', name: 'Légumes', icon: '🥬' },
-  { id: '3', name: 'Fruits', icon: '🍓' },
-  { id: '4', name: 'Épices', icon: '🌶️' },
-  { id: '5', name: 'Légumineuses', icon: '🫘' },
-  { id: '6', name: 'Tubercules', icon: '🥔' }
-])
+  { id: "1", name: "Céréales", icon: "🌾" },
+  { id: "2", name: "Légumes", icon: "🥬" },
+  { id: "3", name: "Fruits", icon: "🍓" },
+  { id: "4", name: "Épices", icon: "🌶️" },
+  { id: "5", name: "Légumineuses", icon: "🫘" },
+  { id: "6", name: "Tubercules", icon: "🥔" },
+]);
 
 // Methods
 const addToCart = (product: any) => {
   if (product.stock > 0) {
-    console.log('Ajouté au panier:', product.name)
+    console.log("Ajouté au panier:", product.name);
     // Here you would implement actual cart functionality
   }
-}
-</script> 
+};
+</script>
