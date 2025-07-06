@@ -2,7 +2,7 @@
   <div
     class="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800"
   >
-    <!-- Hero Section with Flowbite styling -->
+    <!-- Hero Section with fleabite styling -->
     <div class="container mx-auto px-4 py-16">
       <div class="text-center mb-16">
         <div
@@ -21,6 +21,10 @@
             🌱 Fataplus
           </span>
         </h1>
+
+        <p class="mb-4 text-2xl font-semibold text-gray-700 dark:text-gray-300">
+          D'un Héritage de Croissance à un Avenir d'Opportunités
+        </p>
 
         <p
           class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200"
@@ -114,6 +118,89 @@
             Voir tous les produits
             <i class="ri-arrow-right-line ml-2"></i>
           </NuxtLink>
+        </div>
+      </div>
+
+      <!-- Legacy Project Spotlight -->
+      <div class="mb-16">
+        <div
+          class="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg shadow-xl p-1"
+        >
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div
+                  class="inline-flex items-center mb-4 px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full dark:bg-amber-900 dark:text-amber-200"
+                >
+                  <i class="ri-history-line mr-1"></i>
+                  Notre Histoire
+                </div>
+
+                <h2
+                  class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                >
+                  De FANAJARIANA TANY à Fataplus
+                </h2>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                  Découvrez comment un projet visionnaire de reboisement lancé
+                  en 2006 a évolué pour devenir la plateforme technologique
+                  leader de l'agriculture malgache, avec un impact prouvé sur le
+                  terrain.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div
+                    class="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg"
+                  >
+                    <div
+                      class="text-2xl font-bold text-green-600 dark:text-green-400"
+                    >
+                      180
+                    </div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">
+                      Hectares reboisés
+                    </div>
+                  </div>
+                  <div
+                    class="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg"
+                  >
+                    <div
+                      class="text-2xl font-bold text-blue-600 dark:text-blue-400"
+                    >
+                      294,000
+                    </div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">
+                      Plants produits
+                    </div>
+                  </div>
+                </div>
+
+                <NuxtLink
+                  to="/projects/legacy-fata"
+                  class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-green-600 to-green-700 rounded-lg hover:from-green-700 hover:to-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900 transition-all duration-300"
+                >
+                  <i class="ri-arrow-right-line mr-2"></i>
+                  Découvrir Notre Héritage
+                </NuxtLink>
+              </div>
+
+              <div class="flex justify-center">
+                <div class="relative">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur-2xl opacity-30"
+                  ></div>
+                  <div
+                    class="relative bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-full p-12"
+                  >
+                    <i
+                      class="ri-plant-line text-8xl text-green-600 dark:text-green-400"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -360,6 +447,13 @@
               Régions Couvertes
             </div>
           </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+            <i class="ri-information-line mr-1"></i>
+            Impact de l'agriculture malgache depuis 2006
+          </p>
         </div>
       </div>
     </div>

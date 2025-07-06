@@ -1,3 +1,5 @@
+import { queryContent } from "#imports";
+
 export const useFataplusContent = () => {
   // ====== PRODUCTS ======
   const getProducts = async (
@@ -9,7 +11,7 @@ export const useFataplusContent = () => {
       sort?: string;
     } = {}
   ) => {
-    let query = queryCollection("products");
+    let query = queryContent("products");
 
     if (options.category) {
       query = query.where("category", options.category);
@@ -31,7 +33,7 @@ export const useFataplusContent = () => {
   };
 
   const getProduct = async (slug: string) => {
-    return await queryCollection("products")
+    return await queryContent("products")
       .where("_path", `/products/${slug}`)
       .findOne();
   };
@@ -49,7 +51,7 @@ export const useFataplusContent = () => {
       limit?: number;
     } = {}
   ) => {
-    let query = queryCollection("courses");
+    let query = queryContent("courses");
 
     if (options.level) {
       query = query.where("level", options.level);
@@ -68,7 +70,7 @@ export const useFataplusContent = () => {
   };
 
   const getCourse = async (slug: string) => {
-    return await queryCollection("courses")
+    return await queryContent("courses")
       .where("_path", `/courses/${slug}`)
       .findOne();
   };
@@ -87,7 +89,7 @@ export const useFataplusContent = () => {
       limit?: number;
     } = {}
   ) => {
-    let query = queryCollection("articles").sort({ publishedAt: -1 });
+    let query = queryContent("articles").sort({ publishedAt: -1 });
 
     if (options.category) {
       query = query.where("category", options.category);
@@ -109,7 +111,7 @@ export const useFataplusContent = () => {
   };
 
   const getArticle = async (slug: string) => {
-    return await queryCollection("articles")
+    return await queryContent("articles")
       .where("_path", `/articles/${slug}`)
       .findOne();
   };
@@ -129,7 +131,7 @@ export const useFataplusContent = () => {
       limit?: number;
     } = {}
   ) => {
-    let query = queryCollection("guides");
+    let query = queryContent("guides");
 
     if (options.category) {
       query = query.where("category", options.category);
@@ -154,7 +156,7 @@ export const useFataplusContent = () => {
   };
 
   const getGuide = async (slug: string) => {
-    return await queryCollection("guides")
+    return await queryContent("guides")
       .where("_path", `/guides/${slug}`)
       .findOne();
   };
@@ -165,7 +167,7 @@ export const useFataplusContent = () => {
 
   // ====== LEGAL PAGES ======
   const getLegalPage = async (type: string) => {
-    return await queryCollection("legal").where("type", type).findOne();
+    return await queryContent("legal").where("type", type).findOne();
   };
 
   // ====== HOMEPAGE CONTENT ======
