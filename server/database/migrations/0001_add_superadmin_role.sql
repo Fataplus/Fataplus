@@ -1,5 +1,6 @@
 -- Migration: Add superadmin role to users table
 -- Date: 2025-06-24
+
 -- Description: Updates the role enum to include superadmin role
 
 -- First, add a temporary column with the new enum
@@ -15,24 +16,28 @@ UPDATE users SET role_new = role;
 CREATE TABLE users_new (
   id TEXT PRIMARY KEY,
   email TEXT NOT NULL UNIQUE,
-  name TEXT NOT NULL,
+  username TEXT, -- conserve username
+  password TEXT, -- conserve password
+  first_name TEXT,
+  last_name TEXT,
+  phone TEXT,
+  location TEXT,
   role TEXT CHECK (role IN ('superadmin', 'admin', 'farmer', 'vendor', 'user')) NOT NULL DEFAULT 'user',
-  password_hash TEXT NOT NULL,
-  is_verified INTEGER NOT NULL DEFAULT 0,
+  status TEXT DEFAULT 'active' NOT NULL,
+  is_verified INTEGER DEFAULT 0,
   email_verification_token TEXT,
   email_verification_expires INTEGER,
   password_reset_token TEXT,
   password_reset_expires INTEGER,
   last_login_at INTEGER,
-  created_at INTEGER NOT NULL,
-  updated_at INTEGER NOT NULL
+  created_at INTEGER,
+  updated_at INTEGER
 );
 
 -- Copy data from old table to new table
-INSERT INTO users_new 
-SELECT id, email, name, role_new, password_hash, is_verified, email_verification_token, 
-       email_verification_expires, password_reset_token, password_reset_expires, 
-       last_login_at, created_at, updated_at 
+INSERT INTO users_new
+SELECT id, email, username, password, first_name, last_name, phone, location, role_new, status, is_verified, email_verification_token,
+       email_verification_expires, password_reset_token, password_reset_expires, last_login_at, created_at, updated_at
 FROM users;
 
 -- Drop old table and rename new table
@@ -40,4 +45,4 @@ DROP TABLE users;
 ALTER TABLE users_new RENAME TO users;
 
 -- Clean up
-DROP TABLE IF EXISTS users_temp; 
+DROP TABLE IF EXISTS users_temp;
