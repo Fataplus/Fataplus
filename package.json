@@ -31,6 +31,7 @@
     "deploy:wrangler": "wrangler pages deploy dist/"
   },
   "devDependencies": {
+    "@cloudflare/puppeteer": "^1.0.3",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/ui": "^2.11.1",
