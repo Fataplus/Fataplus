@@ -1,0 +1,449 @@
+{
+  "name": "Fataplus RAG AI Assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fataplus-ai-query",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "AI Query Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "fataplus-ai-assistant"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "query-id",
+              "name": "query",
+              "value": "={{ $json.body.query || $json.query }}",
+              "type": "string"
+            },
+            {
+              "id": "user-id",
+              "name": "userId",
+              "value": "={{ $json.body.userId || $json.userId }}",
+              "type": "string"
+            },
+            {
+              "id": "context-id",
+              "name": "context",
+              "value": "={{ $json.body.context || {} }}",
+              "type": "object"
+            },
+            {
+              "id": "session-id",
+              "name": "sessionId",
+              "value": "={{ $json.body.sessionId || $now }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "format-input",
+      "name": "Format Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://fataplus.com/api/n8n/content/all",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "fetch-content",
+      "name": "Fetch Fataplus Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [640, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "fataplus-api-auth",
+          "name": "Fataplus API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://fataplus.com/api/n8n/users/farmers",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "fetch-farmers",
+      "name": "Fetch Farmer Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [640, 400],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "fataplus-api-auth",
+          "name": "Fataplus API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine all Fataplus data for RAG context\nconst contentData = $input.first().json.content || [];\nconst farmerData = $input.last().json.farmers || [];\nconst query = $('Format Input').item.json.query;\nconst userId = $('Format Input').item.json.userId;\n\n// Create comprehensive context for RAG\nconst ragContext = {\n  query: query,\n  userId: userId,\n  timestamp: new Date().toISOString(),\n  content: {\n    products: contentData.filter(item => item.type === 'product'),\n    courses: contentData.filter(item => item.type === 'course'),\n    articles: contentData.filter(item => item.type === 'article'),\n    guides: contentData.filter(item => item.type === 'guide'),\n    knowledge: contentData.filter(item => item.type === 'knowledge'),\n    stories: contentData.filter(item => item.type === 'story')\n  },\n  farmers: farmerData,\n  totalContent: contentData.length,\n  totalFarmers: farmerData.length\n};\n\n// Find relevant content based on query keywords\nconst queryLower = query.toLowerCase();\nconst relevantContent = contentData.filter(item => \n  item.title.toLowerCase().includes(queryLower) ||\n  item.content.toLowerCase().includes(queryLower) ||\n  (item.metadata.tags && item.metadata.tags.some(tag => \n    tag.toLowerCase().includes(queryLower)\n  ))\n).slice(0, 10); // Limit to top 10 most relevant\n\n// Find relevant farmers if query is about specific regions/crops\nconst relevantFarmers = farmerData.filter(farmer => \n  (farmer.region && farmer.region.toLowerCase().includes(queryLower)) ||\n  (farmer.primaryCrops && farmer.primaryCrops.some(crop => \n    crop.toLowerCase().includes(queryLower)\n  ))\n).slice(0, 5); // Limit to 5 relevant farmers\n\nreturn {\n  json: {\n    ragContext: ragContext,\n    relevantContent: relevantContent,\n    relevantFarmers: relevantFarmers,\n    searchMetadata: {\n      totalMatches: relevantContent.length + relevantFarmers.length,\n      contentMatches: relevantContent.length,\n      farmerMatches: relevantFarmers.length,\n      searchTerms: queryLower.split(' ')\n    }\n  }\n};"
+      },
+      "id": "process-rag-data",
+      "name": "Process RAG Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 2000
+        },
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "# Fataplus Agricultural AI Assistant\n\nYou are an expert agricultural AI assistant for Fataplus, a comprehensive agricultural platform serving farmers in Madagascar. Your role is to provide accurate, helpful, and contextually relevant information based on the Fataplus knowledge base.\n\n## Your Knowledge Base Includes:\n- **Products**: Agricultural products, seeds, tools, and equipment\n- **Courses**: Educational content for farmers\n- **Articles**: Latest agricultural news and insights\n- **Guides**: Step-by-step farming instructions\n- **Knowledge**: Technical agricultural information\n- **Stories**: Success stories from the farming community\n- **Farmer Data**: Information about registered farmers, their regions, crops, and challenges\n\n## Guidelines:\n1. **Be Accurate**: Only use information from the provided context\n2. **Be Helpful**: Provide actionable advice when possible\n3. **Be Regional**: Consider Madagascar's specific agricultural context\n4. **Be Respectful**: Acknowledge farmers' expertise and local knowledge\n5. **Be Practical**: Focus on solutions that farmers can implement\n\n## Response Format:\n- Provide clear, concise answers\n- Include relevant examples when available\n- Suggest related Fataplus resources\n- Use simple, accessible language\n- Include specific product/course recommendations when relevant\n\n## When You Don't Know:\nIf the query is outside your knowledge base, politely explain your limitations and suggest contacting Fataplus support or agricultural experts.\n\nRemember: You're here to empower Madagascar's farmers with knowledge and resources to improve their agricultural practices and livelihoods."
+            },
+            {
+              "role": "user",
+              "content": "=**User Query:** {{ $('Format Input').item.json.query }}\n\n**User Context:**\n- User ID: {{ $('Format Input').item.json.userId }}\n- Session: {{ $('Format Input').item.json.sessionId }}\n\n**Relevant Content from Fataplus:**\n{{ JSON.stringify($json.relevantContent, null, 2) }}\n\n**Relevant Farmer Data:**\n{{ JSON.stringify($json.relevantFarmers, null, 2) }}\n\n**Search Metadata:**\n{{ JSON.stringify($json.searchMetadata, null, 2) }}\n\nPlease provide a comprehensive answer based on this Fataplus knowledge base. If you reference specific products, courses, or guides, mention their titles and IDs for easy access."
+            }
+          ]
+        }
+      },
+      "id": "openai-chat",
+      "name": "OpenAI RAG Response",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [1040, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai-credentials",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "response-id",
+              "name": "response",
+              "value": "={{ $json.choices[0].message.content }}",
+              "type": "string"
+            },
+            {
+              "id": "query-id",
+              "name": "originalQuery",
+              "value": "={{ $('Format Input').item.json.query }}",
+              "type": "string"
+            },
+            {
+              "id": "user-id",
+              "name": "userId",
+              "value": "={{ $('Format Input').item.json.userId }}",
+              "type": "string"
+            },
+            {
+              "id": "session-id",
+              "name": "sessionId",
+              "value": "={{ $('Format Input').item.json.sessionId }}",
+              "type": "string"
+            },
+            {
+              "id": "timestamp-id",
+              "name": "timestamp",
+              "value": "={{ $now }}",
+              "type": "string"
+            },
+            {
+              "id": "metadata-id",
+              "name": "metadata",
+              "value": "={{ $('Process RAG Data').item.json.searchMetadata }}",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "format-response",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://fataplus.com/api/ai/conversation-log",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"userId\": \"{{ $json.userId }}\",\n  \"sessionId\": \"{{ $json.sessionId }}\",\n  \"query\": \"{{ $json.originalQuery }}\",\n  \"response\": \"{{ $json.response }}\",\n  \"timestamp\": \"{{ $json.timestamp }}\",\n  \"metadata\": {{ JSON.stringify($json.metadata) }},\n  \"source\": \"n8n-rag-workflow\"\n}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "log-conversation",
+      "name": "Log Conversation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1440, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"response\": \"{{ $json.response.replace(/\"/g, '\\\\\"') }}\",\n  \"metadata\": {\n    \"userId\": \"{{ $json.userId }}\",\n    \"sessionId\": \"{{ $json.sessionId }}\",\n    \"timestamp\": \"{{ $json.timestamp }}\",\n    \"searchResults\": {{ JSON.stringify($json.metadata) }},\n    \"source\": \"fataplus-rag-n8n\"\n  }\n}"
+      },
+      "id": "webhook-response",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1440, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "error-id",
+              "name": "error",
+              "value": "={{ $json.message || 'Unknown error occurred' }}",
+              "type": "string"
+            },
+            {
+              "id": "timestamp-id",
+              "name": "timestamp",
+              "value": "={{ $now }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "format-error",
+      "name": "Format Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1240, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"{{ $json.error }}\",\n  \"timestamp\": \"{{ $json.timestamp }}\",\n  \"message\": \"Sorry, I encountered an error processing your request. Please try again or contact support.\"\n}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1440, 500]
+    },
+    {
+      "parameters": {
+        "url": "https://api.pinecone.io/v1/vectors/upsert",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"vectors\": [\n    {\n      \"id\": \"query-{{ $('Format Input').item.json.sessionId }}\",\n      \"values\": {{ JSON.stringify($('Generate Embeddings').item.json.embedding) }},\n      \"metadata\": {\n        \"query\": \"{{ $('Format Input').item.json.query }}\",\n        \"userId\": \"{{ $('Format Input').item.json.userId }}\",\n        \"timestamp\": \"{{ $now }}\",\n        \"type\": \"user_query\"\n      }\n    }\n  ],\n  \"namespace\": \"fataplus-queries\"\n}",
+        "options": {}
+      },
+      "id": "store-query-vector",
+      "name": "Store Query Vector",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [640, 600],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "pinecone-api-auth",
+          "name": "Pinecone API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "generate-embeddings",
+      "name": "Generate Embeddings",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [440, 600],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai-credentials",
+          "name": "OpenAI API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "AI Query Webhook": {
+      "main": [
+        [
+          {
+            "node": "Format Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Input": {
+      "main": [
+        [
+          {
+            "node": "Fetch Fataplus Content",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Farmer Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Embeddings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Fataplus Content": {
+      "main": [
+        [
+          {
+            "node": "Process RAG Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Farmer Data": {
+      "main": [
+        [
+          {
+            "node": "Process RAG Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process RAG Data": {
+      "main": [
+        [
+          {
+            "node": "OpenAI RAG Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI RAG Response": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Conversation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Error": {
+      "main": [
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Embeddings": {
+      "main": [
+        [
+          {
+            "node": "Store Query Vector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-30T12:00:00.000Z",
+  "updatedAt": "2024-12-30T12:00:00.000Z",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {},
+  "tags": [
+    {
+      "id": "fataplus",
+      "name": "Fataplus"
+    },
+    {
+      "id": "rag",
+      "name": "RAG"
+    },
+    {
+      "id": "ai",
+      "name": "AI"
+    },
+    {
+      "id": "agriculture",
+      "name": "Agriculture"
+    }
+  ],
+  "triggerCount": 1,
+  "versionId": "1"
+}

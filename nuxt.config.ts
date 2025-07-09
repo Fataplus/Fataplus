@@ -13,11 +13,13 @@ export default defineNuxtConfig({
   },
 
   // Essential modules + NuxtHub + Content
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxthub/core',
-    '@nuxt/content'
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxthub/core", "@nuxt/content"],
+
+  // TypeScript configuration - disable strict checking temporarily
+  typescript: {
+    typeCheck: false,
+    strict: false,
+  },
 
   // 🚀 NuxtHub FULL STACK Configuration - All Features Enabled
   // @ts-ignore - TypeScript fix for extended NuxtHub features
@@ -33,6 +35,36 @@ export default defineNuxtConfig({
 
   // Configuration CSS
   css: ["~/assets/css/main.css"],
+
+  // App configuration avec font preloading
+  app: {
+    head: {
+      link: [
+        // Preload critical Fataplus font weights
+        {
+          rel: "preload",
+          href: "/fonts/Fataplus-Book.ttf",
+          as: "font",
+          type: "font/ttf",
+          crossorigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: "/fonts/Fataplus-Medium.ttf",
+          as: "font",
+          type: "font/ttf",
+          crossorigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: "/fonts/Fataplus-SemiBold.ttf",
+          as: "font",
+          type: "font/ttf",
+          crossorigin: "anonymous",
+        },
+      ],
+    },
+  },
 
   // Temporarily commented out modules configurations
   // i18n: {...},

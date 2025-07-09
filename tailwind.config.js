@@ -51,10 +51,11 @@ module.exports = {
         '88': '22rem',
         '128': '32rem',
       },
-      // Agricultural-themed font families
+      // FATAPLUS custom font families
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['Fataplus', 'Inter', 'system-ui', 'sans-serif'],
+        'display': ['Fataplus', 'Inter', 'system-ui', 'sans-serif'],
+        'fataplus': ['Fataplus', 'Inter', 'system-ui', 'sans-serif'],
       },
       // Enhanced shadows for cards and components
       boxShadow: {

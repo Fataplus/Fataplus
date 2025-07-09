@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documents Légaux FATAPLUS - PDFs</title>
+    <meta
+      name="description"
+      content="Accès aux documents légaux de FATAPLUS en format PDF - CGU, Politique de confidentialité, Cookies, et plus."
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 1rem;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .documents-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .document-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        border-left: 5px solid #4caf50;
+      }
+
+      .document-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .document-title {
+        font-size: 1.4rem;
+        color: #2e7d32;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .document-description {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .document-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: #888;
+      }
+
+      .file-size {
+        background: #f0f8f0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: #2e7d32;
+        font-weight: bold;
+      }
+
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #4caf50, #2e7d32);
+        color: white;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+      }
+
+      .download-btn:hover {
+        background: linear-gradient(135deg, #45a049, #1b5e20);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+      }
+
+      .download-btn::before {
+        content: "📄";
+        margin-right: 8px;
+        font-size: 1.1rem;
+      }
+
+      footer {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        margin-top: 20px;
+      }
+
+      .footer-links a {
+        color: #4caf50;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+
+      .footer-links a:hover {
+        color: #2e7d32;
+        text-decoration: underline;
+      }
+
+      .generation-info {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border-left: 4px solid #4caf50;
+      }
+
+      .generation-info h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+
+      .generation-info p {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px 15px;
+        }
+
+        .documents-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .logo {
+          font-size: 2rem;
+        }
+
+        .document-card {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">FATAPLUS</div>
+        <div class="subtitle">Documents Légaux - Version PDF</div>
+        <div class="description">
+          Accédez facilement à tous les documents légaux de FATAPLUS en format
+          PDF. Ces documents sont automatiquement générés à partir de nos
+          sources officielles et sont toujours à jour.
+        </div>
+      </header>
+
+      <div class="documents-grid">
+        <div class="document-card">
+          <div class="document-title">Conditions Générales d'Utilisation</div>
+          <div class="document-description">
+            Règles et conditions d'utilisation de la plateforme FATAPLUS.
+            Document essentiel définissant les droits et obligations des
+            utilisateurs.
+          </div>
+          <div class="document-meta">
+            <span>CGU FATAPLUS</span>
+            <span class="file-size">~137 KB</span>
+          </div>
+          <a href="./terms.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">Politique de Confidentialité</div>
+          <div class="document-description">
+            Protection des données personnelles et respect de la vie privée.
+            Conforme RGPD pour tous les utilisateurs de FATAPLUS.
+          </div>
+          <div class="document-meta">
+            <span>Protection des Données</span>
+            <span class="file-size">~135 KB</span>
+          </div>
+          <a href="./privacy.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">Politique des Cookies</div>
+          <div class="document-description">
+            Gestion des cookies et traceurs utilisés sur la plateforme.
+            Transparence totale sur la collecte de données.
+          </div>
+          <div class="document-meta">
+            <span>Gestion Cookies</span>
+            <span class="file-size">~111 KB</span>
+          </div>
+          <a href="./cookies.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">Suppression de Compte</div>
+          <div class="document-description">
+            Procédure détaillée pour supprimer votre compte et vos données
+            personnelles. Exercice de vos droits RGPD.
+          </div>
+          <div class="document-meta">
+            <span>Droit à l'effacement</span>
+            <span class="file-size">~108 KB</span>
+          </div>
+          <a href="./delete-account.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">Présentation FATAPLUS</div>
+          <div class="document-description">
+            Pitch deck complet de la plateforme agricole FATAPLUS. Vision,
+            mission et impact pour l'agriculture malgache.
+          </div>
+          <div class="document-meta">
+            <span>Pitch Deck</span>
+            <span class="file-size">~294 KB</span>
+          </div>
+          <a
+            href="./fataplus-pitch-deck.pdf"
+            class="download-btn"
+            target="_blank"
+          >
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">Politique de Retour</div>
+          <div class="document-description">
+            Conditions de retour, remboursement et échange pour tous nos
+            produits et services agricoles. Procédures détaillées et délais.
+          </div>
+          <div class="document-meta">
+            <span>Retours & Remboursements</span>
+            <span class="file-size">~246 KB</span>
+          </div>
+          <a href="./return-policy.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+
+        <div class="document-card">
+          <div class="document-title">EULA - Licence Utilisateur</div>
+          <div class="document-description">
+            Contrat de licence utilisateur final pour l'utilisation de la
+            plateforme FATAPLUS. Droits et restrictions d'usage.
+          </div>
+          <div class="document-meta">
+            <span>Licence d'Utilisation</span>
+            <span class="file-size">~270 KB</span>
+          </div>
+          <a href="./eula.pdf" class="download-btn" target="_blank">
+            Télécharger PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="generation-info">
+        <h3>🔄 Génération Automatique</h3>
+        <p>
+          Ces PDFs sont automatiquement générés à partir des documents sources
+          Markdown. Ils sont mis à jour régulièrement pour refléter les
+          dernières modifications.
+        </p>
+        <p>
+          <strong>Dernière génération :</strong>
+          <span id="generation-date"></span>
+        </p>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <strong>FATAPLUS</strong> - Plateforme Agricole Numérique
+          Madagascar<br />
+          Autonomisation des agriculteurs par la technologie
+        </div>
+        <div class="footer-links">
+          <a href="https://fata.plus">Site Web</a>
+          <a href="mailto:contact@fata.plus">Contact</a>
+          <a href="https://fata.plus/about">À Propos</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Set current generation date
+      document.getElementById("generation-date").textContent =
+        new Date().toLocaleDateString("fr-FR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+      // Add click tracking for analytics (optional)
+      document.querySelectorAll(".download-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const filename = this.href.split("/").pop();
+          console.log(`PDF téléchargé: ${filename}`);
+          // Add analytics tracking here if needed
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,27 +1,19 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <!-- Use the updated AppHeader component -->
-    <AppHeader />
-    
-    <!-- Main content with bottom padding for mobile navigation -->
-    <main class="pb-20 md:pb-0">
-      <NuxtPage />
-    </main>
-    
-    <!-- Bottom Navigation for Mobile -->
-    <BottomNavigation />
+  <div class="min-h-screen">
+    <!-- Minimal app wrapper -->
+    <NuxtPage />
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 // Basic app configuration
 useHead({
-  titleTemplate: '%s - Fataplus',
+  titleTemplate: "%s - Fataplus",
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { name: 'theme-color', content: '#16a34a' }
-  ]
-})
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "theme-color", content: "#16a34a" },
+  ],
+});
 </script>
 
 <style>
@@ -39,14 +31,16 @@ useHead({
 
 /* Styles globaux */
 html {
-  font-family: 'Inter', sans-serif;
+  font-family: "Fataplus", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Animation transitions */
@@ -79,4 +73,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-dark);
 }
-</style> 
+</style>
