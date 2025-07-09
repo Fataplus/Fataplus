@@ -1,9 +1,10 @@
-/*
 /**
  * 🚀 DEMO Cache NuxtHub - Agriculture Statistics
  * Performance +70% avec cache automatique activé!
+ *
+ * (DISABLED for NuxtHub deployment)
  */
-
+/*
 export default cachedEventHandler(async (event) => {
   // Simulation API lente agriculture (normalement 2-3 secondes)
   await new Promise(resolve => setTimeout(resolve, 1000))
@@ -52,4 +53,4 @@ export default cachedEventHandler(async (event) => {
   name: 'agriculture-stats',
   getKey: () => 'madagascar-agriculture-stats'
 })
-*/ 
+*/
