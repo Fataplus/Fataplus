@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     cache: true, // ✅ Cache Redis pour performance
     database: true, // ✅ D1 SQLite pour données
     kv: true, // ✅ Key-Value store pour sessions
-    vectorize: true, // ✅ Vector search pour IA
+    vectorize: {}, // ✅ Vector search pour IA (changed from true to object)
   },
 
   // CSS Framework: Tailwind CSS + Flowbite + Iconify
