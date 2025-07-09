@@ -1,1 +1,1 @@
-export { default } from "file:///Users/fefe/Documents/Fataplus/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///Users/fefe/Documents/Fataplus%20Project%20/Fataplus/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

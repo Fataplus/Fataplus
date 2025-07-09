@@ -155,14 +155,14 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { BlobObject, BlobListOptions, BlobPutOptions } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob.js'
-  import('/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob.js')
+  export type { BlobObject, BlobListOptions, BlobPutOptions } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob.d'
+  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob.d')
   // @ts-ignore
-  export type { HubHooks } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.js'
-  import('/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.js')
+  export type { HubHooks } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.d'
+  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.d')
   // @ts-ignore
-  export type { HubKV } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/kv.js'
-  import('/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/kv.js')
+  export type { HubKV } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv.d'
+  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv.d')
   // @ts-ignore
   export type { AuthUser, AuthenticatedEvent } from '../../server/utils/auth-middleware'
   import('../../server/utils/auth-middleware')
@@ -179,17 +179,17 @@ export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
-export { defineAppConfig } from '/Users/fefe/Documents/Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
-export { queryCollection, queryCollectionSearchSections, queryCollectionNavigation, queryCollectionItemSurroundings } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxt/content/dist/runtime/nitro';
-export { parseMarkdown } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/parser';
-export { stringifyMarkdown } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/stringify';
-export { hubAnalytics, proxyHubAnalytics } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/analytics';
-export { requireNuxtHubAuthorization } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/auth';
-export { hubBlob, proxyHubBlob, ensureBlob } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob';
-export { proxyHubCache } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/cache';
-export { hubDatabase, proxyHubDatabase } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/database';
-export { requireNuxtHubFeature } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/features';
-export { hubHooks, onHubReady } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/hooks';
-export { hubKV, proxyHubKV } from '/Users/fefe/Documents/Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/kv';
-export { verifyToken, requireAuth, requireRole, requireAdmin, requireSuperAdmin, canManageUser, getCurrentUser } from '/Users/fefe/Documents/Fataplus/server/utils/auth-middleware';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
+export { defineAppConfig } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
+export { queryCollection, queryCollectionSearchSections, queryCollectionNavigation, queryCollectionItemSurroundings } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxt/content/dist/runtime/nitro';
+export { parseMarkdown } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/parser';
+export { stringifyMarkdown } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxtjs/mdc/dist/runtime/stringify';
+export { hubAnalytics, proxyHubAnalytics } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/analytics';
+export { requireNuxtHubAuthorization } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/auth';
+export { hubBlob, proxyHubBlob, ensureBlob } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob';
+export { proxyHubCache } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/cache';
+export { hubDatabase, proxyHubDatabase } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/database';
+export { requireNuxtHubFeature } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/features';
+export { hubHooks, onHubReady } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/hooks';
+export { hubKV, proxyHubKV } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/kv';
+export { verifyToken, requireAuth, requireRole, requireAdmin, requireSuperAdmin, canManageUser, getCurrentUser } from '/Users/fefe/Documents/Fataplus Project /Fataplus/server/utils/auth-middleware';

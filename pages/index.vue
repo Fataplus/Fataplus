@@ -2,7 +2,7 @@
   <div class="min-h-screen p-8">
     <h1 class="text-4xl font-bold text-center mb-8">
       Connectez, Cultivez, Prospérez
-    </h1>
+        </h1>
 
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-lg mb-8">

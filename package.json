@@ -31,7 +31,6 @@
     "deploy:wrangler": "wrangler pages deploy dist/"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.6.1",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/ui": "^2.11.1",
@@ -46,7 +45,6 @@
     "@vitejs/plugin-vue": "^5.2.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.3",
-    "drizzle-kit": "^0.20.4",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
@@ -79,10 +77,10 @@
     "@vercel/analytics": "^1.1.1",
     "@vueuse/core": "^10.5.0",
     "@vueuse/nuxt": "^10.5.0",
+    "@whop/api": "^0.0.31",
+    "@whop/react": "^0.2.19",
     "bcryptjs": "^2.4.3",
-    "better-sqlite3": "11.10.0",
     "chart.js": "^4.4.0",
-    "drizzle-orm": "^0.29.1",
     "flowbite": "^3.1.2",
     "formidable": "^3.5.1",
     "jose": "^5.1.3",

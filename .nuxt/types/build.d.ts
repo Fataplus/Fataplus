@@ -20,3 +20,4 @@ declare module "#build/unhead.config.mjs";
 declare module "#build/components.plugin.mjs";
 declare module "#build/component-names.mjs";
 declare module "#build/components.islands.mjs";
+declare module "#build/component-chunk.mjs";

@@ -30,6 +30,9 @@ declare module "nitropack/types" {
     '/api/ai/crops/search': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/ai/crops/search.get').default>>>>
     }
+    '/api/ai/n8n-query': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/ai/n8n-query.post').default>>>>
+    }
     '/api/auth/login': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/auth/login.post').default>>>>
     }
@@ -50,6 +53,12 @@ declare module "nitropack/types" {
     }
     '/api/cache-demo/agriculture-stats': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/cache-demo/agriculture-stats.get').default>>>>
+    }
+    '/api/n8n/content/all': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/n8n/content/all.get').default>>>>
+    }
+    '/api/n8n/users/farmers': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/n8n/users/farmers.get').default>>>>
     }
     '/api/vectorize/crops-search': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/vectorize/crops-search.post').default>>>>
