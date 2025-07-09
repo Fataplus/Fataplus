@@ -1,3 +1,4 @@
+/*
 export default defineEventHandler(async (event) => {
   try {
     // Get all content from Nuxt Content collections
@@ -161,3 +162,4 @@ export default defineEventHandler(async (event) => {
     });
   }
 });
+*/

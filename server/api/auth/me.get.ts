@@ -1,3 +1,4 @@
+/*
 import * as jwt from 'jsonwebtoken'
 import { eq } from 'drizzle-orm'
 import { db } from '~/server/database/connection'
@@ -46,4 +47,5 @@ export default defineEventHandler(async (event) => {
       statusMessage: error.statusMessage || 'Token invalide'
     })
   }
-}) 
+})
+*/

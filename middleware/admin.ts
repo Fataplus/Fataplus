@@ -1,3 +1,4 @@
+/*
 export default defineNuxtRouteMiddleware(async (to, from) => {
   try {
     // Check if user is authenticated and has admin/superadmin role
@@ -29,4 +30,5 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       statusMessage: error.statusMessage || 'Access denied'
     })
   }
-}) 
+})
+*/

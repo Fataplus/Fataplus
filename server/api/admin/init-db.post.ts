@@ -1,3 +1,4 @@
+/*
 import * as bcrypt from 'bcryptjs'
 import { randomUUID } from 'crypto'
 
@@ -104,4 +105,5 @@ export default defineEventHandler(async (event) => {
       timestamp: new Date().toISOString()
     }
   }
-}) 
+})
+*/

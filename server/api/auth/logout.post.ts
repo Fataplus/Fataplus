@@ -1,3 +1,4 @@
+/*
 export default defineEventHandler(async (event) => {
   // For stateless JWT auth, logout is handled client-side
   // This endpoint can be used for logging logout events
@@ -6,4 +7,5 @@ export default defineEventHandler(async (event) => {
     success: true,
     message: 'Déconnexion réussie'
   }
-}) 
+})
+*/

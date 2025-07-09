@@ -1,3 +1,4 @@
+/*
 export default defineEventHandler(async (event) => {
   // Using NuxtHub's built-in database (D1)
   // This will automatically work with the NuxtHub deployment
@@ -60,3 +61,4 @@ export default defineEventHandler(async (event) => {
     }
   }
 }) 
+*/

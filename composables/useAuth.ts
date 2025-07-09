@@ -1,3 +1,4 @@
+/*
 // Simple auth composable without Pinia
 interface User {
   id: string

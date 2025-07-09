@@ -1,3 +1,4 @@
+/*
 import { requireSuperAdmin, canManageUser } from '~/server/utils/auth-middleware'
 import Database from 'better-sqlite3'
 
@@ -118,4 +119,5 @@ export default defineEventHandler(async (event) => {
       statusMessage: error.statusMessage || 'Failed to update user role'
     })
   }
-}) 
+})
+*/

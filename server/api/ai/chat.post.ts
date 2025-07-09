@@ -1,125 +1,141 @@
+/*
 /**
  * 🤖 AI Chat API with Madagascar Agriculture AutoRAG
  * Endpoint principal pour l'assistant agricole IA
  */
 
-import { defineEventHandler, readBody } from 'h3'
-import { searchKnowledge, madagascarCrops, agricultureCalendar, commonProblems } from '~/shared/data/madagascar-agriculture'
+import { defineEventHandler, readBody } from "h3";
+import {
+  searchKnowledge,
+  madagascarCrops,
+  agricultureCalendar,
+  commonProblems,
+} from "~/shared/data/madagascar-agriculture";
 
 interface ChatMessage {
-  role: 'user' | 'assistant'
-  content: string
+  role: "user" | "assistant";
+  content: string;
 }
 
 interface ChatRequest {
-  message: string
-  history?: ChatMessage[]
+  message: string;
+  history?: ChatMessage[];
 }
 
 interface ChatResponse {
-  response: string
-  sources: string[]
-  confidence: number
-  suggestions: string[]
+  response: string;
+  sources: string[];
+  confidence: number;
+  suggestions: string[];
 }
 
 export default defineEventHandler(async (event): Promise<ChatResponse> => {
   try {
-    const { message, history = [] }: ChatRequest = await readBody(event)
+    const { message, history = [] }: ChatRequest = await readBody(event);
 
     // 🔍 AutoRAG: Recherche dans la base de connaissances
-    const knowledgeResults = searchKnowledge(message)
-    
+    const knowledgeResults = searchKnowledge(message);
+
     // 🧠 Construction du contexte enrichi
-    const context = buildAgricultureContext(message, knowledgeResults)
-    
+    const context = buildAgricultureContext(message, knowledgeResults);
+
     // 🤖 Utilisation de NuxtHub AI
-    const aiResponse = await hubAI().run('@cf/meta/llama-2-7b-chat-fp16', {
+    const aiResponse = await hubAI().run("@cf/meta/llama-2-7b-chat-fp16", {
       messages: [
         {
-          role: 'system',
-          content: generateSystemPrompt(context)
+          role: "system",
+          content: generateSystemPrompt(context),
         },
-        ...history.map(msg => ({
+        ...history.map((msg) => ({
           role: msg.role,
-          content: msg.content
+          content: msg.content,
         })),
         {
-          role: 'user',
-          content: message
-        }
+          role: "user",
+          content: message,
+        },
       ],
       max_tokens: 1024,
-      temperature: 0.7
-    })
+      temperature: 0.7,
+    });
 
     // 📊 Calcul de confiance basé sur les sources trouvées
-    const confidence = calculateConfidence(knowledgeResults, message)
-    
+    const confidence = calculateConfidence(knowledgeResults, message);
+
     // 💡 Génération de suggestions contextuelles
-    const suggestions = generateSuggestions(message)
+    const suggestions = generateSuggestions(message);
 
     return {
-      response: aiResponse.response || "Désolé, je n'ai pas pu traiter votre demande.",
+      response:
+        aiResponse.response || "Désolé, je n'ai pas pu traiter votre demande.",
       sources: knowledgeResults.slice(0, 3),
       confidence,
-      suggestions
-    }
-
+      suggestions,
+    };
   } catch (error) {
-    console.error('AI Chat Error:', error)
-    
+    console.error("AI Chat Error:", error);
+
     // Fallback avec réponses prédéfinies
     return {
-      response: "Je rencontre des difficultés techniques. Voici quelques informations générales sur l'agriculture malgache...",
+      response:
+        "Je rencontre des difficultés techniques. Voici quelques informations générales sur l'agriculture malgache...",
       sources: ["Base de connaissances locale"],
       confidence: 0.5,
       suggestions: [
         "Comment cultiver le riz à Madagascar ?",
         "Calendrier agricole pour la vanille",
-        "Problèmes communs en agriculture"
-      ]
-    }
+        "Problèmes communs en agriculture",
+      ],
+    };
   }
-})
+});
 
 /**
  * 🧠 Construction du contexte AutoRAG
  */
-function buildAgricultureContext(query: string, searchResults: string[]): string {
-  const queryLower = query.toLowerCase()
-  let context = "CONTEXTE AGRICOLE MADAGASCAR:\n\n"
+function buildAgricultureContext(
+  query: string,
+  searchResults: string[]
+): string {
+  const queryLower = query.toLowerCase();
+  let context = "CONTEXTE AGRICOLE MADAGASCAR:\n\n";
 
   // Informations sur les cultures mentionnées
   Object.entries(madagascarCrops).forEach(([key, crop]) => {
-    if (queryLower.includes(key) || queryLower.includes(crop.name.toLowerCase())) {
-      context += `${crop.name}:\n`
-      context += `- Régions: ${crop.regions.join(', ')}\n`
-      context += `- Saisons: ${crop.seasons.join(', ')}\n`
-      context += `- Techniques: ${crop.techniques.join(', ')}\n`
-      context += `- Défis: ${crop.challenges.join(', ')}\n`
-      context += `- Valeur marché: ${crop.marketValue}\n\n`
+    if (
+      queryLower.includes(key) ||
+      queryLower.includes(crop.name.toLowerCase())
+    ) {
+      context += `${crop.name}:\n`;
+      context += `- Régions: ${crop.regions.join(", ")}\n`;
+      context += `- Saisons: ${crop.seasons.join(", ")}\n`;
+      context += `- Techniques: ${crop.techniques.join(", ")}\n`;
+      context += `- Défis: ${crop.challenges.join(", ")}\n`;
+      context += `- Valeur marché: ${crop.marketValue}\n\n`;
     }
-  })
+  });
 
   // Calendrier agricole pertinent
-  const currentMonth = new Date().toLocaleDateString('fr-FR', { month: 'long' })
-  const monthData = agricultureCalendar[currentMonth as keyof typeof agricultureCalendar]
+  const currentMonth = new Date().toLocaleDateString("fr-FR", {
+    month: "long",
+  });
+  const monthData =
+    agricultureCalendar[currentMonth as keyof typeof agricultureCalendar];
   if (monthData) {
-    context += `ACTIVITÉS ${currentMonth.toUpperCase()}:\n`
-    context += `${monthData.activities.join(', ')}\n`
-    context += `Régions concernées: ${monthData.regions.join(', ')}\n\n`
+    context += `ACTIVITÉS ${currentMonth.toUpperCase()}:\n`;
+    context += `${monthData.activities.join(", ")}\n`;
+    context += `Régions concernées: ${monthData.regions.join(", ")}\n\n`;
   }
 
   // Résultats de recherche
   if (searchResults.length > 0) {
-    context += "INFORMATIONS TROUVÉES:\n"
-    searchResults.forEach(result => {
-      context += `- ${result}\n`
-    })
+    context += "INFORMATIONS TROUVÉES:\n";
+    searchResults.forEach((result) => {
+      context += `- ${result}\n`;
+    });
   }
 
-  return context
+  return context;
 }
 
 /**
@@ -147,53 +163,53 @@ STYLE DE RÉPONSE:
 CONTEXTE ACTUEL:
 ${context}
 
-Répondez de manière utile, précise et adaptée au contexte agricole malgache.`
+Répondez de manière utile, précise et adaptée au contexte agricole malgache.`;
 }
 
 /**
  * 📊 Calcul de confiance
  */
 function calculateConfidence(results: string[], query: string): number {
-  if (results.length === 0) return 0.3
-  if (results.length >= 3) return 0.9
-  if (results.length >= 2) return 0.7
-  return 0.5
+  if (results.length === 0) return 0.3;
+  if (results.length >= 3) return 0.9;
+  if (results.length >= 2) return 0.7;
+  return 0.5;
 }
 
 /**
  * 💡 Génération de suggestions
  */
 function generateSuggestions(query: string): string[] {
-  const queryLower = query.toLowerCase()
-  
-  if (queryLower.includes('riz') || queryLower.includes('vary')) {
+  const queryLower = query.toLowerCase();
+
+  if (queryLower.includes("riz") || queryLower.includes("vary")) {
     return [
       "Techniques SRI pour le riz au Lac Alaotra",
       "Variétés de riz résistantes aux cyclones",
-      "Calendrier du vary aloha et vary vakiamindro"
-    ]
+      "Calendrier du vary aloha et vary vakiamindro",
+    ];
   }
-  
-  if (queryLower.includes('vanille') || queryLower.includes('vanilka')) {
+
+  if (queryLower.includes("vanille") || queryLower.includes("vanilka")) {
     return [
       "Pollinisation manuelle de la vanille",
       "Échaudage et séchage vanille SAVA",
-      "Prévention vol gousses vertes"
-    ]
+      "Prévention vol gousses vertes",
+    ];
   }
-  
-  if (queryLower.includes('café') || queryLower.includes('kafe')) {
+
+  if (queryLower.includes("café") || queryLower.includes("kafe")) {
     return [
       "Traitement café voie humide Madagascar",
       "Variétés arabica Hautes Terres",
-      "Accès marchés équitables café"
-    ]
+      "Accès marchés équitables café",
+    ];
   }
 
   // Suggestions générales
   return [
     "Calendrier agricole par région",
     "Cultures d'exportation Madagascar",
-    "Adaptation changement climatique"
-  ]
-} 
+    "Adaptation changement climatique",
+  ];
+}

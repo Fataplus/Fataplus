@@ -1,3 +1,4 @@
+/*
 import { queryContent } from "#imports";
 
 export const useFataplusContent = () => {
@@ -216,3 +217,4 @@ export const useFataplusContent = () => {
     getHomepageContent,
   };
 };
+*/

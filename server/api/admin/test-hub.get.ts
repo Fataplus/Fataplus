@@ -1,3 +1,4 @@
+/*
 export default defineEventHandler(async (event) => {
   try {
     // Test what's available in the global scope
@@ -30,4 +31,5 @@ export default defineEventHandler(async (event) => {
       timestamp: new Date().toISOString()
     }
   }
-}) 
+})
+*/

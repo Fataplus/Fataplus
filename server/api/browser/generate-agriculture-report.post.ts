@@ -1,41 +1,42 @@
+/*
 /**
  * 🚀 NuxtHub Browser Automation - Génération PDF Rapports Agricoles
  * Génère automatiquement des PDFs de rapports avec Puppeteer sur Cloudflare
  */
 
 export default defineEventHandler(async (event) => {
-  const { farmerName, region, crops, period } = await readBody(event)
-  
+  const { farmerName, region, crops, period } = await readBody(event);
+
   if (!farmerName || !region) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'farmerName and region are required'
-    })
+      statusMessage: "farmerName and region are required",
+    });
   }
 
   try {
     // 🚀 Utilisation de NuxtHub Browser pour automation
-    const browser = hubBrowser()
-    
+    const browser = hubBrowser();
+
     // Génération du contenu HTML du rapport
     const reportHTML = generateReportHTML({
       farmerName,
       region,
       crops: crops || [],
-      period: period || 'Décembre 2024',
-      generatedAt: new Date().toLocaleDateString('fr-FR')
-    })
-    
+      period: period || "Décembre 2024",
+      generatedAt: new Date().toLocaleDateString("fr-FR"),
+    });
+
     // Création du PDF avec le browser automation
     const pdfBuffer = await browser.pdf({
       html: reportHTML,
       options: {
-        format: 'A4',
+        format: "A4",
         margin: {
-          top: '20mm',
-          right: '15mm',
-          bottom: '20mm',
-          left: '15mm'
+          top: "20mm",
+          right: "15mm",
+          bottom: "20mm",
+          left: "15mm",
         },
         displayHeaderFooter: true,
         headerTemplate: `
@@ -47,16 +48,16 @@ export default defineEventHandler(async (event) => {
           <div style="font-size: 10px; width: 100%; text-align: center; color: #666;">
             Page <span class="pageNumber"></span> sur <span class="totalPages"></span>
           </div>
-        `
-      }
-    })
-    
+        `,
+      },
+    });
+
     // Stockage du PDF dans R2 Blob Storage
-    const fileName = `rapport-agricole-${farmerName.replace(/\s+/g, '-')}-${Date.now()}.pdf`
+    const fileName = `rapport-agricole-${farmerName.replace(/\s+/g, "-")}-${Date.now()}.pdf`;
     const pdfUrl = await hubBlob().put(fileName, pdfBuffer, {
-      contentType: 'application/pdf'
-    })
-    
+      contentType: "application/pdf",
+    });
+
     return {
       success: true,
       message: "Rapport PDF généré avec succès",
@@ -67,18 +68,17 @@ export default defineEventHandler(async (event) => {
         region,
         period,
         size: `${Math.round(pdfBuffer.length / 1024)} KB`,
-        generatedAt: new Date().toISOString()
+        generatedAt: new Date().toISOString(),
       },
       browserAutomation: {
         status: "success",
         engine: "Puppeteer on Cloudflare",
-        processingTime: "~2-3 secondes"
-      }
-    }
-
+        processingTime: "~2-3 secondes",
+      },
+    };
   } catch (error) {
-    console.error('Browser automation error:', error)
-    
+    console.error("Browser automation error:", error);
+
     // Fallback: génération simple sans PDF
     return {
       success: false,
@@ -90,16 +90,21 @@ export default defineEventHandler(async (event) => {
           region,
           crops,
           period,
-          textFormat: generateSimpleReport({ farmerName, region, crops, period })
-        }
-      }
-    }
+          textFormat: generateSimpleReport({
+            farmerName,
+            region,
+            crops,
+            period,
+          }),
+        },
+      },
+    };
   }
-})
+});
 
 function generateReportHTML(data: any) {
-  const { farmerName, region, crops, period, generatedAt } = data
-  
+  const { farmerName, region, crops, period, generatedAt } = data;
+
   return `
     <!DOCTYPE html>
     <html>
@@ -172,14 +177,19 @@ function generateReportHTML(data: any) {
 
       <div class="section">
         <h2>🌾 Cultures Analysées</h2>
-        ${crops.length > 0 ? 
-          crops.map((crop: string) => `
+        ${
+          crops.length > 0
+            ? crops
+                .map(
+                  (crop: string) => `
             <div class="crop-item">
               <strong>${crop}</strong>
               <p>Culture adaptée à la région ${region}. Recommandations saisonnières disponibles via l'Assistant IA.</p>
             </div>
-          `).join('') :
-          '<p>Aucune culture spécifiée. Consultez l\'Assistant IA pour des recommandations personnalisées.</p>'
+          `
+                )
+                .join("")
+            : "<p>Aucune culture spécifiée. Consultez l'Assistant IA pour des recommandations personnalisées.</p>"
         }
       </div>
 
@@ -209,12 +219,12 @@ function generateReportHTML(data: any) {
       </div>
     </body>
     </html>
-  `
+  `;
 }
 
 function generateSimpleReport(data: any) {
-  const { farmerName, region, crops, period } = data
-  
+  const { farmerName, region, crops, period } = data;
+
   return `
 RAPPORT AGRICOLE FATAPLUS
 ========================
@@ -222,10 +232,10 @@ RAPPORT AGRICOLE FATAPLUS
 Agriculteur: ${farmerName}
 Région: ${region}
 Période: ${period}
-Généré le: ${new Date().toLocaleDateString('fr-FR')}
+Généré le: ${new Date().toLocaleDateString("fr-FR")}
 
 CULTURES ANALYSÉES:
-${crops.length > 0 ? crops.map((crop: string) => `- ${crop}`).join('\n') : '- Aucune culture spécifiée'}
+${crops.length > 0 ? crops.map((crop: string) => `- ${crop}`).join("\n") : "- Aucune culture spécifiée"}
 
 RECOMMANDATIONS:
 - Consultez l'Assistant IA pour des conseils personnalisés
@@ -233,5 +243,5 @@ RECOMMANDATIONS:
 - Rejoignez la communauté pour échanger avec d'autres agriculteurs
 
 Contact: Assistant IA disponible 24/7 sur la plateforme Fataplus
-  `
-} 
+  `;
+}

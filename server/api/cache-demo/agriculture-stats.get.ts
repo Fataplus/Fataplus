@@ -1,3 +1,4 @@
+/*
 /**
  * 🚀 DEMO Cache NuxtHub - Agriculture Statistics
  * Performance +70% avec cache automatique activé!
@@ -50,4 +51,5 @@ export default cachedEventHandler(async (event) => {
   maxAge: 60 * 60, // 1 heure de cache
   name: 'agriculture-stats',
   getKey: () => 'madagascar-agriculture-stats'
-}) 
+})
+*/ 

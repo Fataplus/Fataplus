@@ -1,3 +1,4 @@
+/*
 interface FarmerProfile {
   id: string
   userId: string
@@ -240,4 +241,5 @@ export const useFarmerProfile = () => {
     getMadagascarRegions,
     getMadagascarCrops
   }
-} 
+}
+*/ 

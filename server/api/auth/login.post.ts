@@ -1,3 +1,4 @@
+/*
 import * as bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 import Database from 'better-sqlite3'
@@ -59,4 +60,5 @@ export default defineEventHandler(async (event) => {
       statusMessage: error.statusMessage || 'Erreur serveur'
     })
   }
-}) 
+})
+*/

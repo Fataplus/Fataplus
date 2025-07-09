@@ -30,9 +30,4 @@ export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callba
 export { setInterval } from '#app/compat/interval';
 export { useAuth } from '../composables/useAuth';
 export { useFarmerProfile } from '../composables/useFarmerProfile';
-export { useFataplusContent } from '../composables/useFataplusContent';
-export { queryCollection, queryCollectionSearchSections, queryCollectionNavigation, queryCollectionItemSurroundings } from '../node_modules/@nuxt/content/dist/runtime/app';
-export { flatUnwrap as unwrapSlot } from '../node_modules/@nuxtjs/mdc/dist/runtime/utils/node';
-export { parseMarkdown } from '../node_modules/@nuxtjs/mdc/dist/runtime/parser';
-export { stringifyMarkdown } from '../node_modules/@nuxtjs/mdc/dist/runtime/stringify';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
