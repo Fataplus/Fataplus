@@ -1,0 +1,8 @@
+name = "fataplus-nuxt-worker"
+main = "./dist/_worker.js"
+compatibility_date = "2024-06-01"
+
+# Uncomment and set your account_id if deploying directly via Wrangler CLI
+# account_id = "<your-cloudflare-account-id>"
+
+# If you need to specify routes or other settings, add them below as needed 
