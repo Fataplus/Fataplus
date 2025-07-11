@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fataplus - Plateforme Agricole de Madagascar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+              },
+              secondary: {
+                100: "#fef3c7",
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+              },
+              accent: {
+                500: "#8b5cf6",
+                600: "#7c3aed",
+              },
+              gray: {
+                50: "#f9fafb",
+                100: "#f3f4f6",
+                200: "#e5e7eb",
+                300: "#d1d5db",
+                400: "#9ca3af",
+                500: "#6b7280",
+                600: "#4b5563",
+                700: "#374151",
+                800: "#1f2937",
+                900: "#111827",
+              },
+            },
+            fontFamily: {
+              fataplus: ["Fataplus-Medium", "system-ui", "sans-serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+              "slide-up": "slideUp 0.5s ease-out",
+              float: "float 6s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Fataplus-Medium";
+        src: url("/fonts/Fataplus-Medium.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Fataplus-Bold";
+        src: url("/fonts/Fataplus-Bold.ttf") format("truetype");
+      }
+
+      /* Custom animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Glass morphism effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      /* Modern gradient backgrounds */
+      .gradient-bg-1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .gradient-bg-2 {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+
+      .gradient-bg-3 {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+
+      /* Hero background pattern */
+      .hero-bg {
+        background-image:
+          radial-gradient(
+            circle at 25% 25%,
+            rgba(34, 197, 94, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(139, 92, 246, 0.1) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.05) 0%,
+            rgba(139, 92, 246, 0.05) 100%
+          );
+      }
+
+      /* Modern card effects */
+      .modern-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .modern-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      /* Smooth scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #22c55e;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #16a34a;
+      }
+    </style>
+  </head>
+  <body class="antialiased bg-gray-50 font-sans">
+    <!-- Header Navigation -->
+    <nav
+      class="fixed top-0 w-full glass backdrop-blur-md z-50 transition-all duration-300"
+      x-data="{ mobileOpen: false, scrolled: false }"
+      x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+      :class="scrolled ? 'py-2' : 'py-4'"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg"
+            >
+              <i class="fas fa-seedling text-white text-xl"></i>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-2xl font-bold text-gray-900 font-fataplus leading-none"
+                >Fataplus</span
+              >
+              <span class="text-xs text-gray-500 font-medium"
+                >Agriculture 4.0</span
+              >
+            </div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="relative text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 group"
+            >
+              Fonctionnalités
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#marketplace"
+              class="relative text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 group"
+            >
+              Marketplace
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#learning"
+              class="relative text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 group"
+            >
+              Formation
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#ai-assistant"
+              class="relative text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 group"
+            >
+              IA Assistant
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <div class="flex items-center space-x-4 ml-8">
+              <button
+                class="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 px-4 py-2 rounded-xl hover:bg-gray-100"
+              >
+                Connexion
+              </button>
+              <button
+                class="bg-gradient-to-r from-primary-600 to-accent-500 text-white px-6 py-2.5 rounded-xl hover:shadow-lg transition-all duration-300 font-medium transform hover:scale-105"
+              >
+                Démarrer gratuitement
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            @click="mobileOpen = !mobileOpen"
+            class="lg:hidden p-3 rounded-xl hover:bg-gray-100 transition-colors"
+          >
+            <i
+              class="fas fa-bars text-gray-700 text-lg"
+              x-show="!mobileOpen"
+            ></i>
+            <i
+              class="fas fa-times text-gray-700 text-lg"
+              x-show="mobileOpen"
+            ></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          x-show="mobileOpen"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform scale-95"
+          x-transition:enter-end="opacity-100 transform scale-100"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform scale-100"
+          x-transition:leave-end="opacity-0 transform scale-95"
+          class="lg:hidden mt-4 p-6 bg-white rounded-2xl shadow-xl border border-gray-100"
+        >
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+              @click="mobileOpen = false"
+            >
+              Fonctionnalités
+            </a>
+            <a
+              href="#marketplace"
+              class="text-gray-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+              @click="mobileOpen = false"
+            >
+              Marketplace
+            </a>
+            <a
+              href="#learning"
+              class="text-gray-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+              @click="mobileOpen = false"
+            >
+              Formation
+            </a>
+            <a
+              href="#ai-assistant"
+              class="text-gray-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+              @click="mobileOpen = false"
+            >
+              IA Assistant
+            </a>
+            <div class="flex flex-col space-y-3 pt-4 border-t border-gray-100">
+              <button
+                class="text-left text-gray-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+              >
+                Connexion
+              </button>
+              <button
+                class="bg-gradient-to-r from-primary-600 to-accent-500 text-white px-6 py-3 rounded-xl font-medium shadow-lg"
+              >
+                Démarrer gratuitement
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center hero-bg overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float"
+        ></div>
+        <div
+          class="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute -bottom-8 left-20 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float"
+          style="animation-delay: 4s"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Hero Content -->
+          <div class="text-center lg:text-left animate-slide-up">
+            <div
+              class="inline-flex items-center bg-white/20 backdrop-blur-sm border border-white/30 text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-lg"
+            >
+              <div
+                class="w-2 h-2 bg-primary-500 rounded-full mr-3 animate-pulse"
+              ></div>
+              <i class="fas fa-leaf text-primary-600 mr-2"></i>
+              Agriculture Intelligente • Madagascar
+            </div>
+
+            <h1
+              class="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-none"
+            >
+              L'agriculture
+              <span
+                class="block bg-gradient-to-r from-primary-600 via-accent-500 to-secondary-500 bg-clip-text text-transparent"
+              >
+                de demain
+              </span>
+              commence ici
+            </h1>
+
+            <p
+              class="text-xl lg:text-2xl text-gray-600 mb-10 max-w-2xl font-light leading-relaxed"
+            >
+              Révolutionnez votre exploitation agricole avec notre plateforme
+              IA. Connectez-vous, apprenez, vendez et prospérez dans
+              l'écosystème agricole malgache.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12"
+            >
+              <button
+                class="group bg-gradient-to-r from-primary-600 to-accent-500 text-white px-10 py-5 rounded-2xl hover:shadow-2xl transition-all duration-300 font-semibold text-lg transform hover:scale-105 relative overflow-hidden"
+              >
+                <span class="relative z-10 flex items-center justify-center">
+                  <i class="fas fa-rocket mr-3"></i>
+                  Commencer gratuitement
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary-700 to-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </button>
+
+              <button
+                class="group glass text-gray-700 px-10 py-5 rounded-2xl hover:bg-white/30 transition-all duration-300 font-semibold text-lg border border-white/20"
+              >
+                <i class="fas fa-play mr-3 text-primary-600"></i>
+                Découvrir en vidéo
+              </button>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div
+              class="flex flex-wrap items-center gap-8 justify-center lg:justify-start text-sm text-gray-600"
+            >
+              <div class="flex items-center">
+                <div class="flex -space-x-2 mr-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                    class="w-8 h-8 rounded-full border-2 border-white"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face"
+                    class="w-8 h-8 rounded-full border-2 border-white"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                    class="w-8 h-8 rounded-full border-2 border-white"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium">5,000+ agriculteurs</span>
+              </div>
+              <div class="flex items-center">
+                <div class="flex text-yellow-400 mr-2">
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                  <i class="fas fa-star text-sm"></i>
+                </div>
+                <span class="font-medium">4.9/5 étoiles</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div
+            class="relative lg:ml-12 animate-slide-up"
+            style="animation-delay: 0.2s"
+          >
+            <!-- Main Dashboard Card -->
+            <div class="relative z-10 modern-card rounded-3xl p-8 shadow-2xl">
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center"
+                  >
+                    <i class="fas fa-tachometer-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900">Tableau de bord</h3>
+                    <p class="text-sm text-gray-500">
+                      Votre exploitation en temps réel
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-3 h-3 bg-green-500 rounded-full animate-pulse"
+                ></div>
+              </div>
+
+              <!-- Stats Grid -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div
+                  class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-4"
+                >
+                  <div class="flex items-center justify-between mb-2">
+                    <i class="fas fa-chart-line text-primary-600 text-lg"></i>
+                    <span class="text-xs text-primary-600 font-medium"
+                      >+12%</span
+                    >
+                  </div>
+                  <div class="text-2xl font-bold text-gray-900">2,450</div>
+                  <div class="text-sm text-gray-600">Kg récoltés</div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl p-4"
+                >
+                  <div class="flex items-center justify-between mb-2">
+                    <i class="fas fa-coins text-secondary-600 text-lg"></i>
+                    <span class="text-xs text-secondary-600 font-medium"
+                      >+28%</span
+                    >
+                  </div>
+                  <div class="text-2xl font-bold text-gray-900">125,000</div>
+                  <div class="text-sm text-gray-600">Ar de revenus</div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-accent-50 to-purple-100 rounded-2xl p-4"
+                >
+                  <div class="flex items-center justify-between mb-2">
+                    <i class="fas fa-users text-accent-600 text-lg"></i>
+                    <span class="text-xs text-accent-600 font-medium"
+                      >Actif</span
+                    >
+                  </div>
+                  <div class="text-2xl font-bold text-gray-900">48</div>
+                  <div class="text-sm text-gray-600">Clients fidèles</div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4"
+                >
+                  <div class="flex items-center justify-between mb-2">
+                    <i class="fas fa-robot text-blue-600 text-lg"></i>
+                    <span class="text-xs text-blue-600 font-medium">IA</span>
+                  </div>
+                  <div class="text-2xl font-bold text-gray-900">95%</div>
+                  <div class="text-sm text-gray-600">Précision</div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-3 rounded-xl font-medium text-sm hover:shadow-lg transition-all duration-300"
+                >
+                  <i class="fas fa-store mr-2"></i>
+                  Vendre
+                </button>
+                <button
+                  class="bg-gray-100 text-gray-700 px-4 py-3 rounded-xl font-medium text-sm hover:bg-gray-200 transition-all duration-300"
+                >
+                  <i class="fas fa-brain mr-2"></i>
+                  Assistant IA
+                </button>
+              </div>
+            </div>
+
+            <!-- Floating Cards -->
+            <div
+              class="absolute -top-6 -right-6 modern-card rounded-2xl p-4 shadow-lg animate-float max-w-xs"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-xl flex items-center justify-center"
+                >
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    Commande livrée
+                  </div>
+                  <div class="text-xs text-gray-500">
+                    50kg de riz • Antsirabe
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -left-6 modern-card rounded-2xl p-4 shadow-lg animate-float max-w-xs"
+              style="animation-delay: 1s"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-500 rounded-xl flex items-center justify-center"
+                >
+                  <i class="fas fa-lightbulb text-white"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">
+                    Conseil IA
+                  </div>
+                  <div class="text-xs text-gray-500">
+                    Optimiser l'irrigation demain
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Background Decorations -->
+            <div
+              class="absolute -z-10 top-10 left-10 w-40 h-40 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full opacity-20 blur-2xl"
+            ></div>
+            <div
+              class="absolute -z-10 bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-accent-200 to-accent-300 rounded-full opacity-20 blur-2xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-500 to-accent-500"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center bg-primary-50 text-primary-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-chart-bar mr-2"></i>
+            Impact en chiffres
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Une communauté qui grandit chaque jour
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Rejoignez des milliers d'agriculteurs qui transforment déjà leur
+            exploitation avec Fataplus
+          </p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center group">
+            <div
+              class="modern-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-users text-white text-2xl"></i>
+              </div>
+              <div
+                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent mb-2"
+              >
+                5,000+
+              </div>
+              <div class="text-gray-600 font-medium">Agriculteurs actifs</div>
+              <div class="text-sm text-gray-500 mt-1">+25% ce mois</div>
+            </div>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="modern-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-shopping-cart text-white text-2xl"></i>
+              </div>
+              <div
+                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-secondary-500 to-primary-600 bg-clip-text text-transparent mb-2"
+              >
+                12,000+
+              </div>
+              <div class="text-gray-600 font-medium">Produits vendus</div>
+              <div class="text-sm text-gray-500 mt-1">Ce trimestre</div>
+            </div>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="modern-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-accent-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+              </div>
+              <div
+                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-accent-500 to-purple-600 bg-clip-text text-transparent mb-2"
+              >
+                50+
+              </div>
+              <div class="text-gray-600 font-medium">Cours disponibles</div>
+              <div class="text-sm text-gray-500 mt-1">Certifiés experts</div>
+            </div>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="modern-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+              </div>
+              <div
+                class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-500 to-accent-500 bg-clip-text text-transparent mb-2"
+              >
+                22
+              </div>
+              <div class="text-gray-600 font-medium">Régions couvertes</div>
+              <div class="text-sm text-gray-500 mt-1">Sur Madagascar</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partners & Collaborators Section -->
+        <div class="mt-20">
+          <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Nos Partenaires & Collaborateurs
+            </h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Fataplus collabore avec des institutions reconnues pour développer
+              l'agriculture malgache
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center"
+          >
+            <!-- Banque Mondiale -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-globe text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">
+                  Banque Mondiale
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Financement</p>
+              </div>
+            </div>
+
+            <!-- PIC -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-industry text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">PIC</h4>
+                <p class="text-xs text-gray-500 mt-1">Innovation</p>
+              </div>
+            </div>
+
+            <!-- Miary Digital -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-laptop-code text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">Miary Digital</h4>
+                <p class="text-xs text-gray-500 mt-1">Technologie</p>
+              </div>
+            </div>
+
+            <!-- Zafy Tody -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-handshake text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">Zafy Tody</h4>
+                <p class="text-xs text-gray-500 mt-1">Partenariat</p>
+              </div>
+            </div>
+
+            <!-- Sitraka Prestataires -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-tools text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">
+                  Sitraka Prestataires
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Services</p>
+              </div>
+            </div>
+
+            <!-- Manj'Art Event -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">
+                  Manj'Art Event
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Événements</p>
+              </div>
+            </div>
+
+            <!-- FIM -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-university text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">FIM</h4>
+                <p class="text-xs text-gray-500 mt-1">Formation</p>
+              </div>
+            </div>
+
+            <!-- Creative Minds -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-lightbulb text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">
+                  Creative Minds
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Créativité</p>
+              </div>
+            </div>
+
+            <!-- Riake -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-network-wired text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">Riake</h4>
+                <p class="text-xs text-gray-500 mt-1">Réseau</p>
+              </div>
+            </div>
+
+            <!-- Here2be -->
+            <div
+              class="flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                </div>
+                <h4 class="font-medium text-gray-900 text-sm">Here2be</h4>
+                <p class="text-xs text-gray-500 mt-1">Localisation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Trust Indicators -->
+        <div
+          class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-60"
+        >
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-shield-check text-primary-600"></i>
+            <span class="text-sm font-medium text-gray-700"
+              >Plateforme sécurisée</span
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-clock text-primary-600"></i>
+            <span class="text-sm font-medium text-gray-700">Support 24/7</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-award text-primary-600"></i>
+            <span class="text-sm font-medium text-gray-700"
+              >Certifié qualité</span
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-mobile-alt text-primary-600"></i>
+            <span class="text-sm font-medium text-gray-700">App mobile</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <div
+            class="inline-flex items-center bg-white/60 backdrop-blur-sm text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium mb-6 shadow-sm border border-white/30"
+          >
+            <i class="fas fa-magic mr-2 text-primary-600"></i>
+            Fonctionnalités puissantes
+          </div>
+          <h2
+            class="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight"
+          >
+            Tout ce dont vous avez besoin pour
+            <span
+              class="bg-gradient-to-r from-primary-600 via-accent-500 to-secondary-500 bg-clip-text text-transparent"
+            >
+              réussir
+            </span>
+          </h2>
+          <p
+            class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed"
+          >
+            Une plateforme complète qui accompagne les agriculteurs malgaches
+            dans leur développement avec des outils innovants et intuitifs
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-20">
+          <!-- Marketplace Feature -->
+          <div id="marketplace" class="group relative">
+            <div
+              class="modern-card rounded-3xl p-10 h-full hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden"
+            >
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+
+              <div class="relative z-10">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-xl"
+                >
+                  <i class="fas fa-store text-white text-3xl"></i>
+                </div>
+
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                  Marketplace
+                </h3>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Vendez vos produits directement aux consommateurs et achetez
+                  ce dont vous avez besoin pour votre exploitation.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-primary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium"
+                      >Vente directe producteur-consommateur</span
+                    >
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-primary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium"
+                      >Gestion intelligente des stocks</span
+                    >
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-primary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium"
+                      >Système de notation transparent</span
+                    >
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 rounded-2xl hover:shadow-lg transition-all duration-300 font-semibold text-lg group-hover:scale-[1.02] transform"
+                >
+                  Explorer le marketplace
+                  <i
+                    class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learning Feature -->
+          <div id="learning" class="group relative">
+            <div
+              class="modern-card rounded-3xl p-10 h-full hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden"
+            >
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-secondary-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+
+              <div class="relative z-10">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-xl"
+                >
+                  <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                </div>
+
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">Formation</h3>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Accédez à des cours spécialisés et des guides pratiques pour
+                  améliorer vos techniques agricoles.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-secondary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium">Cours vidéo interactifs</span>
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-secondary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium"
+                      >Techniques adaptées à Madagascar</span
+                    >
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-secondary-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium">Certificats reconnus</span>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-4 rounded-2xl hover:shadow-lg transition-all duration-300 font-semibold text-lg group-hover:scale-[1.02] transform"
+                >
+                  Commencer à apprendre
+                  <i
+                    class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Feature -->
+          <div id="community" class="group relative">
+            <div
+              class="modern-card rounded-3xl p-10 h-full hover:shadow-2xl transition-all duration-500 border border-white/20 relative overflow-hidden"
+            >
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+
+              <div class="relative z-10">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-xl"
+                >
+                  <i class="fas fa-users text-white text-3xl"></i>
+                </div>
+
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                  Communauté
+                </h3>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Rejoignez une communauté active d'agriculteurs pour partager
+                  vos expériences et obtenir des conseils.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-blue-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium">Forums par région</span>
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-blue-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium"
+                      >Groupes spécialisés par culture</span
+                    >
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <div
+                      class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                    >
+                      <i class="fas fa-check text-blue-600 text-sm"></i>
+                    </div>
+                    <span class="font-medium">Événements et rencontres</span>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-2xl hover:shadow-lg transition-all duration-300 font-semibold text-lg group-hover:scale-[1.02] transform"
+                >
+                  Rejoindre la communauté
+                  <i
+                    class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Features Row -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="modern-card rounded-2xl p-8 flex items-center space-x-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Application Mobile
+              </h4>
+              <p class="text-gray-600">
+                Gérez votre exploitation où que vous soyez avec notre app
+                intuitive.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="modern-card rounded-2xl p-8 flex items-center space-x-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Analytics Avancées
+              </h4>
+              <p class="text-gray-600">
+                Suivez vos performances et optimisez vos rendements avec nos
+                outils d'analyse.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section id="ai-assistant" class="py-24 bg-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+            >
+              <i class="fas fa-robot mr-2"></i>
+              Intelligence Artificielle
+            </div>
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Votre assistant IA
+              <span class="text-purple-600">personnel</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+              Obtenez des conseils personnalisés pour votre exploitation grâce à
+              notre assistant IA formé sur l'agriculture malgache.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <i class="fas fa-brain text-purple-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    Conseils personnalisés
+                  </h4>
+                  <p class="text-gray-600">
+                    Recommandations adaptées à votre région et vos cultures
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <i class="fas fa-calendar text-purple-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    Planification des cultures
+                  </h4>
+                  <p class="text-gray-600">
+                    Optimisez vos calendriers de plantation et récolte
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <i class="fas fa-shield-alt text-purple-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">
+                    Prévention des maladies
+                  </h4>
+                  <p class="text-gray-600">
+                    Détection précoce et traitement des problèmes
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition-all transform hover:scale-105 font-medium text-lg shadow-lg"
+            >
+              <i class="fas fa-comments mr-2"></i>
+              Essayer l'assistant IA
+            </button>
+          </div>
+          <div class="relative">
+            <div class="bg-white rounded-2xl p-6 shadow-2xl">
+              <div class="flex items-center space-x-3 mb-4">
+                <div
+                  class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-robot text-purple-600"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">
+                    Assistant Fataplus
+                  </div>
+                  <div class="text-sm text-green-500">En ligne</div>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div class="bg-gray-100 rounded-lg p-3 max-w-sm">
+                  <p class="text-gray-800">
+                    Bonjour ! Je suis votre assistant agricole. Comment puis-je
+                    vous aider aujourd'hui ?
+                  </p>
+                </div>
+                <div
+                  class="bg-purple-600 text-white rounded-lg p-3 max-w-sm ml-auto"
+                >
+                  <p>Quand dois-je planter mon riz à Antsirabe ?</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-3 max-w-sm">
+                  <p class="text-gray-800">
+                    Pour la région d'Antsirabe, la meilleure période pour
+                    planter le riz est entre octobre et décembre, en fonction
+                    des précipitations. Voici mon conseil détaillé...
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center space-x-2">
+                <input
+                  type="text"
+                  placeholder="Posez votre question..."
+                  class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+                <button
+                  class="bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Ce que disent nos
+            <span class="text-primary-600">agriculteurs</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Découvrez comment Fataplus transforme l'agriculture à Madagascar
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+                alt="Rakoto"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <div class="font-semibold text-gray-900">Rakoto Andry</div>
+                <div class="text-sm text-gray-600">
+                  Producteur de riz, Antsirabe
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Grâce à Fataplus, j'ai pu vendre directement ma récolte aux
+              consommateurs et augmenter mes revenus de 40%. L'assistant IA
+              m'aide aussi à optimiser mes plantations."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face"
+                alt="Hery"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <div class="font-semibold text-gray-900">Hery Razafy</div>
+                <div class="text-sm text-gray-600">
+                  Cultivatrice de vanille, Sambava
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Les formations sur la plateforme m'ont permis d'améliorer la
+              qualité de ma vanille. Maintenant, mes clients me font confiance
+              et reviennent régulièrement."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
+                alt="Nirina"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <div class="font-semibold text-gray-900">Nirina Rabe</div>
+                <div class="text-sm text-gray-600">Éleveur, Fianarantsoa</div>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "La communauté Fataplus m'a aidé à résoudre mes problèmes
+              d'élevage. L'entraide entre agriculteurs fait vraiment la
+              différence."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-600 to-primary-700">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">
+          Prêt à transformer votre agriculture ?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Rejoignez des milliers d'agriculteurs qui utilisent déjà Fataplus pour
+          développer leur exploitation
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white text-primary-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 font-medium text-lg shadow-lg"
+          >
+            <i class="fas fa-rocket mr-2"></i>
+            Créer mon compte gratuitement
+          </button>
+          <button
+            class="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-all font-medium text-lg"
+          >
+            <i class="fas fa-phone mr-2"></i>
+            Nous contacter
+          </button>
+        </div>
+        <p class="text-primary-200 text-sm mt-6">
+          Gratuit pour toujours • Pas de carte de crédit requise
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-2 mb-6">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-seedling text-white text-lg"></i>
+              </div>
+              <span class="text-2xl font-bold font-fataplus">Fataplus</span>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+              La plateforme agricole de référence à Madagascar. Nous connectons
+              les agriculteurs, facilitons les échanges et partageons les
+              connaissances pour une agriculture durable.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >À propos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Marketplace</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Formation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Communauté</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Assistant IA</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Support</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Centre d'aide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Conditions d'utilisation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Politique de confidentialité</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">
+              © 2024 Fataplus. Tous droits réservés.
+            </p>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+              <span class="text-gray-400 text-sm"
+                >Made with ❤️ in Madagascar</span
+              >
+              <div class="flex items-center space-x-2">
+                <img
+                  src="https://flagcdn.com/w20/mg.png"
+                  alt="Madagascar"
+                  class="w-5 h-auto"
+                />
+                <span class="text-gray-400 text-sm">🇲🇬</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector("nav");
+        if (window.scrollY > 100) {
+          navbar.classList.add("shadow-lg");
+        } else {
+          navbar.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+  </body>
+</html>

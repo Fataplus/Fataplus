@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fataplus – Cultivant l'innovation pour une agriculture malgache prospère</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg { background: linear-gradient(120deg, #e0ffe7 0%, #f8fafc 100%); }
+    .section-bg { background: #f8fafc; }
+    .faq-accordion input:checked ~ .faq-content { display: block; }
+    .faq-accordion .faq-content { display: none; }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-white">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-2xl font-bold text-green-700">Fataplus</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#" class="hover:text-green-700 font-medium">Accueil</a>
+        <a href="#features" class="hover:text-green-700 font-medium">Fonctionnalités</a>
+        <a href="#join" class="hover:text-green-700 font-medium">Rejoindre Fataplus</a>
+        <a href="#about" class="hover:text-green-700 font-medium">À propos</a>
+        <div class="relative group">
+          <button class="hover:text-green-700 font-medium flex items-center">
+            Presse
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
+            <a href="#app-update" class="block px-4 py-2 hover:bg-gray-100">App Update</a>
+            <a href="#activity" class="block px-4 py-2 hover:bg-gray-100">Activity</a>
+            <a href="#blogs" class="block px-4 py-2 hover:bg-gray-100">Blogs</a>
+            <a href="#brand-press" class="block px-4 py-2 hover:bg-gray-100">Brand Press</a>
+            <a href="#pitch" class="block px-4 py-2 hover:bg-gray-100">Pitch</a>
+          </div>
+        </div>
+        <a href="#contact" class="hover:text-green-700 font-medium">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <!-- Mobile menu button (not implemented for brevity) -->
+        <button class="text-green-700">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg py-16 px-4">
+    <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+      <div class="w-full max-w-3xl mb-8">
+        <!-- Placeholder for animated video montage -->
+        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-6 shadow-inner">
+          <span class="text-gray-500 text-lg">[Vidéo montage 2006–2025 Fataplus – 3 vidéos, storytelling]</span>
+        </div>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-green-800 mb-4">Cultivant l'innovation pour une agriculture malgache prospère et durable.</h1>
+      <p class="text-lg md:text-2xl text-gray-700 mb-6">Découvrez comment Fataplus réinvente l'agriculture à Madagascar depuis 2006.</p>
+      <a href="https://whop.com/fataplus" class="inline-block px-8 py-3 bg-green-700 text-white font-semibold rounded-lg shadow hover:bg-green-800 transition text-lg">Rejoignez-nous sur Whop</a>
+    </div>
+  </section>
+
+  <!-- Admin App Introduction -->
+  <section class="section-bg py-16 px-4" id="admin">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1">
+        <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-4">Gérez votre agriculture avec Fataplus Admin</h2>
+        <p class="text-gray-700 mb-6">admin.fata.plus est votre tableau de bord centralisé pour la gestion, l'analyse, et l'automatisation de votre activité agricole. Suivi des ventes, gestion des membres, statistiques, et bien plus.</p>
+        <a href="#join" class="inline-block px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-700 transition">S'abonner à Fataplus Admin</a>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <!-- Placeholder for dashboard screenshot/animation -->
+        <div class="w-full max-w-md aspect-video bg-gray-200 rounded-lg flex items-center justify-center shadow-inner">
+          <span class="text-gray-500">[Capture ou animation du dashboard]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stakeholder Features Overview -->
+  <section class="py-16 px-4" id="features">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-8 text-center">Des solutions pour tous les acteurs de l'agriculture</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Agricultor Card -->
+        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+          <div class="mb-3 text-green-700 text-3xl">👩‍🌾</div>
+          <h3 class="font-bold text-lg mb-2">Agriculteurs</h3>
+          <p class="text-gray-600 mb-3 text-center">Outils de gestion, accès au marché, formations, communauté et accompagnement personnalisé.</p>
+          <a href="#agriculteur-details" class="text-green-700 hover:underline text-sm">Découvrir les fonctionnalités</a>
+        </div>
+        <!-- Vendeur Card -->
+        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+          <div class="mb-3 text-green-700 text-3xl">🛒</div>
+          <h3 class="font-bold text-lg mb-2">Vendeurs</h3>
+          <p class="text-gray-600 mb-3 text-center">Marketplace, gestion des stocks, commandes, paiements sécurisés, livraison intégrée.</p>
+          <a href="#vendeur-details" class="text-green-700 hover:underline text-sm">Découvrir les fonctionnalités</a>
+        </div>
+        <!-- Formateur Card -->
+        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+          <div class="mb-3 text-green-700 text-3xl">🎓</div>
+          <h3 class="font-bold text-lg mb-2">Formateurs</h3>
+          <p class="text-gray-600 mb-3 text-center">Création de modules, suivi des apprenants, outils interactifs, certification, analytics.</p>
+          <a href="#formateur-details" class="text-green-700 hover:underline text-sm">Découvrir les fonctionnalités</a>
+        </div>
+        <!-- Partenaire Card -->
+        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+          <div class="mb-3 text-green-700 text-3xl">🤝</div>
+          <h3 class="font-bold text-lg mb-2">Partenaires</h3>
+          <p class="text-gray-600 mb-3 text-center">Intégration API, visibilité, co-innovation, accès à la communauté, reporting avancé.</p>
+          <a href="#partenaire-details" class="text-green-700 hover:underline text-sm">Découvrir les fonctionnalités</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do / Value Proposition -->
+  <section class="section-bg py-16 px-4" id="about">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-8 text-center">Ce que nous faisons – et ce que vous pouvez obtenir</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-bold text-lg mb-2 text-green-700">Agri-Preneurs & Entreprises</h3>
+          <p class="text-gray-700 mb-4">Fataplus accompagne la croissance de votre activité, la digitalisation de vos processus, et l'accès à de nouveaux marchés. Profitez d'une plateforme tout-en-un pour booster votre productivité et votre visibilité.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2 text-green-700">Design & AgriTech</h3>
+          <p class="text-gray-700 mb-4">Vous souhaitez des solutions créatives ou technologiques inspirées par Fataplus ? Notre équipe propose des services sur-mesure en design, développement web, et intégration AgriTech pour accélérer votre transformation digitale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-4" id="faq">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-8 text-center">Questions fréquentes</h2>
+      <div class="faq-accordion space-y-4">
+        <div>
+          <input type="checkbox" id="faq1" class="hidden peer">
+          <label for="faq1" class="block cursor-pointer bg-white rounded-lg shadow px-6 py-4 font-semibold text-green-700 peer-checked:bg-green-50 transition">Qu'est-ce que Fataplus ?</label>
+          <div class="faq-content bg-green-50 rounded-b-lg px-6 py-4 text-gray-700">Fataplus est une plateforme numérique dédiée à l'agriculture malgache, offrant des outils de gestion, de formation, de vente et de collaboration pour tous les acteurs du secteur.</div>
+        </div>
+        <div>
+          <input type="checkbox" id="faq2" class="hidden peer">
+          <label for="faq2" class="block cursor-pointer bg-white rounded-lg shadow px-6 py-4 font-semibold text-green-700 peer-checked:bg-green-50 transition">Comment rejoindre Fataplus ?</label>
+          <div class="faq-content bg-green-50 rounded-b-lg px-6 py-4 text-gray-700">Cliquez sur "Rejoignez-nous sur Whop" ou "S'abonner à Fataplus Admin" pour créer votre compte et accéder à nos services.</div>
+        </div>
+        <div>
+          <input type="checkbox" id="faq3" class="hidden peer">
+          <label for="faq3" class="block cursor-pointer bg-white rounded-lg shadow px-6 py-4 font-semibold text-green-700 peer-checked:bg-green-50 transition">Quels sont les tarifs et les offres ?</label>
+          <div class="faq-content bg-green-50 rounded-b-lg px-6 py-4 text-gray-700">Fataplus propose des offres adaptées à chaque profil : agriculteur, vendeur, formateur, partenaire. Consultez la page d'abonnement ou contactez-nous pour un devis personnalisé.</div>
+        </div>
+        <div>
+          <input type="checkbox" id="faq4" class="hidden peer">
+          <label for="faq4" class="block cursor-pointer bg-white rounded-lg shadow px-6 py-4 font-semibold text-green-700 peer-checked:bg-green-50 transition">Quel support est disponible ?</label>
+          <div class="faq-content bg-green-50 rounded-b-lg px-6 py-4 text-gray-700">Notre équipe support est disponible par email, chat, et téléphone pour vous accompagner dans la prise en main et l'utilisation de la plateforme.</div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://whop.com/fataplus" class="inline-block px-8 py-3 bg-green-700 text-white font-semibold rounded-lg shadow hover:bg-green-800 transition text-lg">Prêt à rejoindre la révolution agricole ? Rejoignez Fataplus aujourd'hui !</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-10 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-2xl font-bold text-green-700 mb-2">Fataplus</span>
+        <div class="flex space-x-4 mb-2">
+          <a href="#" class="text-gray-600 hover:text-green-700">Accueil</a>
+          <a href="#features" class="text-gray-600 hover:text-green-700">Fonctionnalités</a>
+          <a href="#join" class="text-gray-600 hover:text-green-700">Rejoindre</a>
+          <a href="#about" class="text-gray-600 hover:text-green-700">À propos</a>
+          <a href="#press" class="text-gray-600 hover:text-green-700">Presse</a>
+          <a href="#contact" class="text-gray-600 hover:text-green-700">Contact</a>
+        </div>
+        <div class="flex space-x-4">
+          <a href="https://twitter.com/fataplus" class="text-gray-400 hover:text-green-700" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337 3.1a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616 3c-2.72 0-4.924 2.206-4.924 4.924 0 .386.044.762.127 1.124C7.728 8.807 4.1 6.884 1.671 3.882a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg></a>
+          <a href="https://facebook.com/fataplus" class="text-gray-400 hover:text-green-700" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+          <a href="mailto:contact@fata.plus" class="text-gray-400 hover:text-green-700" aria-label="Email"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065l-11.99-8.065h23.98l-11.99 8.065zm11.99-9.065h-23.98c-1.104 0-2 .896-2 2v16c0 1.104.896 2 2 2h23.98c1.104 0 2-.896 2-2v-16c0-1.104-.896-2-2-2zm-11.99 11.065l-11.99-8.065v14.065h23.98v-14.065l-11.99 8.065z"/></svg></a>
+        </div>
+      </div>
+      <div class="text-gray-500 text-sm mt-4 md:mt-0">
+        &copy; 2006–2025 Fataplus. Tous droits réservés.<br>
+        <a href="#legal" class="hover:underline">Mentions légales</a> ·
+        <a href="#privacy" class="hover:underline">Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

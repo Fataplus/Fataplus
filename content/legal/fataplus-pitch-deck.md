@@ -1,113 +1,97 @@
-# FATAPLUS – Pitch Deck 2025
+---
+title: "Pitch Deck Fataplus"
+subtitle: "Réinventer l'agriculture malgache depuis 2006"
+date: "2025-09-07"
+---
+
+# Fataplus – Cultivant l'innovation pour une agriculture malgache prospère et durable
+
+## Elevator Pitch (F-A-T-A+)
+
+> « Je ne suis pas toujours à l’aise pour parler en public, alors j’ai organisé mon discours en quatre étapes : F-A-T-A+. »
+
+- **F – Famille & Histoire (2006)**  
+  En 2006, mon père a lancé une mission de réhabilitation des bassins versants à Alaotra Mangoro, via ‘FATA – Fanajariana ny Tany’.  
+  *Indice : pense à ta famille en 2006 et au mot “FATA”.*
+
+- **A – Analyse des Terrains**  
+  Il a analysé les sols, prévu des améliorations et documenté des pratiques agricoles adaptées.  
+  *Indice : “A” pour Analyse, visualise des cartes de terrain.*
+
+- **T – Transmission aux ZGC**  
+  Ces savoirs ont été transmis aux communautés ZGC, qui ont pu appliquer et vendre les résultats de leur travail.  
+  *Indice : “T” pour Transmettre, imagine un livre ouvert entre mains paysannes.*
+
+- **A+ – AgriTech & Modernité**  
+  Aujourd’hui, Fataplus est la nouvelle version de ce projet : partager et numériser ces techniques grâce aux outils technologiques modernes, pour accélérer et étendre l’impact.  
+  *Indice : “A+” comme AgriTech +++, pense à “plus de tech, plus de portée”.*
+
+✔️ Rappel rapide : **F-A-T-A+**  
+Famille (2006) – Analyse – Transmission – AgriTech+
 
 ---
 
-## Slide 1. 🌱 Vision
+## 1. Problème
 
-**Connecter, former et autonomiser les agriculteurs de Madagascar grâce au digital.**
-> Une agriculture plus productive, inclusive, durable et résiliente.
+- **Fragmentation du secteur agricole** : Difficulté d'accès au marché, manque de formation, isolement des agriculteurs, inefficacité des circuits de vente.
+- **Manque de digitalisation** : Peu d'outils numériques adaptés, faible visibilité des producteurs, absence de données pour piloter l'activité.
+- **Défis climatiques et économiques** : Vulnérabilité face aux aléas, faible résilience, accès limité à l'innovation.
 
----
+## 2. Notre Solution
 
-## Slide 2. 🚩 Mission
+- **Fataplus** : La première plateforme numérique tout-en-un dédiée à l'agriculture à Madagascar.
+- **Marketplace agricole** : Vente directe, gestion des stocks, paiement sécurisé, livraison intégrée.
+- **LMS & Communauté** : Formations interactives, accompagnement, réseau d'entraide, partage de bonnes pratiques.
+- **Admin App** : Tableau de bord centralisé (admin.fata.plus) pour piloter, analyser, automatiser.
+- **Services AgriTech & Design** : Offres sur-mesure pour la digitalisation et la croissance des acteurs du secteur.
 
-- Offrir une plateforme numérique tout-en-un pour l’agriculture malgache
-- Accélérer l’accès au marché, à la formation, à la communauté et aux services innovants
-- Favoriser l’inclusion financière, la traçabilité, la montée en compétences et l’empowerment rural
+## 3. Marché & Opportunité
 
----
+- +10 millions d'agriculteurs à Madagascar, 80% de la population active.
+- Marché en pleine mutation : digitalisation, montée en gamme, besoin de traçabilité et de transparence.
+- Potentiel d'extension régional (Afrique de l'Est, Océan Indien).
 
-## Slide 3. 🚨 Problème
+## 4. Produit & Fonctionnalités Clés
 
-- 80% de la population vit de l’agriculture, mais reste isolée, peu formée, sans accès facile aux marchés, à l’info, au financement
-- Manque de transparence, de traçabilité, de débouchés, d’outils digitaux adaptés
-- Fragmentation des solutions, absence d’écosystème intégré
+- **Marketplace** : Produits locaux, gestion des commandes, paiement mobile, logistique intelligente.
+- **Formation** : Modules interactifs, quiz, certification, suivi de progression.
+- **Communauté** : Forums, événements, matchmaking, mentorat.
+- **Admin** : Analytics, gestion multi-acteurs, automatisation, reporting.
+- **API & Intégrations** : Dolibarr, Nextcloud, DocuSeal, Stripe, etc.
 
----
+## 5. Traction & Impact
 
-## Slide 4. 💡 Solution : FATAPLUS
+- +20 000 utilisateurs historiques (2006–2024)
+- 1ère plateforme agricole malgache à intégrer IA, e-commerce, et formation en ligne.
+- Partenariats avec ONG, institutions, entreprises locales et internationales.
+- Témoignages d'agriculteurs, vendeurs, formateurs, partenaires.
 
-- Plateforme digitale tout-en-un, mobile-first, multilingue (FR/MG), accessible offline
-- **Marketplace** : mise en relation directe producteurs, acheteurs, coopératives, exportateurs
-- **Learning (LMS)** : formations interactives, IA pédagogique, certifications, quiz, badges
-- **Communauté** : profils vérifiés, messagerie, forums, événements, entraide
-- **Intégrations** : ERP (Dolibarr), Nextcloud, DocuSeal, Paperless, SOGo, Stripe, etc.
-- **Outils IA** : assistant agricole, synthèse de documents, recommandations personnalisées
+## 6. Business Model
 
----
+- Abonnement SaaS (Admin, Marketplace, Formation)
+- Commissions sur transactions
+- Services premium (design, développement, intégration)
+- Partenariats et offres B2B
 
-## Slide 5. 🎯 Marché & Opportunité
+## 7. Équipe
 
-- 1,5M agriculteurs, 10 000 coopératives, 5 000 acheteurs/transformateurs, ONG, institutions, exportateurs
-- Marché adressable : +10M€ (services, abonnements, commissions, data, formation, SaaS)
-- Croissance rapide du mobile, digitalisation, besoin d’inclusion et de traçabilité
+- **Fondateur** : Fefe Rakoto, pionnier de l'agri-digital à Madagascar
+- **Équipe pluridisciplinaire** : Tech, design, agriculture, formation, business
+- **Réseau d'experts** : Mentors, partenaires, ambassadeurs
 
----
+## 8. Vision & Ambition
 
-## Slide 6. 📈 Traction & Impact
+- Devenir la référence de l'agriculture connectée à Madagascar et en Afrique.
+- Accélérer la transition vers une agriculture durable, inclusive, et innovante.
+- Créer un écosystème où chaque acteur trouve sa place, progresse, et prospère.
 
-- +5 000 utilisateurs pilotes, 20 coopératives partenaires, 1 000 produits référencés
-- 1ère plateforme agricole malgache intégrant IA, e-commerce, formation, services
-- **Impact** : hausse des revenus, accès à la formation, traçabilité, inclusion financière, empowerment rural
+## 9. Appel à l'action
 
----
-
-## Slide 7. 💸 Business Model
-
-- Commissions sur transactions marketplace (B2B/B2C)
-- Abonnements premium (formation, outils IA, services avancés)
-- Intégration SaaS pour coopératives, ONG, entreprises
-- Services de certification, traçabilité, data analytics
-- Partenariats institutionnels et subventions
-
----
-
-## Slide 8. 🏆 Différenciation
-
-- Plateforme intégrée, mobile, multilingue, IA, conformité RGPD, écosystème ouvert
-- UX adaptée au terrain, offline, gamification, notifications, support multicanal
-- Sécurité, confidentialité, accessibilité, inclusion
+**Prêt à rejoindre la révolution agricole ?**
+- Rejoignez-nous sur [Whop](https://whop.com/fataplus)
+- Essayez [Fataplus Admin](https://admin.fata.plus)
+- Contactez-nous pour un partenariat ou une démo personnalisée : [contact@fata.plus](mailto:contact@fata.plus)
 
 ---
 
-## Slide 9. 👥 Équipe
-
-- Fondateurs : experts agriTech, data, développement logiciel, formation, impact social
-- +10 collaborateurs (dev, IA, UX, support, terrain)
-- Advisory board : agronomie, tech, business, ONG, institutions
-
----
-
-## Slide 10. 🗺️ Roadmap
-
-- **2025** : déploiement national, mobile app, IA multilingue, paiement mobile, API partenaires
-- **2026** : extension Afrique de l’Est, modules finance/assurance, marketplace B2B export
-- **2027** : plateforme ouverte, API, IA prédictive, big data agricole
-
----
-
-## Slide 11. 💶 Finances & Besoin
-
-- CA 2024 : 50k€
-- Objectif 2025 : 250k€ (scaling, mobile, IA, acquisition)
-- Besoin : 500k€ (tech, marketing, terrain, support, R&D IA)
-
----
-
-## Slide 12. 🌍 Impact & Valeurs
-
-- Inclusion, transparence, empowerment, durabilité, souveraineté alimentaire
-- Respect des données, éthique, open innovation, collaboration
-
----
-
-## Slide 13. 🚀 Appel à action
-
-**Rejoignez la révolution agricole malgache !**
-- Investissez, devenez partenaire, pilotez l’innovation avec FATAPLUS
-- Contact : [contact@fata.plus](mailto:contact@fata.plus)
-- Site : [https://fata.plus](https://fata.plus)
-
----
-
-**FATAPLUS – L’agriculture connectée, inclusive et durable pour Madagascar.**
+*Fataplus – Ensemble, cultivons l'avenir de Madagascar.*
