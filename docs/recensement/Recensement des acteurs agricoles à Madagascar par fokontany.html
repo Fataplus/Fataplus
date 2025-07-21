@@ -1,0 +1,811 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Recensement des acteurs agricoles à Madagascar par fokontany - 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#f8f6f0',
+                            100: '#efe9d8',
+                            200: '#ddd1b0',
+                            300: '#c6b381',
+                            400: '#b3995f',
+                            500: '#a0844a',
+                            600: '#8a6e3e',
+                            700: '#715735',
+                            800: '#5d4830',
+                            900: '#4f3d2a',
+                        },
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a1b1a1',
+                            400: '#7a907a',
+                            500: '#5d755d',
+                            600: '#485c48',
+                            700: '#3c4b3c',
+                            800: '#323e32',
+                            900: '#2b342b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(93, 117, 93, 0.9) 0%, rgba(71, 87, 71, 0.7) 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .toc-fixed {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 280px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(93, 117, 93, 0.2);
+        }
+        .content-with-toc {
+            margin-left: 320px;
+        }
+        @media (max-width: 1024px) {
+            .toc-fixed {
+                display: none;
+            }
+            .content-with-toc {
+                margin-left: 0;
+            }
+        }
+        .citation-link {
+            color: #5d755d;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .citation-link:hover {
+            color: #485c48;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(246, 247, 246, 0.8) 0%, rgba(227, 231, 227, 0.6) 100%);
+            border: 1px solid rgba(93, 117, 93, 0.1);
+        }
+    </style>
+  </head>
+
+  <body class="bg-stone-50 text-slate-800 font-sans">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed rounded-lg shadow-lg p-6">
+      <h3 class="font-serif font-semibold text-lg text-sage-700 mb-4">Sommaire</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#introduction" class="text-sage-600 hover:text-sage-800 transition-colors">Introduction</a>
+        </li>
+        <li>
+          <a href="#typologies" class="text-sage-600 hover:text-sage-800 transition-colors">1. Typologies des exploitations agricoles</a>
+        </li>
+        <li>
+          <a href="#methodologie" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">1.1 Méthodologie WAW/FAO</a>
+        </li>
+        <li>
+          <a href="#types-exploitations" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">1.2 Types d&#39;exploitations</a>
+        </li>
+        <li>
+          <a href="#repartition" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">1.3 Répartition nationale</a>
+        </li>
+        <li>
+          <a href="#identification" class="text-sage-600 hover:text-sage-800 transition-colors">2. Identification par fokontany</a>
+        </li>
+        <li>
+          <a href="#donnees-fokontany" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">2.1 Données partielles</a>
+        </li>
+        <li>
+          <a href="#cas-mandritsara" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">2.2 Cas de Mandritsara</a>
+        </li>
+        <li>
+          <a href="#autres-acteurs" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">2.3 Autres acteurs</a>
+        </li>
+        <li>
+          <a href="#defis" class="text-sage-600 hover:text-sage-800 transition-colors">3. Défis majeurs</a>
+        </li>
+        <li>
+          <a href="#defis-environnement" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">3.1 Environnement et ressources</a>
+        </li>
+        <li>
+          <a href="#defis-marches" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">3.2 Marchés et infrastructures</a>
+        </li>
+        <li>
+          <a href="#defis-institutionnels" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">3.3 Défis institutionnels</a>
+        </li>
+        <li>
+          <a href="#programmes" class="text-sage-600 hover:text-sage-800 transition-colors pl-4">3.4 Programmes de réponse</a>
+        </li>
+        <li>
+          <a href="#limites" class="text-sage-600 hover:text-sage-800 transition-colors">4. Limites et recommandations</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content-with-toc">
+      <!-- Hero Section -->
+      <section class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0">
+          <img src="https://kimi-web-img.moonshot.cn/img/www.club-des-voyages.com/dc30572e861dfa45b4fd9aca4f329375f67b6a27.jpg" alt="Paysage agricole de Madagascar avec rizières en terrasses" class="w-full h-full object-cover" size="wallpaper" aspect="wide" color="green" style="photo" query="paysage rizières terrasses madagascar" referrerpolicy="no-referrer" data-modified="1" data-score="11598.00"/>
+          <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Title Section -->
+            <div class="text-white">
+              <h1 class="font-serif text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow">
+                <em>Recensement des acteurs agricoles</em>
+                <br/>
+                <span class="text-4xl lg:text-5xl">à Madagascar par fokontany</span>
+              </h1>
+              <p class="text-xl lg:text-2xl font-light text-stone-100 leading-relaxed text-shadow">
+                Une analyse approfondie des typologies, défis et perspectives du secteur agricole malgache en 2025
+              </p>
+              <div class="mt-8 flex items-center space-x-6 text-stone-200">
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Juillet 2025</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-map-marked-alt"></i>
+                  <span>14,299 Fokontany</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-sage-700 mb-2">50%</div>
+                <div class="text-sm text-sage-600">Des exploitations font moins de 0,75ha</div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-sage-700 mb-2">22%</div>
+                <div class="text-sm text-sage-600">Des terres détenues par ces exploitations</div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-sage-700 mb-2">2004-2005</div>
+                <div class="text-sm text-sage-600">Dernier recensement agricole complet</div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div class="text-3xl font-bold text-sage-700 mb-2">2025</div>
+                <div class="text-sm text-sage-600">Nouveau RGA en préparation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section id="introduction" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl leading-relaxed text-slate-700 mb-8">
+              Un recensement exhaustif et détaillé de tous les acteurs agricoles dans chaque fokontany de Madagascar pour l&#39;année 2025 n&#39;est pas actuellement disponible. Les données existantes sont partielles, souvent anciennes (comme le Recensement Général de l&#39;Agriculture de 2004-2005 ou l&#39;analyse CFSVA de 2010), ou proviennent d&#39;études de cas localisées.
+            </p>
+
+            <div class="bg-sage-50 border-l-4 border-sage-400 p-6 my-8">
+              <p class="text-sage-800 font-medium">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Des typologies d&#39;exploitations agricoles ont été établies (par exemple, par la FAO/WAW), mais leur répartition précise au niveau national par fokontany n&#39;est pas systématiquement documentée.
+              </p>
+            </div>
+
+            <p class="text-lg leading-relaxed text-slate-700">
+              Les acteurs agricoles, y compris les exploitants et d&#39;autres intervenants des filières (collecteurs, transformateurs, etc.), font face à de nombreux défis, notamment environnementaux, d&#39;accès aux marchés et aux intrants, ainsi que des défis institutionnels et financiers. Des programmes comme DEFIS+ visent à y répondre. Un nouveau Recensement Général de l&#39;Agriculture (RGA 3) est en préparation pour 2024-2025 et devrait fournir des données plus récentes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: Typologies -->
+      <section id="typologies" class="py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="font-serif text-4xl font-bold text-sage-800 mb-8">1. Typologies des exploitations agricoles</h2>
+
+          <div class="mb-12">
+            <p class="text-lg leading-relaxed text-slate-700 mb-6">
+              L&#39;initiative <strong>World Agriculture Watch (WAW)</strong>, hébergée par l&#39;Organisation des Nations Unies pour l&#39;alimentation et l&#39;agriculture (FAO), a pour objectif de documenter les transformations structurelles des exploitations agricoles afin d&#39;éclairer le dialogue politique en prenant mieux en compte la diversité des types d&#39;agricultures et les dynamiques de changement à différentes échelles territoriales <a href="https://agritrop.cirad.fr/586887/1/2017_D20_WAW_Mada_2017_Synthese.pdf" class="citation-link" target="_blank">[19]</a>.
+            </p>
+          </div>
+
+          <!-- Methodologie -->
+          <div id="methodologie" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">1.1 Méthodologie de la typologie WAW/FAO</h3>
+
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+              <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                La méthodologie proposée et testée dans le cadre du programme WAW à Madagascar visait à établir des typologies d&#39;exploitations agricoles avec des variantes méthodologiques adaptées aux contextes et aux données disponibles <a href="https://agritrop.cirad.fr/586887/1/2017_D20_WAW_Mada_2017_Synthese.pdf" class="citation-link" target="_blank">[19]</a>.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-sage-50 rounded-lg p-6">
+                  <h4 class="font-semibold text-sage-800 mb-3">Superficie Agricole Utile (SAU)</h4>
+                  <p class="text-sm text-slate-600">Quatre classes : [0 - 0,75 ha], ]0,75 - 1,5 ha], ]1,5 – 3,0 ha] et &gt; 3 ha</p>
+                </div>
+                <div class="bg-sage-50 rounded-lg p-6">
+                  <h4 class="font-semibold text-sage-800 mb-3">Mode de traction</h4>
+                  <p class="text-sm text-slate-600">Traction motorisée, traction animale, ou système manuel</p>
+                </div>
+                <div class="bg-sage-50 rounded-lg p-6">
+                  <h4 class="font-semibold text-sage-800 mb-3">Orientation technico-économique</h4>
+                  <p class="text-sm text-slate-600">Classes définies par zone et programme</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Types d'exploitations -->
+          <div id="types-exploitations" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">1.2 Description des types d&#39;exploitations</h3>
+
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div class="px-8 py-6 bg-sage-100">
+                <h4 class="font-serif text-xl font-semibold text-sage-800">Typologie nationale des exploitations agricoles à Madagascar</h4>
+                <p class="text-sage-600 mt-2">(WAW/FAO, basée sur le RA 2004/2005)</p>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead class="bg-sage-50">
+                    <tr>
+                      <th class="px-6 py-4 text-left font-semibold text-sage-800">Code Type</th>
+                      <th class="px-6 py-4 text-left font-semibold text-sage-800">Désignation</th>
+                      <th class="px-6 py-4 text-left font-semibold text-sage-800">SAU (ha)</th>
+                      <th class="px-6 py-4 text-left font-semibold text-sage-800">Mode de Traction</th>
+                      <th class="px-6 py-4 text-left font-semibold text-sage-800">Caractéristiques</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-sage-100">
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T1</td>
+                      <td class="px-6 py-4">Très petite EA manuelle</td>
+                      <td class="px-6 py-4">≤ 0,75</td>
+                      <td class="px-6 py-4">Manuel</td>
+                      <td class="px-6 py-4 text-sm">Représente plus de 50% des EA, mais ne détient que 22% des terres. Pratique une agriculture de subsistance, souvent avec une forte diversification.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T2</td>
+                      <td class="px-6 py-4">Très petite EA avec traction animale</td>
+                      <td class="px-6 py-4">≤ 0,75</td>
+                      <td class="px-6 py-4">TA</td>
+                      <td class="px-6 py-4 text-sm">Minoritaire parmi les très petites EA. Possède au moins une paire de bœufs, ce qui permet une légère intensification.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T4</td>
+                      <td class="px-6 py-4">Petite EA manuelle</td>
+                      <td class="px-6 py-4">]0,75 - 1,5]</td>
+                      <td class="px-6 py-4">Manuel</td>
+                      <td class="px-6 py-4 text-sm">Catégorie importante, représentant une part significative des EA familiales. Pratique à la fois l&#39;autoconsommation et la vente de surplus.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T5</td>
+                      <td class="px-6 py-4">Petite EA avec traction animale</td>
+                      <td class="px-6 py-4">]0,75 - 1,5]</td>
+                      <td class="px-6 py-4">TA</td>
+                      <td class="px-6 py-4 text-sm">Bénéficie de la traction animale, permettant une meilleure préparation des terres et une capacité de travail accrue.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T8</td>
+                      <td class="px-6 py-4">Moyenne EA avec traction animale</td>
+                      <td class="px-6 py-4">]1,5 - 3,0]</td>
+                      <td class="px-6 py-4">TA</td>
+                      <td class="px-6 py-4 text-sm">Catégorie représentative des EA familiales en voie de modernisation. La combinaison d&#39;une SAU moyenne et de la traction animale permet une production significative.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T11</td>
+                      <td class="px-6 py-4">Grande EA avec traction animale</td>
+                      <td class="px-6 py-4">&gt; 3,0</td>
+                      <td class="px-6 py-4">TA</td>
+                      <td class="px-6 py-4 text-sm">Représente les grandes exploitations familiales bien équipées. Fort potentiel de production et de commercialisation.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">T12</td>
+                      <td class="px-6 py-4">Grande EA motorisée</td>
+                      <td class="px-6 py-4">&gt; 3,0</td>
+                      <td class="px-6 py-4">TM</td>
+                      <td class="px-6 py-4 text-sm">Catégorie minoritaire mais importante en termes de superficie exploitée et de production. Correspond souvent à des EA modernes.</td>
+                    </tr>
+                    <tr class="hover:bg-sage-25">
+                      <td class="px-6 py-4 font-semibold text-sage-700">EA</td>
+                      <td class="px-6 py-4">Entreprise Agricole</td>
+                      <td class="px-6 py-4">Variable</td>
+                      <td class="px-6 py-4">Variable</td>
+                      <td class="px-6 py-4 text-sm">Exploitations de type entrepreneurial, souvent de grande taille et fortement mécanisées. Orientation vers des cultures de rente ou des productions spécialisées.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Répartition nationale -->
+          <div id="repartition" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">1.3 Répartition nationale des types d&#39;exploitations</h3>
+
+            <div class="bg-white rounded-lg shadow-sm p-8">
+              <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                La répartition nationale des types d&#39;exploitations agricoles à Madagascar montre une <strong>prédominance écrasante des petites exploitations familiales</strong>. Selon les analyses, les exploitations de type T1 représentent à elles seules plus de 50% du nombre total des exploitations agricoles <a href="https://agritrop.cirad.fr/586887/1/2017_D20_WAW_Mada_2017_Synthese.pdf" class="citation-link" target="_blank">[19]</a>.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="text-center p-6 bg-red-50 rounded-lg border-l-4 border-red-400">
+                  <div class="text-3xl font-bold text-red-700 mb-2">50%</div>
+                  <div class="text-sm text-red-600">Très petites exploitations (≤ 0,75ha)</div>
+                  <div class="text-xs text-red-500 mt-2">22% des terres seulement</div>
+                </div>
+                <div class="text-center p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                  <div class="text-3xl font-bold text-yellow-700 mb-2">36%</div>
+                  <div class="text-sm text-yellow-600">Petites et moyennes exploitations</div>
+                  <div class="text-xs text-yellow-500 mt-2">57% des terres</div>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-lg border-l-4 border-green-400">
+                  <div class="text-3xl font-bold text-green-700 mb-2">3%</div>
+                  <div class="text-sm text-green-600">Grandes exploitations et entreprises</div>
+                  <div class="text-xs text-green-500 mt-2">16% des terres</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Identification -->
+      <section id="identification" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="font-serif text-4xl font-bold text-sage-800 mb-8">2. Identification et catégorisation des acteurs agricoles par fokontany</h2>
+
+          <div id="donnees-fokontany" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">2.1 Données partielles au niveau des fokontany</h3>
+
+            <div class="bg-stone-50 rounded-lg p-8 mb-8">
+              <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                Les données concernant les acteurs agricoles au niveau du fokontany sont extrêmement limitées. Le Recensement de l&#39;Agriculture de 2004-2005 (RA 2004-2005) a utilisé le fokontany comme unité de base pour son échantillonnage, avec un tirage de 4407 Fokontany échantillons sur un total de 14299, soit un taux de sondage de 30% <a href="https://fr.slideshare.net/slideshow/madagascar-recensement-agricole-2004-2005-pratiques-et-services-agricoles-thmes-6-et-7/82151765" class="citation-link" target="_blank">[26]</a>.
+              </p>
+
+              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+                <p class="text-yellow-800">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  Cette méthodologie implique que des données agrégées au niveau du fokontany existent potentiellement dans les bases de données du RA 2004-2005, même si elles ne sont pas présentées de manière exhaustive dans les rapports généraux.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="cas-mandritsara" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">2.2 Exemple de données détaillées par fokontany : Cas de Mandritsara</h3>
+
+            <div class="bg-stone-50 rounded-lg p-8">
+              <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                L&#39;étude de cas portant sur les Fokontany de Miarinarivo et Malaza, situés dans la commune de Mandritsara, district de Betafo, région de Vakinankaratra, fournit un exemple concret de données agricoles détaillées à l&#39;échelle du fokontany <a href="https://dumas.ccsd.cnrs.fr/dumas-04260418v1/file/2023_Hooker_Marie_Agroecology.pdf" class="citation-link" target="_blank">[35]</a>.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg p-6 border border-sage-200">
+                  <h4 class="font-semibold text-sage-800 mb-4">Fokontany de Malaza</h4>
+                  <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>273 ménages</strong>, 3,17 km²</li>
+                    <li>Cultures irriguées : <strong>63,7%</strong></li>
+                    <li>Cultures pluviales : 26,5%</li>
+                    <li>Espaces naturels : 9,8%</li>
+                    <li>Cheptel : 533 TLU</li>
+                    <li>Production annuelle de paddy : 458 tonnes</li>
+                    <li>Production de lait : 548 tonnes</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 border border-sage-200">
+                  <h4 class="font-semibold text-sage-800 mb-4">Fokontany de Miarinarivo</h4>
+                  <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>288 ménages</strong>, 4,26 km²</li>
+                    <li>Cultures irriguées : 10,8%</li>
+                    <li>Cultures pluviales : <strong>63,4%</strong></li>
+                    <li>Espaces naturels : 25,8%</li>
+                    <li>Cheptel : 457 TLU</li>
+                    <li>Production annuelle de paddy : 170 tonnes</li>
+                    <li>3 classes de ménages identifiées</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="autres-acteurs" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">2.3 Autres catégories d&#39;acteurs de la filière agricole</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-sage-50 rounded-lg p-6">
+                <div class="text-sage-600 mb-3">
+                  <i class="fas fa-truck text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Collecteurs</h4>
+                <p class="text-sm text-slate-600">Rôle crucial dans la mise en marché des produits agricoles. Le lait produit à Malaza est intégralement vendu à des collecteurs comme Socolait.</p>
+              </div>
+
+              <div class="bg-sage-50 rounded-lg p-6">
+                <div class="text-sage-600 mb-3">
+                  <i class="fas fa-store text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Commerçants</h4>
+                <p class="text-sm text-slate-600">Omniprésents pour la vente de produits agricoles finis ou d&#39;intrants. Commerçants de bois de chauffe et de charbon de bois.</p>
+              </div>
+
+              <div class="bg-sage-50 rounded-lg p-6">
+                <div class="text-sage-600 mb-3">
+                  <i class="fas fa-industry text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Transformateurs</h4>
+                <p class="text-sm text-slate-600">Entreprises comme Socolait qui collecte et transforme le lait. Transformation du paddy en riz blanc par les cultivateurs.</p>
+              </div>
+
+              <div class="bg-sage-50 rounded-lg p-6">
+                <div class="text-sage-600 mb-3">
+                  <i class="fas fa-seedling text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Entreprises bio</h4>
+                <p class="text-sm text-slate-600">En 2020, Madagascar comptait environ 340 entreprises référencées chez ECOCERT, employant environ 7000 personnes <a href="https://agritrop.cirad.fr/603909/1/OA_OI_Madagascar_synthese_agriculture%20Vef%20janvier%202023.pdf" class="citation-link" target="_blank">[31]</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Défis -->
+      <section id="defis" class="py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="font-serif text-4xl font-bold text-sage-800 mb-8">3. Défis majeurs des acteurs agricoles à Madagascar</h2>
+
+          <div class="mb-12">
+            <p class="text-xl leading-relaxed text-slate-700">
+              Les acteurs agricoles à Madagascar, des petits exploitants familiaux aux entreprises agricoles, font face à une multitude de défis qui entravent le développement du secteur et la sécurité alimentaire du pays.
+            </p>
+          </div>
+
+          <div id="defis-environnement" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">3.1 Défis liés à l&#39;environnement et aux ressources</h3>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 border-l-4 border-red-400">
+                  <h4 class="font-semibold text-red-800 mb-3">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    Dégradation des sols
+                  </h4>
+                  <p class="text-slate-700 text-sm">
+                    Problème majeur lié à la déforestation et à des pratiques agricoles peu durables. Les paysans notent une diminution de production due au manque de fertilisation organique <a href="https://www.jica.go.jp/project/madagascar/002/materials/ku57pq00001yqr0i-att/resultat_01_01.pdf" class="citation-link" target="_blank">[32]</a>.
+                  </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 border-l-4 border-orange-400">
+                  <h4 class="font-semibold text-orange-800 mb-3">
+                    <i class="fas fa-tree mr-2"></i>
+                    Déforestation
+                  </h4>
+                  <p class="text-slate-700 text-sm">
+                    La couverture forestière est très réduite en raison de la forte densité de population et des activités anthropiques, avec des conséquences sur la disponibilité en bois et l&#39;équilibre des écosystèmes <a href="https://dumas.ccsd.cnrs.fr/dumas-04260418v1/file/2023_Hooker_Marie_Agroecology.pdf" class="citation-link" target="_blank">[35]</a>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 border-l-4 border-blue-400">
+                  <h4 class="font-semibold text-blue-800 mb-3">
+                    <i class="fas fa-cloud-rain mr-2"></i>
+                    Changements climatiques
+                  </h4>
+                  <p class="text-slate-700 text-sm">
+                    Fréquence accrue des événements météorologiques extrêmes tels que les sécheresses et les cyclones, entraînant des pertes de récoltes et menaçant la sécurité alimentaire <a href="https://agritrop.cirad.fr/612006/1/612006.pdf" class="citation-link" target="_blank">[38]</a>, <a href="https://www.imf.org/-/media/Files/Publications/Selected-Issues-Papers/2023/English/SIPEA2023037.ashx" class="citation-link" target="_blank">[39]</a>.
+                  </p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 border-l-4 border-teal-400">
+                  <h4 class="font-semibold text-teal-800 mb-3">
+                    <i class="fas fa-tint mr-2"></i>
+                    Accès à l&#39;eau
+                  </h4>
+                  <p class="text-slate-700 text-sm">
+                    L&#39;inadéquation des infrastructures hydroagricoles est identifiée comme une cause profonde de la malnutrition. La gestion de l&#39;eau varie considérablement selon les régions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="defis-marches" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">3.2 Défis liés aux marchés, aux infrastructures et à l&#39;accès aux intrants</h3>
+
+            <div class="bg-white rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-red-50 rounded-lg">
+                  <div class="text-red-600 mb-3">
+                    <i class="fas fa-chart-line text-3xl"></i>
+                  </div>
+                  <h4 class="font-semibold text-red-800 mb-2">Écoulement de la production</h4>
+                  <p class="text-sm text-slate-600">Les paysans vendent souvent leur paddy immédiatement après la récolte à bas prix. Prix variant de 400 à 800 Ariary le kilo selon les cours.</p>
+                </div>
+
+                <div class="text-center p-6 bg-orange-50 rounded-lg">
+                  <div class="text-orange-600 mb-3">
+                    <i class="fas fa-road text-3xl"></i>
+                  </div>
+                  <h4 class="font-semibold text-orange-800 mb-2">Infrastructures de transport</h4>
+                  <p class="text-sm text-slate-600">Mauvais état des routes. Produits souvent acheminés à bicyclette vers les marchés locaux, limitant les volumes et augmentant les coûts.</p>
+                </div>
+
+                <div class="text-center p-6 bg-yellow-50 rounded-lg">
+                  <div class="text-yellow-600 mb-3">
+                    <i class="fas fa-seedling text-3xl"></i>
+                  </div>
+                  <h4 class="font-semibold text-yellow-800 mb-2">Accès aux intrants</h4>
+                  <p class="text-sm text-slate-600">Difficulté d&#39;accès aux semences améliorées et engrais. Coût des intrants comme les provendes pour le bétail est un frein important.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="defis-institutionnels" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">3.3 Défis institutionnels, financiers et de gouvernance</h3>
+
+            <div class="space-y-6">
+              <div class="bg-white rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 mb-4">
+                  <i class="fas fa-database mr-2 text-red-500"></i>
+                  Manque de données statistiques fiables
+                </h4>
+                <p class="text-slate-700 mb-4">
+                  Le dernier recensement agricole national complet remonte à 2004-2005 <a href="https://newsmada.com/2024/02/29/secteur-agricole-le-troisieme-recensement-general-de-lagriculture-en-preparation/" class="citation-link" target="_blank">[29]</a>, <a href="https://agritrop.cirad.fr/612006/1/612006.pdf" class="citation-link" target="_blank">[38]</a>. Madagascar présente une faible capacité statistique, se classant parmi les pays les moins performants selon les Indicateurs de Performance Statistique de la Banque Mondiale.
+                </p>
+
+                <div class="bg-sage-50 p-4 rounded-lg">
+                  <p class="text-sm text-sage-800">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Un nouveau Recensement Général de l&#39;Agriculture (RGA 3) est en préparation pour le second semestre 2024, avec une finalisation prévue fin 2025.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg p-6">
+                <h4 class="font-semibold text-sage-800 mb-4">
+                  <i class="fas fa-university mr-2 text-orange-500"></i>
+                  Faiblesse des institutions
+                </h4>
+                <p class="text-slate-700">
+                  La capacité institutionnelle et les ressources humaines et financières pour la production et l&#39;analyse des données agricoles sont insuffisantes. L&#39;accès au crédit agricole est très limité pour la majorité des petits exploitants.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="programmes" class="mb-12">
+            <h3 class="font-serif text-2xl font-semibold text-sage-700 mb-6">3.4 Programmes et initiatives de réponse aux défis</h3>
+
+            <div class="bg-gradient-to-r from-sage-50 to-stone-50 rounded-lg p-8">
+              <h4 class="font-serif text-xl font-semibold text-sage-800 mb-6">DEFIS+ (2024-2030)</h4>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <p class="text-slate-700 mb-6">
+                    Projet <strong>DEFIS+ (Développement des chaînes de valeur agricoles inclusives et résilientes aux changements climatiques)</strong>, lancé officiellement en juin 2025 <a href="https://www.moov.mg/article/102651-adaptation-climatique-lagriculture-familiale-au-coeur-de-defis-a-madagascar" class="citation-link" target="_blank">[131]</a>.
+                  </p>
+
+                  <ul class="space-y-3 text-sm text-slate-700">
+                    <li><strong>Durée :</strong> 6 ans (2024-2030)</li>
+                    <li><strong>Financement :</strong> FIDA et Fonds Vert pour le Climat</li>
+                    <li><strong>Coût total :</strong> 150,8 millions USD</li>
+                    <li><strong>Bénéficiaires :</strong> 104 000 exploitants agricoles familiaux</li>
+                    <li><strong>Régions :</strong> 6 régions vulnérables</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-6">
+                  <h5 class="font-semibold text-sage-800 mb-4">Objectifs clés</h5>
+                  <div class="space-y-3 text-sm">
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-shield-alt text-green-500 mt-1"></i>
+                      <span>Mettre en défens 15 000 hectares de terres</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-tree text-green-500 mt-1"></i>
+                      <span>Reboiser ou restaurer 5 500 hectares</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-seedling text-green-500 mt-1"></i>
+                      <span>Distribuer 20 tonnes de semences certifiées par an</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-graduation-cap text-green-500 mt-1"></i>
+                      <span>Former 178 880 agriculteurs</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                      <i class="fas fa-road text-green-500 mt-1"></i>
+                      <span>Réhabiliter 540 km de pistes rurales</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Limites et recommandations -->
+      <section id="limites" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="font-serif text-4xl font-bold text-sage-800 mb-8">4. Annexe : Limites des données et recommandations</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-red-50 rounded-lg p-8 border-l-4 border-red-400">
+              <h3 class="font-serif text-xl font-semibold text-red-800 mb-4">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Disponibilité et actualité des données
+              </h3>
+              <p class="text-slate-700 mb-4">
+                La principale limite concernant les données agricoles à Madagascar est leur disponibilité et leur actualité. Le dernier Recensement Général de l&#39;Agriculture (RGA) complet date de 2004-2005 <a href="https://www.ipcinfo.org/fileadmin/user_upload/countrystat_fenix/congo/docs/Tome1%20G%C3%A9n%C3%A9ralit%C3%A9s-M%C3%A9thodologies-R%C3%A9sultats.pdf" class="citation-link" target="_blank">[25]</a>, <a href="https://newsmada.com/2024/02/29/secteur-agricole-le-troisieme-recensement-general-de-lagriculture-en-preparation/" class="citation-link" target="_blank">[29]</a>.
+              </p>
+              <p class="text-slate-700 text-sm">
+                Les structures agricoles, les pratiques culturales et les défis peuvent varier considérablement d&#39;un fokontany à l&#39;autre, rendant les agrégats à plus grande échelle peu représentatifs de la diversité des situations locales.
+              </p>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-8 border-l-4 border-blue-400">
+              <h3 class="font-serif text-xl font-semibold text-blue-800 mb-4">
+                <i class="fas fa-lightbulb mr-2"></i>
+                Besoins en collecte de données
+              </h3>
+              <ul class="space-y-3 text-slate-700 text-sm">
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-check text-blue-500 mt-1"></i>
+                  <span>Mettre en place un système de collecte régulier et systématique au niveau du fokontany</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-check text-blue-500 mt-1"></i>
+                  <span>Utiliser des technologies modernes (SIG, télédétection, collecte mobile)</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-check text-blue-500 mt-1"></i>
+                  <span>Standardiser les indicateurs collectés pour permettre des comparaisons</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-check text-blue-500 mt-1"></i>
+                  <span>Renforcer les capacités des institutions en charge de la statistique agricole</span>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <i class="fas fa-check text-blue-500 mt-1"></i>
+                  <span>Promouvoir la recherche appliquée et les études de cas approfondies</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-sage-50 rounded-lg p-8">
+            <h3 class="font-serif text-xl font-semibold text-sage-800 mb-6 text-center">
+              Perspectives pour le RGA 3 (2024-2025)
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-database text-2xl text-sage-600"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Données de référence</h4>
+                <p class="text-sm text-slate-600">Produire des données de référence de qualité et des bases de sondage pour diverses enquêtes</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-map text-2xl text-sage-600"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Couverture complète</h4>
+                <p class="text-sm text-slate-600">Renouveler les données structurelles sur l&#39;agriculture, l&#39;élevage, la pêche, la forêt</p>
+              </div>
+
+              <div class="text-center">
+                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-chart-bar text-2xl text-sage-600"></i>
+                </div>
+                <h4 class="font-semibold text-sage-800 mb-2">Analyse fine</h4>
+                <p class="text-sm text-slate-600">Permettre des analyses désagrégées au niveau des fokontany pour une meilleure planification</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-sage-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Sources principales</h3>
+              <ul class="space-y-2 text-sm text-sage-200">
+                <li>
+                  <a href="https://agritrop.cirad.fr/586887/1/2017_D20_WAW_Mada_2017_Synthese.pdf" class="hover:text-white transition-colors">[19] WAW/FAO Typologie des exploitations</a>
+                </li>
+                <li>
+                  <a href="https://fr.slideshare.net/slideshow/madagascar-recensement-agricole-2004-2005-pratiques-et-services-agricoles-thmes-6-et-7/82151765" class="hover:text-white transition-colors">[26] Recensement Agricole 2004-2005</a>
+                </li>
+                <li>
+                  <a href="https://dumas.ccsd.cnrs.fr/dumas-04260418v1/file/2023_Hooker_Marie_Agroecology.pdf" class="hover:text-white transition-colors">[35] Étude de cas Vakinankaratra</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Programmes actuels</h3>
+              <ul class="space-y-2 text-sm text-sage-200">
+                <li>
+                  <a href="https://www.moov.mg/article/102651-adaptation-climatique-lagriculture-familiale-au-coeur-de-defis-a-madagascar" class="hover:text-white transition-colors">[131] DEFIS+ Project</a>
+                </li>
+                <li>
+                  <a href="https://newsmada.com/2024/02/29/secteur-agricole-le-troisieme-recensement-general-de-lagriculture-en-preparation/" class="hover:text-white transition-colors">[29] RGA 3 Préparation</a>
+                </li>
+                <li>
+                  <a href="https://www.jica.go.jp/project/madagascar/002/materials/ku57pq00001yqr0i-att/resultat_01_01.pdf" class="hover:text-white transition-colors">[32] Étude JICA</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Statistiques</h3>
+              <ul class="space-y-2 text-sm text-sage-200">
+                <li>
+                  <a href="https://www.instat.mg/documents/upload/main/INSTAT-RGPH_MenagesAgricoleMadagascar_Fev2022.pdf" class="hover:text-white transition-colors">[30] INSTAT Ménages Agricoles</a>
+                </li>
+                <li>
+                  <a href="https://agritrop.cirad.fr/612006/1/612006.pdf" class="hover:text-white transition-colors">[38] Analyse CIRAD</a>
+                </li>
+                <li>
+                  <a href="https://www.imf.org/-/media/Files/Publications/Selected-Issues-Papers/2023/English/SIPEA2023037.ashx" class="hover:text-white transition-colors">[39] IMF Selected Issues</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-t border-sage-700 mt-8 pt-8 text-center text-sage-300 text-sm">
+            <p>© 2025 Recensement des acteurs agricoles à Madagascar. Données compilées à partir de sources officielles et d&#39;études académiques.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+  
+
+</body></html>

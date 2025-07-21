@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>FATAPLUS JMCJ AI Product Showcase – JMCJ 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="/fonts/Fataplus-Book.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Fataplus-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- Reveal.js core CSS (unpkg, version 4.5.0) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <style>
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Light.ttf") format("truetype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Book.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Roman.ttf") format("truetype");
+      font-weight: 450;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-ExtraBold.ttf") format("truetype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fataplus";
+      src: url("/fonts/Fataplus-Black.ttf") format("truetype");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --font-primary: "Fataplus", "Inter", sans-serif;
+      --font-headings: "Fataplus", "Inter", sans-serif;
+      --color-primary: #2a7ae2;
+      --color-secondary: #1b5e20;
+      --color-accent: #f7c948;
+      --color-bg: #fff;
+      --color-hero: #e3f2fd;
+    }
+    body, .reveal, .reveal .slides {
+      font-family: var(--font-primary);
+      background: var(--color-bg);
+      color: #222;
+    }
+    h1, h2, h3 {
+      font-family: var(--font-headings);
+      margin-bottom: 0.5em;
+    }
+    h1 { font-weight: 900; color: var(--color-secondary); }
+    h2 { font-weight: 700; color: var(--color-primary); }
+    h3 { font-weight: 600; color: #388e3c; }
+    .subtitle {
+      font-family: var(--font-primary);
+      font-weight: 500;
+      font-size: 1.3em;
+      color: var(--color-primary);
+      margin-bottom: 0.5em;
+    }
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background: #eee;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #888;
+      margin: 0 auto 24px auto;
+      font-family: var(--font-primary);
+      font-weight: 700;
+    }
+    .slide-img {
+      display: block;
+      margin: 1.2em auto;
+      border-radius: 12px;
+      max-width: 350px;
+      max-height: 200px;
+      box-shadow: 0 2px 12px #0001;
+    }
+    .img-credit {
+      font-size: 0.85em;
+      color: #888;
+      text-align: center;
+      margin-top: 0.2em;
+    }
+    .qr-placeholder {
+      width: 120px;
+      height: 120px;
+      background: #e0e0e0;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 1em;
+      margin: 1.2em auto;
+      font-family: var(--font-primary);
+      font-weight: 500;
+    }
+    .quote {
+      font-style: italic;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin: 1.5em 0 0.5em 0;
+      font-size: 1.2em;
+      border-left: 4px solid var(--color-accent);
+      padding-left: 1em;
+    }
+    .story {
+      background: var(--color-hero);
+      border-radius: 12px;
+      padding: 1.2em 1em;
+      margin: 1.2em 0;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+    .impact {
+      color: var(--color-secondary);
+      font-weight: 600;
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+    .duration {
+      font-size: 0.95em;
+      color: #888;
+      font-weight: 400;
+      margin-left: 0.5em;
+    }
+    .center { text-align: center; }
+    @media (max-width: 600px) {
+      .logo-placeholder, .qr-placeholder { width: 80px; height: 80px; font-size: 1em; }
+      .slide-img { max-width: 95vw; max-height: 120px; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      h3 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Hero / Accueil -->
+      <section data-background-color="#e3f2fd">
+        <div class="logo-placeholder">[Logo Fataplus]</div>
+        <h1 class="center">FATAPLUS<br>AI Product Showcase</h1>
+        <div class="subtitle center">Journée Mondiale des Compétences des Jeunes</div>
+        <p class="center">
+          15 juillet 2025 – ESTI, Antanimena, Madagascar
+        </p>
+        <div class="quote center">« L’avenir de l’agriculture se construit avec l’innovation et la jeunesse. »</div>
+      </section>
+
+      <!-- Slide 2: Contexte JMCJ -->
+      <section>
+        <h2>Pourquoi la JMCJ ?</h2>
+        <img class="slide-img" src="https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg?cs=srgb&dl=pexels-tara-winstead-8849295.jpg&fm=jpg" alt="IA en agriculture">
+        <div class="img-credit">Photo : Tara Winstead / Pexels</div>
+        <ul>
+          <li>Valoriser les compétences des jeunes pour l’avenir du travail</li>
+          <li>Encourager l’innovation, l’entrepreneuriat et l’autonomisation</li>
+          <li>Répondre aux défis de l’ère numérique et de l’IA</li>
+        </ul>
+        <div class="quote">« 70% des emplois de demain n’existent pas encore aujourd’hui. »</div>
+      </section>
+
+      <!-- Slide 3: Vision Fataplus -->
+      <section>
+        <h2>Notre vision</h2>
+        <div class="story">
+          Chez Fataplus, nous croyons que chaque jeune Malgache peut devenir acteur du changement grâce à l’IA et au numérique. Notre mission : connecter, former et autonomiser les agriculteurs et entrepreneurs de demain.
+        </div>
+        <img class="slide-img" src="https://images.pexels.com/photos/18068747/pexels-photo-18068747.png?cs=srgb&dl=pexels-googledeepmind-18068747.jpg&fm=jpg" alt="Illustration IA éthique">
+        <div class="img-credit">Image : Google DeepMind / Pexels</div>
+      </section>
+
+      <!-- Slide 4: Le Nouveau Code : Spécifications & Communication -->
+      <section>
+        <h2>Le Nouveau Code : Spécifications & Communication</h2>
+        <ul>
+          <li><b>La communication prime sur le code</b> : 80-90% de la valeur réside dans la clarté des intentions, pas dans la syntaxe. <span style="color:#888;">[Sean Grove, OpenAI]</span></li>
+          <li><b>Spécifications = artefact central</b> : elles servent de source unique pour générer du code, de la doc, des tests, et aligner toutes les parties prenantes.</li>
+          <li><b>Alignement humain & IA</b> : une spec claire permet à tous (produit, juridique, IA) de contribuer, discuter, et évaluer.</li>
+          <li><b>Spécifications = matériel d’entraînement IA</b> : elles servent à entraîner et évaluer les modèles, intégrant la politique métier dans les poids du modèle.</li>
+          <li><b>Analogie universelle</b> : comme une Constitution, la spec structure l’alignement d’équipes, de modèles, de lois.</li>
+          <li><b>Le programmeur du futur</b> : celui qui communique le mieux l’intention, pas celui qui code le plus vite.</li>
+          <li><b>L’IDE de demain</b> : un “clarificateur d’intention” pour éliminer l’ambiguïté et accélérer l’innovation.</li>
+        </ul>
+        <div class="quote">« Les spécifications sont l’avenir de la programmation : elles permettent d’aligner humains et IA sur une intention commune, de façon précise et testable. »<br><span style="font-size:0.9em;">— Synthèse d’après Sean Grove, OpenAI</span></div>
+      </section>
+
+      <!-- Slide 5: Module 1 - Introduction à l’IA -->
+      <section>
+        <h2>Module 1 : Introduction à l’IA <span class="duration">(15 min)</span></h2>
+        <ul>
+          <li>Définition simple de l’IA et exemples concrets en agriculture à Madagascar</li>
+          <li>Langage accessible, quiz interactif pour engager les participants</li>
+        </ul>
+        <img class="slide-img" src="https://images.pexels.com/photos/8294619/pexels-photo-8294619.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8294619.jpg&fm=jpg" alt="Robot innovation">
+        <div class="img-credit">Photo : Pavel Danilyuk / Pexels</div>
+        <div style="margin-top:1em;">
+          <b>Quiz :</b> <i>“L’IA peut-elle prédire la météo agricole ?”</i>
+        </div>
+      </section>
+
+      <!-- Slide 6: Module 2 - IA dans le design produit -->
+      <section>
+        <h2>Module 2 : IA & Design Produit <span class="duration">(15 min)</span></h2>
+        <ul>
+          <li>Comment l’IA (Gemini, Relume, Figma, OpenAI API…) accélère le design produit</li>
+          <li>Workflow Fataplus : brief → UX → UI → prototypage avec l’IA</li>
+          <li>Mini challenge design pour les participants</li>
+        </ul>
+        <img class="slide-img" src="https://images.pexels.com/photos/18068747/pexels-photo-18068747.png?cs=srgb&dl=pexels-googledeepmind-18068747.jpg&fm=jpg" alt="Démo UI IA">
+        <div class="img-credit">Image : Google DeepMind / Pexels</div>
+        <div style="margin-top:1em;">
+          <b>Démo :</b> <i>Créer une maquette d’appli agricole en 5 minutes avec Gemini + Figma.</i>
+        </div>
+      </section>
+
+      <!-- Slide 7: Module 3 - Étude de cas Fataplus -->
+      <section>
+        <h2>Module 3 : Étude de cas Fataplus <span class="duration">(15 min)</span></h2>
+        <ul>
+          <li>Mission : connecter, former, autonomiser les agriculteurs malgaches</li>
+          <li>Fonctionnalités IA en direct : chatbot, reconnaissance d’images, insights marché</li>
+        </ul>
+        <img class="slide-img" src="https://images.pexels.com/photos/16629368/pexels-photo-16629368.jpeg?cs=srgb&dl=pexels-sanketgraphy-16629368.jpg&fm=jpg" alt="Chatbot IA sur smartphone">
+        <div class="img-credit">Photo : Sanketgraphy / Pexels</div>
+        <div class="quote">« Grâce à Fataplus, j’ai pu identifier mes cultures et vendre au meilleur prix. »<br><span style="font-size:0.9em;">— Temoignage d’un jeune agriculteur</span></div>
+      </section>
+
+      <!-- Slide 8: Module 4 - Activités pratiques -->
+      <section>
+        <h2>Module 4 : Activités pratiques <span class="duration">(15 min)</span></h2>
+        <ul>
+          <li>Tester l’IA : reconnaissance d’image, chatbot, génération de maquette UI</li>
+          <li>Défis interactifs rapides, feedback immédiat</li>
+        </ul>
+        <img class="slide-img" src="https://images.pexels.com/photos/4800304/pexels-photo-4800304.jpeg?cs=srgb&dl=pexels-introspectivedsgn-4800304.jpg&fm=jpg" alt="Photo prise par participant">
+        <div class="img-credit">Photo : Introspectivedsgn / Pexels</div>
+        <div style="margin-top:1em;">
+          <b>Challenge :</b> <i>“Prenez une photo d’une plante, l’IA devine la culture !”</i>
+        </div>
+      </section>
+
+      <!-- Slide 9: Impact -->
+      <section>
+        <h2>Quel impact ?</h2>
+        <ul>
+          <li>Développer des compétences numériques clés</li>
+          <li>Stimuler l’innovation et la créativité</li>
+          <li>Faciliter l’insertion professionnelle et l’entrepreneuriat</li>
+        </ul>
+        <img class="slide-img" src="https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?cs=srgb&dl=pexels-pixabay-68525.jpg&fm=jpg" alt="Graphique impact">
+        <div class="img-credit">Photo : Pixabay / Pexels</div>
+        <div class="quote">« L’IA n’est pas le futur, c’est le présent de l’agriculture malgache. »</div>
+      </section>
+
+      <!-- Slide 10: Conclusion & Appel à l’action -->
+      <section>
+        <h2>Ensemble, innovons pour l’agriculture malgache !</h2>
+        <div class="impact center">
+          Rejoignez la communauté Fataplus et devenez acteur du changement grâce à l’IA et au numérique.
+        </div>
+        <div class="qr-placeholder">[QR Code Contact]</div>
+        <div class="center" style="margin-top:2em;">
+          <b>Merci pour votre attention</b>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <!-- Reveal.js core JS (unpkg, version 4.5.0) -->
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'fade',
+      backgroundTransition: 'zoom',
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      center: true
+    });
+  </script>
+</body>
+</html>
