@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fataplus – Connecter · Cultiver · Prospérer</title>
+  <meta name="description" content="Fataplus, plateforme agritech malgache : marketplace, IA, formations & outils numériques pour agriculteurs, coopératives et partenaires.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; margin: 0; background: #f8faf7; color: #1B4332; }
+    header, footer { background: #4CAF50; color: #fff; padding: 1.5rem 0; text-align: center; }
+    nav { background: #1B4332; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; }
+    .hero { background: url('https://fata.plus/assets/hero-bg.jpg') center/cover no-repeat; color: #fff; padding: 4rem 2rem 3rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; margin-bottom: 2rem; }
+    .cta-btn { background: #1B4332; color: #fff; padding: 1rem 2rem; border: none; border-radius: 30px; font-size: 1.1rem; cursor: pointer; margin: 0.5rem; }
+    .section { max-width: 1100px; margin: 2.5rem auto; padding: 2rem; background: #fff; border-radius: 18px; box-shadow: 0 2px 12px #e6e9e6; }
+    .section-title { font-size: 2rem; color: #4CAF50; margin-bottom: 1rem; }
+    .values-list, .about-timeline, .impact-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .value-card, .impact-card { background: #E8F5E9; border-radius: 12px; padding: 1.5rem; flex: 1 1 180px; min-width: 180px; margin-bottom: 1rem; }
+    .service-cards { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .service-card { background: #f4f4f4; border-radius: 10px; flex: 1 1 260px; min-width: 260px; padding: 1.5rem; text-align: left; }
+    .service-card h3 { color: #1B4332; }
+    .service-card .price { color: #4CAF50; font-weight: 700; }
+    .cta-section { background: #4CAF50; color: #fff; text-align: center; padding: 2rem 1rem; border-radius: 12px; margin-top: 2rem; }
+    .testimonials { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .testimonial { background: #E8F5E9; border-radius: 10px; padding: 1rem 1.5rem; flex: 1 1 260px; min-width: 260px; }
+    .faq { margin-top: 2rem; }
+    .faq h4 { color: #1B4332; margin-bottom: 0.5rem; }
+    .newsletter { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
+    .newsletter input { padding: 0.7rem; border-radius: 20px; border: 1px solid #ccc; width: 220px; }
+    .newsletter button { background: #4CAF50; color: #fff; border: none; border-radius: 20px; padding: 0.7rem 1.5rem; cursor: pointer; }
+    @media (max-width: 900px) {
+      .values-list, .about-timeline, .impact-stats, .service-cards, .testimonials { flex-direction: column; gap: 1rem; }
+      .section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero" id="accueil">
+      <h1>Connecter · Cultiver · Prospérer</h1>
+      <p>Fataplus transforme vos idées agricoles en business numériques rentables, en 7 jours, pour tous les acteurs de l’agriculture malgache.</p>
+      <button class="cta-btn" onclick="window.location='#services'">Découvrir nos services</button>
+      <button class="cta-btn" onclick="window.location='#apropos'">Notre histoire</button>
+    </div>
+  </header>
+
+  <!-- VALEURS & MISSION -->
+  <section class="section">
+    <div class="section-title">Notre mission</div>
+    <p>
+      Démocratiser l’accès aux compétences agri-tech afin que chacun·e puisse transformer une problématique de terrain en solution concrète, mesurable et durable.<br>
+      <strong>Slogan :</strong> De la donnée au champ : bâtissons l’agriculture de demain ensemble.
+    </p>
+    <div class="values-list">
+      <div class="value-card"><strong>Bienveillance pédagogique</strong><br>Progression adaptée à chaque rythme.</div>
+      <div class="value-card"><strong>Transparence</strong><br>Accès gratuit aux fondamentaux, avancé sur abonnement clair.</div>
+      <div class="value-card"><strong>Excellence pragmatique</strong><br>Méthodes validées sur le terrain par des agriculteurs actifs.</div>
+      <div class="value-card"><strong>Éthique ouverte</strong><br>Partage des apprentissages, respect des données et de la vie privée.</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-title">Nos services</div>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Pack Découverte</h3>
+        <p>Diagnostic IA + 1h de formation personnalisée pour démarrer votre projet agri-tech.</p>
+        <div class="price">99 000 MGA</div>
+        <button class="cta-btn">Commencer</button>
+      </div>
+      <div class="service-card">
+        <h3>Pack Booster</h3>
+        <p>Création de site vitrine, CRM & formation pour booster votre visibilité et gestion client.</p>
+        <div class="price">499 000 MGA</div>
+        <button class="cta-btn">Réserver</button>
+      </div>
+      <div class="service-card">
+        <h3>Pack Partenaire</h3>
+        <p>Plateforme complète : marketplace, e-learning, outils IA, accès marché B2B.</p>
+        <div class="price">1 490 000 MGA/an</div>
+        <button class="cta-btn">Devenir partenaire</button>
+      </div>
+      <div class="service-card">
+        <h3>IA Agricole</h3>
+        <p>Assistant IA, recommandations personnalisées, synthèse de documents et FAQ agricole.</p>
+        <div class="price">à partir de 235 000 MGA/mois</div>
+        <button class="cta-btn">Essayer l’IA</button>
+      </div>
+      <div class="service-card">
+        <h3>Formation & Bootcamp</h3>
+        <p>Sessions pratiques, mentorat, concours #AgriPitchMG, ateliers pour jeunes & coopératives.</p>
+        <div class="price">Tarifs sur demande</div>
+        <button class="cta-btn">S’inscrire</button>
+      </div>
+      <div class="service-card">
+        <h3>Open-source & Ressources</h3>
+        <p>Guides gratuits, blog, prompts IA, apps e-commerce à télécharger pour la communauté.</p>
+        <div class="price">Gratuit</div>
+        <button class="cta-btn">Accéder</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT & CHIFFRES CLÉS -->
+  <section class="section">
+    <div class="section-title">Notre impact</div>
+    <div class="impact-stats">
+      <div class="impact-card"><strong>5 000+</strong><br>Utilisateurs pilotes</div>
+      <div class="impact-card"><strong>20</strong><br>Coopératives partenaires</div>
+      <div class="impact-card"><strong>308</strong><br>Jeunes formés à Fandriana</div>
+      <div class="impact-card"><strong>x10</strong><br>Revenus générés pour nos clients</div>
+    </div>
+    <div style="margin-top:1rem;">
+      <strong>Exemples :</strong> <br>
+      – Rakoto a vendu ses plants en ligne en 72h grâce à Fataplus.<br>
+      – Coopérative Anjafy a automatisé 80% de ses réponses clients avec notre bot IA.<br>
+      – 3 projets jeunes financés lors du bootcamp #AgriPitchMG.
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="section" id="apropos">
+    <div class="section-title">À propos de Fataplus</div>
+    <div class="about-timeline">
+      <div class="value-card">
+        <strong>2006-2012</strong><br>
+        Origine FATA : pépinière, tests de semences, formation rurale à Alaotra Mangoro.
+      </div>
+      <div class="value-card">
+        <strong>2023</strong><br>
+        Sélection PIC Miary Digital & INCO SPRINT-7. Passage au digital.
+      </div>
+      <div class="value-card">
+        <strong>2024</strong><br>
+        SARL immatriculée. Lancement plateforme & packs agri-tech.
+      </div>
+      <div class="value-card">
+        <strong>2025+</strong><br>
+        Objectif : 250 000 € de revenus, extension Afrique de l’Est.
+      </div>
+    </div>
+    <p>
+      <strong>Notre équipe :</strong> Fenohery (CEO/UX), Sumarion (Design), Angola (Com), Dev/PM (Tech).<br>
+      <strong>Partenaires :</strong> 20 coopératives, ONG, écoles agricoles, incubateurs.
+    </p>
+    <div class="cta-section">
+      <h3>Envie de nous rejoindre ou d’en savoir plus ?</h3>
+      <button class="cta-btn" onclick="window.location='#contact'">Nous contacter</button>
+      <button class="cta-btn" onclick="window.location='#blog'">Voir nos ressources</button>
+    </div>
+  </section>
+
+  <!-- BLOG & RESSOURCES -->
+  <section class="section" id="blog">
+    <div class="section-title">Blog & Ressources</div>
+    <ul>
+      <li><a href="#">Comment vendre ses plants en ligne ?</a></li>
+      <li><a href="#">Utiliser l’IA pour booster sa production agricole</a></li>
+      <li><a href="#">Open-source : nos apps gratuites</a></li>
+      <li><a href="#">Retour sur #AgriPitchMG 2025</a></li>
+      <li><a href="#">Témoignages d’agriculteurs et de jeunes makers</a></li>
+    </ul>
+    <div class="newsletter">
+      <input type="email" placeholder="Votre email pour la newsletter" />
+      <button>S’abonner</button>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="section">
+    <div class="section-title">Témoignages</div>
+    <div class="testimonials">
+      <div class="testimonial">« Grâce à Fataplus, j’ai vendu mes plants en ligne en 72 h ! »<br><em>– Jean, Fandriana</em></div>
+      <div class="testimonial">« Le bot IA nous fait gagner 5 h par jour sur les questions clients. »<br><em>– Coopérative Anjafy</em></div>
+      <div class="testimonial">« J’ai appris à créer mon site en 2 jours, sans coder. »<br><em>– Sahondra, Jeune agricultrice</em></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="section-title">FAQ</div>
+    <h4>Comment démarrer avec Fataplus ?</h4>
+    <p>Choisissez un pack, réservez une démo ou contactez-nous pour un diagnostic gratuit.</p>
+    <h4>Est-ce que vos outils fonctionnent hors ligne ?</h4>
+    <p>Oui, nos apps principales sont accessibles en mode offline ou via SMS.</p>
+    <h4>Puis-je réutiliser vos codes open-source ?</h4>
+    <p>Oui, toutes nos ressources sont en accès libre pour la communauté.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-title">Contact</div>
+    <form>
+      <input type="text" placeholder="Nom" required style="width: 49%; margin-right: 2%;" />
+      <input type="email" placeholder="Email" required style="width: 49%;" /><br><br>
+      <textarea placeholder="Votre message" required style="width: 100%; height: 80px;"></textarea><br>
+      <button class="cta-btn" type="submit">Envoyer</button>
+    </form>
+    <div style="margin-top:1rem;">
+      <strong>Email :</strong> contact@fata.plus<br>
+      <strong>Téléphone :</strong> 034 12 345 67<br>
+      <strong>Adresse :</strong> Antananarivo, Madagascar
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Fataplus – Connecter · Cultiver · Prospérer. Tous droits réservés.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+================================================================================
+FATAPLUS - DOSSIER SYNTHÈSE GLOBAL (export .txt)
+Généré le 22/07/2025 – Toute l’équipe peut copier/coller ou imprimer
+================================================================================
+
+0. MEMBRES & RÔLES ACTUELS
+- Fenohery : Porteur de projet & UX/UI Lead  
+- Sumarion : Designer systèmes / visuels  
+- Angola : Communication junior  
+- [Dev/PM] : Développement & management technique  
+
+1. CONTEXTE & HISTORIQUE
+- 2006 : premiers tests de semences & expérimentations menées par le père de Fenohery dans la province d’Alaotra Mangoro.  
+- Depuis 2024 : Fataplus SARL immatriculée (RCS 2024B01310).  
+- Mission actuelle : connecter technologie digitale + IA + agriculture pour les 80 % de Malgaches agriculteurs.
+
+2. OFFRE « STARTERPACK » POUR PREMIERS CASH-FLOWS
+Pack Découverte    : 99 000 MGA – diagnostic IA + 1 h formation  
+Pack Booster       : 499 000 MGA – site vitrine + CRM + formation 1 h  
+Pack Partenaire    : 1 490 000 MGA/an – plateforme complète + e-learning + accès marché B2B
+
+3. STRATÉGIE DE VENTE « 3×3 »
+A. Terrain : caravane pick-up, démo flash 20 min, paiement mobile.  
+B. Digital : landing fataplus.mg/offre, chatbot WhatsApp, TikTok/YouTube Shorts.  
+C. Partenaires : coopératives 10 % comm., ONG, écoles agricoles.
+
+4. PROCESSUS COMMERCIAL EN 5 ÉTAPES
+Lead → Qualif 3 questions → Démo 15 min → Devis & signature électronique → Livraison + suivi J+30.
+
+5. STRATÉGIE COLLABORATION GRANDES ENTREPRISES
+Étape 1 : cartographie Airtable « Score Partenaire » → 3 champions.  
+Étape 2 : proposition de valeur asymétrique (données ESG vs financement).  
+Étape 3 : trouver « champion interne » via LinkedIn Sales Navigator.  
+Étape 4 : pilotage OKR partagé (Notion + Slack Connect).  
+Étape 5 : gouvernance trimestrielle 4 pers.  
+Étape 6 : escalade 3 niveaux – Pilote 6 sem → Programme RSE → JV/Fonds.  
+Étape 7 : gestion risques (délais, PI, clause sortie).  
+Étape 8 : toolkit – one-pager 2 p, pitch deck 8 slides, ROI 1 € = 3 € RSE + 7 € revenu agricole.
+
+6. PROGRAMME « AGRISTART 2025 » POUR LES JEUNES
+- Concours TikTok #AgriPitchMG (30 s).  
+- Bootcamp 4 soirées Zoom.  
+- Mentorat 1 h / équipe.  
+- Demo Day virtuel → 3 projets financés 500 € each.
+
+7. OUTILS & RITUELS ÉQUIPE
+- Notion : dashboard commercial + suivi partenariats.  
+- Trello : colonnes « To Do / Doing / Done » par sprint hebdo.  
+- Slack/Whatsapp : stand-up asynchrone 15 min chaque lundi.  
+- Canva/Figma : one-pager & supports visuels.
+
+8. CALENDRIER 90 JOURS CLÉ-EN-MAIN
+Sem 1  – Short-list GE + créer landing.  
+Sem 2-3 – 1er client StarterPack + vidéo témoignage.  
+Sem 4-6 – 5 avis Malt + 3 accords coopératives.  
+Sem 7-8 – Webinaire « Open Farm » + 30 inscrits.  
+Sem 9-10 – Signature MoU grande entreprise.  
+Sem 11-12 – Demo Day AgriStart + remise prix.
+
+9. MESSAGES CLÉS PRÊTS À L’USAGE
+SMS/WhatsApp : « Bonjour [Prénom], tu cultives [culture] ? En 7 jours Fataplus te crée un site + te connecte à des acheteurs. Démo gratuite 15 min demain 14 h ? »  
+Story FB/IG : image agriculteur + smartphone, texte « +47 % revenus grâce au site de Rakoto. Swipe up. »
+
+10. PROCHAINES MICRO-ACTIONS (24 H)
+1. Créer groupe WhatsApp « #AgriBoost2025 » et inviter 10 premiers jeunes.  
+2. Finaliser landing page fataplus.mg/offre (formulaire 3 champs).  
+3. Programmer caravane terrain – date + commune + post événement.  
+4. Préparer message LinkedIn personnalisé pour 3 champions GE.
+
+================================================================================
+Fin du fichier – bon partage et bonne exécution à toute l’équipe !
+================================================================================

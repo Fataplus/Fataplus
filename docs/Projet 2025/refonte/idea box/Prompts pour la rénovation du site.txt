@@ -1,0 +1,67 @@
+Prompts pour la rénovation du site web et du branding de FATAPLUS
+Prompt 1 : Refonte du site web pour une meilleure expérience utilisateur et conversion
+Objectif : Redéfinir le site web de FATAPLUS pour créer une plateforme intuitive, axée sur le mobile, multilingue, qui favorise l'engagement des utilisateurs, augmente les conversions (transactions sur le marketplace, abonnements premium, inscriptions aux formations) et reflète la mission d'une agriculture inclusive, connectée et durable.
+Prompt :En tant qu'expert en UX/UI et marketing digital, proposez un plan complet de refonte du site web de FATAPLUS. La plateforme cible 1,5 million d'agriculteurs malgaches, 10 000 coopératives et 5 000 acheteurs/transformateurs, avec un accent sur l'accès mobile, la fonctionnalité hors ligne et le support multilingue (français et malgache). Intégrez les éléments suivants :  
+
+Un design épuré et visuellement attractif, aligné sur la mission de FATAPLUS d'autonomiser les communautés rurales et de promouvoir l'innovation agricole.  
+Un parcours utilisateur fluide guidant les agriculteurs, coopératives et acheteurs vers les fonctionnalités clés : marketplace pour les transactions B2B/B2C directes, LMS pour des formations agricoles interactives, et forums communautaires pour la collaboration.  
+Une intégration des outils IA (assistant agricole, recommandations personnalisées) avec des appels à l'action (CTA) clairs pour encourager l'interaction.  
+Des capacités hors ligne pour garantir l'accessibilité dans les zones rurales à faible connectivité.  
+Un guide de style de marque mettant en avant la confiance, l'inclusivité et la durabilité, avec des visuels culturellement pertinents (images d'agriculteurs malgaches, paysages, cultures locales).  
+Des éléments orientés conversion : inscription simplifiée pour les profils vérifiés, incitations aux abonnements premium (LMS, outils IA), et un processus de paiement simplifié pour les transactions via Stripe.  
+Des métriques de succès : rétention des utilisateurs, volume de transactions, taux de complétion des formations, et inscriptions aux abonnements.Fournissez des suggestions de maquettes, une pile technologique recommandée (React pour le front-end, Node.js pour le back-end, Nextcloud pour la gestion de fichiers) et un calendrier pour le développement et les tests.
+
+Prompt 2 : Refonte du branding pour renforcer le positionnement sur le marché
+Objectif : Développer une identité de marque cohérente et impactante pour FATAPLUS, qui résonne avec les agriculteurs, coopératives, acheteurs et partenaires institutionnels malgaches, tout en se démarquant des solutions locales fragmentées (groupes WhatsApp, ERP non adaptés).
+Prompt :En tant que stratège en branding et communication, élaborez une stratégie de marque pour FATAPLUS afin de le positionner comme la principale plateforme agricole tout-en-un à Madagascar. La stratégie doit :  
+
+Refléter les valeurs fondamentales de FATAPLUS : inclusivité, durabilité, transparence et autonomisation des communautés rurales.  
+Développer un logo, une palette de couleurs et une typographie modernes, mais culturellement ancrés à Madagascar (inspirés par l'agriculture locale, les couleurs vibrantes des paysages malgaches).  
+Créer un slogan et un cadre de messages mettant en avant la proposition de valeur unique : une plateforme multilingue, axée sur le mobile, intégrant marketplace, LMS, outils IA et fonctionnalités communautaires.  
+Concevoir des supports de marque pour des événements (bannières, flyers, visuels de stands) pour des foires agricoles et rencontres de coopératives, augmentant la visibilité auprès des 1,5 million d'agriculteurs et 10 000 coopératives.  
+Proposer une campagne sur les réseaux sociaux (notamment Facebook, très utilisé à Madagascar) pour partager des témoignages de succès d'agriculteurs et coopératives utilisant FATAPLUS, renforçant la notoriété et la confiance.  
+Garantir la conformité RGPD dans toutes les communications liées à la marque et aux données, pour séduire les partenaires internationaux (ONG, exportateurs).  
+Suggérer des métriques pour évaluer l'impact de la marque : notoriété, inscriptions d'utilisateurs, et taux d'engagement sur les réseaux sociaux. Fournir un calendrier de campagne de branding sur trois mois, aligné sur la proposition de Takamoa Studio (deux mois de communication, un mois de préparation).
+
+Prompt 3 : Stratégie de marketing digital pour stimuler les ventes et l'engagement
+Objectif : Concevoir une stratégie de marketing digital pour promouvoir les services de FATAPLUS (marketplace, LMS, abonnements premium, intégrations SaaS) et augmenter les ventes, en s'appuyant sur la traction existante (5 000 utilisateurs pilotes, 20 coopératives partenaires) pour atteindre l'objectif de revenus de 250 000 € en 2025.
+Prompt :En tant qu'expert en marketing digital, concevez une campagne de marketing digital de trois mois pour FATAPLUS afin d'accroître l'acquisition d'utilisateurs, les transactions sur le marketplace et les abonnements premium parmi les agriculteurs, coopératives et acheteurs malgaches. La campagne doit :  
+
+Utiliser des canaux économiques comme le marketing par SMS, Facebook et WhatsApp (très utilisés à Madagascar) pour atteindre les publics ruraux avec un accès internet limité.  
+Mettre en avant les fonctionnalités uniques de FATAPLUS : connexions directes producteurs-acheteurs, conseils agricoles via IA, formations accessibles hors ligne, et certifications.  
+Créer des contenus publicitaires ciblés pour chaque segment : agriculteurs (croissance des revenus, formation), coopératives (int integrations SaaS, analyses de données), acheteurs (traçabilité, assurance qualité).  
+Développer un programme de parrainage pour inciter les utilisateurs existants (5 000 pilotes, 20 coopératives) à recruter de nouveaux utilisateurs, avec des avantages comme des abonnements premium à prix réduit ou un accès gratuit au LMS.  
+Intégrer des récits via des témoignages vidéo d'agriculteurs ayant augmenté leurs revenus ou accédé à de nouveaux marchés grâce à FATAPLUS, hébergés sur YouTube et partagés sur les réseaux sociaux.  
+Proposer des partenariats avec des ONG agricoles locales et institutions pour co-promouvoir FATAPLUS lors d'événements communautaires et d'ateliers.  
+Inclure un budget détaillé aligné sur la structure de campagne de trois mois de Takamoa Studio (1 mois de préparation, 2 mois d'exécution) et des métriques : coût d'acquisition d'utilisateurs, taux de conversion, et croissance des revenus.
+
+Prompt 4 : Stratégie de vente pour la croissance du marketplace et des abonnements
+Objectif : Développer une stratégie de vente pour maximiser les revenus du modèle économique de FATAPLUS (commissions sur le marketplace, abonnements premium, intégrations SaaS) en ciblant les agriculteurs, coopératives, acheteurs et partenaires institutionnels.
+Prompt :En tant que consultant en vente et développement commercial, élaborez une stratégie de vente pour FATAPLUS afin d'atteindre l'objectif de revenus de 250 000 € en 2025. La stratégie doit :  
+
+Décrire un entonnoir de vente pour convertir les agriculteurs et coopératives en abonnés premium (accès au LMS, outils IA, analyses avancées) avec des plans tarifaires adaptés à leurs besoins.  
+Proposer une structure de commissions pour les transactions sur le marketplace (B2B/B2C) qui encourage les vendeurs à fort volume tout en restant compétitive (par exemple, commissions de 5 à 10 %).  
+Développer un argumentaire pour les intégrations SaaS (Dolibarr, Nextcloud) ciblant les coopératives et ONG, mettant en avant les économies de coûts, l'évolutivité et les insights basés sur les données.  
+Créer un modèle de partenariat pour les acheteurs institutionnels (exportateurs, ONG) avec des services à valeur ajoutée comme la certification et la traçabilité pour justifier des prix premium.  
+Former une équipe de vente pour des actions de terrain dans les zones rurales, en s'appuyant sur le réseau existant de 20 coopératives partenaires pour instaurer la confiance.  
+Suggérer des opportunités de vente croisée, comme lier l'accès au LMS aux abonnements marketplace ou offrir des analyses IA comme option supplémentaire.  
+Fournir des KPI pour mesurer le succès : nombre d'abonnés premium, valeur moyenne des transactions, et signatures de contrats SaaS. Inclure un calendrier pour la formation de l'équipe de vente et les actions de terrain, aligné sur la feuille de route 2025.
+
+Prompt 5 : Amélioration des fonctionnalités IA pour l'engagement des utilisateurs
+Objectif : Améliorer les fonctionnalités IA de FATAPLUS (assistant agricole, synthèse de documents, recommandations personnalisées) pour augmenter la rétention des utilisateurs et stimuler les abonnements premium.
+Prompt :En tant que consultant en IA et développement de produits, proposez des améliorations aux fonctionnalités IA de FATAPLUS pour accroître l'engagement et la rétention des agriculteurs, coopératives et acheteurs. Les améliorations doivent :  
+
+Améliorer l'assistant agricole pour fournir des conseils en temps réel et contextuels (gestion des cultures, recommandations météo) en français et malgache, accessible hors ligne.  
+Développer un outil de synthèse de documents pour résumer contrats, rapports de marché et supports de formation pour les utilisateurs à faible littératie ou avec des contraintes de temps.  
+Implémenter des recommandations personnalisées pour les annonces sur le marketplace (suggérer des acheteurs selon les produits des agriculteurs) et les cours du LMS (adaptés au type de culture ou au niveau d'expérience).  
+Assurer que les outils IA sont légers et optimisés pour les appareils mobiles à faible puissance, s'intégrant parfaitement à l'application mobile prévue pour 2025.  
+Proposer un modèle freemium où les fonctionnalités IA de base sont gratuites, mais les fonctionnalités avancées (analyses prédictives, recommandations premium) nécessitent un abonnement.  
+Suggérer des tests A/B pour optimiser l'adoption des fonctionnalités IA et des boucles de rétroaction pour affiner les fonctionnalités. Fournir un calendrier de développement et des recommandations de pile technologique (TensorFlow pour l'IA, React Native pour l'application mobile).
+
+Recommandations clés pour la réussite
+
+Comprendre l'audience : Mener une recherche utilisateur pour adapter la plateforme aux besoins des agriculteurs malgaches (faible littératie, accès internet limité) et des coopératives (besoin d'outils évolutifs).  
+Exploiter les canaux locaux : Utiliser SMS, WhatsApp et événements communautaires pour atteindre les utilisateurs ruraux, où l'accès à Internet est limité.  
+Renforcer la confiance : Mettre en avant la traction de FATAPLUS (5 000 utilisateurs, 20 coopératives) et des témoignages de succès pour établir la crédibilité.  
+Prioriser l'évolutivité : S'assurer que le site web et les outils IA sont optimisés pour les environnements à faible bande passante et évolutifs pour l'expansion en Afrique de l'Est d'ici 2026.  
+Mesurer l'impact : Suivre l'engagement des utilisateurs, le volume des transactions et la croissance des abonnements pour affiner les stratégies de manière itérative.
