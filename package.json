@@ -25,13 +25,11 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "create-superadmin": "tsx scripts/create-superadmin.ts",
-    "legal:pdf": "node scripts/convert-legal-to-pdf.js",
-    "deploy": "nuxthub deploy",
-    "deploy:preview": "nuxthub deploy --preview",
-    "deploy:wrangler": "wrangler pages deploy dist/"
+    "legal:pdf": "node scripts/convert-legal-to-pdf.js"
   },
   "devDependencies": {
-    "@cloudflare/puppeteer": "^1.0.3",
+    "@cloudflare/next-on-pages": "^1.12.0",
+    "@cloudflare/workers-types": "^4.20240620.0",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/ui": "^2.11.1",
@@ -67,7 +65,6 @@
     "@auth/drizzle-adapter": "^0.7.0",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
-    "@nuxthub/core": "^0.9.0",
     "@nuxtjs/cloudinary": "^1.0.0",
     "@nuxtjs/i18n": "^8.0.0",
     "@nuxtjs/seo": "^2.0.0-rc.8",

@@ -13,24 +13,12 @@ export default defineNuxtConfig({
   },
 
   // Essential modules for Whop integration + NuxtHub
-  modules: ["@nuxtjs/tailwindcss", "@nuxthub/core"],
+  modules: ["@nuxtjs/tailwindcss"],
 
   // TypeScript configuration - disable strict checking temporarily
   typescript: {
     typeCheck: false,
     strict: false,
-  },
-
-  // 🚀 NuxtHub FULL STACK Configuration - All Features Enabled
-  hub: {
-    ai: true, // ✅ AI features (Workers AI - Llama model)
-    analytics: true, // ✅ Analytics pour dashboard
-    blob: true, // ✅ File storage (images, docs)
-    browser: true, // ✅ Puppeteer pour PDF generation
-    cache: true, // ✅ Cache Redis pour performance
-    database: true, // ✅ D1 SQLite pour données
-    kv: true, // ✅ Key-Value store pour sessions
-    vectorize: {}, // ✅ Vector search pour IA (changed from true to object)
   },
 
   // CSS Framework: Tailwind CSS + Flowbite + Iconify

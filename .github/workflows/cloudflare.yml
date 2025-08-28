@@ -1,5 +1,8 @@
 name: Deploy to NuxtHub
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -21,7 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build & Deploy to NuxtHub
-        uses: nuxt-hub/action@v2
+      - name: Build & Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          project-key: fataplus-app-m6gg
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: fataplus-nuxt-worker
+          directory: .output/public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

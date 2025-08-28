@@ -63,59 +63,6 @@ declare module "nitropack/types" {
     '/api/vectorize/crops-search': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/vectorize/crops-search.post').default>>>>
     }
-    '/api/_hub/analytics': {
-      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/analytics/index.put').default>>>>
-    }
-    '/api/_hub/blob/**:pathname': {
-      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/[...pathname].delete').default>>>>
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/[...pathname].get').default>>>>
-      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/[...pathname].put').default>>>>
-    }
-    '/api/_hub/blob/delete': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/delete.post').default>>>>
-    }
-    '/api/_hub/blob/head/**:pathname': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/head/[...pathname].get').default>>>>
-    }
-    '/api/_hub/blob': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/index.get').default>>>>
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/blob/index.post').default>>>>
-    }
-    '/api/_hub/cache/**:key': {
-      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/[...key].delete').default>>>>
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/[...key].get').default>>>>
-      'options': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/[...key].options').default>>>>
-    }
-    '/api/_hub/cache/batch-delete': {
-      'options': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/batch-delete.options').default>>>>
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/batch-delete.post').default>>>>
-    }
-    '/api/_hub/cache/clear/**:base': {
-      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/clear/[...base].delete').default>>>>
-      'options': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/clear/[...base].options').default>>>>
-    }
-    '/api/_hub/cache': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/cache/index.get').default>>>>
-    }
-    '/api/_hub/database/:command': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/database/[command].post').default>>>>
-    }
-    '/api/_hub/database/query': {
-      'options': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/database/query.options').default>>>>
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/database/query.post').default>>>>
-    }
-    '/api/_hub': {
-      'head': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/index.head').default>>>>
-    }
-    '/api/_hub/kv/**:path': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/kv/[...path]').default>>>>
-    }
-    '/api/_hub/manifest': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/manifest.get').default>>>>
-    }
-    '/api/_hub/openapi': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/api/_hub/openapi.get').default>>>>
-    }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
     }

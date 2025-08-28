@@ -39,7 +39,6 @@ declare global {
   const defineWebSocketHandler: typeof import('../../node_modules/h3')['defineWebSocketHandler']
   const deleteCookie: typeof import('../../node_modules/h3')['deleteCookie']
   const dynamicEventHandler: typeof import('../../node_modules/h3')['dynamicEventHandler']
-  const ensureBlob: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob')['ensureBlob']
   const eventHandler: typeof import('../../node_modules/h3')['eventHandler']
   const fetchWithEvent: typeof import('../../node_modules/h3')['fetchWithEvent']
   const fromNodeMiddleware: typeof import('../../node_modules/h3')['fromNodeMiddleware']
@@ -73,11 +72,6 @@ declare global {
   const getValidatedRouterParams: typeof import('../../node_modules/h3')['getValidatedRouterParams']
   const handleCacheHeaders: typeof import('../../node_modules/h3')['handleCacheHeaders']
   const handleCors: typeof import('../../node_modules/h3')['handleCors']
-  const hubAnalytics: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/analytics')['hubAnalytics']
-  const hubBlob: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob')['hubBlob']
-  const hubDatabase: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/database')['hubDatabase']
-  const hubHooks: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks')['hubHooks']
-  const hubKV: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv')['hubKV']
   const isCorsOriginAllowed: typeof import('../../node_modules/h3')['isCorsOriginAllowed']
   const isError: typeof import('../../node_modules/h3')['isError']
   const isEvent: typeof import('../../node_modules/h3')['isEvent']
@@ -88,14 +82,8 @@ declare global {
   const isWebResponse: typeof import('../../node_modules/h3')['isWebResponse']
   const lazyEventHandler: typeof import('../../node_modules/h3')['lazyEventHandler']
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin')['nitroPlugin']
-  const onHubReady: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks')['onHubReady']
   const parseCookies: typeof import('../../node_modules/h3')['parseCookies']
   const promisifyNodeListener: typeof import('../../node_modules/h3')['promisifyNodeListener']
-  const proxyHubAnalytics: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/analytics')['proxyHubAnalytics']
-  const proxyHubBlob: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob')['proxyHubBlob']
-  const proxyHubCache: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/cache')['proxyHubCache']
-  const proxyHubDatabase: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/database')['proxyHubDatabase']
-  const proxyHubKV: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv')['proxyHubKV']
   const proxyRequest: typeof import('../../node_modules/h3')['proxyRequest']
   const readBody: typeof import('../../node_modules/h3')['readBody']
   const readFormData: typeof import('../../node_modules/h3')['readFormData']
@@ -105,8 +93,6 @@ declare global {
   const removeResponseHeader: typeof import('../../node_modules/h3')['removeResponseHeader']
   const requireAdmin: typeof import('../../server/utils/auth-middleware')['requireAdmin']
   const requireAuth: typeof import('../../server/utils/auth-middleware')['requireAuth']
-  const requireNuxtHubAuthorization: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/auth')['requireNuxtHubAuthorization']
-  const requireNuxtHubFeature: typeof import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/features')['requireNuxtHubFeature']
   const requireRole: typeof import('../../server/utils/auth-middleware')['requireRole']
   const requireSuperAdmin: typeof import('../../server/utils/auth-middleware')['requireSuperAdmin']
   const runTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task')['runTask']
@@ -149,15 +135,6 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { BlobObject, BlobListOptions, BlobPutOptions } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob.d'
-  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/blob.d')
-  // @ts-ignore
-  export type { HubHooks } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.d'
-  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/hooks.d')
-  // @ts-ignore
-  export type { HubKV } from '../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv.d'
-  import('../../node_modules/@nuxthub/core/dist/runtime/server/utils/kv.d')
-  // @ts-ignore
   export type { AuthUser, AuthenticatedEvent } from '../../server/utils/auth-middleware'
   import('../../server/utils/auth-middleware')
 }
@@ -173,14 +150,6 @@ export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
-export { defineAppConfig } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
-export { hubAnalytics, proxyHubAnalytics } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/analytics';
-export { requireNuxtHubAuthorization } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/auth';
-export { hubBlob, proxyHubBlob, ensureBlob } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/blob';
-export { proxyHubCache } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/cache';
-export { hubDatabase, proxyHubDatabase } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/database';
-export { requireNuxtHubFeature } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/features';
-export { hubHooks, onHubReady } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/hooks';
-export { hubKV, proxyHubKV } from '/Users/fefe/Documents/Fataplus Project /Fataplus/node_modules/@nuxthub/core/dist/runtime/server/utils/kv';
-export { verifyToken, requireAuth, requireRole, requireAdmin, requireSuperAdmin, canManageUser, getCurrentUser } from '/Users/fefe/Documents/Fataplus Project /Fataplus/server/utils/auth-middleware';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/app/node_modules/nuxt/dist/core/runtime/nitro/utils/paths';
+export { defineAppConfig } from '/app/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
+export { verifyToken, requireAuth, requireRole, requireAdmin, requireSuperAdmin, canManageUser, getCurrentUser } from '/app/server/utils/auth-middleware';
