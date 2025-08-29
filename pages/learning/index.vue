@@ -182,6 +182,76 @@
           </div>
         </div>
       </div>
+
+      <!-- All Courses -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Toutes les Formations
+        </h2>
+
+        <div
+          v-if="allCourses"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <div
+            v-for="course in allCourses"
+            :key="course._path"
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+          >
+            <!-- Course Image -->
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-t-lg">
+              <img
+                :src="course.thumbnail || '/images/placeholder-course.jpg'"
+                :alt="course.title"
+                class="h-48 w-full object-cover"
+              />
+              <div class="absolute top-2 left-2">
+                <span
+                  :class="getLevelClass(course.level)"
+                  class="px-2 py-1 text-xs rounded-full font-medium"
+                >
+                  {{ getLevelLabel(course.level) }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Course Content -->
+            <div class="p-6">
+              <h3
+                class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+              >
+                {{ course.title }}
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2"
+              >
+                {{ course.description }}
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <span class="text-yellow-400 text-sm">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </span>
+                  <span class="ml-2 text-sm text-gray-600">(4.2)</span>
+                </div>
+                <NuxtLink
+                  :to="`/learning${course._path}`"
+                  class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  {{ course.price ? "Acheter" : "Commencer" }}
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else>
+          <p>Chargement des formations...</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -193,6 +263,7 @@ import { ref } from "vue";
 definePageMeta({
   title: "Formation Agricole",
   description: "Formations spécialisées en agriculture pour Madagascar",
+  middleware: "auth",
 });
 
 // Composables
@@ -206,6 +277,10 @@ const selectedLevel = ref("");
 const { data: featuredCourses } = await useLazyAsyncData(
   "featured-courses",
   () => getFeaturedCourses(6)
+);
+
+const { data: allCourses } = await useLazyAsyncData("all-courses", () =>
+  getCourses()
 );
 
 // Course categories
