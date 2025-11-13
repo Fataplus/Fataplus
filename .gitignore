@@ -96,3 +96,10 @@ frontend/*/.astro/
 # Design assets
 assets/large/
 assets/videos/
+# Security - Environment files and secrets
+**/.env.mcp
+**/.env.production
+**/scan_results/secrets_*.log
+**/scan_results/passwords_and_keys.log
+**/env-fixed.txt
+**/.env copy.example
