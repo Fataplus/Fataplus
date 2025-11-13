@@ -1,0 +1,14 @@
+# Configuration DeepWiki
+GOOGLE_API_KEY=your_google_api_key_here
+OPENAI_API_KEY=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
+
+# Configuration serveur
+PORT=8001
+
+# Configuration logs
+LOG_LEVEL=INFO
+LOG_FILE_PATH=api/logs/application.log
+
+# Désactiver l'authentification (par défaut)
+DEEPWIKI_AUTH_MODE=false
+# DEEPWIKI_AUTH_CODE=votre_code_secret_ici  # Uniquement si vous voulez activer l'authentification
