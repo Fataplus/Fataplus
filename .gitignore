@@ -91,3 +91,19 @@ yarn.lock
 **/secrets.yaml
 **/api_keys.json
 **/credentials.json
+# Security - Prevent secrets from being committed
+*.env
+*.env.*
+*secret*
+*key*
+*token*
+*password*
+*credential*
+cookies.txt
+sensitive_strings.txt
+secrets.yaml
+api_keys.json
+credentials.json
+**/config/secrets/*
+**/secrets/*
+**/keys/*
