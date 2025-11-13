@@ -1,0 +1,6 @@
+# Exclusion des dossiers sensibles pour le push
+documentation/01-PROJECTS/cloudron-rd/
+documentation/01-PROJECTS/bootcamp-product-design/campaign/
+**/cookies.txt
+**/sensitive_strings.txt
+**/secrets.yaml
