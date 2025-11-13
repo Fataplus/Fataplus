@@ -1,0 +1,27 @@
+<task id="{bmad_folder}/custom/modules/agri-ai-design-lab/tasks/twilio-setup.xml" name="Twilio SMS Pilot Setup">
+  <llm critical="true">
+    <i>Objective: configure Twilio numbers and webhooks for irrigation alert pilots.</i>
+    <i>Security: mask SID/token; instruct user to store in TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN.</i>
+  </llm>
+  <flow>
+    <step n="1" title="Provision resources">
+      <action>Instruct user to purchase/assign Twilio number supporting SMS in Madagascar (where available) or fallback country.</action>
+      <action>Capture messaging service SID for pilot group.</action>
+    </step>
+    <step n="2" title="Configure environment">
+      <action>Store credentials in .env, confirm gitignore coverage.</action>
+      <action>Define webhook endpoint (e.g., /api/twilio/alerts) within no-code stack or lightweight Node service.</action>
+    </step>
+    <step n="3" title="Map alert payloads">
+      <action>Design JSON payload schema: { farmerId, plotId, alertType, recommendationText, fallbackMessage }.</action>
+      <action>Outline localization strategy (FR/MG) and character limits.</action>
+    </step>
+    <step n="4" title="Test workflow">
+      <action>Provide curl command using Twilio API to send test alert; user executes outside chat.</action>
+      <action>Record delivery result and log path in docs/agri-ai-design-lab/connector-roadmap.md.</action>
+    </step>
+  </flow>
+  <output>
+    📲 Twilio pilot configured with secure credentials, webhook plan, and test procedures ready for rollout.
+  </output>
+</task>

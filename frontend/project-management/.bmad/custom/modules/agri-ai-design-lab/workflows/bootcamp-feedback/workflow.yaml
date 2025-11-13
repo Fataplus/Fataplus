@@ -1,0 +1,11 @@
+# Bootcamp Feedback Workflow
+name: "bootcamp-feedback"
+description: "Review cohort submissions and issue feedback summaries"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/bootcamp-feedback/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/bootcamp-feedback/template.md"
+standalone: true

@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fataplus-bknd-backend",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-08-03",
+  "account_id": "f30dd0d409679ae65e841302cc0caa8c",
+  "routes": [
+    {"pattern": "bknd.fata.plus/*", "zone_name": "fata.plus"}
+  ],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "minify": true,
+  "assets": {
+    "directory": "node_modules/bknd/dist/static"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fataplus-website-db",
+      "database_id": "20b1fb8c-3e08-4e91-9083-53558750107d"
+    }
+  ]
+}

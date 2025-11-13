@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Openspec Backoffice</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Openspec Backoffice</h1>
+      <p>Monitor and configure Fataplus forms intake</p>
+    </header>
+
+    <main>
+      <section id="status-section">
+        <h2>Status</h2>
+        <button id="check-status">Check Intake Status</button>
+        <pre id="status-output">Click to check status...</pre>
+      </section>
+
+      <section id="setup-section">
+        <h2>Setup</h2>
+        <form id="setup-form">
+          <label>
+            API Key:
+            <input type="text" id="api-key" required />
+          </label>
+          <label>
+            Endpoint URL:
+            <input type="url" id="endpoint-url" required />
+          </label>
+          <button type="submit">Submit Setup</button>
+        </form>
+        <pre id="setup-output"></pre>
+      </section>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

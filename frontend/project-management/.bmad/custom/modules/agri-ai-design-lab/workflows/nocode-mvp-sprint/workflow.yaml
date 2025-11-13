@@ -1,0 +1,11 @@
+# No-Code MVP Sprint Workflow
+name: "nocode-mvp-sprint"
+description: "Generate no-code MVP sprint plan with component mapping and API checklist"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/nocode-mvp-sprint/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/nocode-mvp-sprint/template.md"
+standalone: true

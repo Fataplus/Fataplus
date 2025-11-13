@@ -1,0 +1,33 @@
+# Agri-AI Design Lab Module Configuration
+# Generated manually from module brief on 2025-11-10
+
+module_code: agri-ai-design-lab
+module_name: Agri-AI Design Lab
+module_version: 0.1.0
+install_date: 2025-11-10T00:00:00.000Z
+
+# Core runtime references
+bmad_folder: .bmad
+user_name: Fataplus Studio
+communication_language: English, French
+document_output_language: English, French
+output_folder: '{project-root}/docs/agri-ai-design-lab'
+design_system_root: '{project-root}/design'
+figma_team_url: 'https://www.figma.com/files/team/fataplus'
+nocode_targets:
+  - Bubble
+  - FlutterFlow
+  - Glide
+
+# Module options
+bootcamp_mode_default: false
+quality_standards:
+  - UX outputs align with Fataplus design system tokens and front-end code guidelines
+  - AI recommendations include feasibility, ethical guardrails, and ops-readiness checks
+  - Deliverables produced in FR/EN when requested
+
+# Dependencies (informational)
+external_integrations:
+  figma_api: optional
+  notion: optional
+  ai_providers: optional

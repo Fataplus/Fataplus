@@ -1,0 +1,11 @@
+# Playbook Exporter Workflow
+name: "playbook-exporter"
+description: "Compile module outputs into branded playbook and handoff packet"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/playbook-exporter/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/playbook-exporter/template.md"
+standalone: true

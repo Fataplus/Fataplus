@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Product Design Certifié Figma EDU | Fataplus Madagascar</title>
+    <meta name="description" content="Devenez Product Designer en 12 semaines. Formation certifiée Figma EDU. Travaillez en freelance depuis Madagascar. Places limitées.">
+    <meta name="keywords" content="product design madagascar, formation design, figma edu, bootcamp ux/ui">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bootcamp Product Design | Fataplus">
+    <meta property="og:description" content="Formation certifiée pour devenir Product Designer professionnel">
+    <meta property="og:image" content="https://fataplus.mg/images/og-image.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-success: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            --gradient-warning: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-hero {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '💻🎨📱';
+            font-size: 4rem;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Problem Solution Section */
+        .problem-solution {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .problems-solutions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .problems, .solutions {
+            padding: 2rem;
+        }
+
+        .problems h3 {
+            color: var(--danger);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solutions h3 {
+            color: var(--success);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .point-list {
+            list-style: none;
+        }
+
+        .point-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .point-list li::before {
+            content: '';
+            min-width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+        }
+
+        /* Program Section */
+        .program {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .program-timeline {
+            display: grid;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .program-module {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .program-module:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .module-weeks {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .module-content {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .module-skills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Why Section */
+        .why {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .advantage-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .advantage-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--gradient-success);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .pricing .section-title {
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--dark);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        .price-description {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .value-proposition {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px dashed var(--success);
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .value-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+        }
+
+        .total-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-top: 1rem;
+        }
+
+        .savings {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .urgency-elements {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid var(--danger);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .urgency-title {
+            color: var(--danger);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .urgency-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .urgency-point {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark);
+        }
+
+        .guarantee {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 2px solid var(--success);
+        }
+
+        .guarantee-title {
+            color: var(--success);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark);
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 300px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 5rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="50" height="50" patternUnits="userSpaceOnUse"><text x="25" y="25" font-size="20" fill="rgba(255,255,255,0.1)">⭐</text></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-final {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-final:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Registration Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-section h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .problems-solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .value-items {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3000;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--light);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 3000;
+            animation: slideIn 0.5s ease;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <span>🚀</span>
+                <span>Fataplus</span>
+            </div>
+            <div class="nav-links">
+                <a href="#programme">Le Programme</a>
+                <a href="#pourquoi">Pourquoi nous</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#faq">FAQ</a>
+                <a href="#" class="cta-primary" onclick="openModal()">S'inscrire</a>
+            </div>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Devenez Product Designer Certifié Figma EDU</h1>
+                <p class="subtitle">Formation de 12 semaines pour travailler avec des clients internationaux depuis Madagascar</p>
+                <div class="hero-cta">
+                    <a href="#" class="cta-hero" onclick="openModal()">Réserver ma place</a>
+                    <a href="#programme" class="cta-secondary">Voir le programme</a>
+                </div>
+                <div class="hero-badges">
+                    <div class="badge">✅ Validé par Figma Education</div>
+                    <div class="badge">🎯 +1000 designers formés</div>
+                    <div class="badge">🔒 Garantie satisfaction 30 jours</div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎨</div>
+                        <div style="font-size: 1.2rem; font-weight: 600;">Product Design</div>
+                        <div style="margin-top: 1rem;">📱 💻 🌍</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <h2 class="section-title">Une Opportunité pour l'Avenir</h2>
+            <div class="problems-solutions-grid">
+                <div class="problems">
+                    <h3>📊 Le Contexte Actuel</h3>
+                    <ul class="point-list">
+                        <li>Opportunités économiques locales limitées</li>
+                        <li>Revenus insuffisants pour les jeunes qualifiés</li>
+                        <li>Envie de carrière internationale et de reconnaissance</li>
+                        <li>Besoin de compétences recherchées mondialement</li>
+                        <li>Frustration face au manque de débouchés</li>
+                    </ul>
+                </div>
+                <div class="solutions">
+                    <h3>🚀 La Solution Design</h3>
+                    <ul class="point-list">
+                        <li>Travailler avec des clients européens/américains</li>
+                        <li>Gagner 1500-3000€/mois en freelance</li>
+                        <li>Carrière internationale depuis Madagascar</li>
+                        <li>Compétences digital high-demand</li>
+                        <li>Indépendance économique et professionnelle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program" id="programme">
+        <div class="container">
+            <h2 class="section-title">Programme de Formation Complet</h2>
+            <div class="program-timeline">
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 1-2</div>
+                    <div class="module-title">Design Thinking & User Research</div>
+                    <div class="module-content">
+                        Apprenez les méthodologies double diamond, les techniques de recherche utilisateur, création de personas et journey mapping, et validation d'hypothèses.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Personas</span>
+                    </div>
+                </div>
+
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 3-4</div>
+                    <div class="module-title">Wireframing & Prototyping</div>
+                    <div class="module-content">
+                        Maîtrisez les principes de wireframing, la maquettage haute-fidélité, le prototypage interactif et les tests utilisateurs avec Figma.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 5-6</div>
+                    <div class="module-title">UI Design & Design Systems</div>
+                    <div class="module-content">
+                        Développez votre sens de la composition visuelle, créez des design systems complets, et apprenez le component-based design.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Design Systems</span>
+                        <span class="skill-tag">Typography</span>
+                    </div>
+                </div>
+
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 7-8</div>
+                    <div class="module-title">Product Design & Stratégie</div>
+                    <div class="module-content">
+                        Comprenez le product thinking, développez des roadmaps produit, analysez les metrics et KPIs, et collaborez avec les équipes dev.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">KPIs</span>
+                        <span class="skill-tag">Dev Collaboration</span>
+                    </div>
+                </div>
+
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 9-10</div>
+                    <div class="module-title">No-Code Tools Integration</div>
+                    <div class="module-content">
+                        Découvrez Webflow, Framer, Bubble, l'intégration avec Figma, le lancement rapide de MVPs et préparation au plan Here2be 2026.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">Webflow</span>
+                        <span class="skill-tag">No-Code</span>
+                        <span class="skill-tag">MVP</span>
+                    </div>
+                </div>
+
+                <div class="program-module">
+                    <div class="module-weeks">Semaines 11-12</div>
+                    <div class="module-title">Portfolio & Projet Final</div>
+                    <div class="module-content">
+                        Créez un portfolio professionnel, réalisez un projet client réel, préparez votre pitch et découvrez les débouchés freelance.
+                    </div>
+                    <div class="module-skills">
+                        <span class="skill-tag">Portfolio</span>
+                        <span class="skill-tag">Pitch</span>
+                        <span class="skill-tag">Freelance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why" id="pourquoi">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Choisir Fataplus</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">🎓</div>
+                    <div class="advantage-title">Validation Internationale</div>
+                    <div class="advantage-description">
+                        Seul bootcamp certifié Figma EDU à Madagascar. Licence professionnelle Figma Pro incluse et reconnaissance internationale.
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">👨‍🏫</div>
+                    <div class="advantage-title">Expertise Locale</div>
+                    <div class="advantage-description">
+                        Formateur Product Designer expérimenté avec connaissance du contexte malgache et réseau professionnel local.
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤝</div>
+                    <div class="advantage-title">Partenariats Stratégiques</div>
+                    <div class="advantage-description">
+                        Creative Minds (événements), Here2be (plan no-code 2026), et Figma Education (validation pédagogique).
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">💼</div>
+                    <div class="advantage-title">Débouchés Concrets</div>
+                    <div class="advantage-description">
+                        Accès clients internationaux, accompagnement freelance, portfolio projets réels, support 3 mois post-formation.
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏠</div>
+                    <div class="advantage-title">Avantages Locaux</div>
+                    <div class="advantage-description">
+                        Formation depuis Madagascar, compréhension culturelle, réseau malgache, et support continu en français/malgache.
+                    </div>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">🎯</div>
+                    <div class="advantage-title">Positionnement Unique</div>
+                    <div class="advantage-description">
+                        Contexte adapté à la réalité malgache avec focus sur opportunités carrière internationale et indépendance économique.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="temoignages">
+        <div class="container">
+            <h2 class="section-title">Ils Ont Transformé Leur Carrière</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Avec la formation Fataplus, j'ai signé mon premier client français 2 mois après la fin du bootcamp. Aujourd'hui je gagne 2000€/mois en freelance."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RR</div>
+                        <div class="author-info">
+                            <h4>Rado R.</h4>
+                            <p>Product Designer Freelance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La certification Figma EDU a fait toute la différence sur mon CV. J'ai eu 3 propositions d'emploi dès la fin de la formation."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Mialy R.</h4>
+                            <p>UX Designer Agence Digitale</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Le format intensif de 12 semaines m'a permis de changer de carrière rapidement tout en gardant mon travail actuel."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NR</div>
+                        <div class="author-info">
+                            <h4>Njaka R.</h4>
+                            <p>Product Designer Startup Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Investissement pour Votre Avenir</h2>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="price">790,000 MGA</div>
+                    <div class="price-description">~170€ pour 12 semaines de formation intensive</div>
+
+                    <div class="value-proposition">
+                        <div class="value-title">Valeur réelle de la formation</div>
+                        <div class="value-items">
+                            <div class="value-item">✅ Formation 12 semaines</div>
+                            <div class="value-item">✅ Licence Figma Pro</div>
+                            <div class="value-item">✅ Portfolio coaching</div>
+                            <div class="value-item">✅ Support carrière</div>
+                            <div class="value-item">✅ Accès communauté</div>
+                            <div class="value-item">✅ Templates premium</div>
+                        </div>
+                        <div class="total-value">Valeur totale : 1,850,000 MGA</div>
+                        <div class="savings">ÉCONOMIE : Plus de 1,000,000 MGA !</div>
+                    </div>
+
+                    <div class="urgency-elements">
+                        <div class="urgency-title">⏰ Offre Limitée</div>
+                        <div class="urgency-points">
+                            <div class="urgency-point">🎯 Plus que 15 places disponibles</div>
+                            <div class="urgency-point">🎁 Bonus Early Birds : -100,000 MGA</div>
+                            <div class="urgency-point">📅 Offre expire dans 7 jours</div>
+                            <div class="urgency-point">🚀 Prochaine cohorte : Avril 2026</div>
+                        </div>
+                    </div>
+
+                    <div class="guarantee">
+                        <div class="guarantee-title">✅ Garantie Satisfait ou Remboursé</div>
+                        <div>Satisfaction garantie 30 jours ou remboursement complet</div>
+                    </div>
+
+                    <a href="#" class="cta-hero" onclick="openModal()" style="margin-top: 2rem;">Réserver ma place maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Ai-je besoin d'expérience en design pour m'inscrire ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Non, la formation est conçue pour débutants motivés. Seules curiosité et rigueur sont requises. Nous partons des bases et vous accompagnons pas à pas jusqu'à l'autonomie professionnelle.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        La formation est-elle entièrement en ligne ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oui, avec sessions live hebdomadaires et contenu disponible à vie. Vous pouvez apprendre à votre rythme tout en bénéficiant d'un accompagnement personnalisé.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Quel matériel est nécessaire ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Ordinateur performant (8GB RAM minimum), connexion internet stable, et un compte Figma (gratuit). Nous vous fournissons la licence professionnelle Figma Pro pendant toute la formation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Quels débouchés après la formation ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Freelance international, CDI startups/agences, ou création de votre propre activité. Nos alumni travaillent avec des clients en Europe, Amérique du Nord et Asie.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        La certification Figma EDU est-elle reconnue ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oui, c'est une certification professionnelle reconnue internationalement par les recruteurs. Elle atteste de votre maîtrise de l'outil Figma et des meilleures pratiques de design.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Y a-t-il un financement possible ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Nous proposons des facilités de paiement en 3 fois et recherchons activement des partenariats pour le financement. Contactez-nous pour discuter des options disponibles.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>Prêt à Transformer Votre Carrière ?</h2>
+            <p>Rejoignez la première cohorte de Product Designers certifiés Figma EDU à Madagascar</p>
+            <div class="final-cta-buttons">
+                <a href="#" class="cta-final" onclick="openModal()">Réserver ma place maintenant</a>
+                <a href="#programme" class="cta-secondary">Télécharger le programme</a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📞 +261 XX XX XXX XX</div>
+                <div class="contact-item">📧 contact@fataplus.mg</div>
+                <div class="contact-item">📍 Antananarivo, Madagascar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#programme">Programme</a>
+                <a href="#pourquoi">Pourquoi nous</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#faq">FAQ</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">CGV</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">📘</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">📷</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Fataplus. Tous droits réservés. | Écosystème Digital Malgache</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark);">
+                🎓 Incription Bootcamp Product Design
+            </h2>
+
+            <form id="registrationForm" onsubmit="handleSubmit(event)">
+                <!-- Section 1: Informations personnelles -->
+                <div class="form-section">
+                    <h3>📋 Informations Personnelles</h3>
+                    <div class="form-group">
+                        <label for="firstName">Prénom *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nom *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Âge *</label>
+                        <input type="number" id="age" name="age" min="18" max="45" required>
+                    </div>
+                </div>
+
+                <!-- Section 2: Profil -->
+                <div class="form-section">
+                    <h3>👤 Profil</h3>
+                    <div class="form-group">
+                        <label for="education">Niveau d'éducation actuel *</label>
+                        <select id="education" name="education" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="bac">Bac</option>
+                            <option value="bac+1">Bac+1</option>
+                            <option value="bac+2">Bac+2</option>
+                            <option value="bac+3">Bac+3</option>
+                            <option value="bac+4+">Bac+4 ou plus</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Expérience en design</label>
+                        <select id="experience" name="experience">
+                            <option value="none">Aucune</option>
+                            <option value="beginner">Débutant</option>
+                            <option value="intermediate">Intermédiaire</option>
+                            <option value="advanced">Avancé</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="objectives">Objectif professionnel *</label>
+                        <textarea id="objectives" name="objectives" placeholder="Décrivez vos objectifs professionnels (500 caractères max)" maxlength="500" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Section 3: Logistique -->
+                <div class="form-section">
+                    <h3>📅 Logistique</h3>
+                    <div class="form-group">
+                        <label for="preferredMode">Mode de suivi préféré *</label>
+                        <select id="preferredMode" name="preferredMode" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="online">Online</option>
+                            <option value="inperson">Présentiel</option>
+                            <option value="hybrid">Hybride</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Disponibilité pour la cohorte *</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="january2026">Janvier 2026</option>
+                            <option value="april2026">Avril 2026</option>
+                            <option value="later">Plus tard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="discovery">Comment avez-vous connu la formation ? *</label>
+                        <select id="discovery" name="discovery" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="friend">Ami/Connaissance</option>
+                            <option value="search">Recherche en ligne</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section 4: Finalisation -->
+                <div class="form-section">
+                    <h3>✅ Finalisation</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">J'accepte de recevoir des informations sur la formation *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">J'accepte la politique de confidentialité *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="financing" name="financing">
+                        <label for="financing">Je suis intéressé(e) par les options de financement</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    🚀 Recevoir le programme complet
+                </button>
+
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+                    Inscription gratuite et sans engagement
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        ✅ Merci ! Vous allez recevoir le programme complet par email.
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        }
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('registrationModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('registrationModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Show loading
+            document.getElementById('loading').classList.add('active');
+
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Simulate API call
+            setTimeout(() => {
+                // Hide loading
+                document.getElementById('loading').classList.remove('active');
+
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.add('active');
+
+                // Close modal
+                closeModal();
+
+                // Reset form
+                event.target.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.classList.remove('active');
+                }, 5000);
+
+                // Log data (in real implementation, send to server)
+                console.log('Form submitted:', data);
+
+                // Facebook Pixel tracking
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Bootcamp Product Design',
+                        content_category: 'Education'
+                    });
+                }
+
+                // Google Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        event_category: 'engagement',
+                        event_label: 'bootcamp_registration'
+                    });
+                }
+            }, 2000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.program-module, .advantage-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Countdown timer for urgency (example: 7 days from now)
+        function updateCountdown() {
+            const deadline = new Date();
+            deadline.setDate(deadline.getDate() + 7);
+
+            const now = new Date();
+            const diff = deadline - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            // Update urgency elements if they exist
+            const urgencyElements = document.querySelectorAll('[data-countdown]');
+            urgencyElements.forEach(el => {
+                el.textContent = `${days} jours ${hours} heures`;
+            });
+        }
+
+        // Update countdown every hour
+        updateCountdown();
+        setInterval(updateCountdown, 3600000);
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Fataplus Bootcamp Landing Page - Ready');
+
+            // Add smooth reveal animation to hero section
+            const heroText = document.querySelector('.hero-text');
+            const heroVisual = document.querySelector('.hero-visual');
+
+            setTimeout(() => {
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+            }, 300);
+
+            setTimeout(() => {
+                heroVisual.style.opacity = '1';
+                heroVisual.style.transform = 'translateY(0)';
+            }, 600);
+        });
+
+        // Facebook Pixel (replace with actual pixel ID)
+        /*
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+        */
+
+        // Google Analytics 4 (replace with actual measurement ID)
+        /*
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_MEASUREMENT_ID');
+        */
+    </script>
+</body>
+</html>

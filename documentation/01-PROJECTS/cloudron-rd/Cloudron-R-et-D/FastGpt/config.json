@@ -1,0 +1,21 @@
+// Configuration for FastGPT on Cloudron
+{
+  "feConfigs": {
+    "lafEnv": "https://laf.dev",
+    "mcpServerProxyEndpoint": ""
+  },
+  "systemEnv": {
+    "vectorMaxProcess": 10,
+    "qaMaxProcess": 10,
+    "vlmMaxProcess": 10,
+    "tokenWorkers": 30,
+    "hnswEfSearch": 100,
+    "hnswMaxScanTuples": 100000,
+    "customPdfParse": {
+      "url": "",
+      "key": "",
+      "doc2xKey": "",
+      "price": 0
+    }
+  }
+}

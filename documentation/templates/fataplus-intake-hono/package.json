@@ -1,0 +1,35 @@
+{
+  "name": "fataplus-intake-form",
+  "version": "1.0.0",
+  "description": "Formulaire d'intake de projet interactif avec Hono et Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler publish --dry-run",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.6.5",
+    "@hono/node-server": "^1.12.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@types/node": "^22.9.0",
+    "wrangler": "^3.78.10",
+    "typescript": "^5.6.3",
+    "eslint": "^9.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0"
+  },
+  "keywords": [
+    "hono",
+    "cloudflare-workers",
+    "form",
+    "fataplus",
+    "typescript"
+  ],
+  "author": "Fataplus SARLU",
+  "license": "MIT"
+}

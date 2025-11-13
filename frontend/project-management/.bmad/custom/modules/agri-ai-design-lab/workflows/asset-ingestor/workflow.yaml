@@ -1,0 +1,11 @@
+# Asset Ingestor Workflow
+name: "asset-ingestor"
+description: "Normalize research assets into structured knowledge base"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/asset-ingestor/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/asset-ingestor/template.md"
+standalone: true

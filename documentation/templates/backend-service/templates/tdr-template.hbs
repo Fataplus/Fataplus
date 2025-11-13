@@ -1,0 +1,359 @@
+# 📋 Cahier des Charges - {{projectTitle}}
+
+**Généré le**: {{formatDate}}
+**Client**: {{companyName}}
+**Prestataire**: Fataplus SARLU
+**Projet ID**: {{generateId}}
+**Version**: 1.0
+
+---
+
+## 📋 Résumé du Projet
+
+### 1.1 Informations Générales
+- **Titre du Projet**: {{projectTitle}}
+- **Client**: {{companyName}}
+- **Secteur d'Activité**: {{industry}}
+- **Taille de l'Entreprise**: {{companySize}}
+- **Contact Principal**: {{contactName}} ({{contactEmail}})
+- **Budget Alloué**: {{budgetRange budget}}
+- **Délai Souhaité**: {{timelineRange timeline}}
+
+### 1.2 Contexte et Problématique
+**Problème à Résoudre**: {{problemStatement}}
+
+**Vision de la Solution**: {{solutionVision}}
+
+**Public Cible**: {{targetAudience}}
+
+**Impact Attendu**: {{expectedImpact}}
+
+---
+
+## 🎯 Objectifs et Résultats Attendus
+
+### 2.1 Objectifs Principaux
+{{#if aiGenerated.projectScope}}
+{{{aiGenerated.projectScope}}}
+{{else}}
+#### Objectif Principal
+Développer une solution qui répond efficacement à {{problemStatement}} pour {{targetAudience}}.
+
+#### Objectifs Spécifiques
+1. **Fonctionnel**: Implémenter toutes les fonctionnalités essentielles identifiées
+2. **Technique**: Assurer la performance, la sécurité et la scalabilité
+3. **Utilisateur**: Garantir une expérience utilisateur optimale
+4. **Business**: Atteindre les objectifs métier définis par le client
+{{/if}}
+
+### 2.2 Résultats Attendus
+{{#if aiGenerated.deliverables}}
+{{{aiGenerated.deliverables}}}
+{{else}}
+- **Produit final**: Solution fonctionnelle conforme aux spécifications
+- **Documentation**: Documentation technique et utilisateur complète
+- **Formation**: Formation de l'équipe cliente
+- **Support**: Période de support post-lancement
+{{/if}}
+
+### 2.3 Critères de Succès
+- **Respect du budget**: Le projet doit respecter l'enveloppe budgétaire de {{budgetRange budget}}
+- **Respect des délais**: Livraison dans le délai de {{timelineRange timeline}}
+- **Qualité**: Solution répondant à tous les besoins fonctionnels et non-fonctionnels
+- **Satisfaction client**: Satisfaction mesurée par des indicateurs clairs
+
+---
+
+## 🏗️ Périmètre du Projet
+
+### 3.1 Périmètre Inclus (In-Scope)
+{{#each mustHave}}
+- ✅ {{this}}
+{{/each}}
+
+{{#each modules}}
+- ✅ Module {{capitalize this}}
+{{/each}}
+
+**Spécifications Techniques**:
+{{#if frontendTech}}
+- Technologies Frontend: {{join frontendTech ", "}}
+{{/if}}
+{{#if backendTech}}
+- Technologies Backend: {{join backendTech ", "}}
+{{/if}}
+{{#if database}}
+- Base de données: {{join database ", "}}
+{{/if}}
+
+### 3.2 Périmètre Exclu (Out-of-Scope)
+- ❌ Maintenance et hébergement post-lancement (hors période de garantie)
+- ❌ Formation utilisateurs avancée (hors formation standard)
+- ❌ Intégrations avec systèmes tiers non spécifiés
+- ❌ Développement mobile natif (sauf spécifié)
+
+### 3.3 Hypothèses et Contraintes
+**Hypothèses**:
+- Le client fournira toutes les informations nécessaires dans les délais
+- Les spécifications ne changeront pas significativement
+- L'environnement technique client sera compatible
+
+**Contraintes**:
+- Budget: {{budgetRange budget}}
+- Délai: {{timelineRange timeline}}
+- Ressources disponibles selon la planification
+
+---
+
+## 📅 Planification et Timeline
+
+### 4.1 Timeline Détaillé
+{{#if aiGenerated.timeline}}
+{{{aiGenerated.timeline}}}
+{{else}}
+#### Phase 1: Analyse et Design (2-3 semaines)
+- **Semaine 1**: Ateliers de découverte, collecte des exigences
+- **Semaine 2**: Design UX/UI, architecture technique
+- **Semaine 3**: Validation design, spécifications détaillées
+
+#### Phase 2: Développement (6-10 semaines)
+- **Semaines 4-5**: Développement backend et API
+- **Semaines 6-7**: Développement frontend
+- **Semaines 8-9**: Intégration et tests unitaires
+- **Semaine 10**: Tests d'intégration et recette interne
+
+#### Phase 3: Déploiement et Lancement (2-3 semaines)
+- **Semaine 11**: Tests utilisateur final (UAT)
+- **Semaine 12**: Déploiement en production
+- **Semaine 13**: Formation et handover
+
+#### Phase 4: Support et Optimisation (4 semaines)
+- **Support post-lancement**: 4 semaines incluses
+- **Optimisations**: Basées sur retours utilisateurs
+{{/if}}
+
+### 4.2 Jalons Clés
+| Jalon | Date Cible | Livrables |
+|-------|------------|-----------|
+| Validation Design | [DATE] | Wireframes validés |
+| Développement Backend | [DATE] | API fonctionnelle |
+| Développement Frontend | [DATE] | Interface complète |
+| Tests UAT | [DATE] | Validation client |
+| Lancement Production | [DATE] | Solution en ligne |
+| Fin de Support | [DATE] | Project clôturé |
+
+### 4.3 Gestion des Risques
+**Risques Identifiés**:
+- Changement de périmètre
+- Retards dans la fourniture des contenus
+- Problèmes techniques imprévus
+- Disponibilité des ressources
+
+**Plan de Mitigation**:
+- Processus de gestion du changement
+- Buffer temporel intégré
+- Veille technologique régulière
+- Plan de continuité
+
+---
+
+## 👥 Équipe et Rôles
+
+### 5.1 Composition de l'Équipe
+{{#if aiGenerated.teamComposition}}
+{{{aiGenerated.teamComposition}}}
+{{else}}
+#### Équipe Fataplus
+- **Project Manager**: Coordination générale, gestion client
+- **Tech Lead**: Architecture, supervision technique
+- **Développeur Frontend**: Interface utilisateur
+- **Développeur Backend**: API et logique métier
+- **Designer UX/UI**: Design et expérience utilisateur
+- **Testeur**: Qualité et validation
+
+#### Équipe Client
+- **Chef de Projet**: Validation et décision côté client
+- **Utilisateurs Métier**: Tests et validation fonctionnelle
+- **Support Technique**: Environnement et infrastructure
+{{/if}}
+
+### 5.2 Rôles et Responsabilités
+**Fataplus SARLU**:
+- Développement de la solution selon spécifications
+- Assurance qualité et tests
+- Documentation technique
+- Formation de l'équipe cliente
+- Support post-lancement
+
+**Client ({{companyName}})**:
+- Validation des spécifications et livrables
+- Fourniture des contenus et ressources nécessaires
+- Tests utilisateur (UAT)
+- Validation finale
+- Paiement selon échéancier
+
+---
+
+## 📋 Livrables
+
+### 6.1 Livrables Phase par Phase
+
+#### Phase 1: Analyse et Design
+- [ ] Rapport d'analyse des besoins
+- [ ] Spécifications fonctionnelles détaillées
+- [ ] Maquettes UX/UI (wireframes et mockups)
+- [ ] Architecture technique
+- [ ] Plan de test
+
+#### Phase 2: Développement
+- [ ] Code source complet
+- [ ] Documentation technique
+- [ ] Tests unitaires et d'intégration
+- [ ] Environnement de pré-production
+
+#### Phase 3: Déploiement
+- [ ] Solution en production
+- [ ] Documentation utilisateur
+- [ ] Guide d'administration
+- [ ] Matériel de formation
+
+#### Phase 4: Support
+- [ ] Rapport de clôture
+- [ ] Recommandations d'évolution
+- [ ] Documentation archivée
+- [ ] Transfert complet de propriété
+
+### 6.2 Format des Livrables
+- **Documentation**: Markdown/PDF
+- **Code Source**: Git repository avec accès complet
+- **Design**: Fichiers sources (Figma, Sketch)
+- **Déploiement**: Configuration et scripts
+
+### 6.3 Propriété Intellectuelle
+- **Code Source**: Propriété client après paiement final
+- **Design**: Propriété client
+- **Documentation**: Propriété client
+- **Outils et Frameworks**: Licences respectées
+
+---
+
+## 💰 Aspects Financiers
+
+### 7.1 Budget Détaillé
+**Budget Total**: {{budgetRange budget}}
+
+#### Répartition Estimée
+- **Phase 1 - Analyse et Design**: 15-20%
+- **Phase 2 - Développement**: 50-60%
+- **Phase 3 - Déploiement**: 15-20%
+- **Phase 4 - Support**: 10%
+- **Contingence**: 5-10%
+
+#### Coûts Non Inclus
+- Hébergement et infrastructure (recommandations fournies)
+- Licences logicielles tierces
+- Maintenance post-garantie
+- Dépassements de périmètre
+
+### 7.2 Modalités de Paiement
+- **Acompte**: 30% à signature
+- **Phase 1**: 20% à validation design
+- **Phase 2**: 30% à fin développement
+- **Phase 3**: 15% à mise en production
+- **Phase 4**: 5% à clôture du projet
+
+---
+
+## 🔐 Aspects Juridiques et Contractuels
+
+### 8.1 Propriété Intellectuelle
+- Tous les livrables deviennent propriété du client après paiement final
+- Fataplus conserve le droit de réutiliser les composants génériques
+- Le client s'engage à ne pas reproduire la solution pour des tiers
+
+### 8.2 Confidentialité
+- NDA (Non-Disclosure Agreement) applicable à toutes les informations partagées
+- Protection des données sensibles du client
+- Obligation de discrétion pour les deux parties
+
+### 8.3 Garanties et Support
+- **Garantie**: 3 mois après livraison pour correction des bugs
+- **Support**: Support technique inclus pendant la garantie
+- **Évolutions**: Nouvelles fonctionnalités hors périmètre initial
+
+### 8.4 Résiliation
+- Résiliation possible avec préavis de 30 jours
+- Paiement des travaux réalisés jusqu'à la résiliation
+- Livraison des livrables déjà complétés
+
+---
+
+## 📊 Validation et Acceptation
+
+### 9.1 Critères d'Acceptation
+- ✅ Tous les livrables fonctionnels conformes aux spécifications
+- ✅ Tests utilisateur validés par le client
+- ✅ Documentation complète et livrée
+- ✅ Formation de l'équipe cliente réalisée
+- ✅ Solution déployée en environnement de production
+
+### 9.2 Processus de Validation
+1. **Recette Interne**: Validation par l'équipe Fataplus
+2. **Tests UAT**: Tests utilisateur par le client
+3. **Validation Finale**: Acceptation formelle du projet
+4. **Clôture**: Signature du procès-verbal de fin de projet
+
+### 9.3 Gestion des Changements
+- Tout changement de périmètre doit faire l'objet d'un avenant
+- Impact sur délai et budget évalué et validé
+- Accord formel du client requis avant mise en œuvre
+
+---
+
+## ✅ Signatures
+
+### Approbation Client
+**Entreprise**: {{companyName}}
+
+**Représentant**: {{contactName}}
+**Fonction**: [FONCTION]
+**Email**: {{contactEmail}}
+**Téléphone**: {{contactPhone}}
+
+**Signature**: _________________________
+**Date**: _________________________
+
+### Approbation Prestataire
+**Entreprise**: Fataplus SARLU
+
+**Représentant**: Fenohery Fanomezanirina
+**Fonction**: CEO & Product Designer
+**Email**: fenohery.fanomezanirina@gmail.com
+**Téléphone**: +261 34 20 472 13
+
+**Signature**: _________________________
+**Date**: _________________________
+
+---
+
+## 📝 Annexes
+
+### Annexe A: Spécifications Techniques Détaillées
+[À compléter lors de la phase d'analyse]
+
+### Annexe B: Wireframes et Maquettes
+[Lien vers les fichiers de design]
+
+### Annexe C: Plan de Test Détaillé
+[À développer pendant la phase de planification]
+
+### Annexe D: Matrice de Traçabilité
+[Lien entre exigences et livrables]
+
+---
+
+*Ce Cahier des Charges est un document contractuel qui engage les deux parties. Toute modification doit faire l'objet d'un accord écrit.*
+
+**Version**: 1.0
+**Date de dernière mise à jour**: {{formatDate}}
+**Prochaine mise à jour**: [DATE]

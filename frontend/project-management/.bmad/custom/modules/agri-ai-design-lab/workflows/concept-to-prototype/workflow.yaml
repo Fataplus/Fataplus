@@ -1,0 +1,11 @@
+# Concept to Prototype Workflow
+name: "concept-to-prototype"
+description: "Translate prioritized concept into UX/UI direction and build strategy"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/concept-to-prototype/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/concept-to-prototype/template.md"
+standalone: true

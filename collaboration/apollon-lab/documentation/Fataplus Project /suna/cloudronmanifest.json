@@ -1,0 +1,39 @@
+{
+  "id": "ai.suna",
+  "version": "0.1.0",
+  "title": "Suna",
+  "author": "Fataplus",
+  "website": "https://github.com/kortix-ai/suna",
+  "description": "Suna - open source assistant by kortix-ai",
+  "license": "MIT",
+  "healthCheckPath": "/",
+  "ports": [
+    {
+      "name": "http",
+      "port": 3000
+    }
+  ],
+  "volumes": [
+    {
+      "name": "data",
+      "path": "/app/data"
+    }
+  ],
+  "environment": [
+    {
+      "name": "PORT",
+      "label": "Port",
+      "default": "3000"
+    },
+    {
+      "name": "OPENAI_API_KEY",
+      "label": "OpenAI API key",
+      "description": "Optional API key used by the application",
+      "required": false
+    }
+  ],
+  "scripts": {
+    "start": "./start.sh"
+  },
+  "manifestVersion": 2
+}

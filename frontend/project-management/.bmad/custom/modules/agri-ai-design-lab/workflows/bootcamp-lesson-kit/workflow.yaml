@@ -1,0 +1,11 @@
+# Bootcamp Lesson Kit Workflow
+name: "bootcamp-lesson-kit"
+description: "Generate lesson plan and exercises for bootcamp cohorts based on current engagement"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/bootcamp-lesson-kit/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/bootcamp-lesson-kit/template.md"
+standalone: true

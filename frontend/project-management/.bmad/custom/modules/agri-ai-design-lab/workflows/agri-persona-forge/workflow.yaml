@@ -1,0 +1,11 @@
+# Agri Persona Forge Workflow
+name: "agri-persona-forge"
+description: "Generate agritech personas with jobs-to-be-done and pain/gain grids"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/agri-persona-forge/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/agri-persona-forge/template.md"
+standalone: true

@@ -1,0 +1,11 @@
+# Prototype Storyboard Workflow
+name: "prototype-storyboard"
+description: "Create narrative storyboard summarizing user goal, AI assist, and outcomes"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/prototype-storyboard/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/prototype-storyboard/template.md"
+standalone: true

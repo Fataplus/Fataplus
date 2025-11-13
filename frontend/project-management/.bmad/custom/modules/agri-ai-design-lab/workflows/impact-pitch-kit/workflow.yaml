@@ -1,0 +1,11 @@
+# Impact Pitch Kit Workflow
+name: "impact-pitch-kit"
+description: "Generate investor/client pitch assets summarizing agritech solution and impact"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/impact-pitch-kit/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/impact-pitch-kit/template.md"
+standalone: true

@@ -1,0 +1,27 @@
+<task id="{bmad_folder}/custom/modules/agri-ai-design-lab/tasks/nocode-deploy.xml" name="No-Code Deployment Hook">
+  <llm critical="true">
+    <i>Purpose: configure Bubble and FlutterFlow deployment hooks for Smart Irrigation MVP.</i>
+    <i>Never expose API keys in chat; instruct user to store in environment variables.</i>
+  </llm>
+  <flow>
+    <step n="1" title="Collect credentials">
+      <action>Ask for Bubble API key and app ID; direct user to store as BUBBLE_API_KEY and BUBBLE_APP_ID in .env (gitignored).</action>
+      <action>Ask for FlutterFlow deploy webhook URL or API key; store as FLUTTERFLOW_TOKEN.</action>
+    </step>
+    <step n="2" title="Define deployment endpoints">
+      <action>Document Bubble deployment endpoint: POST https://bubble.io/api/1.1/wf/deploy with version parameter.</action>
+      <action>Document FlutterFlow endpoint (REST or CLI) per latest docs; include sample payload.</action>
+    </step>
+    <step n="3" title="Create automation script">
+      <action>Draft script (scripts/nocode-deploy.mjs) to trigger Bubble deploy then FlutterFlow build sequentially.</action>
+      <action>Include logging, error handling, and Slack/Email notification hooks placeholders.</action>
+    </step>
+    <step n="4" title="Test dry run">
+      <action>Perform dry-run with sandbox credentials if available; otherwise, output curl commands for user to run manually.</action>
+      <action>Record deployment status and URLs in docs/agri-ai-design-lab/connector-roadmap.md.</action>
+    </step>
+  </flow>
+  <output>
+    🚀 No-code deployment automation prepared with secure env vars, documented endpoints, and test plan.
+  </output>
+</task>

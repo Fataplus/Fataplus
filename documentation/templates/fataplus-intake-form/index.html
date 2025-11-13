@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Intake de Projet - Fataplus SARLU</title>
+    <meta name="description" content="Formulaire professionnel pour définir les besoins de votre projet digital avec Fataplus, première agence de design produit agritech de Madagascar">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 83 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M51.2361 7.97809H57.9698V15.6786H60.4469V7.97809H67.1717V6.02397H51.2361V7.97809Z' fill='%2318CF4C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M29.2732 15.7143H26.8319V10.1107H38.4214V11.8239H29.2732V15.7143ZM29.2732 7.97809L26.8319 7.93762V6.05966H39.2263V7.97809H29.2732Z' fill='%2318CF4C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M39.7181 15.7143H37.0353L44.8511 6.06858H47.6948L55.5285 15.7143H52.7295L51.0701 13.546H41.3742L42.676 11.8417H49.7658L47.0957 8.35285C46.9168 8.06137 46.7648 7.83532 46.6396 7.67471C46.5144 7.5141 46.3803 7.34159 46.2372 7.15718H46.1836C46.0464 7.34754 45.9153 7.52302 45.7901 7.68363C45.6649 7.8383 45.5129 8.06435 45.334 8.36178L42.676 11.8417H41.2652L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z' fill='%2318CF4C'/%3E%3Cpath d='M41.2652 11.8417L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z' fill='%2318CF4C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M67.1896 15.7143H64.5068L72.3226 6.06858H75.1663L83 15.7143H80.201L78.5416 13.546H68.8457L70.1475 11.8417H77.2373L74.5672 8.35285C74.3883 8.06137 74.2363 7.83532 74.1111 7.67471C73.9859 7.5141 73.8518 7.34159 73.7087 7.15718H73.655C73.5179 7.34753 73.3868 7.52302 73.2616 7.68363C73.1364 7.8383 72.9844 8.06434 72.8055 8.36178L70.1475 11.8417H68.7366L67.6367 13.546H68.8457L67.1896 15.7143Z' fill='%2318CF4C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M79.1658 4.12647H76.4901V3.02313H79.1658V4.12647ZM80.2636 4.12647H79.1658V6.05964H80.2636V4.12647ZM80.2636 3.02313H79.1658V1.07142H80.2636V3.02313ZM80.2636 3.02313V4.12647H82.9393V3.02313H80.2636Z' fill='%2318CF4C'/%3E%3Cpath d='M79.1658 3.02313V4.12647H80.2636V3.02313H79.1658Z' fill='%2318CF4C'/%3E%3Cpath d='M68.7366 11.8417L67.6367 13.546H68.8457L70.1475 11.8417H68.7366Z' fill='%2318CF4C'/%3E%3Cpath d='M14.1404 1.45847C14.1404 1.20717 12.0243 0.400006 10.841 0.199894C9.18537 -0.0803561 9.15284 -0.07943 7.43352 0.288833C3.55212 1.12055 0.865253 3.96706 0.115772 8.04157C-0.199643 9.75735 0.142343 11.9625 0.984364 13.6431C1.29543 14.2636 1.57396 14.7715 1.60328 14.7715C1.6326 14.7717 1.62184 14.2071 1.57923 13.5166C1.40744 10.7273 2.58159 7.72195 4.5964 5.7954C6.13751 4.32142 7.14995 3.804 9.91011 3.07883C12.1047 2.50211 14.1404 1.72251 14.1404 1.45847Z' fill='%2318CF4C'/%3E%3Cpath d='M14.2622 9.24294C15.3319 7.60869 15.7722 6.03512 15.9126 3.34657L16.0439 0.82733L14.8237 1.76119C13.4841 2.7863 12.7818 3.08462 9.59172 3.9842C6.16774 4.94979 4.5231 6.27877 3.1886 9.15817C2.64619 10.3283 2.5738 10.7625 2.58136 12.8026C2.58801 14.6784 2.68444 15.3278 3.0885 16.2188C3.36291 16.8238 3.68062 17.319 3.79446 17.319C3.9083 17.319 4.05742 16.8972 4.12568 16.3817C4.28671 15.1685 5.6093 12.3623 6.76673 10.7781C7.74962 9.43263 9.55026 7.70689 11.0854 6.63893C12.5551 5.61636 12.5422 5.83153 11.041 7.38217L9.67372 8.79431L10.6472 8.63565C11.8406 8.4411 11.9231 8.7774 10.7842 9.19384C8.93913 9.86852 6.56424 12.8253 5.68878 15.5379C5.10376 17.351 4.82889 19.7463 5.18096 19.9661C5.33443 20.0622 5.43613 19.9496 5.43613 19.6833C5.43613 19.4401 5.54928 18.9127 5.68763 18.5116C5.89264 17.917 6.06329 17.7822 6.61097 17.7822C7.49583 17.7822 9.93141 16.9438 10.8099 16.337C11.667 15.7447 12.9951 14.5035 12.9951 14.2949C12.9951 14.2101 12.7117 14.1939 12.3652 14.259C11.8179 14.3618 11.8915 14.2518 12.9257 13.4205C13.9335 12.6106 15.2857 10.8181 15.2857 10.2924C15.2857 10.2081 14.9235 10.139 14.4808 10.139H13.6758L14.2622 9.24294Z' fill='%2318CF4C'/%3E%3Cpath d='M11.4982 18.3536C17.3346 16.8164 20.229 10.606 17.664 5.12349C17.0135 3.73313 16.66 3.54437 16.66 4.58778C16.66 5.40282 15.8604 7.92368 15.3835 8.61226C14.9235 9.27629 14.973 9.44421 15.6293 9.44421C15.9442 9.44421 16.1996 9.57461 16.1969 9.73372C16.1875 10.2789 15.3461 11.9062 14.6624 12.7018C14.2863 13.1393 14.0194 13.6146 14.0689 13.7577C14.1186 13.9009 13.6325 14.6008 12.9889 15.313C11.7992 16.6293 9.11275 18.2415 8.09688 18.2489C7.69992 18.2519 7.67449 18.2932 7.95578 18.4771C8.46337 18.8087 9.96921 18.7564 11.4982 18.3536Z' fill='%2318CF4C'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-steps">
+            <div class="step active" data-step="1">
+                <i class="fas fa-bullseye"></i>
+                <span>Vision</span>
+            </div>
+            <div class="step" data-step="2">
+                <i class="fas fa-building"></i>
+                <span>Entreprise</span>
+            </div>
+            <div class="step" data-step="3">
+                <i class="fas fa-laptop-code"></i>
+                <span>Projet</span>
+            </div>
+            <div class="step" data-step="4">
+                <i class="fas fa-cogs"></i>
+                <span>Technique</span>
+            </div>
+            <div class="step" data-step="5">
+                <i class="fas fa-palette"></i>
+                <span>Design</span>
+            </div>
+            <div class="step" data-step="6">
+                <i class="fas fa-list-check"></i>
+                <span>Fonctions</span>
+            </div>
+            <div class="step" data-step="7">
+                <i class="fas fa-shield-halved"></i>
+                <span>Sécurité</span>
+            </div>
+            <div class="step" data-step="8">
+                <i class="fas fa-handshake"></i>
+                <span>Final</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-svg" width="120" height="30" viewBox="0 0 83 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M51.2361 7.97809H57.9698V15.6786H60.4469V7.97809H67.1717V6.02397H51.2361V7.97809Z" fill="#18CF4C"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2732 15.7143H26.8319V10.1107H38.4214V11.8239H29.2732V15.7143ZM29.2732 7.97809L26.8319 7.93762V6.05966H39.2263V7.97809H29.2732Z" fill="#18CF4C"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M39.7181 15.7143H37.0353L44.8511 6.06858H47.6948L55.5285 15.7143H52.7295L51.0701 13.546H41.3742L42.676 11.8417H49.7658L47.0957 8.35285C46.9168 8.06137 46.7648 7.83532 46.6396 7.67471C46.5144 7.5141 46.3803 7.34159 46.2372 7.15718H46.1836C46.0464 7.34754 45.9153 7.52302 45.7901 7.68363C45.6649 7.8383 45.5129 8.06435 45.334 8.36178L42.676 11.8417H41.2652L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z" fill="#18CF4C"/>
+                        <path d="M41.2652 11.8417L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z" fill="#18CF4C"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M67.1896 15.7143H64.5068L72.3226 6.06858H75.1663L83 15.7143H80.201L78.5416 13.546H68.8457L70.1475 11.8417H77.2373L74.5672 8.35285C74.3883 8.06137 74.2363 7.83532 74.1111 7.67471C73.9859 7.5141 73.8518 7.34159 73.7087 7.15718H73.655C73.5179 7.34753 73.3868 7.52302 73.2616 7.68363C73.1364 7.8383 72.9844 8.06434 72.8055 8.36178L70.1475 11.8417H68.7366L67.6367 13.546H68.8457L67.1896 15.7143Z" fill="#18CF4C"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M79.1658 4.12647H76.4901V3.02313H79.1658V4.12647ZM80.2636 4.12647H79.1658V6.05964H80.2636V4.12647ZM80.2636 3.02313H79.1658V1.07142H80.2636V3.02313ZM80.2636 3.02313V4.12647H82.9393V3.02313H80.2636Z" fill="#18CF4C"/>
+                        <path d="M79.1658 3.02313V4.12647H80.2636V3.02313H79.1658Z" fill="#18CF4C"/>
+                        <path d="M68.7366 11.8417L67.6367 13.546H68.8457L70.1475 11.8417H68.7366Z" fill="#18CF4C"/>
+                        <path d="M14.1404 1.45847C14.1404 1.20717 12.0243 0.400006 10.841 0.199894C9.18537 -0.0803561 9.15284 -0.07943 7.43352 0.288833C3.55212 1.12055 0.865253 3.96706 0.115772 8.04157C-0.199643 9.75735 0.142343 11.9625 0.984364 13.6431C1.29543 14.2636 1.57396 14.7715 1.60328 14.7715C1.6326 14.7717 1.62184 14.2071 1.57923 13.5166C1.40744 10.7273 2.58159 7.72195 4.5964 5.7954C6.13751 4.32142 7.14995 3.804 9.91011 3.07883C12.1047 2.50211 14.1404 1.72251 14.1404 1.45847Z" fill="#18CF4C"/>
+                        <path d="M14.2622 9.24294C15.3319 7.60869 15.7722 6.03512 15.9126 3.34657L16.0439 0.82733L14.8237 1.76119C13.4841 2.7863 12.7818 3.08462 9.59172 3.9842C6.16774 4.94979 4.5231 6.27877 3.1886 9.15817C2.64619 10.3283 2.5738 10.7625 2.58136 12.8026C2.58801 14.6784 2.68444 15.3278 3.0885 16.2188C3.36291 16.8238 3.68062 17.319 3.79446 17.319C3.9083 17.319 4.05742 16.8972 4.12568 16.3817C4.28671 15.1685 5.6093 12.3623 6.76673 10.7781C7.74962 9.43263 9.55026 7.70689 11.0854 6.63893C12.5551 5.61636 12.5422 5.83153 11.041 7.38217L9.67372 8.79431L10.6472 8.63565C11.8406 8.4411 11.9231 8.7774 10.7842 9.19384C8.93913 9.86852 6.56424 12.8253 5.68878 15.5379C5.10376 17.351 4.82889 19.7463 5.18096 19.9661C5.33443 20.0622 5.43613 19.9496 5.43613 19.6833C5.43613 19.4401 5.54928 18.9127 5.68763 18.5116C5.89264 17.917 6.06329 17.7822 6.61097 17.7822C7.49583 17.7822 9.93141 16.9438 10.8099 16.337C11.667 15.7447 12.9951 14.5035 12.9951 14.2949C12.9951 14.2101 12.7117 14.1939 12.3652 14.259C11.8179 14.3618 11.8915 14.2518 12.9257 13.4205C13.9335 12.6106 15.2857 10.8181 15.2857 10.2924C15.2857 10.2081 14.9235 10.139 14.4808 10.139H13.6758L14.2622 9.24294Z" fill="#18CF4C"/>
+                        <path d="M11.4982 18.3536C17.3346 16.8164 20.229 10.606 17.664 5.12349C17.0135 3.73313 16.66 3.54437 16.66 4.58778C16.66 5.40282 15.8604 7.92368 15.3835 8.61226C14.9235 9.27629 14.973 9.44421 15.6293 9.44421C15.9442 9.44421 16.1996 9.57461 16.1969 9.73372C16.1875 10.2789 15.3461 11.9062 14.6624 12.7018C14.2863 13.1393 14.0194 13.6146 14.0689 13.7577C14.1186 13.9009 13.6325 14.6008 12.9889 15.313C11.7992 16.6293 9.11275 18.2415 8.09688 18.2489C7.69992 18.2519 7.67449 18.2932 7.95578 18.4771C8.46337 18.8087 9.96921 18.7564 11.4982 18.3536Z" fill="#18CF4C"/>
+                    </svg>
+                </div>
+                <div class="header-info">
+                    <h1>Formulaire d'Intake de Projet</h1>
+                    <p>Définissons ensemble les besoins de votre projet digital</p>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:fenohery.fanomezanirina@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+261342047213" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <form id="projectForm" class="project-form">
+
+                <!-- Section 1: Vision Globale -->
+                <section class="form-section active" data-section="1">
+                    <div class="section-header">
+                        <h2><i class="fas fa-bullseye"></i> Vision Globale du Projet</h2>
+                        <p>Décrivez votre vision et ce que vous souhaitez accomplir</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectTitle">Titre du Projet *</label>
+                        <input type="text" id="projectTitle" name="projectTitle" required placeholder="Ex: Platforme agricole intelligente">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problemStatement">Problème à Résoudre *</label>
+                        <textarea id="problemStatement" name="problemStatement" rows="4" required placeholder="Quel problème concret votre projet va-t-il résoudre?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="solutionVision">Solution Envisagée *</label>
+                        <textarea id="solutionVision" name="solutionVision" rows="4" required placeholder="Décrivez la solution que vous imaginez..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="targetAudience">Public Cible *</label>
+                        <textarea id="targetAudience" name="targetAudience" rows="3" required placeholder="Qui sont les utilisateurs finaux de votre produit?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expectedImpact">Impact Attendu *</label>
+                        <textarea id="expectedImpact" name="expectedImpact" rows="3" required placeholder="Quel sera l'impact positif de votre projet?"></textarea>
+                    </div>
+                </section>
+
+                <!-- Section 2: Informations Entreprise -->
+                <section class="form-section" data-section="2">
+                    <div class="section-header">
+                        <h2><i class="fas fa-building"></i> Informations sur l'Entreprise</h2>
+                        <p>Parlez-nous de votre organisation</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="companyName">Nom de l'Entreprise *</label>
+                            <input type="text" id="companyName" name="companyName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry">Secteur d'Activité *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="agritech">Agritech / Agriculture</option>
+                                <option value="fintech">Fintech / Finance</option>
+                                <option value="healthtech">Healthtech / Santé</option>
+                                <option value="edtech">Edtech / Éducation</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="retail">Commerce de détail</option>
+                                <option value="manufacturing">Industrie</option>
+                                <option value="government">Gouvernement</option>
+                                <option value="nonprofit">Association/ONG</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companySize">Taille de l'Entreprise *</label>
+                        <select id="companySize" name="companySize" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="startup">Startup (1-10 employés)</option>
+                            <option value="sme">PME (11-50 employés)</option>
+                            <option value="large">Grande entreprise (51+ employés)</option>
+                            <option value="organization">Organisation/Association</option>
+                            <option value="individual">Particulier</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Budget Disponible *</label>
+                        <div class="budget-options">
+                            <label class="budget-option">
+                                <input type="radio" name="budget" value="small" required>
+                                <span class="budget-label">
+                                    <span class="budget-amount">< 500K MGA</span>
+                                    <span class="budget-desc">Projet simple</span>
+                                </span>
+                            </label>
+                            <label class="budget-option">
+                                <input type="radio" name="budget" value="medium">
+                                <span class="budget-label">
+                                    <span class="budget-amount">500K - 1M MGA</span>
+                                    <span class="budget-desc">Projet modéré</span>
+                                </span>
+                            </label>
+                            <label class="budget-option">
+                                <input type="radio" name="budget" value="large">
+                                <span class="budget-label">
+                                    <span class="budget-amount">1M - 5M MGA</span>
+                                    <span class="budget-desc">Projet avancé</span>
+                                </span>
+                            </label>
+                            <label class="budget-option">
+                                <input type="radio" name="budget" value="enterprise">
+                                <span class="budget-label">
+                                    <span class="budget-amount">> 5M MGA</span>
+                                    <span class="budget-desc">Projet entreprise</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Délai Souhaité *</label>
+                        <div class="timeline-options">
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="urgent" required>
+                                <span>< 1 mois (Urgent)</span>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="short">
+                                <span>1-3 mois</span>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="medium">
+                                <span>3-6 mois</span>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="long">
+                                <span>6-12 mois</span>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="extended">
+                                <span>> 12 mois</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Type de Projet -->
+                <section class="form-section" data-section="3">
+                    <div class="section-header">
+                        <h2><i class="fas fa-laptop-code"></i> Type de Projet</h2>
+                        <p>Sélectionnez les types de projets qui correspondent à vos besoins</p>
+                    </div>
+
+                    <div class="project-types">
+                        <div class="project-category">
+                            <h3><i class="fas fa-palette"></i> Design & UX</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="ui-design">
+                                    <span class="checkmark"></span>
+                                    <span>Design d'interface (UI/UX)</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="product-design">
+                                    <span class="checkmark"></span>
+                                    <span>Design produit complet</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="redesign">
+                                    <span class="checkmark"></span>
+                                    <span>Refonte visuelle</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="branding">
+                                    <span class="checkmark"></span>
+                                    <span>Identité visuelle</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="prototyping">
+                                    <span class="checkmark"></span>
+                                    <span>Prototypage interactif</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="project-category">
+                            <h3><i class="fas fa-globe"></i> Développement Web</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="website">
+                                    <span class="checkmark"></span>
+                                    <span>Site web vitrine</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="ecommerce">
+                                    <span class="checkmark"></span>
+                                    <span>Site e-commerce</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="pwa">
+                                    <span class="checkmark"></span>
+                                    <span>Application web progressive (PWA)</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="saas">
+                                    <span class="checkmark"></span>
+                                    <span>Plateforme SaaS</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="portal">
+                                    <span class="checkmark"></span>
+                                    <span>Portail client</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="project-category">
+                            <h3><i class="fas fa-robot"></i> Intelligence Artificielle</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="chatbot">
+                                    <span class="checkmark"></span>
+                                    <span>Chatbot/AI Assistant</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="recommendation">
+                                    <span class="checkmark"></span>
+                                    <span>Système de recommandation</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="predictive">
+                                    <span class="checkmark"></span>
+                                    <span>Analyse prédictive</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="nlp">
+                                    <span class="checkmark"></span>
+                                    <span>Traitement NLP</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="automation">
+                                    <span class="checkmark"></span>
+                                    <span>Automatisation IA</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="project-category">
+                            <h3><i class="fas fa-mobile-alt"></i> Applications Mobiles</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="ios">
+                                    <span class="checkmark"></span>
+                                    <span>Application iOS native</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="android">
+                                    <span class="checkmark"></span>
+                                    <span>Application Android native</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="projectTypes" value="crossplatform">
+                                    <span class="checkmark"></span>
+                                    <span>Application cross-platform</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complexity">Complexité Technique *</label>
+                        <select id="complexity" name="complexity" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="simple">Simple (template/modèle existant)</option>
+                            <option value="moderate">Moyenne (personnalisation modérée)</option>
+                            <option value="complex">Complexe (développement sur mesure)</option>
+                            <option value="very-complex">Très complexe (architecture avancée)</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Section 4: Spécifications Techniques -->
+                <section class="form-section" data-section="4">
+                    <div class="section-header">
+                        <h2><i class="fas fa-cogs"></i> Spécifications Techniques</h2>
+                        <p>Vos préférences technologiques</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Technologies Frontend Préférées</label>
+                        <div class="tech-options">
+                            <label class="tech-option">
+                                <input type="checkbox" name="frontendTech" value="html-css-js">
+                                <span>HTML/CSS/JavaScript</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="frontendTech" value="react">
+                                <span>React/Next.js</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="frontendTech" value="vue">
+                                <span>Vue.js/Nuxt.js</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="frontendTech" value="angular">
+                                <span>Angular</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="frontendTech" value="no-preference">
+                                <span>Pas de préférence</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Technologies Backend Préférées</label>
+                        <div class="tech-options">
+                            <label class="tech-option">
+                                <input type="checkbox" name="backendTech" value="nodejs">
+                                <span>Node.js</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="backendTech" value="python">
+                                <span>Python (Django/Flask/FastAPI)</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="backendTech" value="php">
+                                <span>PHP (Laravel/Symfony)</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="backendTech" value="java">
+                                <span>Java/Spring</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="backendTech" value="no-preference">
+                                <span>Pas de préférence</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Base de Données</label>
+                        <div class="tech-options">
+                            <label class="tech-option">
+                                <input type="checkbox" name="database" value="mysql">
+                                <span>MySQL/MariaDB</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="database" value="postgresql">
+                                <span>PostgreSQL</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="database" value="mongodb">
+                                <span>MongoDB</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" name="database" value="firebase">
+                                <span>Firebase</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="integrations">Intégrations Externes Requises</label>
+                        <textarea id="integrations" name="integrations" rows="3" placeholder="Listez les systèmes existants à intégrer (CRM, paiement, API tierces, etc.)"></textarea>
+                    </div>
+                </section>
+
+                <!-- Section 5: Design et UX -->
+                <section class="form-section" data-section="5">
+                    <div class="section-header">
+                        <h2><i class="fas fa-palette"></i> Design et Expérience Utilisateur</h2>
+                        <p>Vos préférences visuelles et expérientielles</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Style Visuel Recherché *</label>
+                        <div class="style-options">
+                            <label class="style-option">
+                                <input type="radio" name="visualStyle" value="modern" required>
+                                <span class="style-preview">
+                                    <span class="style-icon">🎨</span>
+                                    <span class="style-name">Moderne et épuré</span>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="visualStyle" value="corporate">
+                                <span class="style-preview">
+                                    <span class="style-icon">🏢</span>
+                                    <span class="style-name">Corporate et professionnel</span>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="visualStyle" value="creative">
+                                <span class="style-preview">
+                                    <span class="style-icon">🎭</span>
+                                    <span class="style-name">Créatif et audacieux</span>
+                                </span>
+                            </label>
+                            <label class="style-option">
+                                <input type="radio" name="visualStyle" value="minimalist">
+                                <span class="style-preview">
+                                    <span class="style-icon">⚪</span>
+                                    <span class="style-name">Minimaliste</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="references">Références Design (sites/apps que vous aimez)</label>
+                        <textarea id="references" name="references" rows="3" placeholder="Listez 2-3 sites ou applications dont vous appréciez le design..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Éléments Visuels Existant *</label>
+                        <div class="existing-assets">
+                            <label class="asset-option">
+                                <input type="checkbox" name="existingAssets" value="logo">
+                                <span>Logo existant</span>
+                            </label>
+                            <label class="asset-option">
+                                <input type="checkbox" name="existingAssets" value="colors">
+                                <span>Couleurs définies</span>
+                            </label>
+                            <label class="asset-option">
+                                <input type="checkbox" name="existingAssets" value="typography">
+                                <span>Typographie choisie</span>
+                            </label>
+                            <label class="asset-option">
+                                <input type="checkbox" name="existingAssets" value="none">
+                                <span>Aucun élément existant</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Fonctionnalités -->
+                <section class="form-section" data-section="6">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list-check"></i> Fonctionnalités Requises</h2>
+                        <p>Définissez les fonctionnalités par ordre de priorité</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mustHave">Fonctionnalités Essentielles (Must-have) *</label>
+                        <div id="mustHaveContainer" class="features-container">
+                            <div class="feature-item">
+                                <input type="text" class="feature-input" placeholder="Fonctionnalité indispensable 1">
+                                <button type="button" class="remove-feature" onclick="removeFeature(this)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-feature-btn" onclick="addFeature('mustHave')">
+                            <i class="fas fa-plus"></i> Ajouter une fonctionnalité
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shouldHave">Fonctionnalités Importantes (Should-have)</label>
+                        <div id="shouldHaveContainer" class="features-container">
+                            <div class="feature-item">
+                                <input type="text" class="feature-input" placeholder="Fonctionnalité souhaitée 1">
+                                <button type="button" class="remove-feature" onclick="removeFeature(this)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-feature-btn" onclick="addFeature('shouldHave')">
+                            <i class="fas fa-plus"></i> Ajouter une fonctionnalité
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Modules Spécifiques</label>
+                        <div class="modules-grid">
+                            <div class="module-category">
+                                <h4><i class="fas fa-users"></i> Gestion Utilisateurs</h4>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="auth">
+                                        <span class="checkmark"></span>
+                                        <span>Inscription/Connexion</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="profiles">
+                                        <span class="checkmark"></span>
+                                        <span>Profils utilisateurs</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="roles">
+                                        <span class="checkmark"></span>
+                                        <span>Rôles et permissions</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="social-auth">
+                                        <span class="checkmark"></span>
+                                        <span>Authentification sociale</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="module-category">
+                                <h4><i class="fas fa-shopping-cart"></i> E-commerce</h4>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="catalog">
+                                        <span class="checkmark"></span>
+                                        <span>Catalogue produits</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="cart">
+                                        <span class="checkmark"></span>
+                                        <span>Panier d'achat</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="payment">
+                                        <span class="checkmark"></span>
+                                        <span>Paiement en ligne</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="modules" value="orders">
+                                        <span class="checkmark"></span>
+                                        <span>Gestion commandes</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 7: Sécurité -->
+                <section class="form-section" data-section="7">
+                    <div class="section-header">
+                        <h2><i class="fas fa-shield-halved"></i> Sécurité et Conformité</h2>
+                        <p>Exigences de sécurité et conformité réglementaire</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Exigences de Sécurité</label>
+                        <div class="security-options">
+                            <label class="security-option">
+                                <input type="checkbox" name="security" value="https">
+                                <span class="checkmark"></span>
+                                <span>HTTPS obligatoire</span>
+                            </label>
+                            <label class="security-option">
+                                <input type="checkbox" name="security" value="strong-auth">
+                                <span class="checkmark"></span>
+                                <span>Authentification forte</span>
+                            </label>
+                            <label class="security-option">
+                                <input type="checkbox" name="security" value="encryption">
+                                <span class="checkmark"></span>
+                                <span>Chiffrement des données</span>
+                            </label>
+                            <label class="security-option">
+                                <input type="checkbox" name="security" value="audit">
+                                <span class="checkmark"></span>
+                                <span>Audit de sécurité</span>
+                            </label>
+                            <label class="security-option">
+                                <input type="checkbox" name="security" value="gdpr">
+                                <span class="checkmark"></span>
+                                <span>Conformité RGPD</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Types de Données Sensibles</label>
+                        <div class="data-types">
+                            <label class="data-option">
+                                <input type="checkbox" name="sensitiveData" value="personal">
+                                <span class="checkmark"></span>
+                                <span>Données personnelles</span>
+                            </label>
+                            <label class="data-option">
+                                <input type="checkbox" name="sensitiveData" value="financial">
+                                <span class="checkmark"></span>
+                                <span>Informations bancaires</span>
+                            </label>
+                            <label class="data-option">
+                                <input type="checkbox" name="sensitiveData" value="medical">
+                                <span class="checkmark"></span>
+                                <span>Données médicales</span>
+                            </label>
+                            <label class="data-option">
+                                <input type="checkbox" name="sensitiveData" value="business">
+                                <span class="checkmark"></span>
+                                <span>Informations d'entreprise</span>
+                            </label>
+                            <label class="data-option">
+                                <input type="checkbox" name="sensitiveData" value="none">
+                                <span class="checkmark"></span>
+                                <span>Aucune donnée sensible</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 8: Final -->
+                <section class="form-section" data-section="8">
+                    <div class="section-header">
+                        <h2><i class="fas fa-handshake"></i> Informations Complémentaires</h2>
+                        <p>Derniers détails pour finaliser votre projet</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Votre Nom *</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Téléphone</label>
+                            <input type="tel" id="contactPhone" name="contactPhone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">Notes Additionnelles</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="5" placeholder="Toute information supplémentaire, contraintes spécifiques, préférences, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span class="checkmark"></span>
+                            <span>J'accepte que les informations fournies soient utilisées par Fataplus pour l'analyse de mon projet et suis d'accord pour être contacté pour une suite *</span>
+                        </label>
+                    </div>
+
+                    <div class="summary-section">
+                        <h3><i class="fas fa-clipboard-check"></i> Résumé de Votre Projet</h3>
+                        <div id="projectSummary" class="project-summary">
+                            <!-- Summary will be generated dynamically -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" id="prevBtn" class="nav-btn prev-btn" onclick="changeSection(-1)">
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <button type="button" id="nextBtn" class="nav-btn next-btn" onclick="changeSection(1)">
+                        Suivant <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="submit" id="submitBtn" class="nav-btn submit-btn" style="display: none;">
+                        <i class="fas fa-paper-plane"></i> Soumettre le Projet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2><i class="fas fa-check-circle"></i> Projet Soumis avec Succès!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Merci d'avoir complété le formulaire. Notre équipe va analyser votre projet et vous contactera dans les 48h.</p>
+                <div class="next-steps">
+                    <h4>Prochaines Étapes:</h4>
+                    <ol>
+                        <li>Analyse de vos besoins par notre équipe</li>
+                        <li>Contact téléphonique pour discussion approfondie</li>
+                        <li>Préparation d'une proposition personnalisée</li>
+                        <li>Validation et début du développement</li>
+                    </ol>
+                </div>
+                <div class="contact-info-final">
+                    <p><strong>Pour toute question urgente:</strong></p>
+                    <a href="mailto:fenohery.fanomezanirina@gmail.com">
+                        <i class="fas fa-envelope"></i> fenohery.fanomezanirina@gmail.com
+                    </a>
+                    <a href="tel:+261342047213">
+                        <i class="fas fa-phone"></i> +261 34 20 472 13
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="downloadPRD()">
+                    <i class="fas fa-download"></i> Télécharger le PRD
+                </button>
+                <button class="btn-secondary" onclick="window.location.reload()">
+                    <i class="fas fa-plus"></i> Nouveau Projet
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Génération de votre PRD en cours...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <svg class="logo-svg" width="100" height="25" viewBox="0 0 83 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M51.2361 7.97809H57.9698V15.6786H60.4469V7.97809H67.1717V6.02397H51.2361V7.97809Z" fill="#18CF4C"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2732 15.7143H26.8319V10.1107H38.4214V11.8239H29.2732V15.7143ZM29.2732 7.97809L26.8319 7.93762V6.05966H39.2263V7.97809H29.2732Z" fill="#18CF4C"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M39.7181 15.7143H37.0353L44.8511 6.06858H47.6948L55.5285 15.7143H52.7295L51.0701 13.546H41.3742L42.676 11.8417H49.7658L47.0957 8.35285C46.9168 8.06137 46.7648 7.83532 46.6396 7.67471C46.5144 7.5141 46.3803 7.34159 46.2372 7.15718H46.1836C46.0464 7.34754 45.9153 7.52302 45.7901 7.68363C45.6649 7.8383 45.5129 8.06435 45.334 8.36178L42.676 11.8417H41.2652L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z" fill="#18CF4C"/>
+                            <path d="M41.2652 11.8417L40.1652 13.546H41.3742L42.676 11.8417H41.2652Z" fill="#18CF4C"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M67.1896 15.7143H64.5068L72.3226 6.06858H75.1663L83 15.7143H80.201L78.5416 13.546H68.8457L70.1475 11.8417H77.2373L74.5672 8.35285C74.3883 8.06137 74.2363 7.83532 74.1111 7.67471C73.9859 7.5141 73.8518 7.34159 73.7087 7.15718H73.655C73.5179 7.34753 73.3868 7.52302 73.2616 7.68363C73.1364 7.8383 72.9844 8.06434 72.8055 8.36178L70.1475 11.8417H68.7366L67.6367 13.546H68.8457L67.1896 15.7143Z" fill="#18CF4C"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M79.1658 4.12647H76.4901V3.02313H79.1658V4.12647ZM80.2636 4.12647H79.1658V6.05964H80.2636V4.12647ZM80.2636 3.02313H79.1658V1.07142H80.2636V3.02313ZM80.2636 3.02313V4.12647H82.9393V3.02313H80.2636Z" fill="#18CF4C"/>
+                            <path d="M79.1658 3.02313V4.12647H80.2636V3.02313H79.1658Z" fill="#18CF4C"/>
+                            <path d="M68.7366 11.8417L67.6367 13.546H68.8457L70.1475 11.8417H68.7366Z" fill="#18CF4C"/>
+                            <path d="M14.1404 1.45847C14.1404 1.20717 12.0243 0.400006 10.841 0.199894C9.18537 -0.0803561 9.15284 -0.07943 7.43352 0.288833C3.55212 1.12055 0.865253 3.96706 0.115772 8.04157C-0.199643 9.75735 0.142343 11.9625 0.984364 13.6431C1.29543 14.2636 1.57396 14.7715 1.60328 14.7715C1.6326 14.7717 1.62184 14.2071 1.57923 13.5166C1.40744 10.7273 2.58159 7.72195 4.5964 5.7954C6.13751 4.32142 7.14995 3.804 9.91011 3.07883C12.1047 2.50211 14.1404 1.72251 14.1404 1.45847Z" fill="#18CF4C"/>
+                            <path d="M14.2622 9.24294C15.3319 7.60869 15.7722 6.03512 15.9126 3.34657L16.0439 0.82733L14.8237 1.76119C13.4841 2.7863 12.7818 3.08462 9.59172 3.9842C6.16774 4.94979 4.5231 6.27877 3.1886 9.15817C2.64619 10.3283 2.5738 10.7625 2.58136 12.8026C2.58801 14.6784 2.68444 15.3278 3.0885 16.2188C3.36291 16.8238 3.68062 17.319 3.79446 17.319C3.9083 17.319 4.05742 16.8972 4.12568 16.3817C4.28671 15.1685 5.6093 12.3623 6.76673 10.7781C7.74962 9.43263 9.55026 7.70689 11.0854 6.63893C12.5551 5.61636 12.5422 5.83153 11.041 7.38217L9.67372 8.79431L10.6472 8.63565C11.8406 8.4411 11.9231 8.7774 10.7842 9.19384C8.93913 9.86852 6.56424 12.8253 5.68878 15.5379C5.10376 17.351 4.82889 19.7463 5.18096 19.9661C5.33443 20.0622 5.43613 19.9496 5.43613 19.6833C5.43613 19.4401 5.54928 18.9127 5.68763 18.5116C5.89264 17.917 6.06329 17.7822 6.61097 17.7822C7.49583 17.7822 9.93141 16.9438 10.8099 16.337C11.667 15.7447 12.9951 14.5035 12.9951 14.2949C12.9951 14.2101 12.7117 14.1939 12.3652 14.259C11.8179 14.3618 11.8915 14.2518 12.9257 13.4205C13.9335 12.6106 15.2857 10.8181 15.2857 10.2924C15.2857 10.2081 14.9235 10.139 14.4808 10.139H13.6758L14.2622 9.24294Z" fill="#18CF4C"/>
+                            <path d="M11.4982 18.3536C17.3346 16.8164 20.229 10.606 17.664 5.12349C17.0135 3.73313 16.66 3.54437 16.66 4.58778C16.66 5.40282 15.8604 7.92368 15.3835 8.61226C14.9235 9.27629 14.973 9.44421 15.6293 9.44421C15.9442 9.44421 16.1996 9.57461 16.1969 9.73372C16.1875 10.2789 15.3461 11.9062 14.6624 12.7018C14.2863 13.1393 14.0194 13.6146 14.0689 13.7577C14.1186 13.9009 13.6325 14.6008 12.9889 15.313C11.7992 16.6293 9.11275 18.2415 8.09688 18.2489C7.69992 18.2519 7.67449 18.2932 7.95578 18.4771C8.46337 18.8087 9.96921 18.7564 11.4982 18.3536Z" fill="#18CF4C"/>
+                        </svg>
+                    </div>
+                    <p>Première agence de design produit agritech de Madagascar</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Services</h4>
+                        <a href="#design">Design UX/UI</a>
+                        <a href="#development">Développement Web</a>
+                        <a href="#ai">Solutions IA</a>
+                        <a href="#mobile">Applications Mobiles</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Entreprise</h4>
+                        <a href="#about">À Propos</a>
+                        <a href="#projects">Projets</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:fenohery.fanomezanirina@gmail.com">
+                        <i class="fas fa-envelope"></i> fenohery.fanomezanirina@gmail.com
+                    </a>
+                    <a href="tel:+261342047213">
+                        <i class="fas fa-phone"></i> +261 34 20 472 13
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fataplus SARLU. Tous droits réservés.</p>
+                <p>Fait avec 🌱 à Madagascar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

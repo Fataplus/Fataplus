@@ -1,0 +1,11 @@
+# Insight to Concept Workflow
+name: "insight-to-concept"
+description: "Transform research insights into prioritized AI-enabled concepts"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/insight-to-concept/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/insight-to-concept/template.md"
+standalone: true

@@ -1,0 +1,31 @@
+name = "fataplus-intake-form"
+main = "_worker.js"
+compatibility_date = "2025-11-10"
+
+[env.production]
+name = "fataplus-intake-form"
+
+# KV namespace for form submissions (optional)
+[[kv_namespaces]]
+binding = "FORM_SUBMISSIONS"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+# EMAIL_SERVICE = "your-email-service"
+# NOTIFICATION_EMAIL = "fenohery.fanomezanirina@gmail.com"
+
+# Build configuration
+[build]
+command = ""
+
+# Site configuration for Pages
+[site]
+bucket = "./"
+entry-point = "workers-site"
+
+# Analytics (optional)
+[analytics]
+engine = "cloudflare"

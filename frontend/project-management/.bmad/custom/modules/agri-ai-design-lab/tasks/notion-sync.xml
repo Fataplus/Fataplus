@@ -1,0 +1,27 @@
+<task id="{bmad_folder}/custom/modules/agri-ai-design-lab/tasks/notion-sync.xml" name="Notion Playbook Sync">
+  <llm critical="true">
+    <i>Goal: publish Agri-AI Design Lab playbooks to Notion while preserving bilingual formatting.</i>
+  </llm>
+  <flow>
+    <step n="1" title="Setup credentials">
+      <action>Guide user to create Notion integration with database/page access; store token as NOTION_TOKEN.</action>
+      <action>Capture target database ID for playbooks and optional parent page IDs.</action>
+    </step>
+    <step n="2" title="Map content model">
+      <action>Define Notion properties (Title, Client, Engagement Date, Status, Tags, FR Summary, EN Summary).</action>
+      <action>Note block structure for sections (toggle for FR/EN paragraphs, callouts for KPIs).</action>
+    </step>
+    <step n="3" title="Build sync script">
+      <action>Outline script (scripts/notion-sync.mjs) converting Markdown to Notion blocks using official SDK.</action>
+      <action>Include bilingual splitting: first English, then French translation if available.</action>
+      <action>Store mapping configuration in JSON (config/notion-playbook.json).</action>
+    </step>
+    <step n="4" title="Run validation">
+      <action>Perform dry run with playbook-smart-irrigation-2025-11-10.md; capture response status.</action>
+      <action>If success, log resulting Notion URL; if failure, show diagnostics.</action>
+    </step>
+  </flow>
+  <output>
+    📚 Notion sync pipeline documented with credentials, schema mapping, and executable script plan.
+  </output>
+</task>

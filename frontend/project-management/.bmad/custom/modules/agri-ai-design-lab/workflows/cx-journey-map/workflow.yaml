@@ -1,0 +1,11 @@
+# CX Journey Map Workflow
+name: "cx-journey-map"
+description: "Produce end-to-end customer and delivery experience journey map"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/cx-journey-map/instructions.md"
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/cx-journey-map/template.md"
+standalone: true

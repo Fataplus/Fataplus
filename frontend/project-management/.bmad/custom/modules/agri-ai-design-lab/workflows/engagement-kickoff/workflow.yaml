@@ -1,0 +1,11 @@
+# Engagement Kickoff Workflow
+name: "engagement-kickoff"
+description: "Kickoff agritech engagement, align goals, stakeholders, and success metrics"
+author: "Agri-AI Design Lab"
+
+config_source: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/config.yaml"
+output_folder: "{config_source}:output_folder"
+
+template: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/engagement-kickoff/template.md"
+instructions: "{project-root}/.bmad/custom/modules/agri-ai-design-lab/workflows/engagement-kickoff/instructions.md"
+standalone: true

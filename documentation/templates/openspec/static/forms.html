@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire d'Intake de Projet - Fataplus</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📋 Formulaire d'Intake de Projet - Fataplus</h1>
+      <p>Remplissez ce formulaire pour initier votre projet avec Fataplus SARLU.</p>
+    </header>
+
+    <main>
+      <form id="intake-form">
+        <section>
+          <h2>1. Informations Générales</h2>
+          <label>Nom du client: <input type="text" name="client" required /></label>
+          <label>Email: <input type="email" name="email" required /></label>
+          <label>Téléphone: <input type="tel" name="telephone" /></label>
+        </section>
+
+        <section>
+          <h2>2. Vision du Projet</h2>
+          <label>Problème à résoudre:<br /><textarea name="probleme" required></textarea></label>
+          <label>Solution envisagée:<br /><textarea name="solution"></textarea></label>
+          <label>Objectifs principaux:<br /><textarea name="objectifs"></textarea></label>
+        </section>
+
+        <section>
+          <h2>3. Type de Projet</h2>
+          <label><input type="checkbox" name="type" value="Design" /> Design & UX</label>
+          <label><input type="checkbox" name="type" value="Web" /> Développement Web</label>
+          <label><input type="checkbox" name="type" value="IA" /> Intelligence Artificielle</label>
+          <label><input type="checkbox" name="type" value="Mobile" /> Application Mobile</label>
+        </section>
+
+        <section>
+          <h2>4. Budget et Délais</h2>
+          <label>Budget estimé:
+            <select name="budget">
+              <option value="<500k">Moins de 500.000 MGA</option>
+              <option value="500k-1M">500.000 - 1.000.000 MGA</option>
+              <option value="1M-5M">1.000.000 - 5.000.000 MGA</option>
+              <option value=">5M">Plus de 5.000.000 MGA</option>
+            </select>
+          </label>
+          <label>Délai souhaité:
+            <select name="delai">
+              <option value="<1m">Moins d’un mois</option>
+              <option value="1-3m">1 à 3 mois</option>
+              <option value="3-6m">3 à 6 mois</option>
+              <option value=">6m">Plus de 6 mois</option>
+            </select>
+          </label>
+        </section>
+
+        <section>
+          <h2>5. Fonctionnalités Principales</h2>
+          <textarea name="fonctionnalites" placeholder="Listez les fonctionnalités principales..."></textarea>
+        </section>
+
+        <section>
+          <h2>6. Validation</h2>
+          <label><input type="checkbox" required /> Je confirme que les informations fournies sont exactes.</label>
+        </section>
+
+        <button type="submit">Soumettre le formulaire</button>
+      </form>
+
+      <div id="response"></div>
+    </main>
+
+    <script>
+      document.getElementById('intake-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(e.target).entries());
+        const res = await fetch('/api/setup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        const data = await res.json();
+        document.getElementById('response').innerText = data.success
+          ? '✅ Formulaire soumis avec succès !'
+          : '❌ Une erreur est survenue.';
+      });
+    </script>
+  </body>
+</html>

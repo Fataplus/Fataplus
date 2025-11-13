@@ -1,0 +1,35 @@
+name = "fataplus-intake-form"
+main = "src/index.ts"
+compatibility_date = "2025-11-10"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "fataplus-intake-form"
+
+# Variables d'environnement
+[vars]
+ENVIRONMENT = "production"
+APP_NAME = "Fataplus Intake Form"
+COMPANY_NAME = "Fataplus SARLU"
+CONTACT_EMAIL = "fenohery.fanomezanirina@gmail.com"
+CONTACT_PHONE = "+261342047213"
+
+# KV namespace pour stocker les soumissions
+[[kv_namespaces]]
+binding = "FORM_SUBMISSIONS"
+id = "fataplus-form-submissions"
+preview_id = "fataplus-form-submissions-preview"
+
+# D1 Database (optionnel pour les analytics)
+[[d1_databases]]
+binding = "DB"
+database_name = "fataplus-analytics"
+database_id = "your-database-id"
+
+# Assets pour servir les fichiers statiques
+[build]
+command = ""
+
+[site]
+bucket = "./static"
+entry-point = "workers-site"

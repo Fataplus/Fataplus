@@ -1,0 +1,29 @@
+<task id="{bmad_folder}/custom/modules/agri-ai-design-lab/tasks/figma-sync.xml" name="Figma Token Sync">
+  <llm critical="true">
+    <i>MANDATORY: Follow each step sequentially; confirm completion before moving on.</i>
+    <i>Do not store secrets in repo; use environment variables or secure vault.</i>
+  </llm>
+  <flow>
+    <step n="1" title="Gather prerequisites">
+      <action>Confirm {user_name} has Figma admin rights for Fataplus team ({config_source}:figma_team_url).</action>
+      <action>Request personal access token from user; instruct to store as FIGMA_PAT in secure env (not written to disk).</action>
+      <action>Identify design system file IDs for tokens, components, and libraries.</action>
+    </step>
+    <step n="2" title="Validate access">
+      <action>Call Figma API /v1/files/{file_id} using FIGMA_PAT (use curl example only; do not execute network calls without approval).</action>
+      <action>If unauthorized, guide user to reissue token with correct scopes.</action>
+    </step>
+    <step n="3" title="Configure sync script">
+      <action>Create or update local script (e.g., scripts/figma-sync.mjs) pulling styles/components into {config_source}:design_system_root.</action>
+      <action>Ensure script outputs JSON for tokens and markdown summary for changelog.</action>
+      <action>Recommend cron or npm script for recurring sync.</action>
+    </step>
+    <step n="4" title="Document handoff">
+      <action>Update docs/agri-ai-design-lab/connector-roadmap.md with token status + file IDs.</action>
+      <action>Remind user to rotate token every 90 days.</action>
+    </step>
+  </flow>
+  <output>
+    ✅ Figma connector configured. Token stored securely, sync script path documented, latest token pull verified.
+  </output>
+</task>

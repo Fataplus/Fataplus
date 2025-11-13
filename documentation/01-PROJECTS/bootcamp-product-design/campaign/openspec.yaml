@@ -1,0 +1,151 @@
+# OpenSpec Campaign Management - Bootcamp Product Design Fataplus
+# Spécification complète pour la campagne marketing 2025-2026
+
+project:
+  name: "Fataplus Bootcamp Product Design Campaign"
+  version: "1.0.0"
+  description: "Campagne marketing pour lancement bootcamp certifié Figma EDU"
+  owner: "Fenohery Fanomezanirina"
+  timeline: "Octobre 2025 - Janvier 2026"
+
+campaign:
+  name: "Bootcamp Launch 2025"
+  budget_total: "1500€"
+  target_leads: 200
+  target_conversions: 30
+
+phases:
+  - phase: "Preparation"
+    duration: "2 weeks"
+    start_date: "2025-10-16"
+    end_date: "2025-10-30"
+    budget: "100€"
+    objectives:
+      - Installation outils
+      - Création contenus
+      - Configuration tracking
+
+  - phase: "Teasing"
+    duration: "2 weeks"
+    start_date: "2025-10-31"
+    end_date: "2025-11-13"
+    budget: "100€"
+    objectives:
+      - Créer attente
+      - Engagement initial
+      - Construction audience
+
+  - phase: "Launch"
+    duration: "4 weeks"
+    start_date: "2025-11-14"
+    end_date: "2025-12-11"
+    budget: "1000€"
+    objectives:
+      - Génération leads
+      - Annonce officielle
+      - Conversion initiale
+
+  - phase: "Conversion"
+    duration: "4 weeks"
+    start_date: "2025-12-12"
+    end_date: "2026-01-08"
+    budget: "300€"
+    objectives:
+      - Finalisation inscriptions
+      - Qualification prospects
+      - Préparation cohorte
+
+platforms:
+  facebook:
+    page: "Fataplus"
+    budget_allocation: "60%"
+    target_audience:
+      age: "18-35"
+      location: "Madagascar + diaspora"
+      interests: ["Design", "Technology", "Education", "Freelance"]
+
+  linkedin:
+    profile: "Fenohery Fanomezanirina"
+    budget_allocation: "40%"
+    target_audience:
+      age: "22-45"
+      location: "Madagascar + international"
+      interests: ["Product Design", "UX/UI", "Tech Education", "Remote Work"]
+
+content_strategy:
+  content_pillars:
+    - pillar: "Formation"
+      topics: ["Product Design", "Figma EDU", "Career opportunities"]
+      formats: ["Posts", "Videos", "Carousels", "Stories"]
+
+    - pillar: "Expertise"
+      topics: ["Design Thinking", "UX Research", "Portfolio Building"]
+      formats: ["Articles", "Tutorials", "Case Studies"]
+
+    - pillar: "Opportunité"
+      topics: ["Freelance international", "Remote work", "Digital careers"]
+      formats: ["Testimonials", "Success stories", "Career guides"]
+
+metrics:
+  kpis:
+    - metric: "Reach"
+      target: "50,000 people"
+      platform: "Facebook + LinkedIn"
+
+    - metric: "Engagement Rate"
+      target: "5%"
+      platform: "Facebook"
+
+    - metric: "Click-Through Rate"
+      target: "3%"
+      platform: "LinkedIn"
+
+    - metric: "Cost Per Lead"
+      target: "5€"
+      platform: "All"
+
+    - metric: "Conversion Rate"
+      target: "15%"
+      platform: "Landing Page"
+
+required_assets:
+  creative_assets:
+    - "Logo Fataplus versions multiples"
+    - "Visuels campagnes (1080x1080, 1200x628)"
+    - "Vidéos courtes (30s, 60s)"
+    - "Carousels éducatifs"
+    - "Stories interactives"
+
+  technical_assets:
+    - "Landing page optimisée mobile"
+    - "Formulaire inscription"
+    - "Pixel Facebook/LinkedIn"
+    - "Email sequences"
+    - "Analytics setup"
+
+team:
+  campaign_manager: "Fenohery Fanomezanirina"
+  content_creator: "Fenohery + équipe"
+  technical_support: "Freelance/local"
+
+risk_management:
+  risks:
+    - risk: "Budget insuffisant"
+      mitigation: "Start small, scale based on performance"
+
+    - risk: "Faible engagement"
+      mitigation: "A/B testing, content optimisation"
+
+    - risk: "Problèmes techniques"
+      mitigation: "Testing pré-lancement, backup plan"
+
+success_criteria:
+  primary:
+    - "30 inscrits confirmés"
+    - "ROI positif campagne"
+    - "Pipeline prospects pour cohorte suivante"
+
+  secondary:
+    - "Notoriété Fataplus augmentée"
+    - "Réseau professionnel développé"
+    - "Contenu réutilisable créé"
