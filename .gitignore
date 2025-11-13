@@ -7,8 +7,9 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
-out/
 .next/
+.nuxt/
+.output/
 
 # Environment variables
 .env
@@ -17,89 +18,76 @@ out/
 .env.test.local
 .env.production.local
 
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-logs/
-*.log
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
+*~
 
 # Temporary files
-tmp/
-temp/
-
-# Cache
+*.tmp
+*.temp
 .cache/
-.parcel-cache/
 
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
+# Heavy directories causing repository bloat
+documentation/01-PROJECTS/fp-09-platform/
+documentation/01-PROJECTS/cloudron-rd/
+documentation/01-PROJECTS/Fiompiana sy Fambolena/
+agritech/
+frontend/node_modules/
+backend-integration/node_modules/
 
-# Coverage directory used by tools like istanbul
-coverage/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# Backend specific
-backend-integration/fataplus-bknd-backend/node_modules/
-backend-integration/fataplus-bknd-backend/dist/
-
-# Frontend specific
-frontend/*/node_modules/
-frontend/*/dist/
-frontend/*/build/
-frontend/*/.astro/
-
-# Large files
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.wma
+*.m4a
 *.zip
-*.tar.gz
-*.7z
 *.rar
+*.7z
+*.tar.gz
+*.tgz
+*.bz2
+*.xz
 
-# Figma files (if large)
-*.fig
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+*.accdb
 
-# Design assets
-assets/large/
-assets/videos/
-# Security - Environment files and secrets
-**/.env.mcp
-**/.env.production
-**/scan_results/secrets_*.log
-**/scan_results/passwords_and_keys.log
-**/env-fixed.txt
-**/.env copy.example
+# Package lock files (keep only one)
+package-lock.json
+yarn.lock
+
+# GitHub secret scanning exclusions
+**/cookies.txt
+**/sensitive_strings.txt
+**/secrets.yaml
+**/api_keys.json
+**/credentials.json
