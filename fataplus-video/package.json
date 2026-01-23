@@ -1,0 +1,27 @@
+{
+  "name": "fataplus-video",
+  "version": "1.0.0",
+  "description": "Vidéo promotionnelle Fataplus avec Remotion",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render FataplusPromo out/video.mp4",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.273",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.273"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config": "^4.0.273",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/web": "^0.0.179",
+    "eslint": "^8.57.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

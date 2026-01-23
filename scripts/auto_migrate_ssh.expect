@@ -1,0 +1,54 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "my.sitraka-prestataire.com"
+set user "root"
+set password "2026Fata"
+
+spawn ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "# " {
+        send "echo 'SSH Login Successful'\r"
+    }
+    "Permission denied" {
+        puts "Authentication failed"
+        exit 1
+    }
+    timeout {
+        puts "Connection timed out in expect"
+        exit 1
+    }
+    "refused" {
+        puts "Connection refused"
+        exit 1
+    }
+}
+
+expect "# "
+puts "Starting Migration Script..."
+send "wget http://roxi8838.odns.fr/backupcloudron/host_migration.sh -O host_migration.sh\r"
+expect "# "
+send "chmod +x host_migration.sh\r"
+expect "# "
+send "./host_migration.sh\r"
+
+# Wait for completion (give it time)
+set timeout 600
+expect {
+    "Migration Upload Complete" {
+        puts "Migration started successfully."
+    }
+    timeout {
+        puts "Timed out waiting for script execution."
+        exit 1
+    }
+}
+
+expect "# "
+send "exit\r"
+exit 0

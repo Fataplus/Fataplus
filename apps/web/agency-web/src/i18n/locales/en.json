@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "blog": "Blog",
+    "store": "Store",
+    "studio": "Studio",
+    "course": "Course",
+    "about": "About",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "loading": "Loading...",
+    "search": "Search",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to Fataplus",
+      "subtitle": "Your digital agency partner",
+      "description": "We create amazing digital experiences that help your business grow and succeed in the modern world."
+    },
+    "process": {
+      "title": "Our Process",
+      "steps": {
+        "discover": "Discover",
+        "design": "Design",
+        "develop": "Develop",
+        "deploy": "Deploy"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about our team and our mission to create exceptional digital experiences."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss your next project.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "system": {
+    "overview": "Overview",
+    "links": "Links",
+    "buttons": "Buttons",
+    "colors": "Colors",
+    "typography": "Typography"
+  }
+}

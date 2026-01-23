@@ -1,0 +1,126 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import BlogEntries1 from "@/components/blog/BlogEntries1.astro";
+import BlogEntries4 from "@/components/blog/BlogEntries4.astro";
+import SubscribeCta from "@/components/blog/SubscribeCta.astro";
+// Get all posts
+import { getCollection } from "astro:content";
+// Needed for dynamic pagination
+export async function getStaticPaths() {
+  const POSTS_PER_PAGE = 2;
+  const allPosts = await getCollection("posts");
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  return Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: String(i + 1) },
+  }));
+}
+// Get the current page from URL
+const { page } = Astro.params;
+const currentPage = parseInt(page);
+// Fetch posts and paginate
+const POSTS_PER_PAGE = 2;
+const allPosts = await getCollection("posts");
+const sortedPosts = allPosts
+  .filter((post) => post.data?.pubDate)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+const start = (currentPage - 1) * POSTS_PER_PAGE;
+const paginatedPosts = sortedPosts.slice(start, start + POSTS_PER_PAGE);
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-8">
+      <div class="overflow-hidden">
+        <Text
+          tag="h1"
+          variant="textXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Reflexions
+        </Text>
+      </div>
+      <div class="flex flex-col gap-y-1 mt-4">
+        {paginatedPosts.map((post) => <BlogEntries4 post={post} />)}
+      </div>
+      <nav
+        class="flex flex-col md:flex-row lg:justify-between gap-4 items-center text-xs text-black mt-4 pt-4 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+        aria-label="Pagination"
+      >
+        <div>
+          {
+            currentPage > 1 && (
+              <Link
+                size="sm"
+                variant="muted"
+                href={
+                  currentPage === 2
+                    ? `/blog/home-3/`
+                    : `/blog/home-3/${currentPage - 1}`
+                }
+                aria-label="Go to previous page"
+              >
+                Previous
+              </Link>
+            )
+          }
+        </div>
+
+        <div>
+          {
+            currentPage < totalPages && (
+              <Link
+                size="sm"
+                variant="muted"
+                href={`/blog/home-3/${currentPage + 1}`}
+                aria-label="Go to next page"
+              >
+                Next
+              </Link>
+            )
+          }
+        </div>
+      </nav>
+    </Wrapper>
+  </section>
+  <SubscribeCta />
+  <section>
+    <Wrapper class="py-8">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Latest relfexions
+        </Text>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-1 mt-1 pt-4 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        {allPosts.slice(0, 4).map((post) => <BlogEntries1 post={post} />)}
+      </div>
+      <div
+        class="flex justify-end mt-4 pt-2 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        <Text
+          tag="a"
+          href="/blog"
+          variant="textBase"
+          class="dark:text-base-400 text-base-500 text-balance"
+        >
+          All relfexions
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

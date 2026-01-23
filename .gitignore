@@ -1,0 +1,33 @@
+# Nested Repositories
+repos/
+
+# Archives and Temp
+archive/temp/
+
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv
+venv/
+
+# Environment Variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+
+# Tool Caches
+.ruff_cache/
+.bmad/

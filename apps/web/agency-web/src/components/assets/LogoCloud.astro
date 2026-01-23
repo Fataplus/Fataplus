@@ -1,0 +1,32 @@
+---
+import logo1 from "@/images/brands/FataplusLogo.svg";
+
+const logos = [
+  { src: logo1, alt: "Fataplus Logo" },
+  { src: logo1, alt: "Fataplus Logo" },
+  { src: logo1, alt: "Fataplus Logo" },
+  { src: logo1, alt: "Fataplus Logo" },
+  { src: logo1, alt: "Fataplus Logo" },
+  { src: logo1, alt: "Fataplus Logo" },
+];
+---
+
+<div
+  class="relative mx-auto mt-12 overflow-hidden overflow-x-hidden pb-12 lg:ml-8"
+>
+  <div
+    class="items-center relative animate-marquee flex gap-4 whitespace-nowrap"
+  >
+    {
+      logos.map((logo) => (
+        <img
+          width={200}
+          height={100}
+          class="h-8 dark:filter-none filter invert"
+          src={(typeof logo.src === "object" && logo.src?.src) ? logo.src.src : logo.src}
+          alt={logo.alt}
+        />
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,50 @@
+timestamp,engine,locale,query,category,new_actors_found,unique_actors_total,stop_rule_triggered2025-08-11T13:51:03Z,bing,fr,site:.gov.mg agriculture Madagascar,Government institutions,1,1,FALSE
+2025-08-11T13:51:08Z,ddg,fr,site:.gov.mg agriculture Madagascar,Government institutions,1,2,FALSE
+2025-08-11T13:51:14Z,bing,fr,site:gouv.mg agriculture Madagascar,Government institutions,0,2,FALSE
+2025-08-11T13:51:18Z,ddg,fr,site:gouv.mg agriculture Madagascar,Government institutions,0,2,FALSE
+2025-08-11T13:51:24Z,bing,fr,site:minae.gov.mg OR site:maep.gov.mg programme agriculture,Government institutions,0,2,FALSE
+2025-08-11T13:51:28Z,ddg,fr,site:minae.gov.mg OR site:maep.gov.mg programme agriculture,Government institutions,0,2,FALSE
+2025-08-11T13:51:33Z,bing,fr,filetype:pdf Madagascar agriculture rapport annuel site:.gov.mg,Government institutions,0,2,FALSE
+2025-08-11T13:51:38Z,ddg,fr,filetype:pdf Madagascar agriculture rapport annuel site:.gov.mg,Government institutions,0,2,FALSE
+2025-08-11T14:08:43Z,bing,fr,site:.gov.mg agriculture Madagascar,Government institutions,0,0,FALSE
+2025-08-11T14:08:47Z,ddg,fr,site:.gov.mg agriculture Madagascar,Government institutions,0,0,FALSE
+2025-08-11T14:08:50Z,bing,fr,site:gouv.mg agriculture Madagascar,Government institutions,0,0,FALSE
+2025-08-11T14:08:54Z,ddg,fr,site:gouv.mg agriculture Madagascar,Government institutions,0,0,FALSE
+2025-08-11T14:08:56Z,bing,fr,site:minae.gov.mg OR site:maep.gov.mg programme agriculture,Government institutions,0,0,FALSE
+2025-08-11T14:09:00Z,ddg,fr,site:minae.gov.mg OR site:maep.gov.mg programme agriculture,Government institutions,0,0,FALSE
+2025-08-11T14:09:02Z,bing,fr,filetype:pdf Madagascar agriculture rapport annuel site:.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:09:06Z,ddg,fr,filetype:pdf Madagascar agriculture rapport annuel site:.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:16:16Z,bing,fr,site:maep.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:16:20Z,ddg,fr,site:maep.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:20:48Z,bing,fr,site:.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:20:51Z,ddg,fr,site:.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:20:53Z,bing,fr,site:onn.mg,Government institutions,0,0,FALSE
+2025-08-11T14:20:56Z,ddg,fr,site:onn.mg,Government institutions,0,0,FALSE
+2025-08-11T14:20:58Z,bing,fr,site:bngrc.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:21:02Z,ddg,fr,site:bngrc.gov.mg,Government institutions,0,0,FALSE
+2025-08-11T14:21:03Z,bing,fr,site:instat.mg,Government institutions,0,0,FALSE
+2025-08-11T14:21:07Z,ddg,fr,site:instat.mg,Government institutions,0,0,FALSE
+2025-08-11T14:21:08Z,bing,fr,site:fofifa.mg,Government institutions,0,0,FALSE
+2025-08-11T14:21:13Z,ddg,fr,site:fofifa.mg,Government institutions,0,0,TRUE
+2025-08-11T15:45:26Z,bing,en,site:fao.org Madagascar agriculture project,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:30Z,ddg,en,site:fao.org Madagascar agriculture project,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:32Z,bing,en,site:ifad.org Madagascar project agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:36Z,ddg,en,site:ifad.org Madagascar project agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:38Z,bing,en,site:worldbank.org Madagascar agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:41Z,ddg,en,site:worldbank.org Madagascar agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:43Z,bing,en,site:usaid.gov Madagascar agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:47Z,ddg,en,site:usaid.gov Madagascar agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:49Z,bing,en,site:afd.fr Madagascar agriculture,Donors and IFIs,0,0,FALSE
+2025-08-11T15:45:53Z,ddg,en,site:afd.fr Madagascar agriculture,Donors and IFIs,0,0,TRUE
+2025-08-11T16:06:09Z,bing,fr,site:maep.gov.mg programme,Public policy programmes and projects,0,0,FALSE
+2025-08-11T16:06:13Z,ddg,fr,site:maep.gov.mg programme,Public policy programmes and projects,0,0,FALSE
+2025-08-11T16:06:15Z,bing,fr,site:maep.gov.mg projet,Public policy programmes and projects,0,0,FALSE
+2025-08-11T16:06:20Z,ddg,fr,site:maep.gov.mg projet,Public policy programmes and projects,1,1,FALSE
+2025-08-11T16:06:22Z,bing,fr,site:gouv.mg agriculture programme,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:26Z,ddg,fr,site:gouv.mg agriculture programme,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:28Z,bing,fr,filetype:pdf Madagascar programme agricole site:.gov.mg,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:32Z,ddg,fr,filetype:pdf Madagascar programme agricole site:.gov.mg,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:33Z,bing,fr,PNIA Madagascar site:.gov.mg,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:37Z,ddg,fr,PNIA Madagascar site:.gov.mg,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:40Z,bing,fr,PAPRIZ site:maep.gov.mg,Public policy programmes and projects,0,1,FALSE
+2025-08-11T16:06:43Z,ddg,fr,PAPRIZ site:maep.gov.mg,Public policy programmes and projects,0,1,FALSE

@@ -1,0 +1,46 @@
+---
+import { getContentBySlug } from "@/sonic/utils";
+
+const env = Astro.locals.runtime?.env;
+const pageEntry = await getContentBySlug(env, 'pages', 'legal');
+const pageData = pageEntry?.data || {
+  title: "Legal",
+  sections: [
+    {
+       title: "Terms of Service",
+       content: "By using this website and services provided by Fataplus, you agree to these Terms of Service. Content is provided “as is”. Do not misuse or attempt to disrupt the service. Contact us for any questions."
+    },
+    {
+       title: "Privacy Policy",
+       content: "We respect your privacy. We collect minimal data necessary to operate and improve our services. We do not sell personal data. You may request access or deletion of your data at any time."
+    },
+    {
+       title: "Cookie Policy",
+       content: "Cookies may be used to remember preferences and improve performance. You can disable cookies in your browser settings; some features may be limited as a result."
+    }
+  ]
+};
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-8 pb-12">
+      <div class="max-w-xl overflow-hidden">
+        <Text tag="h1" variant="textXL" class="dark:text-white text-base-900 text-balance">
+          {pageData.title}
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 gap-8 mt-2">
+        {pageData.sections?.map((section: any) => (
+          <div>
+            <Text tag="h2" variant="textLG" class="dark:text-white text-base-900">{section.title}</Text>
+            <Text tag="p" variant="textBase" class="mt-1 text-base-500 dark:text-base-300">
+              {section.content}
+            </Text>
+          </div>
+        ))}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>
+

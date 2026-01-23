@@ -1,0 +1,223 @@
+# .pages.yml — Pages CMS config for: work, store, posts
+# Images live in: src/images/{work,store,blog,brands,...}
+
+media:
+  name: images
+  label: Images
+  input: src/images
+  output: src/images
+  path: ""                      # start at src/images
+  extensions: [png, jpg, jpeg, webp, svg]
+
+settings:
+  content:
+    merge: true
+
+content:
+  # ---------------------
+  # WORK
+  # ---------------------
+  - name: work
+    label: Work
+    type: collection
+    path: src/content/work
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, work, live]
+      sort: [title]
+    fields:
+      - { name: work, label: Work (slug or id), type: string, required: true }
+      - { name: live, label: Live URL, type: string }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: text }
+
+      # intro / outro: array of { paragraphs: string[] }
+      - name: intro
+        label: Intro
+        type: object
+        list: true
+        fields:
+          - name: paragraphs
+            label: Paragraphs
+            type: string
+            list: true
+
+      - name: outro
+        label: Outro
+        type: object
+        list: true
+        fields:
+          - name: paragraphs
+            label: Paragraphs
+            type: string
+            list: true
+
+      # highlights: [{ title?, paragraphs?[] }]
+      - name: highlights
+        label: Highlights
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - name: paragraphs
+            label: Paragraphs
+            type: string
+            list: true
+
+      # projectData: [{ client, service, sector, year }]
+      - name: projectData
+        label: Project Data
+        type: object
+        list: true
+        fields:
+          - { name: client,  label: Client,  type: string }
+          - { name: service, label: Service, type: string }
+          - { name: sector,  label: Sector,  type: string }
+          - { name: year,    label: Year,    type: string }
+
+      # credits: [{ name, role }]
+      - name: credits
+        label: Credits
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+
+      # images: [{ url(image), alt }]
+      - name: images
+        label: Images
+        type: object
+        list: true
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+              path: work               # opens src/images/work
+          - { name: alt, label: Alt text, type: string }
+
+      # thumbnail: { url(image), alt }
+      - name: thumbnail
+        label: Thumbnail
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+              path: work
+          - { name: alt, label: Alt text, type: string }
+
+      # Optional long content body
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # STORE
+  # ---------------------
+  - name: store
+    label: Store
+    type: collection
+    path: src/content/store
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - { name: price, label: Price, type: string }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: checkout, label: Checkout URL, type: string }
+      - { name: license, label: License, type: string }
+
+      - name: highlights
+        label: Highlights
+        type: string
+        list: true
+
+      # specifications: [{ name, value }]
+      - name: specifications
+        label: Specifications
+        type: object
+        list: true
+        fields:
+          - { name: name,  label: Name,  type: string }
+          - { name: value, label: Value, type: string }
+
+      - { name: description, label: Description, type: text }
+
+      # image: { url(image), alt }
+      - name: image
+        label: Main Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+              path: store              # opens src/images/store
+          - { name: alt, label: Alt text, type: string }
+
+      # images: [{ url(image), alt }]
+      - name: images
+        label: Gallery
+        type: object
+        list: true
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+              path: store
+          - { name: alt, label: Alt text, type: string }
+
+      # faq: [{ question, answer }]
+      - name: faq
+        label: FAQ
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer,   label: Answer,   type: text }
+
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # POSTS
+  # ---------------------
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, pubDate, author]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: pubDate, label: Publication Date, type: date }
+      - { name: description, label: Description, type: text }
+      - { name: author, label: Author, type: string }
+
+      # image: { url(image), alt } -> src/images/blog
+      - name: image
+        label: Cover Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+              path: blog               # opens src/images/blog
+          - { name: alt, label: Alt text, type: string }
+
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }

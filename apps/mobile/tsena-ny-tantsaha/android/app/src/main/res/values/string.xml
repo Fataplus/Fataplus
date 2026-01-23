@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">fataplus</string>
+    <string name="facebook_app_id">1585337585558166</string>
+    <string name="fb_login_protocol_scheme">1585337585558166</string>
+    <string name="facebook_client_token">ca14beb7d56005c162fe48b654abdf4c</string>
+</resources>

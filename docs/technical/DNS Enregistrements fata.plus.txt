@@ -1,0 +1,83 @@
+;;
+;; Domain:     fata.plus.
+;; Exported:   2025-12-06 16:07:29
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+fata.plus	3600	IN	SOA	blakely.ns.cloudflare.com. dns.cloudflare.com. 2051670384 10000 2400 604800 3600
+
+;; NS Records
+fata.plus.	86400	IN	NS	blakely.ns.cloudflare.com.
+fata.plus.	86400	IN	NS	kianchau.ns.cloudflare.com.
+
+;; A Records
+fata.plus.	1	IN	A	204.69.207.1 ; figma site cf_tags=cf-proxied:false
+
+;; CNAME Records
+accounts.fata.plus.	1	IN	CNAME	accounts.clerk.services. ; cf_tags=cf-proxied:false
+admin.fata.plus.	1	IN	CNAME	0f17c8e7.fataplus-admin-dashboard.pages.dev. ; Fataplus Admin Dashboard cf_tags=cf-proxied:true
+agi.fata.plus.	1	IN	CNAME	cname.vercel-dns.com. ; cf_tags=cf-proxied:true
+ai.fata.plus.	1	IN	CNAME	cname.vercel-dns.com. ; cf_tags=cf-proxied:true
+api.fata.plus.	1	IN	CNAME	fataplus-web-backend.f30dd0d409679ae65e841302cc0caa8c.workers.dev. ; Fataplus Web Backend API - Production cf_tags=cf-proxied:true
+app.fata.plus.	1	IN	CNAME	fataplus-staging.pages.dev. ; cf_tags=cf-proxied:true
+autoconfig.fata.plus.	1	IN	CNAME	infomaniak.com. ; infomaniak.com cf_tags=cf-proxied:false
+autodiscover.fata.plus.	1	IN	CNAME	infomaniak.com. ; cf_tags=cf-proxied:false
+backend.fata.plus.	1	IN	CNAME	fra.cloud.appwrite.io. ; Appwrite backend portal cf_tags=cf-proxied:false
+backoffice.fata.plus.	1	IN	CNAME	fataplus-admin.pages.dev. ; Admin backoffice for Fataplus agricultural platform cf_tags=cf-proxied:true
+blog.fata.plus.	1	IN	CNAME	hashnode.network. ; Hashnode Blog CNAME cf_tags=cf-proxied:false
+bolt.fata.plus.	1	IN	CNAME	bolt-diy-52c.pages.dev. ; cf_tags=cf-proxied:true
+clerk.fata.plus.	1	IN	CNAME	frontend-api.clerk.services. ; cf_tags=cf-proxied:false
+clk2._domainkey.fata.plus.	1	IN	CNAME	dkim2.dol2l50x8379.clerk.services. ; cf_tags=cf-proxied:false
+clk._domainkey.fata.plus.	1	IN	CNAME	dkim1.dol2l50x8379.clerk.services. ; cf_tags=cf-proxied:false
+clkmail.fata.plus.	1	IN	CNAME	mail.dol2l50x8379.clerk.services. ; cf_tags=cf-proxied:false
+cms.fata.plus.	1	IN	CNAME	agency-web-edz.pages.dev. ; cf_tags=cf-proxied:true
+dev.fata.plus.	1	IN	CNAME	sites.figma.net. ; cf_tags=cf-proxied:false
+docs.fata.plus.	1	IN	CNAME	craft-hosting.do. ; Craft cf_tags=cf-proxied:false
+dokus.fata.plus.	1	IN	CNAME	cname.vercel-dns.com. ; cf_tags=cf-proxied:false
+learn.fata.plus.	1	IN	CNAME	sites.figma.net. ; cf_tags=cf-proxied:false
+nostra.fata.plus.	1	IN	CNAME	sites.figma.net. ; figma site cf_tags=cf-proxied:true
+s3.fata.plus.	1	IN	CNAME	public.r2.dev. ; cf_tags=cf-proxied:true
+staging-api.fata.plus.	1	IN	CNAME	fataplus-web-backend.f30dd0d409679ae65e841302cc0caa8c.workers.dev. ; Fataplus Web Backend API - Staging cf_tags=cf-proxied:true
+tech.fata.plus.	600	IN	CNAME	2fdad39607dc0a76.vercel-dns-017.com. ; cf_tags=cf-proxied:false
+tsena.fata.plus.	1	IN	CNAME	cname.vercel-dns.com. ; flutter apps cf_tags=cf-proxied:true
+www.fata.plus.	1	IN	CNAME	sites.figma.net. ; figma site cf_tags=cf-proxied:false
+
+;; MX Records
+fata.plus.	1	IN	MX	1 mta-gw.infomaniak.ch.
+
+;; TXT Records
+20250910._domainkey.fata.plus.	1	IN	TXT	"v=DKIM1; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwRbc2ugZ+E1q3+6P7qvHH+LU09rSKcPqvmkh3BgOlWi/mwO7hYhcQLmQVOMv/d89wAyJvgfBJvYRygC8lCuOBmQcrfEPEQjvKaeUj4hhfaVarAUVdAIb+18HTnZNV8Ruqud191afYf6+YqlDsTFL5UJ0oCrnCYhrLP+TloZLM6cn3PLcPE2TP6YOV8FQ50T7zR4" "ecqcAeDbrg9PA2BpcKGmk5TpnF4zHmhyJ9siqNBfG5dfMgPMZnGaG6KKJ7X0hxCmw030+LtWBEImTUPrzzNeKrSjUELfWPtNWRS1BLXAPexDf0X5eaGAZ3Vo031ADERiiDhvMEIAv8BYvhLNAHwIDAQAB"
+_dmarc.fata.plus.	120	IN	TXT	"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; pct=100; rua=mailto:fenohery.fanomezanirina@gmail.com"
+*._domainkey.fata.plus.	1	IN	TXT	"v=DKIM1; p="
+fata.plus.	1	IN	TXT	"v=spf1 include:spf.infomaniak.ch include:_spf.google.com ~all"
+fata.plus.	120	IN	TXT	"google-site-verification=g6dzq2w5oFc6yZ2_nSm1WvoISzq-nV2mnOtUIXI11_A"
+_figma_sites_verify_dev.fata.plus.	1	IN	TXT	"v=a982963d-6931-4c61-bf73-4f4345f679d9"
+_figma_sites_verify.fata.plus.	1	IN	TXT	"v=31d17a36-2033-4647-869c-2a9eb50c4775" ; figma site-txt
+_figma_sites_verify_learn.fata.plus.	1	IN	TXT	"v=926c0fa7-8771-45e4-9db0-928e1fd2d65b"
+_figma_sites_verify_nostra.fata.plus.	1	IN	TXT	"v=98fdf9f3-d2d4-449f-9eb6-669b8983e62b"
+netlify-challenge.fata.plus.	1	IN	TXT	"fd7a8f3e97e6087d5e199bbaaa44c3bd"
+_vercel.fata.plus.	600	IN	TXT	"vc-domain-verify=tech.fata.plus,6ed2270b5e0a2eab7f80,dc"
+_vercel.fata.plus.	3600	IN	TXT	"vc-domain-verify=app.fata.plus,9156ceebe7cade3e1f0a,dc"
+_vercel.fata.plus.	1	IN	TXT	"vc-domain-verify=dokus.fata.plus,a2fe9f21936572267f6d"
+_vercel.fata.plus.	1	IN	TXT	"vc-domain-verify=blog.fata.plus,7c7e4c3506099abd86e0" ; Hashnode Blog TXT Domain name Config
+_vercel.fata.plus.	1	IN	TXT	"vc-domain-verify=ai.fata.plus,dc1332b71d6cc44b20d6"

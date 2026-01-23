@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Pages CMS -->
+    <script src="https://unpkg.com/pages-cms@1.0.0/dist/pages-cms.js"></script>
+    <script>
+      window.pagesCMS = new PagesCMS({
+        github: "fataplus/agency-web",
+        branch: "main",
+        configFile: "/.pages.yml",
+      });
+    </script>
+  </body>
+</html>

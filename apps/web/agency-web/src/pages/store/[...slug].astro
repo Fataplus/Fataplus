@@ -1,0 +1,27 @@
+---
+import { getEntry, getCollection } from "@/sonic/utils";
+import StoreLayout from "@/layouts/StoreLayout.astro";
+
+const { slug } = Astro.params;
+const env = Astro.locals.runtime?.env;
+
+if (!slug) return Astro.redirect('/404');
+
+// 1. Fetch Entry
+const entry = await getEntry(env, 'store', slug);
+if (!entry) return Astro.redirect('/404');
+
+const pageData = entry.data;
+
+// 2. Fetch All for Navigation
+const allStore = await getCollection(env, 'store');
+const validStore = allStore.filter(item => item.data?.title);
+// Find index
+const index = validStore.findIndex(item => item.slug === slug);
+const previous = validStore[index - 1] || null;
+const next = validStore[index + 1] || null;
+---
+
+<StoreLayout frontmatter={pageData} previous={previous} next={next}>
+  <div set:html={pageData.body} />
+</StoreLayout>

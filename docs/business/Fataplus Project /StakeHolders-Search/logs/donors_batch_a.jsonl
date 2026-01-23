@@ -1,0 +1,1 @@
+{"control": "stop_rule_triggered", "engine": "ddg", "query": "site:afd.fr Madagascar agriculture", "window": 10, "min_rate": 0.02, "new_in_last_window": 0, "unique_domains_total": 0}

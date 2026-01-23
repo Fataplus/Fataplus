@@ -1,0 +1,222 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import Avatar from "@/images/FataplusCover.png";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import LogoCloud from "@/components/assets/LogoCloud.astro";
+import { getSetting } from "@/sonic/utils";
+
+const env = Astro.locals.runtime?.env;
+
+// Awards (Fetch from SonicJS DB or fallback)
+const dbAwards = await getSetting(env, 'awards', 'about');
+const awards = dbAwards || [
+  {
+    url: "#_",
+    name: "Figma EDU Professional",
+    award: "Certification",
+    organization: "Figma",
+    project: "Design Education",
+  },
+  {
+    url: "#_",
+    name: "Google UX Design",
+    award: "Professional Certificate",
+    organization: "Google",
+    project: "UX/UI Methodology",
+  },
+  {
+    url: "#_",
+    name: "Digital Gov Innovation",
+    award: "Training",
+    organization: "Public Sector",
+    project: "Digital Governance",
+  },
+  {
+    url: "https://app.uxcel.com/ux/fenohery",
+    name: "UXcel Profile",
+    award: "Profile",
+    organization: "UXcel",
+    project: "Continuous Learning",
+  }
+];
+
+// Experience Data
+const experience = [
+  {
+    yearStart: 2020,
+    yearEnd: "Present",
+    role: "Founder & Lead Designer",
+    company: "Fataplus",
+  },
+  {
+    yearStart: 2018,
+    yearEnd: 2020,
+    role: "UI Engineer",
+    company: "Freelance",
+  }
+];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-8 pb-12">
+      <div class="max-w-xl overflow-hidden">
+        <Text
+          tag="h1"
+          variant="textXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Design is not just about creating beautiful interfaces; it's about solving real problems and making technology accessible to everyone.
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 mt-2">
+        <Text
+          tag="p"
+          variant="textBase"
+          class="mt-2 text-base-500 dark:text-base-300 lg:text-balance order-first lg:order-last"
+        >
+          I'm <strong>Fenohery Fanomezanirina</strong>, a Visionary UX/UI Designer and Digital Innovation Specialist based in
+          Antananarivo, Madagascar. With over 5 years of experience, I transform digital experiences across public sector, 
+          economic development, and creative industries.
+          <br />
+          <br />
+          As the founder of <strong>Fataplus</strong>, Madagascar's first product design agency specializing in agritech, 
+          I bridge the gap between complex challenges and intuitive solutions. My approach combines "Design First" thinking 
+          with a deep understanding of local context, ensuring that technology serves the people who need it most.
+          <br />
+          <br />
+          My work extends beyond pixels. I act as an <strong>expert partner</strong> for institutions like the Presidency of Madagascar 
+          and agencies needing high-level design leadership. I also orchestrate complex projects by subcontracting technical implementation 
+          while maintaining strict control over Product Vision and Art Direction.
+          <br />
+          <br />
+          Passionate about education, I run Figma-certified bootcamps to train the next generation of Malagasy designers, 
+          creating a virtuous cycle of talent and innovation.
+        </Text>
+
+        <Image
+          width={1000}
+          height={2000}
+          src={Avatar}
+          alt="Fenohery Fanomezanirina"
+          class="w-full aspect-square mt-2 object-cover object-right"
+        />
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper class="py-12">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Certifications & Honors
+        </Text>
+      </div>
+      <ul
+        role="list"
+        class="flex flex-col gap-1 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-y last-of-type:border-b last-of-type:border-base-200 dark:last-of-type:border-base-900 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
+      >
+        {
+          awards.map((award) => (
+            <li class="grid grid-cols-2 md:grid-cols-4 items-baseline lg:grid-cols-4 py-2 relative">
+              <a
+                href={award.url}
+                class="absolute inset-0 z-10"
+                title={award.name}
+                aria-label={award.name}
+              />
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-900  dark:text-white"
+              >
+                {award.name}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-400"
+              >
+                {award.award}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-500"
+              >
+                {award.organization}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-600"
+              >
+                {award.project}
+              </Text>
+            </li>
+          ))
+        }
+      </ul>
+    </Wrapper>
+  </section>
+  <LogoCloud />
+  <section class="overflow-hidden relative">
+    <Wrapper class="py-12">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Experience
+        </Text>
+      </div>
+      <ul
+        role="list"
+        class="grid grid-cols-2 md:grid-cols-3 gap-y-8 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
+      >
+        {
+          experience.map((job) => (
+            <li class=" items-baseline lg:grid-cols-4 py-2 ">
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-900  dark:text-white"
+              >
+                {job.yearStart} - {job.yearEnd}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-400"
+              >
+                {job.role}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-500"
+              >
+                {job.company}
+              </Text>
+            </li>
+          ))
+        }
+      </ul>
+    </Wrapper>
+  </section>
+</BaseLayout>

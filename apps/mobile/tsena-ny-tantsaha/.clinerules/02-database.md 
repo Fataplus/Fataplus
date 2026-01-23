@@ -1,0 +1,63 @@
+# Fataplus Database Guidelines
+
+## 🗃️ General
+
+- Use NuxtHub's `database/` directory for schema definitions.
+- Each table should be defined in its own `.ts` file.
+- Use clear, lowercase, snake_case naming for tables and fields.
+- Avoid storing derived or computed data — calculate on read when needed.
+- Use default timestamps (`created_at`, `updated_at`) when useful.
+
+## 📦 Core Tables
+
+### `products.ts`
+
+- `name`: string — product name (e.g. "Tomates")
+- `price`: number — price per unit (e.g. per kg)
+- `unit`: string — "kg", "l", etc.
+- `stock`: number — current stock available
+- `image`: string (blob ref) — product image URL or ID
+
+### `orders.ts`
+
+- `user_id`: reference to `users.id`
+- `product_id`: reference to `products.id`
+- `quantity`: number
+- `total`: number (calculated at checkout)
+- `status`: enum ("pending", "confirmed", "delivered")
+
+### `users.ts`
+
+- `name`, `email`, `password`
+- `role`: enum ("farmer", "buyer", "trainer", "admin")
+
+## 🎓 LMS Tables
+
+### `courses.ts`
+
+- `title`, `description`, `cover`, `instructor`
+
+### `lessons.ts`
+
+- `course_id`: reference to `courses.id`
+- `title`, `content`, `video`
+
+### `progress.ts`
+
+- `user_id`, `course_id`, `lesson_id`
+- `completed`: boolean or timestamp
+
+## 🧠 AI Assistant
+
+### `messages.ts`
+
+- `user_id`: reference to `users.id`
+- `content`: string
+- `type`: enum ("user", "ai")
+- `timestamp`: datetime
+
+## ✅ Notes
+
+- Add `vectorize/` entries for content used in AI assistant (like lessons).
+- Use `blob/` for course media, product images.
+- Use clear field types to help Copilot and Cline generate forms and queries faster.

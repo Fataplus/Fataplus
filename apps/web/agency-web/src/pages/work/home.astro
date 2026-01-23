@@ -1,0 +1,35 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import WorkEntries2 from "@/components/work/WorkEntries2.astro";
+// Content
+import { getCollection } from "@/sonic/utils";
+const env = Astro.locals.runtime?.env;
+
+// Fetch work from D1
+const allWork = await getCollection(env, 'work');
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper class="py-8">
+      <div class="overflow-hidden">
+        <Text
+          tag="h1"
+          variant="textXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          All work
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 lg:gap-1 mt-4">
+        {allWork.map((post) => <WorkEntries2 post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

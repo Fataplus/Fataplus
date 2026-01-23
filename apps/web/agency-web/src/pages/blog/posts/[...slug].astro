@@ -1,0 +1,56 @@
+---
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import { getCollection, getEntry } from "@/sonic/utils";
+
+// In SSR mode with D1, we cannot use getStaticPaths for dynamic data easily
+// unless we fetch all paths at build time (which requires DB access at build time).
+// But 'output: server' means we handle requests dynamically.
+// So we use standard Astro dynamic route handling without getStaticPaths export,
+// OR we export it if we want hybrid rendering, but typical for SSR we just read param.
+
+const { slug } = Astro.params;
+const env = Astro.locals.runtime?.env;
+
+if (!slug) {
+  return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const entry = await getEntry(env, 'posts', slug);
+
+if (!entry) {
+  return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+// Re-fetch and sort all posts for navigation
+// Note: In a real large app, you wouldn't fetch ALL posts just for prev/next links.
+// improved query would look for neighbors.
+const allPosts = await getCollection(env, 'posts');
+
+const validPosts = allPosts.filter(
+  (item) => item.data?.pubDate && item.data?.title
+);
+
+const sorted = validPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const index = sorted.findIndex((item) => item.slug === entry.slug);
+const previous = sorted[index - 1] || null;
+const next = sorted[index + 1] || null;
+
+// Handling Content rendering from JSON
+// Since we don't have the Markdown 'render()' method, we need to pass the content
+// to a component or render generic HTML if it's stored as HTML.
+// Assuming 'entry.data.body' or similar holds the content.
+// For now, we'll pass the whole data object to layout.
+---
+
+<BlogLayout frontmatter={entry.data} previous={previous} next={next}>
+  <!-- 
+    TODO: Render actual body content. 
+    If SonicJS stores HTML in 'content' or 'body', render it here.
+    If it stores JSON blocks, iterate and render components.
+  -->
+  <div set:html={entry.data.body || entry.data.content || '<p>Content pending...</p>'} />
+</BlogLayout>

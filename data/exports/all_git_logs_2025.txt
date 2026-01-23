@@ -1,0 +1,294 @@
+=== Fataplus---Tsena-ny-tantsaha ===
+2025-05-22 | cline rules and memory bank update for further development
+
+=== Fataplus-Agritech-Platform ===
+2025-10-07 | chore(security): remove sensitive env/config files from repository index and update .gitignore
+2025-10-07 | chore: save local changes 2025-10-07_19:00:01
+2025-09-20 | 🔒 Final security fix: Remove remaining hardcoded Figma tokens
+2025-09-20 | 🔒 Additional security fix: Remove remaining hardcoded tokens from docs
+2025-09-20 | 🔒 Security fix: Remove hardcoded Figma API tokens
+2025-09-20 | 🔄 Complete project reorganization and README rewrite
+2025-09-19 | feat(cloudflare): complete Cloudflare Workers deployment configuration
+2025-09-19 | fix(dns): add comprehensive DNS configuration and temporary access solutions
+2025-09-19 | feat(deployment): complete deployment automation with CI/CD pipeline
+2025-09-19 | feat(deployment): create production-ready deployment package
+2025-09-19 | feat(security): complete security integration with production-ready features
+2025-09-19 | feat: major project reorganization and cleanup
+2025-09-18 | feat(mcp): Add Docker Universal deployment for MCP server
+2025-09-17 | feat: Implement comprehensive AutoRAG monetization system
+2025-09-17 | fix: Resolve API connectivity issues and improve error handling
+2025-09-17 | fix: Implement API fallback system to resolve connection errors
+2025-09-17 | deploy: Fresh deployment with immediate access URLs for admin backoffice
+2025-09-17 | feat: Successfully create DNS CNAME record for backoffice.fata.plus
+2025-09-17 | docs: Add comprehensive DNS setup guides and scripts for backoffice.fata.plus
+2025-09-17 | feat: Implement secure admin login system for backoffice
+2025-09-17 | feat: Deploy and reconfigure Fataplus Admin Backoffice
+2025-09-17 | feat: Deploy and reconfigure Fataplus Admin Backoffice
+2025-09-17 | feat(mcp): configure MCP server deployment to mcp.fata.plus
+2025-09-17 | feat: integrate all 338 project tasks from CSV into progress tracking system
+2025-09-17 | feat: Add comprehensive progress tracking system with todo management
+2025-09-17 | feat: Configure app.fata.plus domain and Cloudflare AI with AutoRAG
+2025-09-17 | feat(docs): add comprehensive Fataplus MCP connection guide
+2025-09-16 | temp: Remove workflow file due to GitHub App permissions
+2025-09-16 | feat: Add comprehensive Cloudflare backend and CI/CD deployment configuration
+2025-09-16 | docs: add comprehensive CI/CD setup documentation
+2025-09-16 | fix: add proper spacing in hero headline
+2025-09-16 | trigger: force deployment of new Muse-inspired hero section
+2025-09-16 | fix: correct Vercel configuration for deployment
+2025-09-16 | trigger: force new deployment with updated hero section
+2025-09-16 | feat: add immediate deployment guide for Vercel
+2025-09-16 | feat: add Vercel deployment setup for tech.fata.plus
+2025-09-16 | feat: add Vercel deployment configuration
+2025-09-16 | feat: rebuild hero section inspired by Muse design
+2025-09-16 | ## 🎉 Social Media Manager AI Agent - Complete!
+2025-09-14 | feat(ui): Complete UI design specifications for all user interfaces
+2025-09-12 | Update .gitignore to exclude BFG jar files
+2025-09-12 | Remove BFG jar file from repository
+2025-09-12 | Security improvements: Remove hardcoded credentials and update to use environment variables
+2025-09-12 | Remove sensitive files and cleanup temporary files
+2025-09-12 | Add security documentation and cleanup scripts
+2025-09-12 | Security improvements: Replace hardcoded sensitive values with environment variables
+2025-09-12 | Delete .env.cloudflare
+2025-09-12 | Update specifications with mobile app RAG implementation and create comprehensive task tracking CSV files
+2025-09-09 | Sync changes: Updated admin dashboard components, added AgriBot.space files, and updated package dependencies
+2025-09-09 | Update Cloudron Dockerfile and web frontend config for Cloudflare deployment
+2025-09-09 | Add complete local development environment with all platform services. Add AgriBot.space specification with Keycloak authentication. Add platform deployment scripts and documentation. Update Cloudflare configuration and status. Add context API implementation.
+2025-09-09 | feat: Add comprehensive Cloudflare hosting integration
+2025-09-09 | Fataplus - manual update v0.0.1
+2025-09-08 | Update domain references to fata.plus
+2025-09-08 | 📋 Final Cloudron App Store Submission Summary
+2025-09-08 | 📦 Cloudron App Store Submission Package
+2025-09-08 | 📋 Add CI/CD Quick Setup Guide
+2025-09-08 | 🚀 Implement Complete CI/CD Pipeline for Cloudron Deployment
+2025-09-08 | 🚀 Production Release v1.0.0
+2025-09-08 | Complete Fataplus MCP specification and cleanup
+2025-09-08 | Rename feature to Fataplus MCP
+2025-09-08 | Expand MCP Server to cover entire Fataplus Platform
+2025-09-08 | Add MCP Server for Design System feature specification
+2025-09-08 | Add Fataplus Design System feature specification
+2025-09-08 | feat: complete marketing site with landing page, features, and sections
+2025-09-08 | feat: Add Cloudron deployment configuration and LDAP authentication
+2025-09-08 | feat: Initialize Next.js frontend with basic structure
+2025-09-08 | fix: Update MinIO configuration to use correct environment variables
+2025-09-08 | fix: Correct MinIO credentials in CREDENTIALS.md
+2025-09-08 | feat: Complete Week 2 implementation with authentication and database setup
+2025-09-08 | feat: add frontend infrastructure and backend updates
+2025-09-07 | docs: Update plan.md with CI/CD resolution status
+2025-09-07 | fix: Resolve CI/CD pipeline failures
+2025-09-07 | feat: Complete CI/CD pipeline setup with Docker and testing
+2025-09-07 | feat: Configure GitHub repository workflow and CI/CD
+2025-09-07 | feat: Initialize Fataplus repository structure
+2025-09-07 | Initial commit from Specify template
+
+=== fataplus-app ===
+2025-07-02 | fix: resolve all remaining import errors
+2025-07-02 | fix: update deprecated imports and invalid path aliases
+2025-07-02 | fix: mark waitlist layout as client component
+2025-07-02 | build: specify node version for netlify
+2025-07-02 | fix: add missing layout for waitlist page
+2025-07-02 | feat: resolve dependency issues and run project
+2025-07-02 | feat: Initial commit of Fataplus project structure
+
+=== Fataplus ===
+2025-11-13 | Remove all secrets and sensitive files - security cleanup
+2025-11-13 | Configure Git LFS for large binary files
+2025-11-13 | Add comprehensive .gitignore to exclude heavy directories and secrets
+2025-11-13 | 🔒 Security: Exclude sensitive directories from push
+2025-11-13 | 🚀 Trigger Astro Refactoring: Open Source Strategy + Documentation
+2025-11-13 | 🚀 Major Refactoring: Astro + Open Source Strategy
+2025-11-13 | 🔒 Security Fix: Remove sensitive files and update .gitignore
+2025-11-13 | 🚀 Major Migration: Fataplus CRM Interopérabilité System
+2025-11-13 | Complete repository documentation ready for GitHub migration
+2025-11-13 | Add deployment instructions for GitHub setup
+2025-11-13 | Initial commit - Fataplus Interopérabilité CRM System
+2025-08-29 | feat: Implement authenticated learning module
+2025-08-28 | feat: Configure Cloudflare deployment
+2025-07-22 | Push automatique de toutes les dernières activités
+2025-07-21 | Update docs and assets
+2025-07-19 | Add AI & Agritech session guide for Fandriana 308
+2025-07-16 | JMCJ2025: slides détaillées pour Démonstration, Formation, Simulation (FATAPlus)
+2025-07-11 | Add new content, media files, and documentation
+2025-07-09 | chore(drizzle): config NuxtHub-compatible drizzle.config.ts for SQLite local (no CLI migrate), doc comments added
+2025-07-09 | chore: add wrangler.toml for Cloudflare Worker deployment
+2025-07-09 | fix: set hub.vectorize to object for NuxtHub deployment compatibility
+2025-07-09 | chore: add @cloudflare/puppeteer as dev dependency for NuxtHub browser support
+2025-07-09 | chore: upgrade @nuxthub/core to latest for deployment compatibility
+2025-07-09 | chore: verify and fix all commented files for clean NuxtHub build
+2025-07-09 | fix: remove stray block comment, ensure valid comment structure in agriculture-stats.get.ts
+2025-07-09 | chore: comment out all non-NuxtHub features, ensure native NuxtHub+Cloudflare deployment
+2025-07-09 | chore: comment out all non-Nuxt features for NuxtHub deployment
+2025-07-09 | fix: upgrade react and react-dom to ^19.1.0 for @whop/react compatibility
+2025-07-09 | fix: align react and react-dom to 18.3.1 for CI/CD compatibility
+2025-07-09 | chore: remove all non-NuxtHub CI/CD and workflow files, streamline for NuxtHub Admin bot only
+2025-07-09 | feat: Remove custom GitHub Actions, enable NuxtHub deployment
+2025-07-07 | docs: update README with recent evolutions and NuxtHub deployment plan
+2025-07-07 | docs: add Fataplus x Whop integration plan and roadmap before refactor
+2025-06-27 | 🎉 PHASE 3B COMPLETE: Content Integration & Real Data Implementation
+2025-06-27 | 🔧 Fix GitHub workflow issues & complete CMS integration
+2025-06-27 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | 🚀 Complete Fataplus Farmer-First Platform Ready!
+2025-06-25 | Merge remote changes including Nuxt Studio workflow
+2025-06-25 | fix: Downgrade better-sqlite3 to 11.10.0 for @nuxt/content compatibility
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | chore(deployment): update CNAME
+2025-06-25 | 5 changes by Nuxt Studio
+2025-06-25 | chore(deployment): add CNAME
+2025-06-25 | chore(deployment): add workflow file
+2025-06-25 | feat: Add Nuxt Content v3 with 7 collections and comprehensive CMS
+2025-06-25 | 🎯 Ultra-simple CI/CD: Let nuxt-hub/action@v2 handle everything
+2025-06-25 | 🚀 Fix GitHub Action: Official NuxtHub workflow + Node.js 24
+2025-06-25 | Enhanced ESLint: Professional rules, 1 error/105 warnings - CI/CD ready
+2025-06-25 | Add Dependabot + Enhanced CI/CD pipeline
+2025-06-25 | Add ESLint config: Fix CI/CD lint step
+2025-06-25 | Fix CI/CD: Switch pnpm to npm + Node.js 20 LTS
+2025-06-25 | 📊 Update README: Add progress tracking (75%) & NuxtHub achievements
+2025-06-25 | 📝 Fix GitHub README: Move CI/CD guide to dedicated file
+2025-06-25 | 🚀 NuxtHub Features Activation: 7/8 features enabled, +70% performance
+2025-06-25 | 🔧 Fix React dependency conflicts in CI/CD
+2025-06-25 | 🔧 Fix CI/CD Pipeline: Switch from pnpm to npm
+2025-06-25 | 🧪 Test CI/CD Pipeline with GitHub Secrets
+2025-06-25 | 📝 Add Cloudinary integration and simplified secrets guide
+2025-06-25 | 🚀 Complete CI/CD Pipeline for Fataplus
+2025-06-25 | 📚 Enable OpenAPI documentation for SuperAdmin API
+2025-06-25 | 🔧 Clean up Nuxt config for NuxtHub database setup
+2025-06-25 | 🔍 Add NuxtHub environment test endpoint
+2025-06-25 | 🔧 Simplify database initialization for NuxtHub
+2025-06-25 | 🔧 Fix database initialization: Use correct NuxtHub runtime import
+2025-06-25 | 🔧 Add database initialization endpoint for production
+2025-06-25 | 🔧 Fix SuperAdmin System: Database Schema Compatibility
+2025-06-25 | 🔐 COMPLETE SUPERADMIN SYSTEM: Role-Based Access Control
+2025-06-25 | 🎉 PRODUCTION DEPLOYMENT SUCCESS
+2025-06-25 | ⚡ Performance: Optimize build speed by 10x\n\n🚀 Build Performance Improvements:\n- Disabled DevTools timeline for faster dev builds\n- Added .nuxtignore to exclude UI&Idea-Box (54.55 MiB)\n- Increased file descriptor limit to 8192\n- Optimized Vite dependencies\n- Disabled source maps in development\n- Excluded large directories from file watching\n\n📊 Results:\n- Build time: ~15 seconds (vs 2+ minutes before)\n- Server timing: 17ms generate, 37ms Nitro start\n- No more EMFILE errors or restarts\n- HTTP 200 response in 15s vs previous 503 errors\n\n✅ Ready for fast admin.hub.nuxt.com deployment
+2025-06-25 | 🚀 Add comprehensive admin dashboard with NuxtHub deployment ready
+2025-06-25 | 🚀 Complete GroFresh 7.7 Vue.js Implementation - Production Ready
+2025-06-25 | 🚀 GroFresh 7.7 Flutter App Integration (Safe Version)
+2025-06-25 | 🎨 Integrate Flowbite Pro Design System
+2025-06-25 | ✨ Implement Remix Icons and improve responsive navigation
+2025-06-24 | Fix: Add VSCode settings.json to version control
+2025-06-24 | Enhanced Development Environment Configuration
+2025-06-24 | Fataplus 2025 Project Foundation Complete
+2025-06-24 | Merge remote changes with foundation setup
+2025-06-24 | Fataplus 2025 Project Foundation
+2025-06-24 | ci: add nuxthub workflow
+2025-06-24 | feat: replace main with new NuxtHub app (2025 reboot)
+2025-06-24 | chore: clean main branch for new NuxtHub app
+2025-06-08 | Add missing superuser API
+2025-04-04 | Clean up codebase and reorganize project structure
+2025-04-04 | Add Next.js application with PWA support, PostgreSQL backend, and CI/CD
+2025-04-04 | Refactor: Remove hardcoded credentials and migrate from Supabase to PocketBase
+2025-04-04 | Add PocketBase schema and seed scripts
+2025-04-04 | Remove signout link for guest users
+2025-04-04 | Fix docs deployment: specify correct output directory for Next.js
+2025-04-04 | Update Vercel configuration to route /docs path to documentation app
+2025-04-04 | Update README with comprehensive description of FataPlus features and technologies
+2025-04-04 | Add Turborepo setup and comprehensive app documentation
+2025-04-04 | Fix CommunityPage.tsx: resolve syntax errors and import issues
+2025-04-04 | Fix GitHub workflow files: remove duplicates and rename for clarity
+2025-04-04 | Add real-time updates with WebSockets for community features and notifications
+2025-04-04 | Add deployment package for advanced data management features
+2025-04-04 | Add advanced data management features: migration tools, archiving system, and validation hooks
+2025-04-04 | Add backend enhancement scripts for security, email, payments, backups, and monitoring
+2025-04-04 | Hide superuser access option for non-admin users
+2025-04-04 | Add framer-motion dependency for animations
+2025-04-04 | Add user onboarding and payment processing features
+2025-04-04 | Enhance PWA functionality and add data seeding scripts
+2025-04-04 | Add scripts for automatic PocketBase collection creation
+2025-04-04 | Fix superuser login to use regular auth with admin privileges
+2025-04-04 | Add superuser login to connect with PocketBase admin
+2025-04-04 | Add admin features with comprehensive management interfaces
+2025-04-04 | Add PWA functionality and automated deployment
+2025-04-03 | Initial commit with PocketBase integration
+2025-04-03 | Initial commit with PocketBase integration
+
+=== fataplus-web25 ===
+2025-11-11 | docs: update README.md with corrected company description
+2025-11-11 | refactor: comprehensive reorganization of multi-project repository structure
+2025-11-10 | chore: initial project setup with BMAD module
+
+=== FP-11 ===
+No commits in 2025
+
+=== Fataplus-Web ===
+2025-08-09 | docs: add REPO_DESCRIPTION.md and system-prompt-model.md
+2025-08-09 | Initial commit
+
+=== fataplus-5faf2816 ===
+2025-04-02 | Fix: Database schema type errors
+2025-04-02 | Fix: Type error in schema.ts
+2025-04-02 | Fix: Display English translations
+2025-04-02 | Add PWA and initial superadmin user
+2025-04-02 | Fix: Resolve TypeScript error in schema.ts
+2025-04-02 | Fix: Resolve useContext error
+2025-04-02 | Reverted to edit edt-a1bb32ca-1c16-47a9-a02e-38faa3200f23: "Refactor: Split database check module
+2025-04-02 | Refactor: Update sidebar component
+2025-04-02 | Refactor: Update navbar component
+2025-04-02 | Refactor: Implement responsive navbar
+2025-04-02 | Fix: Resolve TypeScript errors
+2025-04-02 | feat: Implement core app layout and pages
+2025-04-02 | Refactor: Split database check module
+2025-04-02 | Fix: Resolve TypeScript error in manual schema check
+2025-04-02 | Add PWA support
+2025-04-02 | Fix: Resolve TypeScript error in dbConnectionTest.ts
+2025-04-02 | Fix: Supabase query errors
+2025-04-02 | feat: Implement core features and data fetching
+2025-04-02 | Run SQL migration
+2025-04-02 | Fix: Resolve TypeScript errors in cart and product services
+2025-04-02 | Refactor: Implement landing page changes
+2025-04-02 | Fix: LandingPage.tsx syntax errors
+2025-04-02 | Add landing page and backend review
+2025-03-30 | Fix: Wrap BottomNav in Router
+2025-03-30 | Add i18n and language options
+2025-03-29 | Run SQL migration
+2025-03-29 | Fix: Progress calculation in download
+2025-03-29 | Fix: Resolve TypeScript errors in offlineAIService.ts
+2025-03-29 | Fix: RadioGroup and download progress errors
+2025-03-29 | Add offline content and Gemma2B download
+2025-03-29 | Fix: AI response and add pricing page
+2025-03-29 | Fix: Update general settings type
+2025-03-29 | feat: Implement settings page and OpenAI integration
+2025-03-29 | Fix: Type errors in cartService.ts
+2025-03-29 | Fix: Type errors in cart and course services
+2025-03-29 | Fix: Type errors in LearnPage and courseService
+2025-03-29 | Fix: Resolve type errors in PostItem and services
+2025-03-29 | Fix: Resolve TypeScript errors in services
+2025-03-29 | Fix: Implement CRUD operations
+2025-03-29 | Add deep linking to pages
+2025-03-29 | Fix: Resolve module import errors
+2025-03-29 | feat: Implement subpages and admin features
+2025-03-29 | Run SQL migrations
+2025-03-29 | Fix: Resolve 'loading' variable error
+2025-03-29 | Fix: Blank page when logged in
+2025-03-29 | Fix: Supabase RPC call type errors
+2025-03-29 | Fix: Supabase RPC function type errors
+2025-03-29 | Fix: Profile type errors
+2025-03-29 | Run SQL migration
+2025-03-29 | Fix Supabase query errors
+2025-03-29 | Run Supabase SQL migrations
+2025-03-29 | Fix: Resolve AI edit failure
+2025-03-29 | Run SQL migrations
+2025-03-29 | feat: Integrate AI agent and data storage
+2025-03-29 | Connect to Supabase project
+2025-03-29 | feat: Implement FataPlus agricultural app
+2025-03-29 | Use tech stack vite_react_shadcn_ts [skip gpt_engineer]
+
+=== fataplus-builder ===
+2025-09-30 | source repo import
+
+=== fataplus-react ===
+No commits in 2025
+
+=== fataplus-cms ===
+2025-09-30 | source repo import
+

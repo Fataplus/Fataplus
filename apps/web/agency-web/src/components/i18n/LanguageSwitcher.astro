@@ -1,0 +1,131 @@
+---
+const { class: className = "", ...rest } = Astro.props;
+
+const currentLocale = "en";
+
+const languages = [
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "mg", name: "Malagasy", flag: "🇲🇬" }
+];
+
+const currentPath = Astro.url.pathname;
+const currentSearch = Astro.url.search;
+---
+
+<div class="relative" data-language-switcher>
+  <button
+    class={className}
+    {...rest}
+    aria-label="Select language"
+    aria-haspopup="true"
+    aria-expanded="false"
+    data-language-button
+  >
+    <!-- Single SVG Icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      class="dark:text-white text-base-900 size-5"
+    >
+      <path d="M136,24A104,104,0,1,0,240,128,104.11,104.11,0,0,0,136,24Zm0,192a88.1,88.1,0,0,1-88-88c0-1.45.08-2.86.21-4.26L95.57,163.5a8,8,0,0,0,7.06,4.23h15.65a8,8,0,0,1,0,16H102.22a8,8,0,0,0-7.06,4.23l-4.19,12.56A87.89,87.89,0,0,1,136,216Zm77.77-62.77L194.63,148a8,8,0,0,0-7.06-4.23H171.92a8,8,0,0,1,0-16h15.65a8,8,0,0,0,7.06-4.23l8.23-24.68A87.84,87.84,0,0,1,213.77,153.23ZM56,128a87.76,87.76,0,0,1,2.77-21.77l8.23,24.68a8,8,0,0,0,7.06,4.23H89.71a8,8,0,0,1,0,16H74.06a8,8,0,0,0-7.06,4.23L58.86,153A88.07,88.07,0,0,1,56,128Z"></path>
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div
+    class="absolute right-0 mt-2 w-36 rounded-lg bg-base-50 dark:bg-base-900 shadow-lg ring-1 ring-base-200 dark:ring-base-700 opacity-0 invisible scale-95 transition-all duration-200 ease-out z-50"
+    data-language-menu
+    role="menu"
+  >
+    <div class="py-1">
+      {
+        languages.map((lang) => (
+          <a
+            href={
+              currentPath === "/"
+                ? `/${lang.code}`
+                : currentPath.startsWith(`/${currentLocale}`)
+                ? currentPath.replace(`/${currentLocale}`, `/${lang.code}`)
+                : `/${lang.code}${currentPath}`
+            }
+            class={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${
+              lang.code === currentLocale
+                ? "bg-base-200 dark:bg-base-800 text-base-900 dark:text-white"
+                : "text-base-700 dark:text-base-300 hover:bg-base-100 dark:hover:bg-base-800"
+            }`}
+            role="menuitem"
+          >
+            <span class="text-base">{lang.flag}</span>
+            <span class="flex-1">{lang.name}</span>
+            {
+              lang.code === currentLocale && (
+                <svg class="size-3.5 text-accent-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              )
+            }
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  let isLanguageMenuOpen = false;
+
+  function updateLanguageMenu(isOpen) {
+    document.querySelectorAll("[data-language-button]").forEach((button) => {
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.querySelectorAll("[data-language-menu]").forEach((menu) => {
+      if (isOpen) {
+        menu.classList.remove("opacity-0", "invisible", "scale-95");
+        menu.classList.add("opacity-100", "visible", "scale-100");
+      } else {
+        menu.classList.add("opacity-0", "invisible", "scale-95");
+        menu.classList.remove("opacity-100", "visible", "scale-100");
+      }
+    });
+  }
+
+  function initializeLanguageMenu() {
+    // Save to localStorage if not already saved
+    if (!localStorage.getItem("languageMenuOpen")) {
+      localStorage.setItem("languageMenuOpen", "false");
+    }
+    isLanguageMenuOpen = localStorage.getItem("languageMenuOpen") === "true";
+    updateLanguageMenu(isLanguageMenuOpen);
+  }
+
+  initializeLanguageMenu();
+
+  document.querySelectorAll("[data-language-button]").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isLanguageMenuOpen = !isLanguageMenuOpen;
+      localStorage.setItem("languageMenuOpen", isLanguageMenuOpen ? "true" : "false");
+      updateLanguageMenu(isLanguageMenuOpen);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (isLanguageMenuOpen && !e.target.closest("[data-language-switcher]")) {
+      isLanguageMenuOpen = false;
+      localStorage.setItem("languageMenuOpen", "false");
+      updateLanguageMenu(false);
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isLanguageMenuOpen) {
+      isLanguageMenuOpen = false;
+      localStorage.setItem("languageMenuOpen", "false");
+      updateLanguageMenu(false);
+      document.querySelector("[data-language-button]")?.focus();
+    }
+  });
+</script>

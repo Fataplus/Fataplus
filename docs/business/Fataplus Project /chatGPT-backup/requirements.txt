@@ -1,0 +1,2 @@
+# Requirements for split_conversations.py (streaming version)
+ijson==3.2.3 

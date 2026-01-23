@@ -1,0 +1,53 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getContentBySlug } from "@/sonic/utils";
+
+const env = Astro.locals.runtime?.env;
+const pageEntry = await getContentBySlug(env, 'pages', '404');
+const pageData = pageEntry?.data || {
+  title: "Error 404 or Page Not Found",
+  body: 'Error 404, also known as "Page Not Found" error, occurs when a user tries to access a web page that does not exist or is no longer available on the server.'
+};
+// If body comes from DB rich text, it might need parsing or just displayed as string?
+// For now assuming plain text or handled by Text component?
+// Text component renders children.
+const description = pageData.body || pageData.description; 
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper class="py-24">
+      <div class="max-w-xl">
+        <Text
+          tag="h1"
+          variant="textXL"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          {pageData.title}
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          class="mt-2 text-base-500 dark:text-base-300 lg:text-balance"
+        >
+          {description}
+        </Text>
+
+        <div class="mt-4 flex">
+          <Link
+            href="/"
+            size="xs"
+            variant="default"
+            class="text-base-500 dark:text-base-300 lg:text-balance"
+            title="home"
+            aria-label="home">Go back Home</Link
+          >
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

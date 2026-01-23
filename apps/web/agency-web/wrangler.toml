@@ -1,0 +1,33 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "fataplus-os"
+compatibility_date = "2024-12-05"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "./dist"
+
+# Astro SSR
+[site]
+bucket = "./dist"
+
+# D1 Database Binding for SonicJS
+[[d1_databases]]
+binding = "DB"
+database_name = "sonicjs-db"
+database_id = "43c95e66-d007-4336-8cb6-05b5151edee0" # Run: npx wrangler d1 create sonicjs-db
+
+# KV Namespace for Cache
+[[kv_namespaces]]
+binding = "CACHE_KV"
+id = "23458439d0dd486b8f0d480055427ad2" # Run: npx wrangler kv namespace create CACHE_KV
+
+# R2 Bucket for Media
+[[r2_buckets]]
+binding = "MEDIA_BUCKET"
+bucket_name = "sonicjs-media" # Run: npx wrangler r2 bucket create sonicjs-media
+
+# Optional: Smart Placement
+# [placement]
+# mode = "smart"
+
+# Environment variables
+[vars]
+SONICJS_VERSION = "2.3.9"

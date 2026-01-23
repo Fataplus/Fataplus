@@ -1,0 +1,28 @@
+---
+import { getEntry, getCollection } from "@/sonic/utils";
+import WorkLayout from "@/layouts/WorkLayout.astro";
+
+// SSR Mode
+const { slug } = Astro.params;
+const env = Astro.locals.runtime?.env;
+
+if (!slug) return Astro.redirect('/404');
+
+// 1. Fetch Entry
+const entry = await getEntry(env, 'work', slug);
+if (!entry) return Astro.redirect('/404');
+
+const pageData = entry.data;
+
+// 2. Fetch All for Navigation
+const allWork = await getCollection(env, 'work');
+const validWork = allWork.filter(item => item.data?.title);
+// Find index using slug
+const index = validWork.findIndex(item => item.slug === slug);
+const previous = validWork[index - 1] || null;
+const next = validWork[index + 1] || null;
+---
+
+<WorkLayout frontmatter={pageData} previous={previous} next={next}>
+  <div set:html={pageData.body} />
+</WorkLayout>

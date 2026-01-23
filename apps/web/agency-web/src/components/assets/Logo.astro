@@ -1,0 +1,6 @@
+---
+import FataplusLogo from "@/images/brands/Fataplus-Fav.svg";
+const { class: className = "", ...rest } = Astro.props;
+const src = typeof FataplusLogo === "string" ? FataplusLogo : FataplusLogo?.src;
+---
+<img src={src} alt="Fataplus Logo" class={className} {...rest} />

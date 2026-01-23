@@ -1,0 +1,119 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Sections
+import Hero from "@/components/landing/Hero.astro";
+import Process from "@/components/landing/Process.astro";
+// Components
+import BlogEntries1 from "@/components/blog/BlogEntries1.astro";
+import WorkEntries1 from "@/components/work/WorkEntries1.astro";
+import { getEntry, getCollection } from "@/sonic/utils";
+
+const env = Astro.locals.runtime?.env;
+
+// 1. Fetch Home Page Data
+const homeEntry = await getEntry(env, 'pages', 'home');
+const homeData = homeEntry?.data || {
+  hero_title: "Welcome to Fataplus",
+  hero_description: "This is a default placeholder. Please create a Static Page with slug 'home' in the Admin Panel to customize this content.",
+  hero_button_text: "Go to Admin",
+  hero_button_url: "/admin",
+  process_steps: []
+};
+
+if (!homeEntry) {
+  console.log("⚠️ Home page data not found in DB. Using fallback content.");
+}
+
+// 2. Fetch Recent Work (limited to 4)
+const allWork = await getCollection(env, 'work');
+allWork.sort((a, b) => {
+   const dateA = new Date(a.data?.date || 0).getTime();
+   const dateB = new Date(b.data?.date || 0).getTime();
+   return dateB - dateA;
+});
+
+// 3. Fetch Recent Posts (limited to 4)
+const allPosts = await getCollection(env, 'posts');
+allPosts.sort((a, b) => {
+  const dateA = new Date(a.data?.pubDate || 0).getTime();
+  const dateB = new Date(b.data?.pubDate || 0).getTime();
+  return dateB - dateA;
+});
+---
+
+<BaseLayout>
+  <Hero 
+    title={homeData.hero_title}
+    subtitle={homeData.hero_description}
+    buttonText={homeData.hero_button_text}
+    buttonUrl={homeData.hero_button_url}
+  />
+  <Process steps={homeData.process_steps} />
+  <section>
+    <Wrapper class="py-24">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Latest insights
+        </Text>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-1 mt-1 pt-4 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        {allPosts.slice(0, 4).map((post) => <BlogEntries1 post={post} />)}
+      </div>
+      <div
+        class="flex justify-end mt-4 pt-2 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        <Text
+          tag="a"
+          href="/blog"
+          variant="textBase"
+          class="dark:text-base-400 text-base-500 text-balance"
+        >
+          All insights
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper class="py-24">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Selected projects
+        </Text>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-12 lg:gap-1 mt-1 pt-4 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        {allWork.slice(0, 4).map((post) => <WorkEntries1 post={post} />)}
+      </div>
+      <div
+        class="flex justify-end mt-4 pt-2 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+      >
+        <Text
+          tag="a"
+          href="/work"
+          variant="textBase"
+          class="dark:text-base-400 text-base-500 text-balance"
+        >
+          All work
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

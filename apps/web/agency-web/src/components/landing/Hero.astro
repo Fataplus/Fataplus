@@ -1,0 +1,71 @@
+```astro
+---
+// Assets
+import { Image } from "astro:assets";
+import Avatar from "@/images/FataplusCover.png";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+const {
+  title = "Fataplus Product Design Agency",
+  subtitle = "Madagascar's first product design agency specializing in agritech innovation. We build scalable digital solutions that transform businesses and lives.",
+  buttonText = "Let's talk",
+  buttonUrl = "/forms/contact"
+} = Astro.props;
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="py-8 lg:pb-24">
+    <div class="overflow-hidden">
+      <Image
+        width={1300}
+        height={366}
+        src={Avatar}
+        alt="Fata.plus cover"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="w-full h-96 object-cover object-center"
+      />
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 mt-2">
+      <div>
+        <div class="overflow-hidden">
+          <Text
+            tag="h1"
+            variant="textXL"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            class="dark:text-white text-base-900 text-balance"
+          >
+            {title}
+          </Text>
+        </div>
+        <div class="overflow-hidden">
+          <Text
+            tag="p"
+            variant="textBase"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="mt-2 text-base-500 dark:text-base-300 lg:text-balance"
+          >
+            {subtitle}
+          </Text>
+        </div>
+      </div>
+      <div class="flex lg:ml-auto">
+        <Link
+          size="xs"
+          variant="muted"
+          href={buttonUrl}
+          title={buttonText}
+          aria-label={buttonText}
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          {buttonText}
+        </Link>
+      </div>
+    </div>
+  </Wrapper>
+</section>

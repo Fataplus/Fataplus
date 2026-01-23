@@ -1,0 +1,517 @@
+1ère cohorte du programme Miary Digital
+Projet Pôles Intégrés de Croissance
+1
+
+ETUDES DE MARCHES
+ATELIER #1
+PHASE : Digital innovation & Business Planning
+
+Objectifs de la session
+1. Comprendre les concepts de base de l’étude de
+marchés
+2. Développer la méthodologie d’études de marchés pour
+son projet
+3. Avoir une base de sources pour la collecte de données
+3
+
+Agenda
+Durée : 4h
+❖ 09h00-09h30 : Présentation des concepts de l’étude de marché
+❖ 09h30-10h45 : Activités pour collecter les données
+❖ 10h45-11h00 : Pause
+❖ 11h00-13h00 : Collecte et Analyse des données
+
+4
+
+Concepts de base de l’étude de
+marché
+
+5
+
+1. Déﬁnition
+Travail de recherche, collecte et de traitement de données pour
+identiﬁer les caractéristiques d’un marché donné :
+❖ Le marché, actuel et futur.
+❖ Vos clients potentiels.
+❖ Vos concurrents.
+❖ La réglementation de votre activité.
+6
+
+2. Objectifs
+Valider les hypothèses concernant votre problème et votre produit
+❖ Une clientèle cible existante et évolutive.
+❖ Des concurrents identiﬁés.
+❖ Fiabilité et rentabilité de votre offre.
+
+7
+
+3. Méthodologies
+2 Types de méthodologies à appliquer pour collecter des données les
+plus complètes possible
+❖ Recherche primaire
+➢
+
+Interne : concerne spéciﬁquement votre produit et votre offre
+
+➢
+
+Sur le terrain : au plus près de votre clientèle cible (entretiens, enquêtes, etc.)
+
+❖ Recherche secondaire
+➢
+
+externe : données basées sur des études réalisées par des experts du marché
+
+➢
+
+sur Internet : données publiées gratuites ou payantes, informations sur les
+réseaux sociaux, etc.
+8
+
+Activité 1 : Vos Hypothèses
+
+9
+
+A quoi, pour qui répond votre offre?
+Votre problème :
+La majorité des
+agriculteurs/producteurs ont
+des diﬃcultés à trouver des
+débouchés et des prix
+intéressant pour vendre leurs
+produits.
+
+Les personnes touchées :
+- les agriculteurs
+- les producteurs
+- Consommateurs direct
+- Visiteurs/touristes
+- Acheteurs potentiels
+
+10
+
+Activité 2 :
+Caractéristiques du marché
+
+11
+
+Taille du marché
+Oui/Non
+LOCAL
+
+NATIONAL
+
+INTERNATIONAL
+
+Données collectées
+
+Sources
+
+oui
+
+Le secteur agricole est le pilier de l'économie malgache: il représente 30% du
+PIB (2009). Il génère 30 à 40% des exportations et emploie 80% des familles
+malgaches, sur quelque 2,5 millions de petites exploitations. Ses trois
+sous-secteurs – agriculture, élevage et pêche – constituent la clé d'une
+réduction de la pauvreté et de l'amélioration de la sécurité alimentaire. En effet,
+ils font vivre 75% de la population du pays, représentent 86% des emplois et
+60% de l'emploi des jeunes.
+
+https://www.ifad.org/fr/web/operations
+/w/pays/madagascar
+
+oui
+
+A Madagascar, le potentiel de surfaces agricoles irriguées
+est estimé à 1 516 819 ha et 1 200 000 hectares seraient
+cultivés .
+
+https://agritrop.cirad.fr/603909/1/OA_
+OI_Madagascar_synthese_agriculture
+%20Vef%20janvier%202023.pdf
+
+Agriculture, valeur ajoutée (% du PIB) - Madagascar
+
+https://donnees.banquemondiale.org/i
+ndicator/NV.AGR.TOTL.ZS?locations
+=MG
+
+oui
+
+Sources: instituts de sondage, études par les bailleurs de fonds (Banque Mondiale, PNUD, UNICEF, etc.),
+études de marchés payantes, réseaux sociaux (Data portal, groupes, etc.)
+12
+
+Tendance du marché
+Oui/Non
+
+CROISSANCE
+
+STAGNATION
+
+DÉCLIN
+
+Données collectées
+
+Sources
+
+Oui
+
+Pour le ministère de l’Agriculture et de l’Elevage (MINAE),
+l’agribusiness est le grand avenir de l’économie du pays. Et il ne
+s’agit pas seulement de développer des grands projets agricoles de
+plusieurs centaines ou milliers d’hectares, mais aussi de promouvoir
+l’entrepreneuriat agricole permettant notamment aux jeunes de
+développer des activités génératrices de revenus innovantes et
+rentables.
+
+https://lexpress.mg/27/05/2023/agribu
+siness-une-filiere-de-grands-enjeux/
+
+Non
+
+Depuis plusieurs années, la production agricole progresse à un
+rythme inférieur à la croissance démographique. L’insuffisance de la
+production est liée à plusieurs facteurs
+
+https://agritrop.cirad.fr/603909/1/OA_
+OI_Madagascar_synthese_agriculture
+%20Vef%20janvier%202023.pdf
+
+Oui
+
+L’insuffisance de la production agricole et la pression démographique
+entraîne un recours croissant aux importations de produits
+alimentaires qui représentent environ 12% de la valeur totale des
+importations (World Food Programme et al., 2021)
+
+https://agritrop.cirad.fr/603909/1/OA_
+OI_Madagascar_synthese_agriculture
+%20Vef%20janvier%202023.pdf
+
+Sources: instituts de sondage, études par les bailleurs de fonds (Banque Mondiale, PNUD, UNICEF, etc.),
+études de marchés payantes, réseaux sociaux (Data portal, groupes, etc.)
+13
+
+Clients cibles
+Oui/Non
+
+B2C
+
+B2B
+
+B2G
+
+Données collectées
+
+oui
+
+Selon le Ministère de l'Agriculture et de l'Élevage de
+Madagascar, il y a environ 3,5 millions d'agriculteurs dans le
+pays. La population malgache est estimée à 28 millions
+d'habitants. Le marché potentiel pour Fataplus est donc de
+3,5 millions d'utilisateurs.
+
+oui
+
+Le marché des produits agricoles à Madagascar est estimé
+à 2 milliards de dollars. Les principaux acheteurs de
+produits agricoles malgaches sont les gouvernements
+locaux et nationaux, les entreprises locales et
+internationales, et les consommateurs malgaches.
+
+oui
+
+Le gouvernement malgache est un important acheteur de
+produits agricoles. Le gouvernement lance régulièrement
+des appels d'offres pour l'achat de produits agricoles.
+Fataplus a l'intention de se positionner comme un partenaire
+privilégié du gouvernement pour l'achat de produits
+agricoles.
+
+Sources
+
+https://agriculture.gouv.fr/madagascar#:~:text=Le%20secteur%20a
+gricole%20repr%C3%A9sente%2029,Andry%20Rajoelina.
+https://www.tranobenytantsaha.mg/
+
+https://www.blp.mg/
+http://www.amic.mg/
+
+https://www.ifad.org/fr/web/operations/w/pays/madagascar
+https://www.afdibfc.org/fr/madagascar
+
+NB : Même si votre offre est globale, celle-ci doit s’adresser à un groupe de personnes homogène, c-à-d une
+cible client.
+14
+
+Activité 3 :
+Caractéristiques de la cible
+
+15
+
+Les groupes de clients cibles
+Volumétrie potentielle
+
+Canaux
+accessibles
+
+Groupe 1
+B2C
+
+Consommateurs : les consommateurs sont les personnes qui achètent des produits ou services pour leur usage personnel. Dans le cas de
+Fataplus, les consommateurs pourraient être des Malgaches qui souhaitent acheter des produits agricoles locaux ou internationaux.
+Particuliers : les particuliers sont les personnes qui achètent des produits ou services pour leur usage personnel ou professionnel. Dans le
+cas de Fataplus, les particuliers pourraient être des agriculteurs qui souhaitent vendre leurs produits agricoles directement aux
+consommateurs.
+Entreprises : les entreprises sont des organisations qui achètent des produits ou services pour leur activité. Dans le cas de Fataplus, les
+entreprises pourraient être des restaurants, des hôtels ou des supermarchés qui souhaitent acheter des produits agricoles pour leur clientèle.
+
+local
+national
+international
+
+En ligne et
+Hors ligne
+
+Groupe 2
+B2B
+
+Acheteurs : les acheteurs sont les personnes ou organisations qui achètent des produits ou services pour leur activité. Dans le cas de
+Fataplus, les acheteurs pourraient être des entreprises, des gouvernements ou des institutions qui souhaitent acheter des produits agricoles.
+Fournisseurs : les fournisseurs sont les personnes ou organisations qui vendent des produits ou services à d'autres personnes ou
+organisations. Dans le cas de Fataplus, les fournisseurs pourraient être des agriculteurs, des entreprises ou des gouvernements qui
+souhaitent vendre des produits agricoles.
+Partenaires : les partenaires sont les personnes ou organisations qui travaillent ensemble pour atteindre un objectif commun. Dans le cas de
+Fataplus, les partenaires pourraient être des gouvernements, des institutions ou des entreprises qui souhaitent collaborer pour améliorer le
+secteur agricole malgache.
+
+local
+national
+international
+
+En ligne et
+Hors ligne
+
+https://library.fes.de/pdf-files/bueros/madaga
+skar/15139.pdf
+
+Groupe 3
+B2G
+
+Gouvernements locaux : les gouvernements locaux sont les gouvernements des villes, des villages ou des districts. Dans le cas de Fataplus,
+les gouvernements locaux pourraient être intéressés par la plateforme pour acheter des produits agricoles pour leurs programmes sociaux ou
+pour soutenir les agriculteurs locaux.
+Gouvernements nationaux : les gouvernements nationaux sont les gouvernements des pays. Dans le cas de Fataplus, le gouvernement
+national pourrait être intéressé par la plateforme pour acheter des produits agricoles pour ses programmes d'alimentation ou pour soutenir le
+secteur agricole malgache.
+Institutions : les institutions sont des organisations publiques ou privées qui fournissent des services à la population. Dans le cas de Fataplus,
+les institutions pourraient être intéressées par la plateforme pour acheter des produits agricoles pour leurs programmes de nutrition ou pour
+soutenir les agriculteurs malgaches.
+
+local
+national
+international
+
+En ligne et
+Hors ligne
+
+https://www.banquemondiale.org/fr/news/pre
+ss-release/2023/04/07/madagascar-afe-227million-to-increase-productivity-and-strength
+en-the-resilience-of-rural-livelihoods
+
+Caractéristiques
+
+Critères de différenciations : données démographiques, sources de revenus, centres d’intérêt
+
+Sources
+
+https://www.willagri.com/2019/07/22/fiharian
+a-un-programme-pour-stimuler-lagrobusines
+s-malgache/
+https://fca-madagascar.org/
+
+16
+
+Activité 4 :
+Les concurrents
+
+17
+
+Les leaders
+Local/national/
+International
+
+Direct/
+Indirect
+
+Part de marché
+
+Caractéristiques produits/offres
+
+Sources
+https://www.soafiary.mg/
+
+B2C
+
+B2B
+
+B2G
+
+https://www.symabio.mg/cl
+ient.html
+
+https://sahanala.net/
+
+Direct
+
+https://www.europages.fr/e
+ntreprises/madagascar/agr
+iculture%20et%20%C3%A
+9levage.html
+
+https://www.ifad.org/fr/web
+/operations/w/pays/madag
+ascar
+https://www.capfida.mg/pi/
+www.capfida.mg/site/spipa
+e94.html?rubrique265
+
+18
+
+Comparaison des offres
+CIBLE
+
+CANAUX
+
+OFFRE
+
+PRIX
+
+SOURCES
+
+VOUS
+
+Gov
+
+https://edbm.mg/wp-cont
+ent/uploads/2018/09/INV
+EST-IN-AGRIBUSINESS
+.pdf
+
+19
+
+Activité 5 :
+Etude auprès du Client
+
+20
+
+Recherche Client utilisateur de la solution
+Template :
+https://docs.google.com/spreadsheets/d/1gqdXHdF7SHx_EoVlrcv
+OyBp9Sng0gtrV-5bYaG2KkeI/edit?usp=sharing
+> Questionnaire ou Guide d’entretien?
+> Ajuster, personnaliser les questions
+
+21
+
+Activité 6 :
+Analyse des données collectées
+
+22
+
+Analyse récapitulative du Marché Cible
+●
+
+Total Available Market (TAM) : 3,5 millions d'agriculteurs malgaches
+
+●
+
+Serviceable Available Market (SAM) : 2,5 millions d'agriculteurs malgaches
+cibles pour chaque Fokontany / communes / district .
+
+●
+
+Serviceable Obtainable market (SOM) : 1,5 millions d'agriculteurs malgaches
+qui peuvent disposer d'une connexion Internet ou des informations aupres
+des associations et fokontany et d'un intérêt pour la plateforme Fataplus .
+
+23
+
+Analyse - User Personas
+Persona 1 : L'agriculteur
+
+Persona 2 : Le consommateur
+
+Persona 3 : Le gouvernement
+
+Nom : Jean
+Âge : 40 ans
+Profession : Agriculteur
+Revenu : 200 000 ariary par mois
+Lieu de résidence : Village rural à Madagascar
+Besoins et motivations
+Jean souhaite vendre ses produits agricoles à un
+prix juste et avec un minimum d'efforts.
+Il souhaite également accéder à des
+informations sur les marchés et les prix des
+produits agricoles.
+Commentaires:
+Jean est un utilisateur potentiel de Fataplus car
+il est un agriculteur malgache disposant d'une
+connexion Internet. Il est motivé par la
+possibilité de vendre ses produits agricoles à un
+prix juste et avec un minimum d'efforts.
+
+Nom : Marie
+Âge : 25 ans
+Profession : Employée
+Revenu : 500 000 ariary par mois
+Lieu de résidence : Antananarivo, Madagascar
+Besoins et motivations
+
+Nom : Ministère de l'Agriculture et de l'Élevage
+Lieu de résidence : Antananarivo, Madagascar
+Besoins et motivations
+
+Marie souhaite acheter des produits agricoles
+frais et de qualité à un prix abordable.
+Elle souhaite également soutenir les agriculteurs
+malgaches.
+Commentaires
+Marie est un utilisateur potentiel de Fataplus car
+elle est une consommatrice malgache
+intéressée par l'achat de produits agricoles
+locaux. Elle est motivée par la possibilité
+d'acheter des produits frais et de qualité à un
+prix abordable, ainsi que par le soutien aux
+agriculteurs malgaches.
+
+Le gouvernement souhaite acheter des produits
+agricoles locaux pour ses programmes sociaux
+et pour soutenir le secteur agricole.
+Il souhaite également avoir accès à des
+informations sur la production agricole
+malgache.
+Commentaires
+Le gouvernement est un utilisateur potentiel de
+Fataplus car il est un acheteur important de
+produits agricoles. Il est motivé par la possibilité
+d'acheter des produits agricoles locaux à un prix
+abordable, ainsi que par le soutien au secteur
+agricole.
+
+24
+
+Analyse - Stratégie
+● Positionnement de l’offre Produits et/ou Services
+● Stratégie de développement auprès des clients utilisateurs et
+contre les concurrents
+
+25
+
+A vos carnets!
+
+26
+
+

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "115429779338",
+    "project_id": "fataplus-2024",
+    "storage_bucket": "fataplus-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115429779338:android:3d5162b3b5e170d09a0a73",
+        "android_client_info": {
+          "package_name": "com.fata.plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115429779338-5r0g8vdvmuu069hjksd88tievjteiqcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRnjJVu6uapk9DirN49cNfKLAt6yMmD7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115429779338-5r0g8vdvmuu069hjksd88tievjteiqcm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

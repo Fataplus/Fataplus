@@ -1,0 +1,68 @@
+---
+// Foundations
+import "@/styles/global.css";
+import BaseHead from "@/components/fundations/head/BaseHead.astro";
+// Components
+import Footer from "@/components/global/Footer.astro";
+import DesktopNav from "@/components/navigation/DesktopNav.astro";
+import MobileNav from "@/components/navigation/MobileNav.astro";
+import ToggleLocalStorage from "@/components/fundations/scripts/ToggleLocalStorage.astro";
+// LanguageSwitcher removed
+// import LanguageSwitcher from "@/components/i18n/LanguageSwitcher.astro";
+// import { getLocale } from 'astro-i18next';
+// import { getLanguageInfo } from '@/i18n/utils';
+
+const currentLocale = "en";
+const languageInfo = { dir: "ltr" };
+---
+
+<html lang={currentLocale} class="scroll-smooth" dir={languageInfo.dir}>
+  <head>
+    <BaseHead />
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_amhuXWXTxou3CBvJg41M3WGqrl16mF1BfQ4wkvHKh6o',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only'})
+    </script>
+  </head>
+  <body class="dark:bg-base-950 bg-white">
+    <div class="min-h-[640px] flex flex-col">
+      <div>
+        <!-- Static sidebar for desktop -->
+        <div class="absolute top-4 right-4 z-50">
+          <!-- LanguageSwitcher removed -->
+        </div>
+        <DesktopNav />
+        <div class="relative z-0 flex flex-1 overflow-hidden">
+          <div
+            class="relative z-0 flex-1 overflow-y-auto focus:outline-none lg:pl-64 2xl:pl-64"
+          >
+            <div class="flex justify-end p-4 lg:hidden">
+              <!-- LanguageSwitcher removed -->
+            </div>
+            <MobileNav />
+            <!-- Start main area-->
+            <div class="flex-1 mx-auto min-h-svh flex flex-col">
+              <main class="grow">
+                <slot />
+              </main>
+              <Footer />
+              <!--- end main area  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+    // AOS animation library
+    // https://github.com/michalsnik/aos
+  -->
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+    <script type="text/javascript">
+      AOS.init({
+        once: true,
+      });
+    </script>
+    <ToggleLocalStorage />
+  </body>
+</html>

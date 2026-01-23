@@ -1,0 +1,188 @@
+# Folder Organizer Configuration for Fataplus
+# Location: .opencode/skill/folder-organizer/config.yaml
+
+# Workspace metadata
+workspace:
+  name: Fataplus
+  description: Multi-project Agritech organization workspace
+  primary_language: French
+  markets: [Madagascar, Europe]
+
+# Categories to skip during reorganization
+skip_categories:
+  - .git
+  - node_modules
+  - .next
+  - venv
+  - __pycache__
+
+# Custom category mappings for this workspace
+custom_mappings:
+  # Web Applications
+  Agency-Web: apps/web/agency-web
+  fataplus-os: apps/web/fataplus-os
+  
+  # Tools & Utilities
+  temp_scraper: apps/tools/facebook-scraper
+  Fataplus-Master-Dashboard: apps/tools/master-dashboard
+  
+  # Data & Exports
+  "Bank docs": data/banking
+  fb_posts_2025.json: data/social/facebook
+  social_media_archive.json: data/social/archive
+  
+  # Documentation - Strategy
+  docs: docs/strategy
+  
+  # Documentation - Technical
+  Documentation: docs/technical
+  
+  # Documentation - Business
+  fataplus: docs/business
+  CodeAndScale: docs/proposals
+  
+  # Documentation - Financial
+  Facturation: docs/financial/invoices
+  
+  # Resources
+  Resources: resources
+  
+  # Repositories
+  Repos: repos
+  
+  # Scripts
+  "*.py": scripts/python
+  
+  # Archive candidates (empty directories)
+  apps: archive/empty/apps
+  archive: archive/legacy
+  data: data
+
+# Archive threshold (days since last git commit)
+archive_threshold_days: 180
+
+# Protected directories (never move)
+protected:
+  - .git
+  - .bmad
+  - .claude
+  - .superdesign
+  - node_modules
+  - .next
+  - venv
+  - dist
+  - build
+
+# Special handling for hidden directories
+hidden_directories:
+  .bmad:
+    action: keep_at_root
+    description: BMAD methodology framework
+  .claude:
+    action: keep_at_root
+    description: Claude Code settings
+  .superdesign:
+    action: keep_at_root
+    description: SuperDesign workflow
+
+# Index files to update after reorganization
+index_files:
+  - FATAPLUS_INDEX.md
+  - project-context.md
+  - agent.md
+
+# Files to preserve at root level
+root_files:
+  - FATAPLUS_INDEX.md
+  - project-context.md
+  - agent.md
+  - .DS_Store
+
+# Proposed final structure
+proposed_structure:
+  apps:
+    web:
+      - agency-web      # Astro marketing site
+      - fataplus-os     # Next.js SaaS dashboard
+    mobile:
+      - tsena-ny-tantsaha  # Flutter marketplace (from Repos)
+    tools:
+      - facebook-scraper   # Python scraper
+      - master-dashboard   # Internal dashboard
+    api: []               # Future API projects
+  
+  repos:
+    active: []            # Active external repos
+    archive: []           # Inactive repos
+  
+  docs:
+    strategy:             # 2026 planning docs
+      - bmm-product-brief
+      - brand-voice
+      - gtm-strategy
+      - portfolio-catalog
+    technical:            # Architecture & specs
+      - rapport_financier_pic
+      - rapport_technique_pic
+      - indicateurs_performance
+    business:             # PDFs, pitch decks
+      - pitch-decks
+      - contracts
+      - proposals
+    financial:            # Invoicing & treasury
+      - invoices
+      - treasury
+  
+  data:
+    banking:              # MCB statements
+      - statements
+      - converted_csvs
+    social:               # Social media data
+      - facebook
+      - archive
+    exports: []           # Generated data
+  
+  scripts:
+    python:               # Python utilities
+      - analyze_facebook_data.py
+      - calculate_kpi.py
+      - scrape_facebook.py
+      - clone_repos.py
+      - extract_logs.py
+    shell: []             # Shell scripts
+  
+  resources:
+    assets:               # Logos, images
+      - logos
+      - icons
+    guides:               # Reference PDFs
+      - web-design
+  
+  archive:
+    legacy: []            # Old/deprecated items
+    empty: []             # Placeholder directories
+
+# Tech stack detection patterns
+tech_detection:
+  nextjs:
+    files: [package.json]
+    patterns: ['"next":', 'next.config']
+  astro:
+    files: [package.json, astro.config.mjs]
+    patterns: ['"astro":']
+  flutter:
+    files: [pubspec.yaml]
+    patterns: ['flutter:']
+  python:
+    files: [requirements.txt, pyproject.toml, setup.py]
+    patterns: []
+  hono:
+    files: [package.json]
+    patterns: ['"hono":']
+
+# Reporting
+reports:
+  audit_output: .opencode/reports/audit-report.json
+  categorization_output: .opencode/reports/categorization-plan.md
+  migration_log: .opencode/reports/migration-log.md
+  rollback_script: .opencode/reports/migration-rollback.sh

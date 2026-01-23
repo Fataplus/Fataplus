@@ -1,0 +1,201 @@
+{
+    "name": "Analyse IA des e-mails envoyés",
+    "nodes": [
+      {
+        "parameters": {
+          "rule": {
+            "type": "cron",
+            "value": "0 9 * * *" // Exécution quotidienne à 9h
+          }
+        },
+        "id": "Schedule",
+        "name": "Déclencheur quotidien",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.1,
+        "position": [240, 300]
+      },
+      {
+        "parameters": {
+          "operation": "search",
+          "q": "in:sent after:{{ $now.minusDays(7).format('YYYY/MM/DD') }}",
+          "options": {}
+        },
+        "id": "Gmail",
+        "name": "Récupérer e-mails envoyés",
+        "type": "n8n-nodes-base.gmail",
+        "typeVersion": 1,
+        "position": [460, 300],
+        "credentials": {
+          "gmailOAuth2Api": {
+            "id": "VOTRE_ID_CREDENTIAL_GMAIL",
+            "name": "Gmail"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "jsCode": "// Nettoyer le contenu HTML\nconst html = $json.body;\nconst text = html.replace(/<[^>]+>/g, '');\n\nreturn [{\n  id: $json.id,\n  date: $json.date,\n  to: $json.to,\n  subject: $json.subject,\n  content: text\n}];"
+        },
+        "id": "Code",
+        "name": "Nettoyer contenu",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 1,
+        "position": [680, 300]
+      },
+      {
+        "parameters": {
+          "resource": "chat",
+          "operation": "create",
+          "model": "gpt-3.5-turbo",
+          "messages": {
+            "values": [
+              {
+                "role": "system",
+                "content": "Analyse cet e-mail envoyé et fournis une réponse JSON avec les clés : resume (résumé en 3 points max), ton (formel/informel/professionnel), sujets (liste des sujets abordés), clarte (note sur 5 + commentaire)."
+              },
+              {
+                "role": "user",
+                "content": "Destinataire : {{$json.to}}\nSujet : {{$json.subject}}\nContenu : {{$json.content}}"
+              }
+            ]
+          }
+        },
+        "id": "OpenAI",
+        "name": "Analyse IA",
+        "type": "n8n-nodes-base.openAi",
+        "typeVersion": 1,
+        "position": [900, 300],
+        "credentials": {
+          "openAiApi": {
+            "id": "VOTRE_ID_CREDENTIAL_OPENAI",
+            "name": "OpenAI"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "keepOnlySet": true,
+          "values": {
+            "string": [],
+            "array": [],
+            "object": [
+              {
+                "key": "analysis",
+                "value": "=JSON.parse($json.choices[0].message.content)"
+              }
+            ],
+            "boolean": []
+          },
+          "options": {}
+        },
+        "id": "Set",
+        "name": "Parser réponse IA",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [1120, 300]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "sheetId": "VOTRE_ID_GOOGLE_SHEET",
+          "range": "A:G",
+          "options": {
+            "headerFields": [
+              "Date",
+              "Destinataire",
+              "Sujet",
+              "Résumé",
+              "Ton",
+              "Sujets",
+              "Clarté"
+            ]
+          },
+          "values": {
+            "array": [
+              [
+                "={{ $node[\"Gmail\"].json[\"date\"] }}",
+                "={{ $node[\"Gmail\"].json[\"to\"] }}",
+                "={{ $node[\"Gmail\"].json[\"subject\"] }}",
+                "={{ $node[\"Set\"].json[\"analysis\"][\"resume\"].join('\\n') }}",
+                "={{ $node[\"Set\"].json[\"analysis\"][\"ton\"] }}",
+                "={{ $node[\"Set\"].json[\"analysis\"][\"sujets\"].join(', ') }}",
+                "={{ $node[\"Set\"].json[\"analysis\"][\"clarte\"] }}"
+              ]
+            ]
+          }
+        },
+        "id": "Google Sheets",
+        "name": "Stockage résultats",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 2,
+        "position": [1340, 300],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "VOTRE_ID_CREDENTIAL_GOOGLE",
+            "name": "Google Sheets"
+          }
+        }
+      }
+    ],
+    "pinData": {},
+    "connections": {
+      "Schedule": {
+        "main": [
+          [
+            {
+              "node": "Gmail",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Gmail": {
+        "main": [
+          [
+            {
+              "node": "Code",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code": {
+        "main": [
+          [
+            {
+              "node": "OpenAI",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "OpenAI": {
+        "main": [
+          [
+            {
+              "node": "Set",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Set": {
+        "main": [
+          [
+            {
+              "node": "Google Sheets",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "active": false,
+    "settings": {},
+    "versionId": "1"
+  }

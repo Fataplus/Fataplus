@@ -1,0 +1,39 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-8">
+      <div class="max-w-4xl mx-auto">
+        <Text tag="h1" variant="textXL" class="dark:text-white text-base-900 mb-8">
+          Analytics Dashboard
+        </Text>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Placeholder Stats -->
+          <div class="bg-base-50 dark:bg-base-900 p-6 rounded-lg shadow-sm">
+            <Text tag="h3" variant="textBase" class="text-base-500 dark:text-base-400">Total Visitors</Text>
+            <Text tag="p" variant="textXL" class="dark:text-white text-base-900 mt-2">--</Text>
+          </div>
+          <div class="bg-base-50 dark:bg-base-900 p-6 rounded-lg shadow-sm">
+            <Text tag="h3" variant="textBase" class="text-base-500 dark:text-base-400">Page Views</Text>
+            <Text tag="p" variant="textXL" class="dark:text-white text-base-900 mt-2">--</Text>
+          </div>
+          <div class="bg-base-50 dark:bg-base-900 p-6 rounded-lg shadow-sm">
+            <Text tag="h3" variant="textBase" class="text-base-500 dark:text-base-400">Avg. Session</Text>
+            <Text tag="p" variant="textXL" class="dark:text-white text-base-900 mt-2">--</Text>
+          </div>
+        </div>
+
+        <div class="bg-base-50 dark:bg-base-900 p-6 rounded-lg shadow-sm h-96 flex items-center justify-center">
+           <Text tag="p" variant="textBase" class="text-base-500 dark:text-base-400">
+             Charts will be loaded here via PostHog API
+           </Text>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-01-13T18:47:51.643395",
+  "projects": [
+    {
+      "name": "fataplus-5faf2816",
+      "path": "/Repos/fataplus-5faf2816",
+      "last_modified": 1768311717.4266403,
+      "description": "Welcome to your Lovable project",
+      "tech": [
+        "@hookform/resolvers",
+        "@huggingface/transformers",
+        "@radix-ui/react-accordion",
+        "@radix-ui/react-alert-dialog",
+        "@radix-ui/react-aspect-ratio"
+      ]
+    },
+    {
+      "name": "fataplus-react",
+      "path": "/Repos/fataplus-react",
+      "last_modified": 1768311713.581861,
+      "description": "",
+      "tech": [
+        "@emotion/cache",
+        "@emotion/react",
+        "@emotion/server",
+        "@emotion/styled",
+        "@mui/icons-material"
+      ]
+    },
+    {
+      "name": "Fataplus---Tsena-ny-tantsaha",
+      "path": "/Repos/Fataplus---Tsena-ny-tantsaha",
+      "last_modified": 1768311685.0593681,
+      "description": "flutter_grocery",
+      "tech": [
+        "firebase"
+      ]
+    },
+    {
+      "name": "fataplus-app",
+      "path": "/Repos/fataplus-app",
+      "last_modified": 1768311678.4109235,
+      "description": "",
+      "tech": [
+        "@types/node",
+        "@types/react",
+        "@types/react-dom",
+        "@whop-sdk/core",
+        "@whop/frosted-ui"
+      ]
+    },
+    {
+      "name": "Fataplus-Web",
+      "path": "/Repos/Fataplus-Web",
+      "last_modified": 1768311675.625144,
+      "description": "Fataplus-Web",
+      "tech": []
+    },
+    {
+      "name": "fataplus-cms",
+      "path": "/Repos/fataplus-cms",
+      "last_modified": 1768311673.9807081,
+      "description": "A blank template to get started with Payload 3.0",
+      "tech": [
+        "@opennextjs/cloudflare",
+        "@payloadcms/db-d1-sqlite",
+        "@payloadcms/next",
+        "@payloadcms/payload-cloud",
+        "@payloadcms/richtext-lexical"
+      ]
+    },
+    {
+      "name": "fataplus-builder",
+      "path": "/Repos/fataplus-builder",
+      "last_modified": 1768311671.4629178,
+      "description": "\ud83e\udde1 Cloudflare Vibe SDK",
+      "tech": [
+        "@cloudflare/containers",
+        "@cloudflare/sandbox",
+        "@noble/ciphers",
+        "@octokit/rest",
+        "@radix-ui/react-accordion"
+      ]
+    },
+    {
+      "name": "Fataplus-Agritech-Platform",
+      "path": "/Repos/Fataplus-Agritech-Platform",
+      "last_modified": 1768311667.9522777,
+      "description": "\ud83c\udf3e Fataplus Agritech Platform",
+      "tech": [
+        "pm2"
+      ]
+    },
+    {
+      "name": "fataplus-web25",
+      "path": "/Repos/fataplus-web25",
+      "last_modified": 1768311659.0905378,
+      "description": "Fataplus Multi-Project Repository",
+      "tech": []
+    },
+    {
+      "name": "FP-11",
+      "path": "/Repos/FP-11",
+      "last_modified": 1768311650.7141778,
+      "description": "",
+      "tech": []
+    },
+    {
+      "name": "Fataplus",
+      "path": "/Repos/Fataplus",
+      "last_modified": 1768311650.6867151,
+      "description": "\ud83d\ude80 Fataplus Interop\u00e9rabilit\u00e9 - CRM Multi-Tenant IA-Powered",
+      "tech": []
+    },
+    {
+      "name": "fataplus-os",
+      "path": "/fataplus-os",
+      "last_modified": 1767722676.0796254,
+      "description": "",
+      "tech": [
+        "@cloudflare/next-on-pages",
+        "@hono/zod-validator",
+        "@hookform/resolvers",
+        "@langwatch/better-agents",
+        "@radix-ui/react-avatar"
+      ]
+    },
+    {
+      "name": "Agency-Web",
+      "path": "/Agency-Web",
+      "last_modified": 1767722676.079296,
+      "description": "Fataplus - Product Design Agency",
+      "tech": [
+        "@astrojs/cloudflare",
+        "@astrojs/rss",
+        "@astrojs/sitemap",
+        "@astrolib/seo",
+        "@cloudflare/workers-types"
+      ]
+    }
+  ],
+  "finance": {
+    "total_income": 100036298.92999995,
+    "total_expenses": 98791059.23999994,
+    "balance": 1245239.6900000125,
+    "currency": "MGA"
+  },
+  "activity": [
+    "=== Fataplus---Tsena-ny-tantsaha ===",
+    "2025-05-22 | cline rules and memory bank update for further development",
+    "",
+    "=== Fataplus-Agritech-Platform ===",
+    "2025-10-07 | chore(security): remove sensitive env/config files from repository index and update .gitignore",
+    "2025-10-07 | chore: save local changes 2025-10-07_19:00:01",
+    "2025-09-20 | \ud83d\udd12 Final security fix: Remove remaining hardcoded Figma tokens",
+    "2025-09-20 | \ud83d\udd12 Additional security fix: Remove remaining hardcoded tokens from docs",
+    "2025-09-20 | \ud83d\udd12 Security fix: Remove hardcoded Figma API tokens",
+    "2025-09-20 | \ud83d\udd04 Complete project reorganization and README rewrite",
+    "2025-09-19 | feat(cloudflare): complete Cloudflare Workers deployment configuration",
+    "2025-09-19 | fix(dns): add comprehensive DNS configuration and temporary access solutions",
+    "2025-09-19 | feat(deployment): complete deployment automation with CI/CD pipeline",
+    "2025-09-19 | feat(deployment): create production-ready deployment package",
+    "2025-09-19 | feat(security): complete security integration with production-ready features",
+    "2025-09-19 | feat: major project reorganization and cleanup",
+    "2025-09-18 | feat(mcp): Add Docker Universal deployment for MCP server",
+    "2025-09-17 | feat: Implement comprehensive AutoRAG monetization system",
+    "2025-09-17 | fix: Resolve API connectivity issues and improve error handling",
+    "2025-09-17 | fix: Implement API fallback system to resolve connection errors"
+  ]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Financial Overview</h1>
+            <p>Analysis for /Users/fefe/Documents/Fataplus/Bank docs</p>
+        </header>
+
+        <div class="summary-cards">
+            <div class="card">
+                <h3>Total Income</h3>
+                <div class="value green" id="total-income">0 MGA</div>
+            </div>
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <div class="value red" id="total-expenses">0 MGA</div>
+            </div>
+            <div class="card">
+                <h3>Net Balance Change</h3>
+                <div class="value" id="net-balance">0 MGA</div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <div class="calendar-controls">
+                    <button id="prevMonth">
+                        << /button>
+                            <input type="month" id="monthPicker"
+                                style="background: transparent; color: white; border: none; font-size: 1.5rem; font-family: inherit; font-weight: 300;">
+                            <button id="nextMonth">></button>
+                </div>
+                <div style="width: 20px;"></div> <!-- Spacer -->
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Headers -->
+                <div class="calendar-day-header">Sun</div>
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+                <!-- Days will be injected here -->
+            </div>
+        </div>
+
+        <div class="chart-section" style="display: flex; gap: 20px;">
+            <div style="flex: 2;">
+                <canvas id="mainChart"></canvas>
+            </div>
+            <div style="flex: 1;">
+                <canvas id="incomeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Search transactions...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Debit</th>
+                        <th>Credit</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="txTableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fataplus Master Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="brand">
+                <h1>Fataplus<span class="highlight">.OS</span></h1>
+                <span class="badge">MASTER VIEW</span>
+            </div>
+            <div class="last-updated" id="last-updated">Updating...</div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Finance Section -->
+            <section class="card finance-card">
+                <div class="card-header">
+                    <h2>Financial Overview</h2>
+                    <a href="../Bank docs/dashboard.html" class="action-link">Full Report &rarr;</a>
+                </div>
+                <div class="finance-stats">
+                    <div class="stat-item">
+                        <span class="label">Balance</span>
+                        <span class="value big" id="finance-balance">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-item mini">
+                            <span class="label">Income</span>
+                            <span class="value green" id="finance-income">--</span>
+                        </div>
+                        <div class="stat-item mini">
+                            <span class="label">Expenses</span>
+                            <span class="value red" id="finance-expenses">--</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Section -->
+            <section class="card activity-card">
+                <div class="card-header">
+                    <h2>Recent Activity</h2>
+                </div>
+                <ul class="activity-list" id="activity-list">
+                    <!-- Injected by JS -->
+                    <li class="loading">Loading activity...</li>
+                </ul>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="full-width-section">
+                <div class="section-header">
+                    <h2>Active Projects</h2>
+                    <div class="controls">
+                        <input type="text" id="project-search" placeholder="Search projects...">
+                    </div>
+                </div>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Injected by JS -->
+                    <div class="loading-grid">Loading projects...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

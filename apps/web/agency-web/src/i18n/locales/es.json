@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "work": "Trabajo",
+    "blog": "Blog",
+    "store": "Tienda",
+    "studio": "Estudio",
+    "course": "Curso",
+    "about": "Nosotros",
+    "signin": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "common": {
+    "learnMore": "Aprende Más",
+    "readMore": "Leer Más",
+    "contactUs": "Contáctanos",
+    "loading": "Cargando...",
+    "search": "Buscar",
+    "language": "Idioma"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenido a Fataplus",
+      "subtitle": "Tu socio de agencia digital",
+      "description": "Creamos experiencias digitales increíbles que ayudan a tu negocio a crecer y tener éxito en el mundo moderno."
+    },
+    "process": {
+      "title": "Nuestro Proceso",
+      "steps": {
+        "discover": "Descubrir",
+        "design": "Diseñar",
+        "develop": "Desarrollar",
+        "deploy": "Desplegar"
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "description": "Conoce más sobre nuestro equipo y nuestra misión de crear experiencias digitales excepcionales."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "description": "Ponte en contacto con nuestro equipo para discutir tu próximo proyecto.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    }
+  },
+  "system": {
+    "overview": "Descripción General",
+    "links": "Enlaces",
+    "buttons": "Botones",
+    "colors": "Colores",
+    "typography": "Tipografía"
+  }
+}

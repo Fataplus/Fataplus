@@ -1,0 +1,6 @@
+{
+    "schema": "./src/sonic/db-schema.ts",
+    "out": "./drizzle",
+    "driver": "d1-http",
+    "dialect": "sqlite"
+}

@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1765146904292,
+      "tag": "0000_breezy_master_mold",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1765148285276,
+      "tag": "0001_nasty_the_watchers",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+Résultat d’évaluation et recommandations techniques et financières
+Informations générales
+Nom du projet
+
+FATAPLUS
+
+N° Dossier
+
+44
+
+Incubateur
+
+ZAFY TODY
+
+I. ÉVALUATION DES PROJETS
+1.1.Critères d’évaluation : six (06) domaines d’évaluation
+
+Critère 1 : Produit
+Critère 2 : Potentiel
+Critère 3 : Capital Humain
+Critère 4 : Stratégies
+Critère 5 : Due Diligence Technique ou Financière
+Critère 6 : Pitch
+
+1.2.Interprétation des résultats
+Critères
+
+Interprétation
+
+Si note >10
+
+Le dossier est favorable
+
+Si note entre 6 et 10
+
+Le dossier est favorable avec réserves
+
+Si note < 6
+
+Le dossier est rejeté
+
+II. PRESENTATION DES RESULTATS
+II.1. Résultats :
+
+Evaluation
+Technique
+
+Financière
+
+Critère 1 : Produit
+
+1,00
+
+Critère 1 : Produit
+
+0,67
+
+Critère 2 : Potentiel
+
+0,60
+
+Critère 2 : Potentiel
+
+0,64
+
+Critère 3 : Capital Humain 0,98 Critère 3 : Capital Humain
+
+0,69
+
+Critère 4 : Stratégies
+
+1,04
+
+0,84
+
+Critère 4 : Stratégies
+
+Critère 5 : Tech
+
+1,80
+
+Critère 5 : Fin
+
+3,55
+
+Critère 6 : Pitch
+
+0,29
+
+Critère 6 : Pitch
+
+0,33
+
+Total /10
+
+5,51
+
+Total /10
+
+6,92
+
+Total Notation/20 :
+
+6,44
+
+II.2. Points forts
+
+Expert financier
+- L’équipe peut capitaliser sur l’expérience familiale du secteur de l’agriculture pour proposer des
+produits pertinents.
+- Les possibilités de partenariats avec des acteurs locaux (OSC, ONG, programmes
+gouvernementaux, ministères) pour le financement et l’opérationnalisation du projet. - Un
+secteur en plein essor à Madagascar avec peu de concurrence installée.
+Expert technique
+- Marché vaste et activité pouvant avoir un impact économique et social majeur, Bonne connaissance et réseau local grâce à l’expérience de leur père,
+- Expérience intéressante et complémentaire de l’équipe de porteurs de projets (technologique
+et gestion foncière)
+
+II.3. Points faibles
+Expert financier
+- Le BP manque d’éléments concrets (ex : track-record) pour justifier la viabilité du projet auprès
+des investisseurs.
+- La fracture numérique auprès des agriculteurs reste encore un défi pour le projet.
+- Le projet veut proposer trop de services en même temps (6 au total), ce qui représente un
+risque de non-réalisation.
+- Le ciblage des agriculteurs pourrait être amélioré en proposant dans un premier temps de
+définir une localité test pour la phase MVP du projet et/ou durant la phase de lancement.
+
+Expert technique
+- Le dossier est trop scolaire. L’analyse du marché n’est pas assez détaillée, l’avantage
+concurrentiel n’est pas convaincant, etc.
+- Le dossier ne présente pas assez les premières réalisations de l’équipe : mock-ups de la
+solution, détail des 9 personas définies, résultats du projet pilote conduit avec les 27
+agriculteurs, etc. Pour évaluer un projet entrepreneurial, on veut pouvoir évaluer la capacité
+de l’équipe à entreprendre et le dossier ne le démontre pas car il ne présente pas ce qui a été
+entrepris.
+- En conséquence des 2 précédents points, il semble difficile à la lecture du dossier d’être
+convaincu de la capacité de l’équipe à délivrer les services présentés et les résultats
+envisagés. Il serait profitable de réduire l’ampleur du projet, de définir des objectifs très
+
+raisonnables et de prouver que l’équipe peut les atteindre.
+
+III. CONCLUSION
+Avis technique :
+L’impact économique et social du projet peut être très positif. L’équipe doit prouver sa capacité à
+réaliser ce projet. Cela passe par une présentation plus détaillée de son marché et de ses réalisations
+à jour.
+L’équipe a intérêt à mieux focaliser son action et ses ressources en n’offrant qu’un service au départ,
+celui qui apporte le plus de valeur immédiate aux agriculteurs. Une fois qu’elle aura démontré sa
+capacité à délivrer de façon réussie ce service (en prouvant que le marché existe, que le besoin est
+réel et que l’équipe est en mesure de produire des résultats), elle sera crédible pour lever des fonds
+et pour développer son activité (en offrant de multiples services).
+Les réserves qui pourraient être appliquées pour l’obtention de la subvention pourraient être :
+1. Retravailler le dossier pour présenter plus concrètement et efficacement les réalisations
+de l’équipe (et notamment la présentation du marché et les résultats du projet
+pilote) ;
+2. Réduire le scope du projet pour son lancement en ne se focalisant que sur un seul service
+dans un premier temps afin de créer un track record concluant. Des KPIs précis
+doivent être définis avant le lancement pour mesurer les résultats de ce premier
+service.
+Avis financier :
+Le projet semble globalement viable, mais il reste à démontrer que le ciblage des agriculteurs est
+correctement défini compte tenu de la fracture numérique à Madagascar, notamment auprès des
+agriculteurs. L’intérêt des agriculteurs à la solution doit impérativement être prouvé et documenté
+dans le BP à travers les premières données de vente pour apporter plus crédibilité au projet. Un focus
+reste à faire sur les services à privilégier en priorité afin de limiter les risques.
+
+Recommandations générales
+Avis : Favorable avec réserves
+
+Recommandations générales :
+- Approfondir les différents éléments sur le marché et les concurrents à travers des données ou
+
+statistiques clés
+- Mettre en avant les solutions alternatives proposées pour les agriculteurs exclus
+
+numériquement (pas d’accès Internet, ne disposant pas de smartphone.)
+- Lancer au plus vite les phases de test ou de MVP pour obtenir des track-record afin de
+
+concrétiser l’intérêt des agriculteurs aux solutions proposées
+Recommandations sur le BP :
+
+- Améliorer la présentation du BP de manière à ce que ce soit plus visuel, ne pas hésiter à utiliser
+
+des schémas ou des images pour illustrer les propos
+- Documenter au maximum les plans d’action et roadmap de développement du produit et des
+innovations envisagées
+- Mettre en avant l’intérêt du produit auprès des agriculteurs en intégrant les résultats du travail
+de simulation et de test auprès des 400 agriculteurs (BP p.5)
+- Intégrer dans le BP une partie réservée à la présentation et à la mise en avant du capital humain
+: background des fondateurs, présentation de l’équipe, description des compétences, du
+parcours, organisation générale dans l’entreprise avec répartition des responsabilités et
+l’organigramme, culture de l’entreprise, motivation de l’équipe, compétences à acquérir et
+plan de recrutement.
+- Approfondir les éléments du modèle financier : intégrer les prévisions de vente par type de
+produit par mois, et les prévisions des charges mensualisées, définir le calendrier
+d’acquisition et de décaissement de la subvention
+- Établir les États financiers prévisionnels : bilan prévisionnel, compte de résultat prévisionnel,
+tableau de flux de trésorerie prévisionnel
+- Privilégier le format Excel pour le modèle financier pour faciliter la lecture et les analyses des
+destinataires (investisseurs)
+- Détailler davantage avec le plan de financement, l’utilisation de la subvention du PIC avec
+éventuellement une proposition de calendrier de décaissement
+- Documenter le chiffre d’affaires (les ventes) mensuellement par type de produit afin de mettre
+en avant l’évolution de la croissance des ventes par produit
+- Analyser les coûts engagés suivant les critères de coûts variables ou coûts fixes afin de
+déterminer le point mort et fixer les objectifs de vente par produit
+- Mettre en place des tableaux de bord en fonction des objectifs du projet afin de surveiller sa
+croissance
+
+

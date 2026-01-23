@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "work": "Travail",
+    "blog": "Blog",
+    "store": "Boutique",
+    "studio": "Studio",
+    "course": "Cours",
+    "about": "À Propos",
+    "signin": "Se Connecter",
+    "signup": "S'inscrire",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "common": {
+    "learnMore": "En Savoir Plus",
+    "readMore": "Lire Plus",
+    "contactUs": "Nous Contacter",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "language": "Langue"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenue chez Fataplus",
+      "subtitle": "Votre partenaire agence digitale",
+      "description": "Nous créons des expériences numériques incroyables qui aident votre entreprise à se développer et à réussir dans le monde moderne."
+    },
+    "process": {
+      "title": "Notre Processus",
+      "steps": {
+        "discover": "Découvrir",
+        "design": "Concevoir",
+        "develop": "Développer",
+        "deploy": "Déployer"
+      }
+    }
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "En savoir plus sur notre équipe et notre mission de créer des expériences numériques exceptionnelles."
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "description": "Contactez notre équipe pour discuter de votre prochain projet.",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer le Message"
+    }
+  },
+  "system": {
+    "overview": "Aperçu",
+    "links": "Liens",
+    "buttons": "Boutons",
+    "colors": "Couleurs",
+    "typography": "Typographie"
+  }
+}

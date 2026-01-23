@@ -1,0 +1,32 @@
+generated: 2026-01-14
+project:
+  name: Fataplus (Agritech Product Design)
+  type: ecosystem
+  track: method  # Protocol: VENTURE BUILD
+  field_type: brownfield
+  path_file: method-brownfield.yaml
+
+# Current active workflow
+active_workflow: document-project
+
+# Workflow Status Tracking
+workflows:
+  # Phase 0: Discovery
+  brainstorm-project: /Users/fefe/Documents/Fataplus/docs/bmm-brainstorming-session-2026-01-13.md
+  research: /Users/fefe/Documents/Fataplus/docs/research-competency-market-2026.md
+  product-brief: /Users/fefe/Documents/Fataplus/docs/bmm-product-brief-Fataplus-2026-2026-01-13.md
+
+  # Phase 1: Planning
+  document-project: required  # agent: analyst
+  prd: required  # agent: pm
+  validate-prd: optional  # agent: pm
+  create-ux-design: required  # agent: ux-designer
+
+  # Phase 2: Solutioning
+  architecture: required  # agent: architect
+  validate-architecture: optional  # agent: architect
+  solutioning-gate-check: required  # agent: architect
+
+  # Phase 3: Implementation
+  sprint-planning: required  # agent: sm
+  story-development: required  # agent: sm

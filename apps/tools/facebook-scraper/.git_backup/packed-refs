@@ -1,0 +1,35 @@
+# pack-refs with: peeled fully-peeled sorted 
+bb37567516a668191be6f61602ce927f3f5f5d3b refs/remotes/origin/Bug-Fix--`comment_facebook_id`-Scraping---Investigation-Required
+f274dd13ca94ab06a4f1845f9e575afde96b45b4 refs/remotes/origin/CLI-Enhancement--Advanced-`View-Posts`-Filtering
+8ea3b25cae925ad704ad80ef5c2c0c8fc67610f3 refs/remotes/origin/CLI-Enhancement--Centralized-Menu-Driven-Interface
+5420a62935fab73a9331a523fcc9063d0ae6c227 refs/remotes/origin/CLI-Menu-Organization-and-Update-&-Export-Functionality-Improvements
+d5be989a083969b5edaa32fdd919aad6e12a45d8 refs/remotes/origin/Enhance-database-schema-and-scraping-logic
+0f01685fb4a91984674ff94547a9876735aa37c7 refs/remotes/origin/Enhanced-Error-Handling-&-Retry-Logic
+a5b3b9e745e4574e958df340aa972c6c9a22930d refs/remotes/origin/Export-Data-Functionality-(CSV/JSON)
+d5414f43aa0e9de4d60474825040d5b8d9a046f8 refs/remotes/origin/Fixes-for-AI-Processing-and-Schema-Alignment
+8f6d8954acdf60a7832b52e3a94694e9cc6b8f4f refs/remotes/origin/Incremental-Database-Saves-During-Scraping
+51a448fb22674f580769fdbb7eab06e19e48aaec refs/remotes/origin/Refine-Timestamp-Parsing
+1af5acd1e4362d045f41e33194cd9487c3320659 refs/remotes/origin/Scraping-and-Processing-Speed
+1063ab949cc9592c3e47093b37f42317dad453a6 refs/remotes/origin/Statistics-Command
+8836f6a3e1285172f13baddef9e5da3ee8d762fa refs/remotes/origin/Support-for-Multiple-Facebook-Groups
+a3fc13a252a1f2b378bfc97566c6d592fe974785 refs/remotes/origin/View-Command-Pagination/Limit
+659db4b124a342bf32567447bafc1437521c2fa7 refs/remotes/origin/View-Command-Simplification
+cd36fcd0860b98362f91b2a4cba81dc9dfe55dd1 refs/remotes/origin/feat/gemini-sdk-2025-migration
+539e2b54f432d07c88c0d21c8e9be1f62d6b68f9 refs/remotes/origin/feat/pr-check-workflow
+3000747581bdb2acb8ff6cdb862ad7573ab0a1c1 refs/remotes/origin/feat/production-ready-upgrade-2025
+8abf4ad944654e9d4d72c0e66a1c6acb496fb800 refs/remotes/origin/feature/2025-production-readiness-overhaul
+e2829b473c9af4555748dfdd415b287ab1f2b7bb refs/remotes/origin/feature/automated-release-and-creds
+9290f74ac8c7656139a4be2ac85c873df7322853 refs/remotes/origin/feature/comprehensive-unit-tests
+104701a5a9650ce1a2f6d653bc06594849ef28ed refs/remotes/origin/feature/multi-provider-ai-support
+5a10d42c650f131436444e731baca41e67ddb694 refs/remotes/origin/feature/optimized-overlay-handling
+aeb0e585b3392c792f97fb03508c579748ad8e81 refs/remotes/origin/fix/database-path-resolution
+e3f5450e14d86c5b804e7b907a046f74d0645179 refs/remotes/origin/master
+1bb69b003a324a8851ce8f3eb1583fb81feff4c2 refs/remotes/origin/modernization/update-dependencies-and-compatibility
+56d05c997acdf70dc4b0193a5a06ac51b65acc87 refs/tags/v0.6.0
+f06e3b3ce5ffdd4337efe9054c68a9e1d2c6abe7 refs/tags/v0.8.0
+f1b15823b9eb3e8dda2d958f816228cff5916241 refs/tags/v0.8.1
+^ad6fa84e72aae4d3867681300233226e6d9f98ed
+a21537c23eca0897ed733fdd1069e210df650cab refs/tags/v0.8.2
+^eb3af3ce02bc37493563ff4c54fe4b632b72da38
+57d72d9431251b930fa95e471e028f5f8c0ff94f refs/tags/v0.8.3
+^e3f5450e14d86c5b804e7b907a046f74d0645179
