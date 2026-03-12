@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Accessibilité - Designer pour Tous</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Accessibilité - Designer pour Tous</h1>
+</section>
+
+<section id="accessibilité---designer-pour-tous" class="slide level1">
+<h1>Accessibilité - Designer pour Tous</h1>
+<p><strong>Module:</strong> Jour 4 - Design Systems &amp; Outils IA
+<strong>Slug:</strong> accessibilite</p>
+</section>
+<section id="accessibilité---designer-pour-tous-1" class="slide level1">
+<h1>Accessibilité - Designer pour Tous</h1>
+<h2 id="quest-ce-que-laccessibilité">Qu’est-ce que l’accessibilité?</h2>
+<p>L’<strong>accessibilité</strong> (a11y) signifie que ton design peut
+être utilisé par <strong>toute personne</strong>, quelle que soit sa
+capacité.</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>L’accessibilité, c’est comme une <strong>rampe d’accès</strong> dans
+un bâtiment : - Sans rampe : Une personne en fauteuil ne peut pas entrer
+- Avec rampe : Tout le monde peut entrer (fauteuil, poussette, vélo)</p>
+<p>Designer avec accessibilité = <strong>Rendre le web accessible à
+tous</strong>.</p>
+<h2 id="pourquoi-laccessibilité-est-importante">Pourquoi l’accessibilité
+est importante?</h2>
+<h3 id="les-chiffres">Les chiffres</h3>
+<p>🌍 <strong>1 milliard de personnes</strong> dans le monde vivent avec
+un handicap</p>
+<p>Types de handicaps : - 👁️ <strong>Visuel</strong> : Cécité,
+malvoyance, daltonisme (300M) - 👂 <strong>Auditif</strong> : Surdité,
+malentendance (466M) - 🖐️ <strong>Moteur</strong> : Difficultés de
+mouvement (190M) - 🧠 <strong>Cognitif</strong> : Dyslexie, TDAH,
+troubles de l’attention - 👴 <strong>Âge</strong> : Les capacités
+diminuent avec l’âge</p>
+<h3 id="en-madagascar">En Madagascar</h3>
+<p>Beaucoup de personnes âgées utilisent les téléphones : - Vue qui
+baisse = Besoin de textes plus grands - Mains moins agiles = Besoin de
+boutons plus grands - Mémoire qui faiblit = Besoin d’interfaces
+simples</p>
+<h2 id="les-4-principes-de-laccessibilité-pour">Les 4 principes de
+l’accessibilité (POUR)</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│            PRINCIPES WCAG (Web Content Accessibility)       │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  🔍 PERCEVABLE                                              │
+│     L&#39;info doit être présentée de façon perceptible        │
+│     (visible, audible)                                      │
+│                                                             │
+│  🎮 UTILISABLE                                              │
+│     L&#39;interface doit être opérable                         │
+│     (clavier, touch, voix)                                  │
+│                                                             │
+│  🧠 COMPRÉHENSIBLE                                          │
+│     L&#39;info et l&#39;interface doivent être compréhensibles     │
+│     (clair, prévisible)                                     │
+│                                                             │
+│  💪 ROBUSTE                                                 │
+│     Le contenu doit être compatible                        │
+│     (technologies d&#39;assistance)                            │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="percevable---voir-et-entendre">1. Percevable - Voir et
+Entendre</h2>
+<h3 id="a.-contraste-des-couleurs">A. Contraste des couleurs</h3>
+<p>Le contraste détermine si le texte est lisible.</p>
+<p><strong>Règle WCAG :</strong> - <strong>Texte normal</strong> :
+Contraste minimum 4.5:1 - <strong>Texte large (18px+)</strong> :
+Contraste minimum 3:1 - <strong>AAA (excellent)</strong> : Contraste
+7:1</p>
+<p><strong>Exemples :</strong></p>
+<pre><code>❌ MAUVAIS (Contraste 2.1:1)
+┌─────────────────────────────────┐
+│ Texte gris clair sur blanc     │
+│ #AAAAAA sur #FFFFFF            │
+│ Difficile à lire               │
+└─────────────────────────────────┘
+
+✅ BON (Contraste 7.5:1)
+┌─────────────────────────────────┐
+│ Texte gris foncé sur blanc     │
+│ #595959 sur #FFFFFF            │
+│ Facile à lire                   │
+└─────────────────────────────────┘</code></pre>
+<h3 id="comment-vérifier-le-contraste">Comment vérifier le
+contraste?</h3>
+<p><strong>Outils gratuits :</strong> - <strong>WebAIM Contrast
+Checker</strong> : webaim.org/resources/contrastchecker - <strong>Figma
+Plugin</strong> : Able, Contrast - <strong>Chrome DevTools</strong> :
+Inspecter → Accessibility</p>
+<h3 id="exercice-vérifier-le-contraste-10-min">Exercice : Vérifier le
+contraste (10 min)</h3>
+<ol type="1">
+<li>Ouvre le site MVola</li>
+<li>Utilise un outil de contraste</li>
+<li>Vérifie si le texte est assez contrasté</li>
+<li>Note les problèmes trouvés</li>
+</ol>
+<h3 id="b.-ne-pas-utiliser-seulement-la-couleur">B. Ne pas utiliser
+seulement la couleur</h3>
+<p>⚠️ <strong>La couleur ne doit jamais être le SEUL moyen de
+transmettre une information.</strong></p>
+<p><strong>Exemple : Messages d’erreur</strong></p>
+<pre><code>❌ MAUVAIS
+┌─────────────────────────────────┐
+│ [__________]  (bordure rouge)  │
+│ Champ invalide                  │
+│ Un daltonien ne voit pas l&#39;erreur│
+└─────────────────────────────────┘
+
+✅ BON
+┌─────────────────────────────────┐
+│ [__________]  (bordure rouge)  │
+│ ⚠️ Champ invalide               │
+│ Icône + texte + couleur         │
+└─────────────────────────────────┘</code></pre>
+<h3 id="c.-texte-alternatif-pour-les-images">C. Texte alternatif pour
+les images</h3>
+<p>Les lecteurs d’écran (pour aveugles) ont besoin de
+<strong>descriptions textuelles</strong> des images.</p>
+<p><strong>Règles :</strong> - Images informatives → Décrire le contenu
+- Images décoratives → alt=“” (vide) - Images avec texte → Décrire le
+texte</p>
+<p><strong>Exemples :</strong></p>
+<pre><code>❌ MAUVAIS
+&lt;img src=&quot;ravitoto.jpg&quot; alt=&quot;image&quot;&gt;
+
+✅ BON
+&lt;img src=&quot;ravitoto.jpg&quot; alt=&quot;Plat de ravitoto au porc dans une assiette en terre cuite&quot;&gt;</code></pre>
+<h2 id="utilisable---naviguer-et-interagir">2. Utilisable - Naviguer et
+Interagir</h2>
+<h3 id="a.-navigation-au-clavier">A. Navigation au clavier</h3>
+<p>Toutes les fonctionnalités doivent être accessibles <strong>sans
+souris</strong>.</p>
+<p><strong>Touches importantes :</strong> - <strong>Tab</strong> :
+Passer à l’élément suivant - <strong>Shift + Tab</strong> : Élément
+précédent - <strong>Enter</strong> : Activer (bouton, lien) -
+<strong>Espace</strong> : Cocher une case - <strong>Flèches</strong> :
+Naviguer dans les listes</p>
+<p><strong>Indicateur de focus :</strong></p>
+<pre><code>❌ MAUVAIS
+outline: none;  /* Pas d&#39;indicateur */
+
+✅ BON
+outline: 2px solid blue;
+outline-offset: 2px;</code></pre>
+<h3 id="b.-taille-des-zones-tactiles">B. Taille des zones tactiles</h3>
+<p><strong>Règle :</strong> Minimum <strong>44 × 44 pixels</strong> pour
+les zones cliquables.</p>
+<pre><code>❌ MAUVAIS                    ✅ BON
+┌─────────┐                 ┌─────────────┐
+│   OK    │  30×30px       │    Cliquer   │  44×44px
+└─────────┘                 └─────────────┘
+ Difficile à cliquer          Facile à cliquer</code></pre>
+<h3 id="c.-temps-suffisant">C. Temps suffisant</h3>
+<p>Pour les actions avec limite de temps : - Permettre de
+<strong>prolonger</strong> le temps - Pas de limite si possible -
+Avertir avant expiration</p>
+<h2 id="compréhensible---clair-et-prévisible">3. Compréhensible - Clair
+et Prévisible</h2>
+<h3 id="a.-langue-claire-et-simple">A. Langue claire et simple</h3>
+<p><strong>Règles :</strong> - Niveau de lecture : <strong>8ème
+année</strong> (13 ans) - Phrases courtes : <strong>15-20 mots
+max</strong> - Éviter le jargon technique - Expliquer les acronymes</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>❌ MAUVAIS
+&quot;Votre session a expiré en raison d&#39;une inactivité 
+prolongée. Veuillez vous réauthentifier.&quot;
+
+✅ BON
+&quot;Vous avez été déconnecté. Connectez-vous à nouveau.&quot;</code></pre>
+<h3 id="b.-labels-explicites">B. Labels explicites</h3>
+<p>Chaque champ de formulaire doit avoir un <strong>label
+clair</strong>.</p>
+<pre><code>❌ MAUVAIS
+┌─────────────────────────────────┐
+│ [Rechercher...]                  │  Placeholder seul
+└─────────────────────────────────┘
+
+✅ BON
+┌─────────────────────────────────┐
+│ Rechercher une recette           │  Label visible
+│ [Tapez le nom...]                │  Placeholder
+└─────────────────────────────────┘</code></pre>
+<h3 id="c.-prévisibilité">C. Prévisibilité</h3>
+<p>Les éléments doivent se comporter comme prévu.</p>
+<p><strong>Règles :</strong> - Un lien doit aller à une nouvelle page -
+Un bouton ne doit pas changer d’emplacement - Les erreurs doivent être
+expliquées clairement - Les changements de contexte doivent être
+annoncés</p>
+<h3 id="d.-prévention-des-erreurs">D. Prévention des erreurs</h3>
+<p><strong>Actions réversibles ou confirmées :</strong> - Suppression →
+Demander confirmation - Changements importants → Permettre d’annuler -
+Formulaires → Sauvegarder automatiquement</p>
+<h2 id="robuste---compatible-et-futur-proof">4. Robuste - Compatible et
+Futur-proof</h2>
+<h3 id="a.-code-sémantique">A. Code sémantique</h3>
+<p>Utiliser les bonnes balises HTML :</p>
+<pre><code>❌ MAUVAIS                    ✅ BON
+&lt;div onclick=&quot;...&quot;&gt;         &lt;button onclick=&quot;...&quot;&gt;
+  Cliquer                      Cliquer
+&lt;/div&gt;                       &lt;/button&gt;
+
+&lt;div class=&quot;heading&quot;&gt;       &lt;h1&gt;
+  Titre                        Titre
+&lt;/div&gt;                       &lt;/h1&gt;</code></pre>
+<h3 id="b.-aria-accessible-rich-internet-applications">B. ARIA
+(Accessible Rich Internet Applications)</h3>
+<p>Quand le HTML ne suffit pas, utiliser <strong>ARIA</strong> :</p>
+<ul>
+<li><strong>role</strong> : Définir le rôle (button, navigation)</li>
+<li><strong>aria-label</strong> : Nom accessible</li>
+<li><strong>aria-describedby</strong> : Description</li>
+<li><strong>aria-hidden</strong> : Masquer aux lecteurs d’écran</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span> <span class="er">aria-label</span><span class="ot">=</span><span class="st">&quot;Fermer le menu&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">svg</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span>  <span class="co">&lt;!-- Icône X --&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code></pre></div>
+<h2 id="les-erreurs-les-plus-courantes">Les erreurs les plus
+courantes</h2>
+<h3 id="top-5-des-erreurs-daccessibilité">Top 5 des erreurs
+d’accessibilité</h3>
+<p><strong>1. Contraste insuffisant</strong> - Texte trop clair sur fond
+clair - Solution : Vérifier avec un outil de contraste</p>
+<p><strong>2. Manque de labels</strong> - Formulaires sans labels -
+Solution : Ajouter des labels visibles</p>
+<p><strong>3. Images sans alt</strong> - Images décoratives sans alt=“”
+- Images informatives sans description - Solution : Toujours ajouter
+alt</p>
+<p><strong>4. Navigation clavier impossible</strong> - Éléments
+cliquables uniquement à la souris - Solution : Tester au clavier</p>
+<p><strong>5. Focus invisible</strong> - outline: none sans alternative
+- Solution : Style de focus visible</p>
+<h2 id="exercice-pratique-audit-daccessibilité-30-min">Exercice pratique
+: Audit d’accessibilité (30 min)</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Auditer l’accessibilité d’une app populaire.</p>
+<h3 id="outils">Outils</h3>
+<ul>
+<li><strong>WAVE</strong> : wave.webaim.org (extension Chrome)</li>
+<li><strong>Lighthouse</strong> : Chrome DevTools → Lighthouse</li>
+<li><strong>Accessibility Insights</strong> : Extension Chrome</li>
+</ul>
+<h3 id="tâches">Tâches</h3>
+<ol type="1">
+<li><strong>Installer WAVE</strong> (extension Chrome)</li>
+<li><strong>Ouvrir</strong> une app de ton choix (ex: Facebook,
+MVola)</li>
+<li><strong>Activer WAVE</strong> et analyser</li>
+<li><strong>Noter</strong> les problèmes :
+<ul>
+<li>🔴 Erreurs (Errors)</li>
+<li>🟡 Alertes (Alerts)</li>
+<li>🟢 Points forts (Features)</li>
+</ul></li>
+<li><strong>Proposer</strong> 3 améliorations concrètes</li>
+</ol>
+<h3 id="grille-daudit">Grille d’audit</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│           GRILLE D&#39;AUDIT ACCESSIBILITÉ                      │
+├─────────────────────────────────────────────────────────────┤
+│ Critère                    │ OK │ Non OK │ Notes          │
+├─────────────────────────────────────────────────────────────┤
+│ Contraste texte            │    │        │                │
+│ Labels formulaires         │    │        │                │
+│ Alt images                 │    │        │                │
+│ Navigation clavier         │    │        │                │
+│ Focus visible              │    │        │                │
+│ Taille boutons (44px)      │    │        │                │
+│ Langue claire              │    │        │                │
+│ Messages d&#39;erreur clairs   │    │        │                │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="accessibilité-et-business">Accessibilité et Business</h2>
+<h3 id="pourquoi-ça-compte">Pourquoi ça compte?</h3>
+<p><strong>1. Marché plus large</strong> - 15% de la population mondiale
+= handicap - Ignorer = Perdre 15% de clients potentiels</p>
+<p><strong>2. Légal</strong> - Lois d’accessibilité dans de nombreux
+pays - RGAA (France), ADA (USA)</p>
+<p><strong>3. SEO</strong> - Google valorise les sites accessibles -
+Structure sémantique = meilleur référencement</p>
+<p><strong>4. UX pour tous</strong> - Accessibilité améliore
+l’expérience pour tous - Sous-titles aident en milieu bruyant -
+Contraste aide en plein soleil</p>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la leçon</h2>
+<h3 id="ce-que-tu-as-appris">Ce que tu as appris :</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                 ACCESSIBILITÉ (A11Y)                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  🔍 PERCEVABLE      →  Contraste, couleurs, alt text       │
+│  🎮 UTILISABLE      →  Clavier, taille zones tactiles      │
+│  🧠 COMPRÉHENSIBLE  →  Langue claire, labels, prévisible   │
+│  💪 ROBUSTE         →  Code sémantique, ARIA               │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ✅ Contraste minimum : 4.5:1                               │
+│  ✅ Boutons minimum : 44×44px                               │
+│  ✅ Toujours tester au clavier                              │
+│  ✅ Toujours ajouter alt aux images                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="checklist-accessibilité-pour-chaque-projet">Checklist
+accessibilité pour chaque projet</h3>
+<p><strong>Avant de livrer :</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Contraste vérifié (4.5:1
+minimum)</label></li>
+<li><label><input type="checkbox" />Tous les formulaires ont des
+labels</label></li>
+<li><label><input type="checkbox" />Toutes les images ont un
+alt</label></li>
+<li><label><input type="checkbox" />Navigation au clavier
+testée</label></li>
+<li><label><input type="checkbox" />Focus visible sur tous les
+éléments</label></li>
+<li><label><input type="checkbox" />Boutons minimum 44×44px</label></li>
+<li><label><input type="checkbox" />Texte lisible (16px
+minimum)</label></li>
+<li><label><input type="checkbox" />Messages d’erreur
+clairs</label></li>
+<li><label><input type="checkbox" />Test avec WAVE ou
+Lighthouse</label></li>
+</ul>
+<h2 id="quiz-quiz-accessibilité">📝 Quiz: Quiz : Accessibilité</h2>
+<p><strong>1.</strong> Quel est le contraste minimum recommandé pour du
+texte normal ?</p>
+<p>⬜ 2:1 ⬜ 3:1 ✅ 4.5:1 ⬜ 7:1</p>
+<p><em>Le contraste minimum WCAG AA pour du texte normal est de
+4.5:1.</em></p>
+<p><strong>2.</strong> Quelle est la taille minimum pour une zone
+tactile ?</p>
+<p>⬜ 32×32px ✅ 44×44px ⬜ 48×48px ⬜ 64×64px</p>
+<p><em>La taille minimum recommandée est de 44×44 pixels pour être
+facilement cliquable.</em></p>
+<p><strong>3.</strong> Que signifie l’attribut alt sur une image ?</p>
+<p>⬜ Alternative colorée ✅ Texte alternatif pour lecteurs d’écran ⬜
+Alignement du texte ⬜ Animation alternative</p>
+<p><em>L’attribut alt fournit une description textuelle pour les
+lecteurs d’écran.</em></p>
+<p><strong>4.</strong> Comment navigue un utilisateur au clavier ?</p>
+<p>⬜ Avec la souris ✅ Avec Tab et Enter ⬜ Avec les flèches seulement
+⬜ Impossible</p>
+<p><em>Tab permet de naviguer entre les éléments et Enter permet
+d’activer.</em></p>
+<p><strong>5.</strong> Que signifie POUR en accessibilité ?</p>
+<p>⬜ Pour les utilisateurs ✅ Percevable, Utilisable, Compréhensible,
+Robuste ⬜ Pratique, Utile, Original, Rapide ⬜ Programmable, Universel,
+Optimal, Réactif</p>
+<p><em>POUR = Percevable, Operable (Utilisable), Understandable
+(Compréhensible), Robust.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Installer</strong> l’extension WAVE sur Chrome</li>
+<li><strong>Auditer</strong> 2 sites que tu utilises souvent</li>
+<li><strong>Créer</strong> un bouton accessible dans Figma :
+<ul>
+<li>Contraste 7:1 minimum</li>
+<li>Taille 44×44px minimum</li>
+<li>Focus visible</li>
+</ul></li>
+<li><strong>Réfléchir</strong> : Quels sites malgaches sont accessibles
+?</li>
+</ol>
+<p><strong>Durée estimée :</strong> 30 minutes</p>
+<h3 id="ressources">Ressources :</h3>
+<ul>
+<li><a href="https://wave.webaim.org">WAVE</a></li>
+<li><a href="https://webaim.org">WebAIM</a></li>
+<li><a
+href="https://developer.mozilla.org/fr/docs/Web/Accessibility">MDN
+Accessibility</a></li>
+<li><a href="https://www.a11yproject.com">A11y Project</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

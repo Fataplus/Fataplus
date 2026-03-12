@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Introduction à Figma</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Introduction à Figma</h1>
+</section>
+
+<section id="introduction-à-figma" class="slide level1">
+<h1>Introduction à Figma</h1>
+<p><strong>Module:</strong> Jour 3 - UI Design &amp; Atomic Design
+<strong>Slug:</strong> figma-intro</p>
+</section>
+<section id="introduction-à-figma---ton-nouvel-atelier"
+class="slide level1">
+<h1>Introduction à Figma - Ton Nouvel Atelier</h1>
+<h2 id="quest-ce-que-figma">Qu’est-ce que Figma?</h2>
+<p><strong>Figma</strong> est un logiciel de design d’interface, gratuit
+et dans le navigateur. C’est comme avoir un atelier de design complet,
+accessible depuis n’importe quel ordinateur.</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>Figma, c’est comme ton <strong>echoppe au marché</strong> : - Tu as
+ton espace de travail - Tes outils sont toujours là - Tu peux montrer
+ton travail aux clients - Tu peux collaborer avec d’autres vendeurs</p>
+<p>Mais en version numérique et gratuite !</p>
+<h2 id="pourquoi-figma">Pourquoi Figma?</h2>
+<p>✅ <strong>Gratuit</strong> - Pas besoin de payer ✅ <strong>Dans le
+navigateur</strong> - Aucune installation ✅ <strong>Collaboration en
+temps réel</strong> - Travailler à plusieurs ✅ <strong>Standard de
+l’industrie</strong> - Utilisé par les pros ✅
+<strong>Multi-plateforme</strong> - Windows, Mac, Linux, Chromebook</p>
+<h3 id="les-alternatives-pour-info">Les alternatives (pour info)</h3>
+<ul>
+<li><strong>Sketch</strong> - Mac seulement, payant</li>
+<li><strong>Adobe XD</strong> - Payant</li>
+<li><strong>Canva</strong> - Trop simple pour le design UI pro</li>
+</ul>
+<p>Figma = Le meilleur choix pour débuter et continuer.</p>
+<h2 id="créer-ton-compte-figma-10-min">Créer ton compte Figma (10
+min)</h2>
+<h3 id="étape-1-aller-sur-figma.com">Étape 1 : Aller sur figma.com</h3>
+<ol type="1">
+<li>Ouvre ton navigateur</li>
+<li>Tape <code>figma.com</code> dans la barre d’adresse</li>
+<li>Clique sur “Sign up” (S’inscrire)</li>
+</ol>
+<h3 id="étape-2-créer-le-compte">Étape 2 : Créer le compte</h3>
+<p>Choisis une méthode : - <strong>Email</strong> - Entre ton email et
+crée un mot de passe - <strong>Google</strong> - Connexion rapide avec
+Gmail</p>
+<h3 id="étape-3-configurer-ton-profil">Étape 3 : Configurer ton
+profil</h3>
+<ul>
+<li><strong>Name</strong> : Ton prénom + nom (professionnel)</li>
+<li><strong>Role</strong> : Designer ou Student</li>
+<li><strong>Use case</strong> : Design pour des apps/sites web</li>
+</ul>
+<h3 id="étape-4-choisir-le-plan-gratuit">Étape 4 : Choisir le plan
+gratuit</h3>
+<p>Figma propose un plan payant, mais <strong>le plan gratuit
+suffit</strong> pour ce bootcamp et au-delà.</p>
+<p>⚠️ <strong>Ne pas payer</strong> - Le plan Starter (gratuit) est
+parfait !</p>
+<h2 id="découvrir-linterface-15-min">Découvrir l’interface (15 min)</h2>
+<h3 id="lécran-daccueil">L’écran d’accueil</h3>
+<p>Quand tu arrives sur Figma, tu vois :</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│  LOGO FIGMA    [Recent]  [Drafts]  [Community]             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│     📁 Recent files                                         │
+│     ┌─────┐  ┌─────┐  ┌─────┐                             │
+│     │     │  │     │  │     │                             │
+│     └─────┘  └─────┘  └─────┘                             │
+│                                                             │
+│     ➕ New design file                                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="créer-un-nouveau-fichier">Créer un nouveau fichier</h3>
+<ol type="1">
+<li>Clique sur <strong>“New design file”</strong> (ou le +)</li>
+<li>Un fichier vierge s’ouvre</li>
+<li>C’est ton espace de travail !</li>
+</ol>
+<h3 id="les-4-zones-principales">Les 4 zones principales</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│                    BARRE D&#39;OUTILS (Top)                     │
+├──────────┬───────────────────────────────────┬───────────────┤
+│          │                                   │               │
+│  CALQUES │                                   │  PROPRIÉTÉS   │
+│  (Layers)│         ZONE DE TRAVAIL           │  (Design)     │
+│          │         (Canvas)                  │               │
+│          │                                   │               │
+│          │                                   │               │
+├──────────┴───────────────────────────────────┴───────────────┤
+│                    BARRE D&#39;ACTIONS (Bottom)                  │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+<p><strong>1. Zone de gauche (Layers/Calques)</strong> - Liste de tous
+les éléments - Comme les couches d’un gâteau - Le haut = premier plan,
+le bas = arrière-plan</p>
+<p><strong>2. Zone centrale (Canvas/Toile)</strong> - Ton espace de
+dessin - Infini ! Tu peux zoomer et dézoomer</p>
+<p><strong>3. Zone de droite (Design/Properties)</strong> - Propriétés
+de l’élément sélectionné - Couleur, taille, position, etc.</p>
+<p><strong>4. Barre d’outils (Top)</strong> - Outils de dessin - Frame,
+Rectangle, Texte, Main, etc.</p>
+<h2 id="les-outils-essentiels-30-min">Les outils essentiels (30
+min)</h2>
+<h3 id="loutil-frame-f---la-fondation">1. L’outil Frame (F) - La
+Fondation</h3>
+<p><strong>Frame</strong> = Conteneur = La base de tout design</p>
+<p>Analogie : Une frame, c’est comme <strong>un cadre photo</strong> ou
+<strong>une page de cahier</strong>.</p>
+<h4 id="comment-créer-une-frame">Comment créer une Frame :</h4>
+<ol type="1">
+<li>Appuie sur <strong>F</strong> ou clique sur l’icône Frame</li>
+<li>Dessine un rectangle sur la toile</li>
+<li>Ou choisis une taille prédéfinie (iPhone, Desktop, etc.)</li>
+</ol>
+<h4 id="tailles-courantes">Tailles courantes :</h4>
+<ul>
+<li><strong>Mobile</strong> : 375 × 812 px (iPhone X)</li>
+<li><strong>Tablet</strong> : 768 × 1024 px (iPad)</li>
+<li><strong>Desktop</strong> : 1440 × 900 px (Laptop)</li>
+<li><strong>Story Instagram</strong> : 1080 × 1920 px</li>
+</ul>
+<h3 id="exercice-créer-une-frame-mobile">Exercice : Créer une Frame
+Mobile</h3>
+<ol type="1">
+<li>Appuie sur F</li>
+<li>Dans le panneau droit, cherche “Phone”</li>
+<li>Choisis “iPhone 14 &amp; 15 Pro Max” (430 × 932)</li>
+<li>Nomme ta frame “Accueil App”</li>
+</ol>
+<h3 id="loutil-rectangle-r---les-formes">2. L’outil Rectangle (R) - Les
+Formes</h3>
+<p><strong>Rectangle</strong> = Bloc carré ou rectangle</p>
+<p>Analogie : Comme découper du papier coloré.</p>
+<h4 id="comment-créer-un-rectangle">Comment créer un Rectangle :</h4>
+<ol type="1">
+<li>Appuie sur <strong>R</strong></li>
+<li>Dessine sur la toile</li>
+<li>Modifie la couleur dans le panneau droit</li>
+</ol>
+<h4 id="propriétés-importantes">Propriétés importantes :</h4>
+<ul>
+<li><strong>W</strong> (Width) = Largeur</li>
+<li><strong>H</strong> (Height) = Hauteur</li>
+<li><strong>Fill</strong> = Couleur de remplissage</li>
+<li><strong>Stroke</strong> = Bordure</li>
+<li><strong>Corner radius</strong> = Coins arrondis</li>
+</ul>
+<h3 id="exercice-créer-un-bouton">Exercice : Créer un bouton</h3>
+<ol type="1">
+<li>Crée un rectangle de 200 × 50 px</li>
+<li>Donne-lui une couleur (ex: bleu #3B82F6)</li>
+<li>Arrondis les coins à 25px</li>
+<li>Nomme-le “Button Primary”</li>
+</ol>
+<h3 id="loutil-texte-t---les-mots">3. L’outil Texte (T) - Les Mots</h3>
+<p><strong>Texte</strong> = Écrire des mots</p>
+<p>Analogie : Comme écrire au stylo, mais modifiable.</p>
+<h4 id="comment-créer-du-texte">Comment créer du Texte :</h4>
+<ol type="1">
+<li>Appuie sur <strong>T</strong></li>
+<li>Clique sur la toile</li>
+<li>Tape ton texte</li>
+</ol>
+<h4 id="propriétés-importantes-1">Propriétés importantes :</h4>
+<ul>
+<li><strong>Font</strong> = Police (Inter, Roboto, etc.)</li>
+<li><strong>Size</strong> = Taille (16px, 24px, etc.)</li>
+<li><strong>Weight</strong> = Épaisseur (Regular, Bold)</li>
+<li><strong>Line height</strong> = Espacement entre lignes</li>
+<li><strong>Letter spacing</strong> = Espacement entre lettres</li>
+</ul>
+<h3 id="exercice-ajouter-du-texte-au-bouton">Exercice : Ajouter du texte
+au bouton</h3>
+<ol type="1">
+<li>Crée un texte “Connexion”</li>
+<li>Police : Inter, Bold, 16px</li>
+<li>Couleur : Blanc #FFFFFF</li>
+<li>Centre-le dans ton bouton</li>
+</ol>
+<h3 id="loutil-main-h---navigation">4. L’outil Main (H) -
+Navigation</h3>
+<p><strong>Main</strong> = Se déplacer dans le canvas</p>
+<h4 id="raccourcis-de-navigation">Raccourcis de navigation :</h4>
+<ul>
+<li><strong>H + glisser</strong> = Déplacer la vue</li>
+<li><strong>Molette + glisser</strong> = Déplacer la vue</li>
+<li><strong>Scroll</strong> = Zoom vertical</li>
+<li><strong>Shift + Scroll</strong> = Zoom horizontal</li>
+<li><strong>Ctrl/Cmd + +</strong> = Zoom avant</li>
+<li><strong>Ctrl/Cmd + -</strong> = Zoom arrière</li>
+<li><strong>Ctrl/Cmd + 0</strong> = Zoom 100%</li>
+<li><strong>Ctrl/Cmd + 1</strong> = Voir tout le fichier</li>
+</ul>
+<h3 id="loutil-sélection-v---choisir">5. L’outil Sélection (V) -
+Choisir</h3>
+<p><strong>Sélection</strong> = Cliquer sur un élément pour le
+modifier</p>
+<h4 id="raccourcis-de-sélection">Raccourcis de sélection :</h4>
+<ul>
+<li><strong>V</strong> = Outil sélection</li>
+<li><strong>Clic</strong> = Sélectionner</li>
+<li><strong>Double-clic</strong> = Entrer dans un groupe</li>
+<li><strong>Shift + clic</strong> = Sélection multiple</li>
+<li><strong>Ctrl/Cmd + A</strong> = Tout sélectionner</li>
+<li><strong>Échap</strong> = Désélectionner</li>
+</ul>
+<h2 id="exercice-pratique-créer-un-bouton-complet-30-min">Exercice
+pratique : Créer un bouton complet (30 min)</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Créer un bouton “Acheter maintenant” professionnel.</p>
+<h3 id="étapes">Étapes :</h3>
+<p><strong>1. Créer la frame</strong> - Frame : 375 × 812 px (iPhone) -
+Fond : #FFFFFF (blanc)</p>
+<p><strong>2. Créer le bouton</strong> - Rectangle : 300 × 50 px -
+Couleur : #10B981 (vert) - Coins arrondis : 25px - Centrer
+horizontalement</p>
+<p><strong>3. Ajouter le texte</strong> - Texte : “Acheter maintenant” -
+Police : Inter, Bold, 16px - Couleur : #FFFFFF (blanc) - Centrer dans le
+bouton</p>
+<p><strong>4. Grouper</strong> - Sélectionne le rectangle + texte -
+Ctrl/Cmd + G = Grouper - Nomme le groupe “Button-Buy”</p>
+<h2 id="les-raccourcis-essentiels-15-min">Les raccourcis essentiels (15
+min)</h2>
+<h3 id="raccourcis-à-mémoriser">Raccourcis à mémoriser :</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Windows</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sélection</td>
+<td>V</td>
+<td>V</td>
+</tr>
+<tr class="even">
+<td>Frame</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>Rectangle</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr class="even">
+<td>Texte</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>Main (déplacer)</td>
+<td>H</td>
+<td>H</td>
+</tr>
+<tr class="even">
+<td>Zoom</td>
+<td>Z</td>
+<td>Z</td>
+</tr>
+<tr class="odd">
+<td>Copier</td>
+<td>Ctrl+C</td>
+<td>Cmd+C</td>
+</tr>
+<tr class="even">
+<td>Coller</td>
+<td>Ctrl+V</td>
+<td>Cmd+V</td>
+</tr>
+<tr class="odd">
+<td>Couper</td>
+<td>Ctrl+X</td>
+<td>Cmd+X</td>
+</tr>
+<tr class="even">
+<td>Annuler</td>
+<td>Ctrl+Z</td>
+<td>Cmd+Z</td>
+</tr>
+<tr class="odd">
+<td>Refaire</td>
+<td>Ctrl+Y</td>
+<td>Cmd+Y</td>
+</tr>
+<tr class="even">
+<td>Grouper</td>
+<td>Ctrl+G</td>
+<td>Cmd+G</td>
+</tr>
+<tr class="odd">
+<td>Dégrouper</td>
+<td>Ctrl+Shift+G</td>
+<td>Cmd+Shift+G</td>
+</tr>
+<tr class="even">
+<td>Dupliquer</td>
+<td>Alt+glisser</td>
+<td>Option+glisser</td>
+</tr>
+<tr class="odd">
+<td>Contraintes</td>
+<td>Alt</td>
+<td>Option</td>
+</tr>
+</tbody>
+</table>
+<h2 id="la-hiérarchie-des-calques-10-min">La hiérarchie des calques (10
+min)</h2>
+<h3 id="comprendre-les-calques">Comprendre les calques</h3>
+<p>Les calques (layers) sont comme <strong>des feuilles transparentes
+empilées</strong> :</p>
+<pre><code>┌─────────────────────────┐
+│  Couche 1 : Texte       │  ← Premier plan (visible)
+├─────────────────────────┤
+│  Couche 2 : Bouton      │
+├─────────────────────────┤
+│  Couche 3 : Fond        │
+├─────────────────────────┤
+│  Couche 4 : Frame       │  ← Arrière-plan
+└─────────────────────────┘</code></pre>
+<h3 id="manipuler-les-calques">Manipuler les calques :</h3>
+<ul>
+<li><strong>Glisser vers le haut</strong> = Mettre en avant</li>
+<li><strong>Glisser vers le bas</strong> = Mettre en arrière</li>
+<li><strong>Œil</strong> = Masquer/Afficher</li>
+<li><strong>Cadenas</strong> = Verrouiller/Déverrouiller</li>
+</ul>
+<h2 id="les-couleurs-dans-figma-15-min">Les couleurs dans Figma (15
+min)</h2>
+<h3 id="le-sélecteur-de-couleurs">Le sélecteur de couleurs</h3>
+<p>Clique sur la couleur <strong>Fill</strong> pour ouvrir le sélecteur
+:</p>
+<p><strong>1. Formats de couleur</strong> - <strong>HEX</strong> :
+#3B82F6 (6 caractères) - <strong>RGB</strong> : rgb(59, 130, 246) -
+<strong>HSL</strong> : hsl(217, 91%, 60%)</p>
+<p><strong>2. Opacité</strong> - 100% = Totalement opaque - 50% =
+Semi-transparent - 0% = Invisible</p>
+<h3 id="analogie-madagascar-1">Analogie Madagascar 🇲🇬</h3>
+<p>Les couleurs HEX, c’est comme les <strong>codes MVola</strong> : -
+Chaque code est unique - Tu dois le taper exactement - Un mauvais
+chiffre = mauvaise couleur</p>
+<h3 id="exercice-créer-une-palette">Exercice : Créer une palette</h3>
+<ol type="1">
+<li>Dessine 5 rectangles</li>
+<li>Applique ces couleurs :
+<ul>
+<li>Primaire : #3B82F6 (bleu)</li>
+<li>Secondaire : #10B981 (vert)</li>
+<li>Accent : #F59E0B (orange)</li>
+<li>Neutre : #6B7280 (gris)</li>
+<li>Fond : #FFFFFF (blanc)</li>
+</ul></li>
+</ol>
+<h2 id="lalignement-et-la-distribution-10-min">L’alignement et la
+distribution (10 min)</h2>
+<h3 id="alignement">Alignement</h3>
+<p>Sélectionne plusieurs éléments, puis utilise les boutons d’alignement
+:</p>
+<pre><code>┌───┬───┬───┐     ┌───┬───┬───┐     ┌───┬───┬───┐
+│ ■ │   │   │     │   │ ■ │   │     │   │   │ ■ │
+└───┴───┴───┘     └───┴───┴───┘     └───┴───┴───┘
+   Gauche            Centre            Droite
+
+┌───────────────┐     ┌───────────────┐
+│       ■       │     │       ■       │
+└───────────────┘     └───────────────┘
+     Haut                  Bas</code></pre>
+<h3 id="distribution">Distribution</h3>
+<p>Répartir équitablement l’espace entre les éléments :</p>
+<pre><code>Avant :  ■■    ■■        ■■
+Après :  ■■  ■■  ■■</code></pre>
+<h3 id="exercice-aligner-3-boutons">Exercice : Aligner 3 boutons</h3>
+<ol type="1">
+<li>Crée 3 boutons identiques</li>
+<li>Sélectionne-les tous</li>
+<li>Clique sur “Align center” (horizontal)</li>
+<li>Clique sur “Distribute vertically” (espacement égal)</li>
+</ol>
+<h2 id="les-composants---intro-15-min">Les composants - Intro (15
+min)</h2>
+<h3 id="quest-ce-quun-composant">Qu’est-ce qu’un composant?</h3>
+<p>Un <strong>composant</strong> est un élément réutilisable.</p>
+<p>Analogie Madagascar 🇲🇬 : Un composant, c’est comme <strong>un moule à
+mofo gasy</strong> : - Tu crées le moule une fois - Tu peux en faire 100
+mofo identiques - Si tu modifies le moule, tous les mofo changent</p>
+<h3 id="créer-un-composant">Créer un composant :</h3>
+<ol type="1">
+<li>Dessine un bouton complet</li>
+<li>Sélectionne-le</li>
+<li>Clique sur le <strong>◇</strong> (losange) dans la barre
+d’outils</li>
+<li>Ou : Ctrl/Cmd + Alt + K</li>
+</ol>
+<h3 id="utiliser-un-composant">Utiliser un composant :</h3>
+<ol type="1">
+<li>Va dans la section “Assets” (calques)</li>
+<li>Glisse ton composant sur la toile</li>
+<li>C’est une <strong>instance</strong> = une copie liée</li>
+</ol>
+<h3 id="modifier-le-composant">Modifier le composant :</h3>
+<ul>
+<li>Modifier le <strong>maître</strong> = change toutes les
+instances</li>
+<li>Modifier une <strong>instance</strong> = ne change que celle-ci
+(sauf structure)</li>
+</ul>
+<h2 id="sauvegarder-et-exporter-5-min">Sauvegarder et exporter (5
+min)</h2>
+<h3 id="sauvegarde-automatique">Sauvegarde automatique</h3>
+<p>Figma sauvegarde automatiquement ! Pas besoin de Ctrl+S.</p>
+<p>Mais tu peux : - <strong>File → Save as</strong> = Nouvelle version -
+<strong>File → Version history</strong> = Voir les versions</p>
+<h3 id="exporter-ton-design">Exporter ton design</h3>
+<ol type="1">
+<li>Sélectionne ta Frame</li>
+<li>Dans le panneau droit, section “Export”</li>
+<li>Clique sur <strong>+</strong></li>
+<li>Choisis le format :
+<ul>
+<li><strong>PNG</strong> : Pour le web, fond transparent possible</li>
+<li><strong>JPG</strong> : Photos, fond toujours blanc</li>
+<li><strong>SVG</strong> : Vecteurs, modifiable</li>
+<li><strong>PDF</strong> : Pour l’impression</li>
+</ul></li>
+<li>Choisis l’échelle (1x, 2x, 3x pour retina)</li>
+<li>Clique sur <strong>Export</strong></li>
+</ol>
+<h2 id="atelier-pratique-mini-projet-45-min">Atelier pratique :
+Mini-projet (45 min)</h2>
+<h3 id="objectif-1">Objectif</h3>
+<p>Créer l’écran d’accueil d’une app de recettes malgaches.</p>
+<h3 id="spécifications">Spécifications :</h3>
+<p><strong>Frame :</strong> - iPhone 14 Pro Max (430 × 932 px) - Fond :
+#FAFAFA (gris très clair)</p>
+<p><strong>Header :</strong> - Rectangle : 430 × 80 px - Couleur :
+#DC2626 (rouge Madagascar) - Texte : “Kitapo” (nom de l’app) - Police :
+Playfair Display, Bold, 28px - Couleur : Blanc</p>
+<p><strong>Carte de recette :</strong> - Rectangle : 390 × 200 px - Fond
+: Blanc - Coins arrondis : 12px - Ombre : légère - Image placeholder :
+390 × 120 px, gris #E5E5E5 - Titre : “Ravitoto” (Inter, Bold, 18px) -
+Sous-titre : “30 min • Facile” (Inter, Regular, 14px, gris)</p>
+<p><strong>Bouton flottant :</strong> - Cercle : 56 × 56 px - Couleur :
+#DC2626 - Icône “+” (texte, 32px, blanc) - Position : bas-droite, marge
+16px</p>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la leçon</h2>
+<h3 id="ce-que-tu-as-appris">Ce que tu as appris :</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                  FIGMA - LES BASES                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  🖼️ FRAME      →  Conteneur, taille d&#39;écran               │
+│  ⬛ RECTANGLE  →  Formes, boutons, cartes                  │
+│  📝 TEXT       →  Titres, paragraphes, labels              │
+│  🎨 COULEURS   →  HEX, RGB, opacité                       │
+│  📐 ALIGNEMENT →  Centrer, distribuer                      │
+│  ◇ COMPOSANT  →  Élément réutilisable                     │
+│  💾 EXPORT     →  PNG, JPG, SVG, PDF                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="les-raccourcis-clés">Les raccourcis clés :</h3>
+<ul>
+<li><strong>V</strong> = Sélection</li>
+<li><strong>F</strong> = Frame</li>
+<li><strong>R</strong> = Rectangle</li>
+<li><strong>T</strong> = Texte</li>
+<li><strong>Ctrl/Cmd + G</strong> = Grouper</li>
+<li><strong>Alt + glisser</strong> = Dupliquer</li>
+</ul>
+<h2 id="quiz-quiz-introduction-à-figma">📝 Quiz: Quiz : Introduction à
+Figma</h2>
+<p><strong>1.</strong> Quel raccourci crée une Frame ?</p>
+<p>⬜ R ⬜ T ✅ F ⬜ V</p>
+<p><em>F = Frame. R = Rectangle, T = Texte, V = Sélection.</em></p>
+<p><strong>2.</strong> Quelle est la taille standard d’un iPhone moderne
+en design ?</p>
+<p>⬜ 320 × 480 px ⬜ 375 × 667 px ✅ 430 × 932 px ⬜ 768 × 1024 px</p>
+<p><em>430 × 932 px correspond à l’iPhone 14 Pro Max. Les anciens
+modèles sont plus petits.</em></p>
+<p><strong>3.</strong> Comment s’appelle une copie réutilisable d’un
+élément ?</p>
+<p>⬜ Un clone ⬜ Un composant ✅ Une instance ⬜ Un duplicata</p>
+<p><em>Un composant crée des instances. L’instance est liée au composant
+maître.</em></p>
+<p><strong>4.</strong> Quel format est le meilleur pour exporter avec
+fond transparent ?</p>
+<p>⬜ JPG ✅ PNG ⬜ PDF ⬜ SVG</p>
+<p><em>PNG supporte la transparence. JPG a toujours un fond
+(généralement blanc).</em></p>
+<p><strong>5.</strong> Comment dupliquer un élément rapidement ?</p>
+<p>⬜ Ctrl+C puis Ctrl+V ✅ Alt + glisser ⬜ Clic droit → Duplicate ⬜
+Ctrl+D</p>
+<p><em>Alt + glisser est la méthode la plus rapide pour dupliquer dans
+Figma.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Créer ton compte Figma</strong> si ce n’est pas fait</li>
+<li><strong>Reproduire</strong> l’écran d’accueil de MVola
+(simplifié)</li>
+<li><strong>Explorer</strong> la bibliothèque Community de Figma</li>
+<li><strong>Noter</strong> 3 questions que tu as sur Figma</li>
+</ol>
+<p><strong>Durée estimée :</strong> 45 minutes</p>
+<h3 id="ressources">Ressources :</h3>
+<ul>
+<li><a href="https://youtube.com">Figma pour débutants
+(YouTube)</a></li>
+<li><a href="https://help.figma.com">Documentation Figma</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

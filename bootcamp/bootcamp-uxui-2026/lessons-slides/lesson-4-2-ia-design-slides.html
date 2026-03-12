@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>L'IA au Service du Design</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">L'IA au Service du Design</h1>
+</section>
+
+<section id="lia-au-service-du-design" class="slide level1">
+<h1>L’IA au Service du Design</h1>
+<p><strong>Module:</strong> Jour 4 - Design Systems &amp; Outils IA
+<strong>Slug:</strong> ia-design</p>
+</section>
+<section id="lia-au-service-du-design-1" class="slide level1">
+<h1>L’IA au Service du Design</h1>
+<h2 id="quest-ce-que-lia-pour-les-designers">Qu’est-ce que l’IA pour les
+designers?</h2>
+<p>L’<strong>Intelligence Artificielle</strong> (IA) est un assistant
+qui peut t’aider à : - Générer des idées - Créer du contenu - Accélérer
+ton workflow - Automatiser des tâches répétitives</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>L’IA, c’est comme un <strong>assistant zézé</strong> (jeune employé)
+très intelligent : - Tu lui donnes des instructions - Il exécute
+rapidement - Tu restes le chef (le designer) - Tu valides et ajustes le
+résultat</p>
+<h2 id="les-outils-ia-pour-designers">Les outils IA pour designers</h2>
+<h3 id="les-3-outils-principaux">Les 3 outils principaux</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                 OUTILS IA POUR DESIGNERS                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  🤖 CLAUDE         Texte, brainstorming, UX writing        │
+│  🎨 MIDJOURNEY     Génération d&#39;images, illustrations      │
+│  ✏️ FIGMA AI       Design, suggestions, variations         │
+│  🖌️ ADOBE FIREFLY  Retouche, génération d&#39;images          │
+│  📝 CHATGPT        Idées, rédaction, documentation         │
+│  ⚡ GALILEO AI     UI generation from prompts              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="claude-et-chatgpt---tes-assistants-texte">1. Claude et ChatGPT -
+Tes Assistants Texte</h2>
+<h3 id="pour-quoi-faire">Pour quoi faire?</h3>
+<p><strong>UX Writing</strong> - Rédiger des microcopies (boutons,
+messages) - Créer des messages d’erreur clairs - Écrire des onboarding
+flows</p>
+<p><strong>Brainstorming</strong> - Générer des idées de features -
+Explorer des personas - Créer des user stories</p>
+<p><strong>Documentation</strong> - Rédiger des spécifications - Créer
+des guidelines - Documenter des décisions design</p>
+<h3 id="exemple-de-prompt-efficace">Exemple de prompt efficace</h3>
+<p>❌ <strong>Prompt vague :</strong></p>
+<pre><code>Écris un texte pour mon app</code></pre>
+<p>✅ <strong>Prompt précis :</strong></p>
+<pre><code>Je crée une app mobile pour commander des repas 
+à Madagascar. Rédige 3 messages d&#39;erreur pour :
+
+1. Le restaurant est fermé
+2. Le livreur n&#39;est pas disponible
+3. Le paiement a échoué
+
+Ton : Amical mais professionnel
+Longueur : Maximum 10 mots par message
+Langue : Français malgache (style local)</code></pre>
+<h3 id="exemples-de-résultats">Exemples de résultats</h3>
+<p><strong>Message 1 : Restaurant fermé</strong></p>
+<pre><code>&quot;Oups ! Ce restaurant est fermé pour l&#39;instant. 
+Réessaie plus tard ou explore d&#39;autres options !&quot;</code></pre>
+<p><strong>Message 2 : Pas de livreur</strong></p>
+<pre><code>&quot;Tous nos livreurs sont occupés en ce moment. 
+Un petit instant, ça arrive !&quot;</code></pre>
+<p><strong>Message 3 : Paiement échoué</strong></p>
+<pre><code>&quot;Le paiement n&#39;a pas fonctionné. 
+Vérifie ton solde MVola et réessaie.&quot;</code></pre>
+<h3 id="exercice-générer-des-microcopies-15-min">Exercice : Générer des
+microcopies (15 min)</h3>
+<p><strong>Objectif</strong> : Utiliser Claude ou ChatGPT pour créer du
+contenu.</p>
+<p><strong>Contexte</strong> : Tu crées l’app <strong>TikTok
+Mada</strong> pour partager des vidéos.</p>
+<p><strong>Tâches</strong> : 1. Demande à l’IA de rédiger 5 messages
+d’onboarding 2. Demande 3 textes pour un écran vide (pas encore de
+vidéos) 3. Demande un message de confirmation de publication</p>
+<p><strong>Prompt template</strong> :</p>
+<pre><code>Je crée une app de partage de vidéos courte 
+pour le marché malgache (comme TikTok).
+
+[Clairement décrire ce que tu veux]
+
+Ton : Fun, jeune, local
+Langue : Français avec expressions malgaches</code></pre>
+<h2 id="midjourney---génération-dimages">2. Midjourney - Génération
+d’Images</h2>
+<h3 id="quest-ce-que-cest">Qu’est-ce que c’est?</h3>
+<p><strong>Midjourney</strong> génère des images à partir de
+descriptions textuelles (prompts).</p>
+<h3 id="comment-lutiliser">Comment l’utiliser</h3>
+<ol type="1">
+<li>Aller sur Discord → Midjourney server</li>
+<li>Utiliser la commande <code>/imagine</code></li>
+<li>Écrire ton prompt</li>
+<li>Choisir parmi 4 variations</li>
+<li>Télécharger l’image</li>
+</ol>
+<h3 id="structure-dun-bon-prompt">Structure d’un bon prompt</h3>
+<pre><code>[SUJET] + [STYLE] + [COULEURS] + [AMBIANCE] + [FORMAT]</code></pre>
+<p><strong>Exemple pour une app de cuisine</strong> :</p>
+<pre><code>A warm illustration of a Malagasy family 
+cooking together in a traditional kitchen, 
+soft pastel colors, friendly and inviting, 
+flat design style --ar 16:9</code></pre>
+<h3 id="styles-utiles-pour-le-design-ui">Styles utiles pour le design
+UI</h3>
+<p><strong>Flat Design</strong></p>
+<pre><code>flat design illustration, [sujet], 
+minimal, vector style, bright colors</code></pre>
+<p><strong>Isometric</strong></p>
+<pre><code>isometric illustration of [sujet], 
+clean, professional, corporate colors</code></pre>
+<p><strong>3D</strong></p>
+<pre><code>3D render of [sujet], soft lighting, 
+pastel colors, modern, friendly</code></pre>
+<p><strong>Line Art</strong></p>
+<pre><code>line art illustration of [sujet], 
+minimal, elegant, single color</code></pre>
+<h3 id="exercice-créer-une-illustration-20-min">Exercice : Créer une
+illustration (20 min)</h3>
+<p><strong>Objectif</strong> : Générer une illustration pour l’app
+Kitapo.</p>
+<p><strong>Tâche</strong> : 1. Ouvre Midjourney (ou utilise un
+générateur gratuit comme Leonardo.ai) 2. Crée un prompt pour une
+illustration de cuisine malgache 3. Génère 4 variations 4. Choisis la
+meilleure 5. Télécharge l’image</p>
+<p><strong>Prompt suggéré</strong> :</p>
+<pre><code>A cozy illustration of a Malagasy kitchen 
+with a woman cooking ravitoto in a clay pot, 
+warm orange and green tones, flat design style, 
+friendly and inviting, no text, 
+square format --ar 1:1</code></pre>
+<h2 id="figma-ai---ton-assistant-design">3. Figma AI - Ton Assistant
+Design</h2>
+<h3 id="fonctionnalités-ai-dans-figma">Fonctionnalités AI dans
+Figma</h3>
+<p><strong>1. Auto Layout</strong> (Intelligent) - Ajuste
+automatiquement les espacements - Responsive design facilité</p>
+<p><strong>2. Suggestions de couleurs</strong> - Palette harmonieuse
+générée - Basée sur une couleur de départ</p>
+<p><strong>3. Renommage de calques</strong> - Organisation automatique -
+Noms cohérents</p>
+<h3 id="plugins-ia-recommandés">Plugins IA recommandés</h3>
+<p><strong>Magician (Figma)</strong> - Génération de texte - Création
+d’icônes - Suggestions de design</p>
+<p><strong>Remove.bg</strong> - Suppression de fond automatique - Pour
+les photos de profil</p>
+<p><strong>Unsplash</strong> - Images gratuites haute qualité -
+Intégration directe</p>
+<p><strong>Content Reel</strong> - Remplissage de données factices -
+Noms, avatars, textes</p>
+<h2 id="galileo-ai---génération-dinterfaces">4. Galileo AI - Génération
+d’Interfaces</h2>
+<h3 id="quest-ce-que-cest-1">Qu’est-ce que c’est?</h3>
+<p><strong>Galileo AI</strong> génère des interfaces complètes à partir
+de descriptions textuelles.</p>
+<h3 id="comment-lutiliser-1">Comment l’utiliser</h3>
+<ol type="1">
+<li>Aller sur usegalileo.ai</li>
+<li>Créer un compte</li>
+<li>Décrire l’interface souhaitée</li>
+<li>Générer et exporter vers Figma</li>
+</ol>
+<h3 id="exemple-de-prompt">Exemple de prompt</h3>
+<pre><code>Create a mobile app home screen for a food 
+delivery app in Madagascar. Include:
+- Search bar at the top
+- Category filters (Malagasy food, Fast food, Drinks)
+- Featured restaurants section
+- Popular dishes carousel
+- Bottom navigation with Home, Search, Orders, Profile
+
+Style: Clean, modern, warm colors (red and orange)</code></pre>
+<h3 id="exercice-générer-un-écran-20-min">Exercice : Générer un écran
+(20 min)</h3>
+<p><strong>Objectif</strong> : Utiliser Galileo AI pour créer un
+écran.</p>
+<p><strong>Tâche</strong> : 1. Va sur usegalileo.ai 2. Crée un compte
+(gratuit) 3. Génère l’écran d’accueil de l’app Kitapo 4. Exporte vers
+Figma 5. Analyse ce qui est bon et ce qui doit être amélioré</p>
+<p><strong>Prompt</strong> :</p>
+<pre><code>Mobile app home screen for a Malagasy recipe 
+app called Kitapo. Include:
+- Header with app name and search
+- Categories (Plats, Desserts, Boissons)
+- Featured recipes with photos
+- Bottom navigation
+
+Style: Warm, inviting, uses red as primary color</code></pre>
+<h2 id="les-limites-de-lia">5. Les limites de l’IA</h2>
+<h3 id="ce-que-lia-ne-peut-pas-faire">Ce que l’IA ne peut PAS faire</h3>
+<p>❌ <strong>Remplacer la créativité humaine</strong> - L’IA génère, tu
+décides - Le designer reste le chef</p>
+<p>❌ <strong>Comprendre le contexte local</strong> - Nuances
+culturelles malgaches - Expressions idiomatiques - Sensibilités
+locales</p>
+<p>❌ <strong>Prendre des décisions design</strong> - Hiérarchie de
+l’information - Priorisation des éléments - Équilibre visuel</p>
+<p>❌ <strong>Garantir l’accessibilité</strong> - Contraste des couleurs
+- Taille des textes - Navigation au clavier</p>
+<h3 id="les-pièges-à-éviter">Les pièges à éviter</h3>
+<p>⚠️ <strong>Copier-coller sans réfléchir</strong> - Toujours valider
+le résultat - Adapter au contexte</p>
+<p>⚠️ <strong>Utiliser des images sans vérifier</strong> - Droits
+d’auteur - Cohérence visuelle</p>
+<p>⚠️ <strong>Oublier l’utilisateur final</strong> - L’IA ne connaît pas
+tes users - Tu dois tester avec de vraies personnes</p>
+<h2 id="best-practices-pour-lia">Best Practices pour l’IA</h2>
+<h3 id="les-5-commandements-de-lia-en-design">Les 5 commandements de
+l’IA en design</h3>
+<p><strong>1. L’IA est un assistant, pas un remplaçant</strong> - Tu
+restes le designer - Tu prends les décisions finales</p>
+<p><strong>2. Prompts précis = Meilleurs résultats</strong> - Détailler
+le contexte - Spécifier le ton, le style, le format</p>
+<p><strong>3. Toujours valider et adapter</strong> - Relire le texte
+généré - Vérifier la cohérence - Adapter au public cible</p>
+<p><strong>4. Citer les sources</strong> - Mentionner l’utilisation d’IA
+- Respecter les licences</p>
+<p><strong>5. Tester avec de vrais utilisateurs</strong> - L’IA ne
+remplace pas les tests users - Le feedback humain est irremplaçable</p>
+<h2 id="workflow-ia-recommandé">Workflow IA recommandé</h2>
+<h3 id="pour-un-projet-de-design">Pour un projet de design</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                 WORKFLOW AVEC IA                            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. BRAINSTORMING                                           │
+│     Claude/ChatGPT → Générer des idées                     │
+│                                                             │
+│  2. UX WRITING                                              │
+│     Claude → Microcopies, messages                          │
+│                                                             │
+│  3. VISUALS                                                 │
+│     Midjourney → Illustrations, placeholders               │
+│                                                             │
+│  4. UI GENERATION                                           │
+│     Galileo → Premiers wireframes                          │
+│                                                             │
+│  5. REFINEMENT                                              │
+│     Toi dans Figma → Ajuster, peaufiner                    │
+│                                                             │
+│  6. TESTING                                                 │
+│     Utilisateurs réels → Valider                            │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="exercice-pratique-complet-30-min">Exercice pratique complet (30
+min)</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Utiliser plusieurs outils IA pour créer une section de l’app
+Kitapo.</p>
+<h3 id="étape-1-brainstorming-5-min">Étape 1 : Brainstorming (5
+min)</h3>
+<p>Utilise Claude ou ChatGPT pour :</p>
+<pre><code>Génère 5 idées de fonctionnalités originales 
+pour une app de recettes malgaches qui la 
+différencieraient des autres apps de cuisine.</code></pre>
+<h3 id="étape-2-ux-writing-5-min">Étape 2 : UX Writing (5 min)</h3>
+<p>Choisis 1 idée et génère :</p>
+<pre><code>Rédige le texte pour l&#39;écran d&#39;onboarding 
+qui présente cette fonctionnalité.
+Inclus : titre, description, bouton.</code></pre>
+<h3 id="étape-3-illustration-10-min">Étape 3 : Illustration (10
+min)</h3>
+<p>Utilise Midjourney ou Leonardo.ai :</p>
+<pre><code>Génère une illustration pour cet écran 
+d&#39;onboarding, style flat design, 
+couleurs chaudes (orange, rouge, vert).</code></pre>
+<h3 id="étape-4-intégration-10-min">Étape 4 : Intégration (10 min)</h3>
+<ul>
+<li>Importe l’image dans Figma</li>
+<li>Crée l’écran avec le texte généré</li>
+<li>Ajuste selon ton jugement de designer</li>
+</ul>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la leçon</h2>
+<h3 id="ce-que-tu-as-appris">Ce que tu as appris :</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                 IA POUR DESIGNERS                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  🤖 CLAUDE/CHATGPT  →  Texte, idées, documentation         │
+│  🎨 MIDJOURNEY      →  Illustrations, images               │
+│  ⚡ GALILEO AI      →  Génération d&#39;interfaces             │
+│  🔌 FIGMA PLUGINS   →  Automatisation, assets              │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ⚠️ L&#39;IA est un ASSISTANT, pas un remplaçant              │
+│  ✅ Prompts PRÉCIS = Meilleurs résultats                   │
+│  🧪 Toujours VALIDER et ADAPTER                             │
+│  👥 TESTER avec de vrais utilisateurs                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="quiz-quiz-ia-au-service-du-design">📝 Quiz: Quiz : IA au Service
+du Design</h2>
+<p><strong>1.</strong> Quel outil IA est le meilleur pour générer du
+texte UX ?</p>
+<p>⬜ Midjourney ✅ Claude/ChatGPT ⬜ Galileo AI ⬜ Figma</p>
+<p><em>Claude et ChatGPT sont des modèles de langage spécialisés dans la
+génération de texte.</em></p>
+<p><strong>2.</strong> Qu’est-ce qu’un prompt efficace ?</p>
+<p>⬜ Court et vague ⬜ Long et complexe ✅ Précis avec contexte et
+contraintes ⬜ Copié depuis internet</p>
+<p><em>Un bon prompt inclut le contexte, le ton, le style et les
+contraintes spécifiques.</em></p>
+<p><strong>3.</strong> Quelle est la limite principale de l’IA en design
+?</p>
+<p>⬜ Elle est trop lente ✅ Elle ne comprend pas le contexte local ⬜
+Elle coûte trop cher ⬜ Elle ne génère pas d’images</p>
+<p><em>L’IA manque de compréhension culturelle et contextuelle, surtout
+pour des marchés locaux comme Madagascar.</em></p>
+<p><strong>4.</strong> Que faut-il TOUJOURS faire après avoir utilisé
+l’IA ?</p>
+<p>⬜ Publier directement ✅ Valider et adapter le résultat ⬜ Générer
+plus de contenu ⬜ Supprimer les prompts</p>
+<p><em>Il faut toujours valider, relire et adapter le contenu généré par
+l’IA.</em></p>
+<p><strong>5.</strong> Quel outil génère des interfaces complètes ?</p>
+<p>⬜ ChatGPT ⬜ Midjourney ✅ Galileo AI ⬜ Remove.bg</p>
+<p><em>Galileo AI est spécialisé dans la génération d’interfaces UI
+complètes à partir de prompts.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Créer un compte</strong> sur Claude (claude.ai) ou
+ChatGPT</li>
+<li><strong>Générer</strong> 5 idées de features pour une app de ton
+choix</li>
+<li><strong>Essayer</strong> un générateur d’images (Midjourney,
+Leonardo.ai, ou DALL-E)</li>
+<li><strong>Réfléchir</strong> : Comment l’IA pourrait t’aider dans ton
+futur métier ?</li>
+</ol>
+<p><strong>Durée estimée :</strong> 30 minutes</p>
+<h3 id="ressources">Ressources :</h3>
+<ul>
+<li><a href="https://claude.ai">Claude</a></li>
+<li><a href="https://chat.openai.com">ChatGPT</a></li>
+<li><a href="https://midjourney.com">Midjourney</a></li>
+<li><a href="https://leonardo.ai">Leonardo.ai</a> - Gratuit</li>
+<li><a href="https://usegalileo.ai">Galileo AI</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

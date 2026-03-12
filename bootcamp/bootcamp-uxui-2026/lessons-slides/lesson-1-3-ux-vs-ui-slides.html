@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>UX vs UI - Enfin Comprendre la Différence</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">UX vs UI - Enfin Comprendre la Différence</h1>
+</section>
+
+<section id="ux-vs-ui---enfin-comprendre-la-différence"
+class="slide level1">
+<h1>UX vs UI - Enfin Comprendre la Différence</h1>
+<p><strong>Module:</strong> Jour 1 - Les Fondations: Comprendre les Mots
+<strong>Slug:</strong> ux-vs-ui</p>
+</section>
+<section id="ux-vs-ui---enfin-comprendre-la-différence-1"
+class="slide level1">
+<h1>UX vs UI - Enfin Comprendre la Différence</h1>
+<h2 id="les-définitions">Les définitions</h2>
+<pre><code>UX = User Experience = Expérience Utilisateur = COMMENT ÇA SE SENS
+UI = User Interface = Interface Utilisateur = À QUOI ÇA RESSEMBLE</code></pre>
+</section>
+<section class="slide level1">
+
+<h2 id="lanalogie-de-la-maison">L’analogie de la Maison</h2>
+<p>Imaginez que vous construisez une maison:</p>
+<h3 id="ux-expérience">UX (Expérience)</h3>
+<ul>
+<li>Le <strong>plan</strong> de la maison</li>
+<li>Le <strong>flux</strong>: cuisine près du salon, toilettes
+accessibles</li>
+<li>L’<strong>organisation</strong>: où mettre chaque pièce</li>
+<li>La <strong>logique</strong>: pourquoi la chambre est à l’étage</li>
+</ul>
+<h3 id="ui-interface">UI (Interface)</h3>
+<ul>
+<li>La <strong>décoration</strong> intérieure</li>
+<li>Les <strong>couleurs</strong> des murs</li>
+<li>Les <strong>poignées</strong> de porte</li>
+<li>Le <strong>style</strong> des meubles</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="lanalogie-du-restaurant">L’analogie du Restaurant</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>UX ou UI?</th>
+<th>Explication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Le menu est facile à lire</td>
+<td>UX</td>
+<td>Expérience de lecture</td>
+</tr>
+<tr class="even">
+<td>Les couleurs du menu</td>
+<td>UI</td>
+<td>Aspect visuel</td>
+</tr>
+<tr class="odd">
+<td>Le serveur arrive vite</td>
+<td>UX</td>
+<td>Qualité du service</td>
+</tr>
+<tr class="even">
+<td>La musique est trop forte</td>
+<td>UX</td>
+<td>Ambiance, confort</td>
+</tr>
+<tr class="odd">
+<td>L’assiette est belle</td>
+<td>UI</td>
+<td>Présentation visuelle</td>
+</tr>
+<tr class="even">
+<td>Les prix sont clairs</td>
+<td>UX/UI</td>
+<td>Les deux!</td>
+</tr>
+<tr class="odd">
+<td>La chaise est confortable</td>
+<td>UX</td>
+<td>Confort physique</td>
+</tr>
+<tr class="even">
+<td>La déco est moderne</td>
+<td>UI</td>
+<td>Esthétique</td>
+</tr>
+</tbody>
+</table>
+<h2 id="en-pratique-une-app-mobile">En pratique: une app mobile</h2>
+<h3 id="ce-qui-relève-de-lux">Ce qui relève de l’UX:</h3>
+<ul>
+<li><strong>Parcours utilisateur:</strong> Comment l’utilisateur
+navigue-t-il?</li>
+<li><strong>Architecture de l’information:</strong> Où trouver chaque
+fonction?</li>
+<li><strong>Flux de tâches:</strong> Combien d’étapes pour faire une
+action?</li>
+<li><strong>Messages d’erreur:</strong> Sont-ils clairs et aidants?</li>
+<li><strong>Performance:</strong> L’app répond-elle vite?</li>
+<li><strong>Accessibilité:</strong> Tout le monde peut-il
+l’utiliser?</li>
+</ul>
+<h3 id="ce-qui-relève-de-lui">Ce qui relève de l’UI:</h3>
+<ul>
+<li><strong>Couleurs:</strong> Palette utilisée</li>
+<li><strong>Typographie:</strong> Polices, tailles</li>
+<li><strong>Icônes:</strong> Style, cohérence</li>
+<li><strong>Boutons:</strong> Forme, ombres, états</li>
+<li><strong>Espacement:</strong> Marges, padding</li>
+<li><strong>Animations:</strong> Transitions, micro-interactions</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="étude-de-cas-mvola-vs-orange-money">🌍 Étude de cas: MVola vs
+Orange Money</h2>
+<p>Comparons les deux apps de paiement mobile à Madagascar:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Critère</th>
+<th>MVola</th>
+<th>Orange Money</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Couleurs (UI)</td>
+<td>Orange (marque)</td>
+<td>Orange (marque)</td>
+</tr>
+<tr class="even">
+<td>Simplicité inscription (UX)</td>
+<td>5 étapes</td>
+<td>7 étapes</td>
+</tr>
+<tr class="odd">
+<td>Taille des boutons (UI)</td>
+<td>Grands, accessibles</td>
+<td>Moyens</td>
+</tr>
+<tr class="even">
+<td>Vitesse de transaction (UX)</td>
+<td>~3 secondes</td>
+<td>~5 secondes</td>
+</tr>
+<tr class="odd">
+<td>Feedback visuel (UI)</td>
+<td>Animations claires</td>
+<td>Basique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lequel est meilleur?</strong> Ça dépend de ce qu’on cherche.
+Mais souvent, <strong>UX &gt; UI</strong> au début.</p>
+<h2 id="exercice-pratique-45-min">🎯 Exercice pratique (45 min)</h2>
+<h3 id="partie-1-analyse-dune-app-20-min">Partie 1: Analyse d’une app
+(20 min)</h3>
+<p>Prenez une app de votre choix et remplissez:</p>
+<p><strong>Éléments UX identifiés:</strong> 1.
+_______________________________ 2. _______________________________ 3.
+_______________________________</p>
+<p><strong>Éléments UI identifiés:</strong> 1.
+_______________________________ 2. _______________________________ 3.
+_______________________________</p>
+<h3 id="partie-2-débat-25-min">Partie 2: Débat (25 min)</h3>
+<p><strong>Question:</strong> Si vous deviez choisir, qu’est-ce qui est
+plus important: UX ou UI?</p>
+<ul>
+<li>Groupe A: Défendez UX</li>
+<li>Groupe B: Défendez UI</li>
+</ul>
+<p>Arguments à préparer: - Exemples d’apps avec mauvais UX mais bon UI -
+Exemples d’apps avec bon UX mais UI basique - Impact sur l’utilisateur
+final</p>
+<h2 id="quiz-quiz-ux-vs-ui">📝 Quiz: Quiz: UX vs UI</h2>
+<p><strong>1.</strong> Si un bouton est trop petit et difficile à
+cliquer, c’est un problème de:</p>
+<p>⬜ UX uniquement ⬜ UI uniquement ✅ Les deux (UX et UI) ⬜ Ni l’un
+ni l’autre</p>
+<p><strong>2.</strong> La couleur d’un bouton, c’est:</p>
+<p>⬜ UX ✅ UI ⬜ Les deux ⬜ Ni l’un ni l’autre</p>
+<p><strong>3.</strong> Le nombre d’étapes pour finaliser un achat,
+c’est:</p>
+<p>✅ UX ⬜ UI ⬜ Les deux ⬜ Ni l’un ni l’autre</p>
+<h2 id="à-retenir">📝 À retenir</h2>
+<table>
+<thead>
+<tr class="header">
+<th>UX</th>
+<th>UI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comment ça fonctionne</td>
+<td>À quoi ça ressemble</td>
+</tr>
+<tr class="even">
+<td>Expérience, feelings</td>
+<td>Visuels, esthétique</td>
+</tr>
+<tr class="odd">
+<td>Logique, flux</td>
+<td>Couleurs, formes</td>
+</tr>
+<tr class="even">
+<td>Invisible mais ressenti</td>
+<td>Visible immédiatement</td>
+</tr>
+</tbody>
+</table>
+<p><strong>La formule magique:</strong></p>
+<pre><code>BON PRODUIT = BON UX + BON UI</code></pre>
+<p>Les deux sont nécessaires. Mais en cas de doute, <strong>priorisez
+l’UX</strong>. Une app moche mais qui marche &gt; Une app belle mais qui
+ne marche pas.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Les Éléments de Base - Atomes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Les Éléments de Base - Atomes</h1>
+</section>
+
+<section id="les-éléments-de-base---atomes" class="slide level1">
+<h1>Les Éléments de Base - Atomes</h1>
+<p><strong>Module:</strong> Jour 3 - UI Design &amp; Atomic Design
+<strong>Slug:</strong> atomes-ui</p>
+</section>
+<section id="les-éléments-de-base---les-atomes-du-design"
+class="slide level1">
+<h1>Les Éléments de Base - Les Atomes du Design</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Imagine que tu construis une maison en briques. Chaque brique est
+petite, mais ensemble elles forment quelque chose de grand. En design
+UI, c’est pareil : les <strong>atomes</strong> sont nos petites
+briques.</p>
+<p>Aujourd’hui, on va apprendre les 4 atomes les plus importants : 1. 📝
+<strong>La Typographie</strong> - Les mots et comment ils s’affichent 2.
+🎨 <strong>Les Couleurs</strong> - La palette qui donne vie 3. ⬜
+<strong>L’Espace</strong> - La respiration du design 4. 🔘 <strong>Les
+Boutons</strong> - Les portes vers l’action</p>
+<h2 id="la-typographie---la-voix-visuelle">1. La Typographie - La Voix
+Visuelle</h2>
+<h3 id="quest-ce-que-la-typographie">Qu’est-ce que la typographie?</h3>
+<p><strong>TYPO</strong> = Type (genre) <strong>GRAPHIE</strong> =
+Écriture</p>
+<p>La typographie, c’est <strong>la façon dont on habille les
+mots</strong>. C’est comme choisir ta tenue pour aller quelque part.</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>Pense à <strong>Radio Madagascar</strong>. Quand tu écoutes : - Les
+nouvelles = Voix sérieuse, posée - La musique = Voix joyeuse, dynamique
+- Les annonces = Voix claire, importante</p>
+<p>La typographie, c’est pareil ! La police de caractères donne le
+ton.</p>
+<h3 id="les-4-règles-dor-de-la-typographie">Les 4 Règles d’Or de la
+Typographie</h3>
+<p><strong>Règle 1 : Maximum 2 polices par projet</strong></p>
+<p>Pourquoi ? Comme on dit à Madagascar : <em>“Tsy ny maro no mahasoa,
+fa ny mety”</em> (Ce n’est pas la quantité qui compte, mais la
+justesse).</p>
+<pre><code>✅ BON : Montserrat + Open Sans
+❌ MAUVAIS : Montserrat + Open Sans + Roboto + Poppins + Arial</code></pre>
+<p><strong>Règle 2 : Hiérarchie = Importance</strong></p>
+<ul>
+<li>Titre H1 = Le chef du village (le plus grand)</li>
+<li>Titre H2 = Les conseillers (moyen)</li>
+<li>Corps de texte = Les villageois (normal)</li>
+</ul>
+<p><strong>Règle 3 : Lisibilité avant tout</strong></p>
+<p>Taille minimum pour le corps : <strong>16px</strong></p>
+<p>Imagine lire un livre avec des lettres minuscules… C’est comme
+essayer de voir les étoiles à midi !</p>
+<p><strong>Règle 4 : Contraste pour la lisibilité</strong></p>
+<ul>
+<li>Texte foncé sur fond clair = Facile à lire</li>
+<li>Texte clair sur fond foncé = Possible mais fatiguant</li>
+<li>Texte clair sur fond clair = Illisible !</li>
+</ul>
+<h3 id="les-familles-de-polices">Les familles de polices</h3>
+<p><strong>1. Serif (Avec empattement)</strong> - Exemple : Times New
+Roman, Georgia - Vibe : Classique, sérieux, traditionnel - Usage :
+Journaux, livres, banques - Analogie : Comme les vieux bâtiments
+coloniaux d’Antananarivo</p>
+<p><strong>2. Sans-serif (Sans empattement)</strong> - Exemple : Arial,
+Roboto, Montserrat - Vibe : Moderne, propre, amical - Usage : Apps,
+sites web, startups - Analogie : Comme les nouveaux buildings du
+centre-ville</p>
+<p><strong>3. Display (Décorative)</strong> - Exemple : Pacifico,
+Lobster - Vibe : Fun, créatif, unique - Usage : Logos, titres seulement
+- Analogie : Comme les enseignes colorées du marché Analakely</p>
+<h2 id="exercice-1-audit-typographique-20-min">Exercice 1 : Audit
+Typographique (20 min)</h2>
+<h3 id="ton-objectif">Ton objectif</h3>
+<p>Analyser l’app <strong>MVola</strong> sur ton téléphone.</p>
+<h3 id="questions-à-répondre">Questions à répondre :</h3>
+<ol type="1">
+<li>Combien de polices différentes vois-tu ?</li>
+<li>Quelle est la taille du texte principal ?</li>
+<li>Les titres sont-ils assez grands par rapport au corps ?</li>
+<li>Le texte est-il facile à lire au soleil ?</li>
+</ol>
+<h3 id="livrable">Livrable</h3>
+<p>Écris tes réponses dans ton carnet de notes.</p>
+<h2 id="les-couleurs---lémotion-visuelle">2. Les Couleurs - L’Émotion
+Visuelle</h2>
+<h3 id="pourquoi-les-couleurs-sont-importantes">Pourquoi les couleurs
+sont importantes?</h3>
+<p>Les couleurs communiquent <strong>avant même que tu lises un
+mot</strong>. C’est comme les vêtements : tu juges quelqu’un en 3
+secondes.</p>
+<h3 id="la-psychologie-des-couleurs">La psychologie des couleurs</h3>
+<p>🔴 <strong>ROUGE</strong> = Attention, urgence, erreur, passion -
+<em>Exemple :</em> Le bouton d’urgence, les feux rouges - <em>Madagascar
+:</em> La terre laterite de nos routes</p>
+<p>🟢 <strong>VERT</strong> = Succès, nature, argent, croissance -
+<em>Exemple :</em> “Paiement réussi”, les produits bio - <em>Madagascar
+:</em> Nos rizières vertes</p>
+<p>🔵 <strong>BLEU</strong> = Confiance, calme, technologie,
+professionnalisme - <em>Exemple :</em> Banques, assurance, entreprises -
+<em>Madagascar :</em> Le ciel bleu d’Antsirabe</p>
+<p>🟡 <strong>JAUNE</strong> = Joie, attention modérée, énergie -
+<em>Exemple :</em> Promotions, nouveautés - <em>Madagascar :</em> Le
+soleil tropical</p>
+<p>🟠 <strong>ORANGE</strong> = Créativité, enthousiasme, accessibilité
+- <em>Exemple :</em> Call-to-action, offres - <em>Madagascar :</em> Les
+mandarines</p>
+<p>⚫ <strong>NOIR</strong> = Élégance, luxe, sérieux, mystère -
+<em>Exemple :</em> Marques de luxe, mode - <em>Madagascar :</em>
+L’obsidienne volcanique</p>
+<p>⚪ <strong>BLANC</strong> = Pureté, espace, minimalisme, propreté -
+<em>Exemple :</em> Apple, design moderne - <em>Madagascar :</em> Les
+nuages</p>
+<h3 id="la-règle-60-30-10">La Règle 60-30-10</h3>
+<p>C’est LA règle pour créer des palettes harmonieuses!</p>
+<pre><code>┌─────────────────────────────────────────┐
+│  ████████████████████████████████████   │ 60% Couleur Principale
+│  ████████████████████                   │ (arrière-plan, grandes zones)
+│                                         │
+│  ░░░░░░░░░░░░░░░░░░                     │ 30% Couleur Secondaire
+│  ░░░░░░░░░░░                            │ (sections, cartes, nav)
+│                                         │
+│  ▲▲▲▲▲                                  │ 10% Couleur d&#39;Accent
+│                                         │ (boutons, liens, highlights)
+└─────────────────────────────────────────┘</code></pre>
+<h3 id="exemple-mvola">Exemple : MVola</h3>
+<ul>
+<li>60% Blanc (fond propre)</li>
+<li>30% Bleu foncé (header, sections)</li>
+<li>10% Orange (bouton d’action principal)</li>
+</ul>
+<h2 id="exercice-2-analyse-de-palette-15-min">Exercice 2 : Analyse de
+Palette (15 min)</h2>
+<h3 id="ton-objectif-1">Ton objectif</h3>
+<p>Créer une palette pour une app fictive.</p>
+<h3 id="scénario-app-tiktok-mada">Scénario : App “TikTok Mada”</h3>
+<p>Une app pour partager des vidéos courtes sur Madagascar.</p>
+<h3 id="questions">Questions :</h3>
+<ol type="1">
+<li>Quelle couleur principale (60%) ? Pourquoi ?</li>
+<li>Quelle couleur secondaire (30%) ? Pourquoi ?</li>
+<li>Quelle couleur d’accent (10%) ? Pourquoi ?</li>
+<li>Dessine ta palette sur papier avec les pourcentages.</li>
+</ol>
+<h3 id="contraintes">Contraintes</h3>
+<ul>
+<li>L’app doit sentir “Madagascar”</li>
+<li>Elle doit être fun mais pas enfantine</li>
+<li>Les jeunes (18-30 ans) sont la cible</li>
+</ul>
+<h2 id="lespace-whitespace---la-respiration">3. L’Espace (Whitespace) -
+La Respiration</h2>
+<h3 id="quest-ce-que-le-whitespace">Qu’est-ce que le whitespace?</h3>
+<p><strong>Whitespace</strong> = Espace vide = Respiration du design</p>
+<p>Mais attention : “Espace vide” ne veut pas dire “gaspillage” !</p>
+<h3 id="analogie-madagascar-1">Analogie Madagascar 🇲🇬</h3>
+<p>Compare deux taxis-be :</p>
+<p><strong>Taxi A (Bien espacé) :</strong> - 4 passagers sur 4 places -
+Chacun est à l’aise - Air circule bien - Confortable</p>
+<p><strong>Taxi B (Serré) :</strong> - 8 passagers sur 4 places - Tout
+le monde est compressé - Difficile de respirer - Inconfortable</p>
+<p>Le design, c’est pareil ! <strong>Trop d’éléments =
+suffocant.</strong></p>
+<h3 id="les-bienfaits-du-whitespace">Les bienfaits du whitespace</h3>
+<p>✅ <strong>Lisibilité améliorée</strong> - Les yeux peuvent se
+reposer ✅ <strong>Focus guidé</strong> - L’important ressort ✅
+<strong>Élégance</strong> - Le design paraît plus premium ✅
+<strong>Compréhension</strong> - Le cerveau peut traiter l’info</p>
+<h3 id="la-règle-des-multiples-de-8">La règle des multiples de 8</h3>
+<p>En design, on utilise souvent des espacements en multiples de 8 :</p>
+<pre><code>8px  - Très petit espacement
+16px - Petit espacement
+24px - Moyen espacement
+32px - Grand espacement
+48px - Très grand espacement
+64px - Section spacing</code></pre>
+<p>Pourquoi 8 ? Parce que la plupart des écrans utilisent des grilles de
+8, et ça crée une harmonie naturelle.</p>
+<h2 id="exercice-3-comparaison-whitespace-10-min">Exercice 3 :
+Comparaison Whitespace (10 min)</h2>
+<h3 id="ton-objectif-2">Ton objectif</h3>
+<p>Comparer deux versions d’un même écran.</p>
+<h3 id="instructions">Instructions :</h3>
+<ol type="1">
+<li>Ouvre Facebook</li>
+<li>Ouvre un site de petites annonces malgaches</li>
+<li>Compare les deux :
+<ul>
+<li>Lequel est plus facile à lire ?</li>
+<li>Lequel paraît plus professionnel ?</li>
+<li>Pourquoi ?</li>
+</ul></li>
+</ol>
+<h3 id="analyse-à-écrire">Analyse à écrire :</h3>
+<ul>
+<li>Nombre d’éléments visibles sans scroller</li>
+<li>Espace entre les éléments</li>
+<li>Sensation globale (calme vs chaotique)</li>
+</ul>
+<h2 id="les-boutons---les-portes-de-laction">4. Les Boutons - Les Portes
+de l’Action</h2>
+<h3 id="quest-ce-quun-bouton">Qu’est-ce qu’un bouton?</h3>
+<p>Un bouton = Une <strong>porte</strong> vers une action.</p>
+<p>Quand tu cliques, quelque chose se passe. Le bouton doit donc dire
+clairement : <strong>“CLIQUE-MOI !”</strong></p>
+<h3 id="les-4-qualités-dun-bon-bouton">Les 4 qualités d’un bon
+bouton</h3>
+<p><strong>1. VISIBLE</strong> - Il doit se démarquer du fond - Utiliser
+la couleur d’accent (les 10%) - Contraste suffisant</p>
+<p><strong>2. CLIQUABLE</strong> - Taille minimum : <strong>44px ×
+44px</strong> (taille d’un doigt) - Forme reconnaissable (coins arrondis
+souvent) - Effet de profondeur (ombre légère)</p>
+<p><strong>3. CLAIR</strong> - Le texte dit exactement ce qui va se
+passer - ❌ “OK” → trop vague - ✅ “Envoyer le message” → clair</p>
+<p><strong>4. RÉACTIF</strong> - États différents selon l’interaction :
+- <strong>Normal</strong> : État de base - <strong>Hover</strong> :
+Survole (souris dessus) - <strong>Active</strong> : En train de cliquer
+- <strong>Disabled</strong> : Non cliquable (grisé)</p>
+<h3 id="types-de-boutons">Types de boutons</h3>
+<p><strong>1. Bouton Principal (Primary)</strong> - Couleur d’accent -
+Pour l’action la plus importante - Exemple : “Acheter maintenant”,
+“Envoyer”</p>
+<p><strong>2. Bouton Secondaire (Secondary)</strong> - Couleur plus
+neutre - Pour les actions alternatives - Exemple : “Annuler”,
+“Retour”</p>
+<p><strong>3. Bouton Tertiaire (Ghost/Text)</strong> - Pas de fond,
+juste du texte - Pour les actions mineures - Exemple : “En savoir plus”,
+“Mot de passe oublié”</p>
+<h3 id="analogie-madagascar-2">Analogie Madagascar 🇲🇬</h3>
+<p>Les boutons sont comme les <strong>portes dans une maison</strong>
+:</p>
+<ul>
+<li><strong>Porte principale</strong> = Bouton primaire (grande,
+colorée, évidente)</li>
+<li><strong>Porte de service</strong> = Bouton secondaire (plus petite,
+neutre)</li>
+<li><strong>Trappe</strong> = Bouton tertiaire (discrète, pour les
+initiés)</li>
+</ul>
+<h2 id="exercice-4-chasse-aux-boutons-15-min">Exercice 4 : Chasse aux
+Boutons (15 min)</h2>
+<h3 id="ton-objectif-3">Ton objectif</h3>
+<p>Trouver et analyser 5 boutons différents.</p>
+<h3 id="apps-à-explorer">Apps à explorer :</h3>
+<ol type="1">
+<li>WhatsApp</li>
+<li>Facebook</li>
+<li>MVola</li>
+<li>Une app de ton choix</li>
+</ol>
+<h3 id="pour-chaque-bouton-note">Pour chaque bouton, note :</h3>
+<ol type="1">
+<li>Sa taille approximative</li>
+<li>Sa couleur (primaire, secondaire, tertiaire ?)</li>
+<li>Son texte</li>
+<li>Son état (y a-t-il un effet hover ?)</li>
+<li>Est-ce un bon bouton ? Pourquoi ?</li>
+</ol>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la Leçon</h2>
+<h3 id="les-4-atomes-du-design-ui">Les 4 Atomes du Design UI</h3>
+<pre><code>┌────────────────────────────────────────────────────────────┐
+│                    LES 4 ATOMES UI                        │
+├────────────────────────────────────────────────────────────┤
+│                                                            │
+│  📝 TYPOGRAPHIE        →  2 polices max, hiérarchie claire │
+│  🎨 COULEURS           →  60-30-10, psychologie            │
+│  ⬜ ESPACE             →  Multiples de 8px, respiration    │
+│  🔘 BOUTONS            →  44px min, visible, clair         │
+│                                                            │
+└────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="phrases-à-retenir">Phrases à retenir</h3>
+<ul>
+<li><em>“La typographie est la voix de ton design”</em></li>
+<li><em>“Les couleurs parlent avant les mots”</em></li>
+<li><em>“L’espace vide n’est pas perdu, il respire”</em></li>
+<li><em>“Un bon bouton se fait cliquer naturellement”</em></li>
+</ul>
+<h2 id="quiz-quiz-les-éléments-de-base">📝 Quiz: Quiz : Les Éléments de
+Base</h2>
+<p><strong>1.</strong> Combien de polices maximum doit-on utiliser dans
+un projet ?</p>
+<p>⬜ 1 police ✅ 2 polices ⬜ 3 polices ⬜ Autant qu’on veut</p>
+<p><em>Maximum 2 polices pour garder la cohérence. Une pour les titres,
+une pour le corps de texte.</em></p>
+<p><strong>2.</strong> Dans la règle 60-30-10, à quoi correspond le 10%
+?</p>
+<p>⬜ La couleur de fond ⬜ La couleur secondaire ✅ La couleur d’accent
+⬜ La couleur du texte</p>
+<p><em>Le 10% est la couleur d’accent, utilisée pour les boutons et
+éléments importants.</em></p>
+<p><strong>3.</strong> Quelle est la taille minimum recommandée pour un
+bouton tactile ?</p>
+<p>⬜ 24px × 24px ⬜ 32px × 32px ✅ 44px × 44px ⬜ 64px × 64px</p>
+<p><em>44px × 44px est la taille minimum pour un doigt moyen sur un
+écran tactile.</em></p>
+<p><strong>4.</strong> Quel espacement suit la règle des multiples de 8
+?</p>
+<p>⬜ 10px ⬜ 12px ⬜ 15px ✅ 24px</p>
+<p><em>24px est un multiple de 8 (8 × 3 = 24). Les autres ne le sont
+pas.</em></p>
+<p><strong>5.</strong> Quelle couleur est généralement utilisée pour
+indiquer un succès ?</p>
+<p>⬜ Rouge ⬜ Bleu ✅ Vert ⬜ Jaune</p>
+<p><em>Le vert est universellement associé au succès, à la validation et
+à la croissance.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Trouve 3 exemples</strong> de mauvaise typographie (trop
+petite, illisible)</li>
+<li><strong>Photographie</strong> un panneau publicitaire à Tana et
+analyse ses couleurs</li>
+<li><strong>Dessine</strong> un bouton primaire et un bouton secondaire
+sur papier</li>
+</ol>
+<p><strong>Durée estimée :</strong> 20 minutes</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

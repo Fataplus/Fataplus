@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>UI Polish - Les Détails qui Comptent</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">UI Polish - Les Détails qui Comptent</h1>
+</section>
+
+<section id="ui-polish---les-détails-qui-comptent" class="slide level1">
+<h1>UI Polish - Les Détails qui Comptent</h1>
+<p><strong>Module:</strong> Jour 5 - Projet Final &amp; Présentation
+<strong>Slug:</strong> ui-polish</p>
+</section>
+<section id="ui-polish---les-détails-qui-comptent-1"
+class="slide level1">
+<h1>UI Polish - Les Détails qui Comptent</h1>
+<h2 id="introduction">Introduction</h2>
+<p>“Le diable est dans les détails.” En design UI, les petits détails
+font la différence entre un design amateur et un design
+professionnel.</p>
+<p>Aujourd’hui, on va apprendre <strong>les 10 commandements du Polish
+UI</strong> - les règles qui suivre pour transformer un bon design en un
+design exceptionnel.</p>
+<h2 id="les-10-commandements-du-polish-ui">Les 10 Commandements du
+Polish UI</h2>
+<h3 id="la-cohérence-avant-tout">1. La Cohérence Avant Tout</h3>
+<p><strong>Règle :</strong> Utilise les mêmes styles, couleurs et
+espacements partout.</p>
+<p><strong>Pourquoi :</strong> La cohérence crée la confiance et la
+familiarité.</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>❌ MAUVAIS
+┌─────────────────────────────────────┐
+│ [Bouton Bleu]   [Bouton Vert]    │
+│ [Bouton Orange]  [Bouton Rose]   │
+└─────────────────────────────────────┘
+4 boutons, 4 styles différents.
+
+✅ BON
+┌─────────────────────────────────────┐
+│ [Bouton Bleu]   [Bouton Bleu]   │
+│ [Bouton Bleu]   [Bouton Bleu]   │
+└─────────────────────────────────────┘
+4 boutons. 1 style cohérent.</code></pre>
+<h3 id="lalignement-parfait">2. L’Alignement Parfait</h3>
+<p><strong>Règle :</strong> Aligner tous les éléments avec une grille
+invisible.</p>
+<p><strong>Pourquoi :</strong> L’alignement crée de l’ordre et la
+lisibilité.</p>
+<p><strong>La grille 8px :</strong> - Tous les éléments s’alignent sur
+des multiples de 8 - Largeurs, hauteurs. espacements = 8, 16, 24, 32,
+48, 64…</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>❌ MAUVAIS                  ✅ BON
+┌─────────────────┐       ┌─────────────────┐
+│  ┌───┐           │       │  ┌───┐           │
+│  │   │  ┌─────┐  │       │  │   │  ┌─────┐  │
+│  └───┘  │     │  │       │  └───┘  │     │  │
+│         └─────┘  │       │         └─────┘  │
+│  ┌────┐           │       │  ┌────┐           │
+└─────────────────┘       └─────────────────┘
+ Éléments désalignés         Éléments alignés</code></pre>
+<h3 id="lespacement-égal">3. L’Espacement Égal</h3>
+<p><strong>Règle :</strong> Utiliser des espacements cohérents entre les
+éléments similaires.</p>
+<p><strong>Pourquoi :</strong> L’espacement crée du rythme et de la
+respiration.</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>❌ MAUVAIS                  ✅ BON
+┌─────────────────┐       ┌─────────────────┐
+│ Élément 1       │       │ Élément 1       │
+│Élément 2        │       │                 │
+│   Élément 3     │       │ Élément 2       │
+│                 │       │                 │
+│Élément 4        │       │ Élément 3       │
+└─────────────────┘       │                 │
+ Espacements variables       │ Élément 4       │
+                           └─────────────────┘
+                            Espacements égaux</code></pre>
+<h3 id="la-hiérarchie-visuelle-claire">4. La Hiérarchie Visuelle
+Claire</h3>
+<p><strong>Règle :</strong> L’importance doit être visible
+immédiatement.</p>
+<p><strong>Pourquoi :</strong> L’oeil scanne du plus important au moins
+important.</p>
+<p><strong>Comment créer la hiérarchie :</strong> -
+<strong>Taille</strong> : Plus grand = Plus important -
+<strong>Poids</strong> : Gras = Plus important -
+<strong>Couleur</strong> : Contrasté =Plus important -
+<strong>Position</strong> : En haut/gauche = Plus important</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>┌─────────────────────────────────────┐
+│ TITRE PRINCIPAL (36px Bold)        │
+│                                    │
+│ Sous-titre (24px Semibold)         │
+│                                    │
+│ Corps de texte (16px Regular)      │
+│ Description détaillée du contenu   │
+│ avec moins d&#39;importance.           │
+│                                    │
+│ Caption (12px Regular, gris)       │
+└─────────────────────────────────────┘</code></pre>
+<h3 id="le-contraste-intelligent">5. Le Contraste Intelligent</h3>
+<p><strong>Règle :</strong> Utiliser le contraste pour guider
+l’oeil.</p>
+<p><strong>Pourquoi :</strong> Le contraste attire l’attention sur
+l’important.</p>
+<p><strong>Types de contraste :</strong> - <strong>Taille</strong> :
+Grand vs Petit - <strong>Couleur</strong> : Foncé vs Clair -
+<strong>Poids</strong> : Bold vs Regular - <strong>Forme</strong> : Rond
+vs Carré</p>
+<p><strong>Analogie Madagascar :</strong> Comme au marché Analakely : -
+Les tomates rouges ressortent sur le tas vert - Les vendeurs crient plus
+fort pour attirer l’attention</p>
+<p><strong>Exemple :</strong></p>
+<pre><code>┌─────────────────────────────────────┐
+│ ████████████████████████████████    │ ← Élément contrasté
+│                                    │
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    │ ← Élément neutre
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    │
+│                                    │
+│ ████████████████████████████████    │ ← Élément contrasté
+└─────────────────────────────────────┘</code></pre>
+<h3 id="la-typographie-soignée">6. La Typographie Soignée</h3>
+<p><strong>Règle :</strong> Choisir et respecter une échelle
+typographique.</p>
+<p><strong>Pourquoi :</strong> La typo donne le ton et la
+lisibilité.</p>
+<p><strong>L’échelle typographique :</strong></p>
+<pre><code>┌─────────────────────────────────────────┐
+│ H1 : 48px / 64px line-height            │
+│ H2 : 36px / 48px line-height            │
+│ H3 : 28px / 36px line-height            │
+│ H4 : 24px / 32px line-height            │
+│ Body Large : 18px / 28px line-height    │
+│ Body : 16px / 24px line-height          │
+│ Caption : 14px / 20px line-height       │
+└─────────────────────────────────────────┘</code></pre>
+<p><strong>Règles :</strong> - Maximum 2 polices - Line-height entre 1.4
+et 1.6 pour le corps - Jamais en dessous de 16px pour le corps</p>
+<h3 id="les-coins-arrondis-cohérents">7. Les Coins Arrondis
+Cohérents</h3>
+<p><strong>Règle :</strong> Utiliser un système de border-radius
+cohérent.</p>
+<p><strong>Pourquoi :</strong> La cohérence des coins crée une identité
+visuelle.</p>
+<p><strong>Le système de coins :</strong></p>
+<pre><code>┌─────────────────────────────────────────┐
+│ radius-none : 0px    → Carré parfait    │
+│ radius-sm   : 4px    → Subtil           │
+│ radius      : 8px    → Standard         │
+│ radius-md   : 12px   → Moyen            │
+│ radius-lg   : 16px   → Doux             │
+│ radius-xl   : 24px   → Très doux        │
+│ radius-full : 9999px → Pilule/Cercle   │
+└─────────────────────────────────────────┘</code></pre>
+<p><strong>Règle :</strong> Choisir UN niveau et l’appliquer
+partout.</p>
+<p><strong>Exemple :</strong> - Style moderne : radius-md (12px) partout
+- Style doux : radius-lg (16px) partout - Style sharp : radius-sm (4px)
+partout</p>
+<h3 id="les-ombres-subtiles">8. Les Ombres Subtiles</h3>
+<p><strong>Règle :</strong> Utiliser des ombres avec parcimonie et
+subtilité.</p>
+<p><strong>Pourquoi :</strong> Les ombres créent de la profondeur mais
+trop = lourd.</p>
+<p><strong>Le système d’ombres :</strong></p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│ shadow-sm: 0 1px 2px rgba(0,0,0,0.05)                      │
+│ → Cartes, éléments subtils                                 │
+│                                                             │
+│ shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)│
+│ → Boutons, inputs                                          │
+│                                                             │
+│ shadow-md: 0 4px 6px rgba(0,0,0,0.1)                       │
+│ → Cards, dropdowns                                         │
+│                                                             │
+│ shadow-lg: 0 10px 15px rgba(0,0,0,0.1)                     │
+│ → Modals, floating elements                                │
+│                                                             │
+│ shadow-xl: 0 20px 25px rgba(0,0,0,0.1)                     │
+│ → Notifications, alerts                                    │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<p><strong>Règle :</strong> Jamais de noir pur (#000) pour les ombres
+!</p>
+<h3 id="les-états-interactifs">9. Les États Interactifs</h3>
+<p><strong>Règle :</strong> Chaque élément interactif doit avoir des
+états visibles.</p>
+<p><strong>Pourquoi :</strong> L’utilisateur doit comprendre qu’il peut
+interagir.</p>
+<p><strong>Les 5 états essentiels :</strong></p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│ 1. DEFAULT     → État normal                               │
+│    [Bouton]                                                 │
+│                                                             │
+│ 2. HOVER       → Souris dessus                             │
+│    [Bouton] (légèrement plus foncé)                         │
+│                                                             │
+│ 3. FOCUS       → Sélectionné au clavier                     │
+│    [Bouton] (outline visible)                               │
+│                                                             │
+│ 4. ACTIVE      → En train de cliquer                       │
+│    [Bouton] (enfoncé)                                       │
+│                                                             │
+│ 5. DISABLED    → Non cliquable                              │
+│    [Bouton] (grisé, curseur not-allowed)                    │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<p><strong>Règle :</strong> La différence entre états doit être VISIBLE
+mais SUBTILE.</p>
+<h3 id="lattention-aux-détails">10. L’Attention aux Détails</h3>
+<p><strong>Règle :</strong> Soigner les micro-interactions et les
+finitions.</p>
+<p><strong>Pourquoi :</strong> Les détails transforment un bon design en
+design mémorable.</p>
+<p><strong>Les détails qui comptent :</strong></p>
+<p><strong>A. Transitions fluides</strong> - Changements d’état :
+150-300ms - Changements de page : 300-500ms - Easing : ease-out ou
+ease-in-out</p>
+<p><strong>B. Loading states</strong> - Skeleton screens (pas de
+spinners vides) - Progress bars pour les actions longues</p>
+<p><strong>C. Empty states</strong> - Jamais d’écran vide sans
+explication - Illustration + Message + Action</p>
+<p><strong>D. Error states</strong> - Messages clairs et utiles -
+Suggestion de solution</p>
+<p><strong>E. Microcopy</strong> - Textes des boutons : verbes d’action
+- Messages : ton approprié</p>
+<h2 id="exercice-pratique-polish-audit-40-min">Exercice pratique :
+Polish Audit (40 min)</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Auditer et améliorer un design existant.</p>
+<h3 id="tâche">Tâche</h3>
+<p><strong>1. Choisir un écran</strong> - Prends l’écran d’accueil de
+Kitapo créé précédemment</p>
+<p><strong>2. Vérifier les 10 commandements</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Commandement</th>
+<th>OK</th>
+<th>Problème</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Cohérence</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Alignement</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Espacement</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Hiérarchie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Contraste</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Typographie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Coins arrondis</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Ombres</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>États</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Détails</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. Appliquer les corrections</strong> - Modifier ton design
+dans Figma - Avant / Après screenshots</p>
+<p><strong>4. Documenter</strong> - Quels problèmes as-tu trouvés ? -
+Quelles corrections as-tu faites ? - Quelle est la différence visuelle
+?</p>
+<h2 id="les-erreurs-de-polish-les-plus-courantes">Les erreurs de Polish
+les plus courantes</h2>
+<h3 id="top-10-des-erreurs">Top 10 des erreurs</h3>
+<p><strong>1. Oublier le line-height</strong> ❌ Texte tassé ✅
+Line-height 1.5 minimum</p>
+<p><strong>2. Alignements approximatifs</strong> ❌ “Ça le fait à peu
+près” ✅ Grille précise, pixels parfaits</p>
+<p><strong>3. Espacements incohérents</strong> ❌ 12px ici, 14px là,
+16px ailleurs ✅ Toujours des multiples de 8</p>
+<p><strong>4. Trop de couleurs</strong> ❌ 10 nuances de bleu ✅ 3-5
+couleurs définies</p>
+<p><strong>5. Coins différents</strong> ❌ 8px sur les boutons, 12px sur
+les cards ✅ Système cohérent</p>
+<p><strong>6. Ombres trop fortes</strong> ❌ shadow: 0 10px 30px
+rgba(0,0,0,0.5) ✅ shadow: 0 4px 6px rgba(0,0,0,0.1)</p>
+<p><strong>7. Pas d’états hover</strong> ❌ Bouton statique ✅ Hover
+visible</p>
+<p><strong>8. Texte trop petit</strong> ❌ Body 12px ✅ Body 16px
+minimum</p>
+<p><strong>9. Pas de focus visible</strong> ❌ outline: none ✅ outline:
+2px solid color</p>
+<p><strong>10. Lazy empty states</strong> ❌ “Aucun résultat” ✅
+Illustration + Message + Action</p>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la leçon</h2>
+<h3 id="les-10-commandements-du-polish-ui-1">Les 10 Commandements du
+Polish UI</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│              LES 10 COMMANDEMENTS UI POLISH                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1️⃣  COHÉRENCE        →  Mêmes styles partout              │
+│  2️⃣  ALIGNEMENT       →  Grille précise                     │
+│  3️⃣  ESPACEMENT       →  Multiples de 8, égal               │
+│  4️⃣  HIÉRARCHIE       →  Importance visible                 │
+│  5️⃣  CONTRASTE        →  Guider l&#39;oeil                      │
+│  6️⃣  TYPOGRAPHIE      →  Échelle respectée                  │
+│  7️⃣  COINS            →  Système cohérent                   │
+│  8️⃣  OMBRES           →  Subtiles et parcimonieuses         │
+│  9️⃣  ÉTATS            →  Hover, Focus, Active, Disabled     │
+│  🔟  DÉTAILS          →  Micro-interactions soignées        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="checklist-polish-avant-livraison">Checklist Polish avant
+livraison</h3>
+<p><strong>Pour chaque écran :</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Tous les éléments sont alignés sur
+la grille</label></li>
+<li><label><input type="checkbox" />Les espacements sont cohérents
+(multiples de 8)</label></li>
+<li><label><input type="checkbox" />La hiérarchie est claire (H1 &gt; H2
+&gt; Body)</label></li>
+<li><label><input type="checkbox" />Les boutons ont des états (hover,
+focus, active)</label></li>
+<li><label><input type="checkbox" />Les coins sont
+cohérents</label></li>
+<li><label><input type="checkbox" />Les ombres sont
+subtiles</label></li>
+<li><label><input type="checkbox" />Le texte est lisible (16px+,
+contraste 4.5:1+)</label></li>
+<li><label><input type="checkbox" />Les empty states sont
+soignés</label></li>
+<li><label><input type="checkbox" />Les erreurs sont gérées</label></li>
+<li><label><input type="checkbox" />Les transitions sont fluides
+(150-300ms)</label></li>
+</ul>
+<h2 id="quiz-quiz-ui-polish">📝 Quiz: Quiz : UI Polish</h2>
+<p><strong>1.</strong> Quelle est la base de la grille d’alignement
+recommandée ?</p>
+<p>⬜ 4px ✅ 8px ⬜ 10px ⬜ 16px</p>
+<p><em>La grille de 8px est le standard car elle s’adapte à la plupart
+des écrans et crée une harmonie naturelle.</em></p>
+<p><strong>2.</strong> Quel line-height est recommandé pour le corps de
+texte ?</p>
+<p>⬜ 1.0 ⬜ 1.2 ✅ 1.5 ⬜ 2.0</p>
+<p><em>Un line-height de 1.5 (soit 150%) offre une bonne lisibilité sans
+trop d’espace.</em></p>
+<p><strong>3.</strong> Quelle durée est idéale pour une transition hover
+?</p>
+<p>⬜ 50ms ✅ 150-300ms ⬜ 500ms ⬜ 1000ms</p>
+<p><em>150-300ms est assez rapide pour être fluide mais assez lent pour
+être perceptible.</em></p>
+<p><strong>4.</strong> Que doit contenir un bon empty state ?</p>
+<p>⬜ Juste du texte ⬜ Un spinner ✅ Illustration + Message + Action ⬜
+Rien du tout</p>
+<p><em>Un empty state complet inclut une illustration pour le visuel, un
+message explicatif et une action suggérée.</em></p>
+<p><strong>5.</strong> Quel est le problème principal d’une ombre avec
+du noir pur (#000) ?</p>
+<p>⬜ Trop légère ✅ Trop lourde/froide ⬜ Pas visible ⬜ Trop
+colorée</p>
+<p><em>Le noir pur (#000) crée des ombres trop dures et artificielles.
+Utilisez des noirs avec transparence.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Polir</strong> ton écran Kitapo en appliquant les 10
+commandements</li>
+<li><strong>Comparer</strong> avant/après en screenshots</li>
+<li><strong>Auditer</strong> 2 apps que tu utilises avec la
+checklist</li>
+<li><strong>Noter</strong> 3 améliorations que tu ferais sur l’app
+MVola</li>
+</ol>
+<p><strong>Durée estimée :</strong> 45 minutes</p>
+<h3 id="ressources">Ressources :</h3>
+<ul>
+<li><a href="https://refactoringui.com">Refactoring UI</a></li>
+<li><a href="https://lawsofux.com">Laws of UX</a></li>
+<li><a href="https://www.smashingmagazine.com/polish-ui/">Polish Your
+UI</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

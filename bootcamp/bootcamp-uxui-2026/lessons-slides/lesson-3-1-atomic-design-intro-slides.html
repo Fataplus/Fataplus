@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Atomic Design - Construire Brique par Brique</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Atomic Design - Construire Brique par Brique</h1>
+</section>
+
+<section id="atomic-design---construire-brique-par-brique"
+class="slide level1">
+<h1>Atomic Design - Construire Brique par Brique</h1>
+<p><strong>Module:</strong> Jour 3 - UI Design &amp; Atomic Design
+<strong>Slug:</strong> atomic-design-intro</p>
+</section>
+<section id="atomic-design---construire-brique-par-brique-1"
+class="slide level1">
+<h1>Atomic Design - Construire Brique par Brique</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>ATOM</strong> = Atome = La plus petite partie de la matière
+<strong>ATOMIC DESIGN</strong> = Construire des interfaces comme la
+nature construit toute chose</p>
+<p>Imagine que tu regardes une maison de très près. Qu’est-ce que tu
+vois ? Des briques ! Chaque brique est petite, mais ensemble elles
+forment quelque chose de grand. En design UI, c’est pareil : les
+<strong>atomes</strong> sont nos petites briques.</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>Pense à un <strong>plateau de vary (riz) au marché</strong> :</p>
+<ol type="1">
+<li>Un grain de riz = Atome (le plus petit élément)</li>
+<li>Une poignée de riz = Molécule (groupe d’atomes)</li>
+<li>Un bol de riz = Organisme (section complète)</li>
+<li>Une table avec plusieurs bols = Template (structure)</li>
+<li>Tout le marché = Page (le tout !)</li>
+</ol>
+<p>C’est la méthodologie créée par <strong>Brad Frost</strong> pour
+concevoir des interfaces de manière modulaire et organisée.</p>
+<h2 id="pourquoi-atomic-design">Pourquoi Atomic Design?</h2>
+<h3 id="le-problème-du-design-traditionnel">Le problème du design
+traditionnel</h3>
+<p>Avant, on concevait des pages entières, et c’était : - Difficile à
+maintenir - Incohérent d’une page à l’autre - Long à créer chaque fois -
+Complexe pour les équipes</p>
+<h3 id="la-solution-atomic-design">La solution Atomic Design</h3>
+<p>Avec Atomic Design, on : - Crée des <strong>composants
+réutilisables</strong> - Garantit la <strong>cohérence</strong> partout
+- Facilite la <strong>maintenance</strong> - Améliore la
+<strong>collaboration</strong> designer/dev</p>
+<h3 id="analogie-de-la-maison">Analogie de la Maison</h3>
+<pre><code>Briques (Atomes)
+    ↓
+Mur (Molécule)
+    ↓
+Pièce (Organisme)
+    ↓
+Plan de la maison (Template)
+    ↓
+Maison complète (Page)</code></pre>
+<h2 id="les-5-niveaux-datomic-design">Les 5 Niveaux d’Atomic Design</h2>
+<h3 id="niveau-1-atomes">Niveau 1 : ATOMES ⚛️</h3>
+<p><strong>Définition :</strong> Les éléments les plus simples,
+indivisibles.</p>
+<p><strong>Exemples :</strong> - Un bouton - Un champ de texte (input) -
+Une étiquette (label) - Une icône - Un titre (heading) - Un
+paragraphe</p>
+<p><strong>Caractéristiques :</strong> - Ne peuvent pas être divisés
+davantage - Ont leur propre style - Sont utilisés partout</p>
+<p><strong>Analogie Madagascar :</strong> Un grain de riz, une brique,
+une vis</p>
+<pre><code>Exemples d&#39;atomes :
+┌─────────┐  ┌───────────────┐  ┌─────────┐
+│ Bouton  │  │ ___________   │  │   🔍    │
+│         │  │ Input texte   │  │ Icône   │
+└─────────┘  └───────────────┘  └─────────┘</code></pre>
+<h3 id="niveau-2-molécules">Niveau 2 : MOLÉCULES 🧪</h3>
+<p><strong>Définition :</strong> Groupes d’atomes qui fonctionnent
+ensemble.</p>
+<p><strong>Exemples :</strong> - Barre de recherche = Input + Bouton +
+Icône - Champ de formulaire = Label + Input + Message d’erreur - Carte
+de produit = Image + Titre + Prix - Navigation item = Icône + Texte</p>
+<p><strong>Caractéristiques :</strong> - Combinent 2+ atomes - Ont une
+fonction spécifique - Sont réutilisables</p>
+<p><strong>Analogie Madagascar :</strong> Une poignée de riz, un mur de
+briques, une étagère assemblée</p>
+<pre><code>Exemple de molécule (Barre de recherche) :
+┌─────────────────────────────────────────┐
+│  🔍  │ Tapez votre recherche... │ │
+└─────────────────────────────────────────┘
+   Icône + Input + Bouton = Molécule</code></pre>
+<h3 id="niveau-3-organismes">Niveau 3 : ORGANISMES 🦠</h3>
+<p><strong>Définition :</strong> Sections complètes composées de
+molécules et d’atomes.</p>
+<p><strong>Exemples :</strong> - Header du site (logo + navigation +
+bouton connexion) - Carte de produit complète (image + infos + boutons)
+- Formulaire d’inscription (plusieurs champs) - Footer (liens + réseaux
+sociaux + copyright)</p>
+<p><strong>Caractéristiques :</strong> - Sections indépendantes - Ont un
+sens complet - Peuvent être déplacées entre pages</p>
+<p><strong>Analogie Madagascar :</strong> Un bol de riz complet, une
+pièce de maison, un étal au marché</p>
+<pre><code>Exemple d&#39;organisme (Header) :
+┌─────────────────────────────────────────────────────────────┐
+│ [Logo]     Accueil  Produits  Contact     [Connexion]       │
+└─────────────────────────────────────────────────────────────┘
+   Logo + Navigation (molécules) + Bouton (atome) = Organisme</code></pre>
+<h3 id="niveau-4-templates">Niveau 4 : TEMPLATES 📄</h3>
+<p><strong>Définition :</strong> Structure de page qui organise les
+organismes.</p>
+<p><strong>Exemples :</strong> - Template page d’accueil - Template page
+produit - Template page article - Template page contact</p>
+<p><strong>Caractéristiques :</strong> - Montrent la disposition
+générale - Sans contenu réel (lorem ipsum) - Réutilisables pour
+plusieurs pages</p>
+<p><strong>Analogie Madagascar :</strong> Le plan d’une maison, la
+disposition d’un marché</p>
+<pre><code>Exemple de template (Page d&#39;accueil) :
+┌─────────────────────────────────────────────────┐
+│                    HEADER                        │
+├─────────────────────────────────────────────────┤
+│                   HERO                           │
+├─────────────────────────────────────────────────┤
+│              CARACTÉRISTIQUES                   │
+├─────────────────────────────────────────────────┤
+│               TÉMOIGNAGES                       │
+├────────────────────────────────────────---------┤
+│                   FOOTER                         │
+└─────────────────────────────────────────────────┘</code></pre>
+<h3 id="niveau-5-pages">Niveau 5 : PAGES 📱</h3>
+<p><strong>Définition :</strong> Templates avec le contenu réel.</p>
+<p><strong>Exemples :</strong> - Page d’accueil avec vrais textes et
+images - Page produit “Tomates Bio de Ravo” - Page article “Comment
+cultiver le riz”</p>
+<p><strong>Caractéristiques :</strong> - Ce que l’utilisateur voit
+vraiment - Contenu réel et final - Variations possibles du template</p>
+<p><strong>Analogie Madagascar :</strong> La maison construite et
+meublée, le marché en pleine activité</p>
+<pre><code>Exemple de page :
+┌─────────────────────────────────────────────────┐
+│ [FATAPLUS]     Accueil  Produits  Contact       │
+├─────────────────────────────────────────────────┤
+│        🍅 Tomates Bio de Ravo                    │
+│        Frais d&#39;Antsirabe                        │
+│        [Commander maintenant]                   │
+├─────────────────────────────────────────────────┤
+│   ★★★★★ &quot;Délicieux !&quot; - Mamy                    │
+│   ★★★★☆ &quot;Très frais&quot; - Tiana                   │
+├─────────────────────────────────────────────────┤
+│ FATAPLUS © 2026  Contact | Aide                 │
+└─────────────────────────────────────────────────┘</code></pre>
+<h2 id="résumé-visuel-des-5-niveaux">Résumé Visuel des 5 Niveaux</h2>
+<pre><code>┌────────────────────────────────────────────────────────────────┐
+│                    ATOMIC DESIGN EN RÉSUMÉ                     │
+├────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ⚛️ ATOMES (Éléments simples)                                  │
+│     • Bouton, Input, Icône, Titre                              │
+│     • Ex : Un grain de riz                                     │
+│                                                                 │
+│  🧪 MOLÉCULES (Groupes d&#39;atomes)                               │
+│     • Barre de recherche, Champ de formulaire                  │
+│     • Ex : Une poignée de riz                                  │
+│                                                                 │
+│  🦠 ORGANISMES (Sections complètes)                            │
+│     • Header, Footer, Carte de produit                         │
+│     • Ex : Un bol de riz                                       │
+│                                                                 │
+│  📄 TEMPLATES (Structure de page)                              │
+│     • Disposition générale, Layout                             │
+│     • Ex : Le plan de la table                                 │
+│                                                                 │
+│  📱 PAGES (Contenu réel)                                       │
+│     • Page finale avec vrais textes et images                  │
+│     • Ex : Le marché complet                                   │
+│                                                                 │
+└────────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="les-avantages-datomic-design">Les Avantages d’Atomic Design</h2>
+<h3 id="réutilisabilité">1. Réutilisabilité ♻️</h3>
+<p><strong>Un bouton créé une fois = utilisé 100 fois</strong></p>
+<ul>
+<li>Gagne du temps</li>
+<li>Réduit les erreurs</li>
+<li>Facilite les mises à jour</li>
+</ul>
+<h3 id="cohérence">2. Cohérence 🎯</h3>
+<p><strong>Tous les boutons se ressemblent</strong></p>
+<ul>
+<li>Expérience uniforme</li>
+<li>Marque cohérente</li>
+<li>Professionnalisme</li>
+</ul>
+<h3 id="maintenance">3. Maintenance 🛠️</h3>
+<p><strong>Changer 1 atome = change partout</strong></p>
+<ul>
+<li>Mise à jour facile</li>
+<li>Moins de bugs</li>
+<li>Évolutions rapides</li>
+</ul>
+<h3 id="collaboration">4. Collaboration 🤝</h3>
+<p><strong>Designers et devs parlent le même langage</strong></p>
+<ul>
+<li>“Le bouton primaire” = tout le monde comprend</li>
+<li>Documentation claire</li>
+<li>Communication efficace</li>
+</ul>
+<h2 id="exemple-pratique-lapp-mvola">Exemple Pratique : L’app MVola</h2>
+<h3 id="atomes-de-mvola">Atomes de MVola</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│  ATOMES MVola                                                 │
+├──────────────────────────────────────────────────────────────┤
+│                                                               │
+│  🔵 Bouton orange (Send Money)                               │
+│  📱 Input numéro téléphone                                   │
+│  💰 Input montant                                             │
+│  👤 Avatar utilisateur                                        │
+│  📊 Icône transaction                                         │
+│                                                               │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="molécules-de-mvola">Molécules de MVola</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│  MOLÉCULES MVola                                              │
+├──────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌─────────────────────────────────────────┐                 │
+│  │ [Avatar] Nom du contact    [Montant]    │ = Contact Card  │
+│  └─────────────────────────────────────────┘                 │
+│                                                               │
+│  ┌─────────────────────────────────────────┐                 │
+│  │ [Numéro]                 [Icone]        │ = Input Field   │
+│  └─────────────────────────────────────────┘                 │
+│                                                               │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="organisme-de-mvola">Organisme de MVola</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│  ORGANISME : Formulaire d&#39;envoi                              │
+├──────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌─────────────────────────────────────────┐                 │
+│  │ Destinataire                            │                 │
+│  │ [________________] [🔍]                 │                 │
+│  └─────────────────────────────────────────┘                 │
+│                                                               │
+│  ┌─────────────────────────────────────────┐                 │
+│  │ Montant                                 │                 │
+│  │ [________________] Ar                    │                 │
+│  └─────────────────────────────────────────┘                 │
+│                                                               │
+│  ┌─────────────────────────────────────────┐                 │
+│  │          [Envoyer l&#39;argent]             │                 │
+│  └─────────────────────────────────────────┘                 │
+│                                                               │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="exercice-1-décomposition-atomic-30-min">Exercice 1 :
+Décomposition Atomic (30 min)</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Décomposer l’écran d’accueil de <strong>Facebook</strong> en
+utilisant Atomic Design.</p>
+<h3 id="instructions">Instructions</h3>
+<ol type="1">
+<li><p>Ouvre Facebook sur ton téléphone</p></li>
+<li><p>Prends une capture d’écran de l’accueil</p></li>
+<li><p>Identifie et liste :</p>
+<p><strong>Atomes (minimum 5) :</strong></p>
+<ul>
+<li>Ex : Bouton Like, Avatar, Icône commentaire…</li>
+</ul>
+<p><strong>Molécules (minimum 3) :</strong></p>
+<ul>
+<li>Ex : Barre de recherche, Post header, Zone de réactions…</li>
+</ul>
+<p><strong>Organismes (minimum 2) :</strong></p>
+<ul>
+<li>Ex : Un post complet, Le header Facebook…</li>
+</ul></li>
+<li><p>Dessine un schéma montrant la hiérarchie</p></li>
+</ol>
+<h3 id="format-de-livraison">Format de livraison</h3>
+<ul>
+<li>1 feuille A4 avec le schéma</li>
+<li>Légende avec les différents niveaux</li>
+<li>Code couleur : Atomes = Bleu, Molécules = Vert, Organismes =
+Orange</li>
+</ul>
+<h2 id="exercice-2-créer-tes-propres-atomes-20-min">Exercice 2 : Créer
+tes propres Atomes (20 min)</h2>
+<h3 id="objectif-1">Objectif</h3>
+<p>Créer 5 atomes pour une app de <strong>livraison de repas à
+Madagascar</strong>.</p>
+<h3 id="lapp-tikoto">L’app “Tikoto”</h3>
+<p>Une app pour commander des repas malgaches (vary, romazava,
+koba…)</p>
+<h3 id="ta-mission">Ta mission</h3>
+<p>Dessiner sur papier ces 5 atomes :</p>
+<ol type="1">
+<li><strong>Bouton primaire</strong> - “Commander maintenant”</li>
+<li><strong>Bouton secondaire</strong> - “Voir le menu”</li>
+<li><strong>Input</strong> - Pour entrer l’adresse de livraison</li>
+<li><strong>Badge</strong> - Pour montrer le prix (ex: 5000 Ar)</li>
+<li><strong>Icône</strong> - Représentant un plat malgache</li>
+</ol>
+<h3 id="contraintes">Contraintes</h3>
+<ul>
+<li>Style cohérent (même épaisseur de trait)</li>
+<li>Formes simples</li>
+<li>Taille appropriée (ni trop grand ni trop petit)</li>
+<li>Annoter chaque atome avec son nom et usage</li>
+</ul>
+<h2 id="comment-organiser-son-design-system">Comment organiser son
+Design System</h2>
+<h3 id="structure-de-fichiers-recommandée">Structure de fichiers
+recommandée</h3>
+<pre><code>design-system/
+├── atoms/
+│   ├── buttons/
+│   │   ├── primary-button
+│   │   ├── secondary-button
+│   │   └── icon-button
+│   ├── inputs/
+│   │   ├── text-input
+│   │   ├── select-input
+│   │   └── checkbox
+│   └── typography/
+│       ├── heading
+│       └── paragraph
+├── molecules/
+│   ├── search-bar/
+│   ├── form-field/
+│   └── card/
+├── organisms/
+│   ├── header/
+│   ├── footer/
+│   └── product-card/
+├── templates/
+│   ├── home-page/
+│   └── product-page/
+└── pages/
+    ├── home/
+    └── product/</code></pre>
+<h3 id="nommer-ses-composants">Nommer ses composants</h3>
+<p>Utilise des noms clairs et descriptifs :</p>
+<ul>
+<li><p>✅ <code>primary-button</code></p></li>
+<li><p>❌ <code>button1</code></p></li>
+<li><p>✅ <code>product-card</code></p></li>
+<li><p>❌ <code>card-thing</code></p></li>
+<li><p>✅ <code>search-input</code></p></li>
+<li><p>❌ <code>input-thingy</code></p></li>
+</ul>
+<h2 id="les-erreurs-à-éviter">Les Erreurs à Éviter</h2>
+<h3 id="erreur-1-créer-trop-datomes-différents">❌ Erreur 1 : Créer trop
+d’atomes différents</h3>
+<p><strong>Problème :</strong> 15 boutons différents = confusion
+<strong>Solution :</strong> 2-3 variations maximum (primaire,
+secondaire, tertiaire)</p>
+<h3 id="erreur-2-sauter-des-niveaux">❌ Erreur 2 : Sauter des
+niveaux</h3>
+<p><strong>Problème :</strong> Passer directement des atomes aux
+organismes <strong>Solution :</strong> Chaque niveau a son importance,
+respecter la hiérarchie</p>
+<h3 id="erreur-3-ne-pas-documenter">❌ Erreur 3 : Ne pas documenter</h3>
+<p><strong>Problème :</strong> Personne ne comprend comment utiliser les
+composants <strong>Solution :</strong> Documenter chaque composant avec
+: nom, usage, propriétés, exemples</p>
+<h3 id="erreur-4-ignorer-la-réutilisabilité">❌ Erreur 4 : Ignorer la
+réutilisabilité</h3>
+<p><strong>Problème :</strong> Créer des composants trop spécifiques
+<strong>Solution :</strong> Se demander “Est-ce que je peux réutiliser
+ça ailleurs ?”</p>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la Leçon</h2>
+<h3 id="atomic-design-en-5-points">Atomic Design en 5 points</h3>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│               ATOMIC DESIGN EN RÉSUMÉ                   │
+├────────────────────────────────────────────────────────┤
+│                                                         │
+│  1️⃣ ATOMES     → Éléments simples, indivisibles       │
+│  2️⃣ MOLÉCULES  → Groupes d&#39;atomes fonctionnels        │
+│  3️⃣ ORGANISMES → Sections complètes                   │
+│  4️⃣ TEMPLATES  → Structure de page                    │
+│  5️⃣ PAGES      → Contenu réel et final                │
+│                                                         │
+├────────────────────────────────────────────────────────┤
+│  AVANTAGES :                                            │
+│  • Réutilisabilité    • Cohérence                      │
+│  • Maintenance        • Collaboration                  │
+│                                                         │
+└────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="phrases-à-retenir">Phrases à retenir</h3>
+<ul>
+<li><em>“Un atome créé une fois = utilisé partout”</em></li>
+<li><em>“La cohérence fait le professionnalisme”</em></li>
+<li><em>“Pense petit pour construire grand”</em></li>
+</ul>
+<h2 id="quiz-quiz-atomic-design">📝 Quiz: Quiz : Atomic Design</h2>
+<p><strong>1.</strong> Quels sont les 5 niveaux d’Atomic Design (du plus
+petit au plus grand) ?</p>
+<p>⬜ Pages, Templates, Organismes, Molécules, Atomes ✅ Atomes,
+Molécules, Organismes, Templates, Pages ⬜ Molécules, Atomes, Pages,
+Templates, Organismes ⬜ Templates, Atomes, Pages, Molécules,
+Organismes</p>
+<p><em>Les 5 niveaux sont : Atomes (plus petit) → Molécules → Organismes
+→ Templates → Pages (plus grand).</em></p>
+<p><strong>2.</strong> Qu’est-ce qu’un atome en Atomic Design ?</p>
+<p>⬜ Une page complète ⬜ Un groupe d’éléments ✅ L’élément le plus
+simple et indivisible ⬜ Une section de page</p>
+<p><em>Un atome est l’élément le plus simple, qui ne peut pas être
+divisé davantage (ex: un bouton, une icône).</em></p>
+<p><strong>3.</strong> Quel avantage principal offre la réutilisabilité
+d’Atomic Design ?</p>
+<p>⬜ Plus de couleurs ✅ Gagner du temps en créant une fois pour toutes
+⬜ Plus de pages ⬜ Moins de bugs</p>
+<p><em>La réutilisabilité permet de créer un composant une seule fois et
+de l’utiliser partout, ce qui fait gagner beaucoup de temps.</em></p>
+<p><strong>4.</strong> Dans MVola, qu’est-ce qu’un ‘organisme’ ?</p>
+<p>⬜ Un bouton orange ✅ Le formulaire d’envoi complet ⬜ Une icône de
+transaction ⬜ Un input de numéro</p>
+<p><em>Le formulaire d’envoi complet (avec destinataire, montant,
+bouton) est un organisme car c’est une section complète composée de
+molécules et d’atomes.</em></p>
+<p><strong>5.</strong> Pourquoi est-il important de documenter ses
+composants ?</p>
+<p>⬜ Pour faire joli ✅ Pour que tout le monde puisse les comprendre et
+utiliser ⬜ C’est obligatoire ⬜ Pour avoir plus de fichiers</p>
+<p><em>La documentation permet à toute l’équipe de comprendre comment
+utiliser chaque composant correctement.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Choisir</strong> une app que tu utilises souvent (WhatsApp,
+Instagram, Spotify…)</li>
+<li><strong>Décomposer</strong> l’écran d’accueil en atomes, molécules,
+organismes</li>
+<li><strong>Dessiner</strong> un schéma hiérarchique</li>
+<li><strong>Créer</strong> 3 atomes personnalisés pour cette app</li>
+</ol>
+<p><strong>Format</strong> : 2 pages A4 - Page 1 : Schéma de
+décomposition - Page 2 : Tes 3 atomes dessinés</p>
+<p><strong>Durée estimée</strong> : 40 minutes</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

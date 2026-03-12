@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>User Journey - Le Voyage de l'Utilisateur</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">User Journey - Le Voyage de l'Utilisateur</h1>
+</section>
+
+<section id="user-journey---le-voyage-de-lutilisateur"
+class="slide level1">
+<h1>User Journey - Le Voyage de l’Utilisateur</h1>
+<p><strong>Module:</strong> Jour 2 - La Méthode Design Thinking
+<strong>Slug:</strong> user-journey</p>
+</section>
+<section id="user-journey---le-voyage-de-lutilisateur-1"
+class="slide level1">
+<h1>User Journey - Le Voyage de l’Utilisateur</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>USER JOURNEY</strong> = Le voyage de l’utilisateur =
+L’histoire complète de son expérience</p>
+<p>Imagine que tu es un <strong>guide touristique</strong>. Ton job est
+d’accompagner les visiteurs du début à la fin de leur voyage. Le User
+Journey, c’est exactement ça : tracer le chemin que parcourt un
+utilisateur pour atteindre son but.</p>
+<h3 id="analogie-madagascar">Analogie Madagascar 🇲🇬</h3>
+<p>Pense à un <strong>voyage en taxi-be</strong> de Analakely vers
+Antsirabe :</p>
+<ol type="1">
+<li><strong>DÉBUT</strong> : Tu es à la gare routière, tu cherches le
+bon taxi</li>
+<li><strong>RECHERCHE</strong> : Tu demandes “Aiza ny taxi-be mankany
+Antsirabe?”</li>
+<li><strong>ACTION</strong> : Tu trouves le taxi, tu montes, tu
+paies</li>
+<li><strong>VOYAGE</strong> : 3 heures de route, arrêts, paysages</li>
+<li><strong>ARRIVÉE</strong> : Tu descends à Antsirabe, content d’être
+arrivé</li>
+</ol>
+<p>Chaque étape compte. Si une étape est mauvaise, tout le voyage est
+gâché.</p>
+<h2 id="pourquoi-le-user-journey-est-important">Pourquoi le User Journey
+est important?</h2>
+<h3 id="le-problème">Le problème</h3>
+<p>Les designers oublient souvent ce que ressent l’utilisateur. Ils
+dessinent des écrans sans penser au <strong>parcours
+complet</strong>.</p>
+<h3 id="la-solution">La solution</h3>
+<p>Le User Journey nous force à : - Voir l’expérience <strong>du point
+de vue de l’utilisateur</strong> - Identifier les <strong>moments de
+friction</strong> (où ça coince) - Créer des <strong>solutions pour
+chaque étape</strong> - Rendre l’expérience <strong>fluide et
+agréable</strong></p>
+<h2 id="les-3-éléments-du-user-journey">Les 3 Éléments du User
+Journey</h2>
+<h3 id="étapes-steps">1. ÉTAPES (Steps)</h3>
+<p>Les grandes phases du voyage. Par exemple, pour commander sur MVola
+:</p>
+<pre><code>ÉTAPE 1 : Découverte
+→ L&#39;utilisateur découvre qu&#39;il peut envoyer de l&#39;argent
+
+ÉTAPE 2 : Inscription
+→ Il crée son compte
+
+ÉTAPE 3 : Configuration
+→ Il lie son numéro de téléphone
+
+ÉTAPE 4 : Transaction
+→ Il envoie l&#39;argent
+
+ÉTAPE 5 : Confirmation
+→ Il reçoit la confirmation</code></pre>
+<h3 id="actions-actions">2. ACTIONS (Actions)</h3>
+<p>Ce que fait l’utilisateur à chaque étape :</p>
+<ul>
+<li>Clique sur un bouton</li>
+<li>Remplit un formulaire</li>
+<li>Scrolle la page</li>
+<li>Prend une photo</li>
+<li>Parle au support</li>
+</ul>
+<h3 id="émotions-emotions">3. ÉMOTIONS (Emotions)</h3>
+<p>Ce que ressent l’utilisateur :</p>
+<p>😊 <strong>Content</strong> = Tout va bien 😕 <strong>Confus</strong>
+= Ne comprend pas 😤 <strong>Frustré</strong> = Ça ne marche pas 😰
+<strong>Anxieux</strong> = Peur de faire une erreur 🎉
+<strong>Soulagé</strong> = C’est fait!</p>
+<h2
+id="exemple-complet-tiana-utilise-mvola-pour-la-première-fois">Exemple
+Complet : Tiana utilise MVola pour la première fois</h2>
+<h3 id="persona">Persona</h3>
+<p><strong>Tiana</strong> = Étudiant de 20 ans, première année à
+l’université. Il n’a jamais utilisé d’app mobile money.</p>
+<h3 id="le-journey-map">Le Journey Map</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────┐
+│                    USER JOURNEY - TIANA &amp; MVola                       │
+├──────────────────────────────────────────────────────────────────────┤
+│                                                                       │
+│  ÉTAPE 1 : DÉCOUVERTE                                                │
+│  ─────────────────────                                                │
+│  Action : Entend parler de MVola par son coloc                        │
+│  Émotion : 😕 Curieux mais sceptique                                  │
+│  Friction : &quot;Est-ce que c&#39;est sécurisé ?&quot;                             │
+│                                                                       │
+│  ÉTAPE 2 : TÉLÉCHARGEMENT                                            │
+│  ─────────────────────────                                            │
+│  Action : Cherche &quot;MVola&quot; sur Play Store                              │
+│  Émotion : 😊 Confiant                                                │
+│  Friction : Aucune                                                    │
+│                                                                       │
+│  ÉTAPE 3 : INSCRIPTION                                               │
+│  ─────────────────────                                                │
+│  Action : Entre son numéro, reçoit un code SMS                        │
+│  Émotion : 😰 Anxieux (le code arrive-t-il ?)                         │
+│  Friction : Le SMS met 2 minutes à arriver → panique !                │
+│                                                                       │
+│  ÉTAPE 4 : PREMIÈRE TRANSACTION                                      │
+│  ────────────────────────────                                         │
+│  Action : Envoie 10 000 Ar à sa mère                                  │
+│  Émotion : 😤 Stressé (ne veut pas se tromper de numéro)              │
+│  Friction : Peur de confirmer, vérifie 3 fois                         │
+│                                                                       │
+│  ÉTAPE 5 : CONFIRMATION                                              │
+│  ─────────────────────                                                │
+│  Action : Reçoit le SMS de confirmation                               │
+│  Émotion : 🎉 Soulagé et content !                                    │
+│  Friction : Aucune                                                    │
+│                                                                       │
+└──────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="insights-ce-quon-apprend">Insights (Ce qu’on apprend)</h3>
+<ol type="1">
+<li><strong>L’anxiété du premier envoi</strong> = Besoin de
+rassurance</li>
+<li><strong>Le délai du SMS</strong> = Moment critique à améliorer</li>
+<li><strong>La peur de se tromper</strong> = Ajouter une confirmation
+visuelle claire</li>
+</ol>
+<h2 id="comment-créer-un-user-journey">Comment créer un User
+Journey</h2>
+<h3 id="étape-1-définir-le-persona">Étape 1 : Définir le persona</h3>
+<p>Qui fait le voyage ? Utilise les personas créés dans la leçon 1-5
+:</p>
+<ul>
+<li><strong>Ravo</strong> (agriculteur, 45 ans)</li>
+<li><strong>Mamy</strong> (mère de famille, acheteuse)</li>
+<li><strong>Tiana</strong> (étudiant, 20 ans)</li>
+</ul>
+<h3 id="étape-2-identifier-le-but">Étape 2 : Identifier le but</h3>
+<p>Qu’est-ce que l’utilisateur veut accomplir ?</p>
+<ul>
+<li>Acheter des légumes sur une app ?</li>
+<li>Envoyer de l’argent à sa famille ?</li>
+<li>Réserver un taxi-be ?</li>
+</ul>
+<h3 id="étape-3-lister-toutes-les-étapes">Étape 3 : Lister toutes les
+étapes</h3>
+<p>Du début à la fin, sans sauter d’étapes !</p>
+<ul>
+<li>Comment l’utilisateur découvre-t-il le produit ?</li>
+<li>Quelle est sa première action ?</li>
+<li>Que fait-il ensuite ?</li>
+<li>Comment sait-il que c’est terminé ?</li>
+</ul>
+<h3 id="étape-4-ajouter-les-émotions">Étape 4 : Ajouter les
+émotions</h3>
+<p>À chaque étape, demander :</p>
+<ul>
+<li>Comment se sent l’utilisateur ?</li>
+<li>Est-ce qu’il est content ? Confus ? Frustré ?</li>
+<li>Qu’est-ce qui pourrait mal se passer ?</li>
+</ul>
+<h3 id="étape-5-identifier-les-frictions">Étape 5 : Identifier les
+frictions</h3>
+<p>Les <strong>frictions</strong> = Les moments où ça coince</p>
+<p>Exemples : - Formulaire trop long - Message d’erreur confus - Temps
+d’attente trop long - Bouton difficile à trouver</p>
+<h2 id="les-outils-pour-créer-un-user-journey">Les Outils pour créer un
+User Journey</h2>
+<h3 id="outil-1-paper-pen-papier-et-crayon">Outil 1 : Paper &amp; Pen
+(Papier et crayon)</h3>
+<p>Le meilleur outil pour commencer !</p>
+<ul>
+<li>Dessine une ligne de gauche à droite</li>
+<li>Ajoute des points pour chaque étape</li>
+<li>Note les actions et émotions</li>
+</ul>
+<h3 id="outil-2-sticky-notes-post-its">Outil 2 : Sticky Notes
+(Post-its)</h3>
+<p>Parfait pour brainstormer en équipe :</p>
+<ul>
+<li>1 post-it = 1 étape</li>
+<li>Couleurs différentes pour les émotions</li>
+<li>Facile à réorganiser</li>
+</ul>
+<h3 id="outil-3-figma-miro-figjam">Outil 3 : Figma / Miro / FigJam</h3>
+<p>Pour créer des journey maps numériques :</p>
+<ul>
+<li>Partageable avec l’équipe</li>
+<li>Facile à modifier</li>
+<li>Possibilité d’ajouter des images</li>
+</ul>
+<h2 id="exercice-1-user-journey-de-ravo-30-min">Exercice 1 : User
+Journey de Ravo (30 min)</h2>
+<h3 id="contexte">Contexte</h3>
+<p><strong>Ravo</strong> est un agriculteur de 45 ans à Antsirabe. Il
+veut utiliser une app pour vendre ses tomates directement aux
+clients.</p>
+<h3 id="ta-mission">Ta mission</h3>
+<p>Créer le User Journey complet de Ravo :</p>
+<ol type="1">
+<li><strong>Définir le but</strong> de Ravo</li>
+<li><strong>Identifier 5-7 étapes</strong> de son voyage</li>
+<li><strong>Pour chaque étape</strong> :
+<ul>
+<li>L’action de Ravo</li>
+<li>Son émotion</li>
+<li>Une friction potentielle</li>
+</ul></li>
+<li><strong>Proposer 2 solutions</strong> pour améliorer son
+expérience</li>
+</ol>
+<h3 id="format-de-livraison">Format de livraison</h3>
+<p>Dessine sur papier ou utilise les post-its fournis :</p>
+<pre><code>┌─────────────────────────────────────────┐
+│ RAVO - User Journey App Vente Tomates   │
+├─────────────────────────────────────────┤
+│ Étape 1 : ___________                   │
+│ Action : ___________                    │
+│ Émotion : ___________                   │
+│ Friction : ___________                  │
+├─────────────────────────────────────────┤
+│ ... (répéter pour chaque étape)         │
+└─────────────────────────────────────────┘</code></pre>
+<h2 id="exercice-2-améliorer-une-expérience-20-min">Exercice 2 :
+Améliorer une expérience (20 min)</h2>
+<h3 id="scénario">Scénario</h3>
+<p>Tu as identifié ces frictions dans le journey d’un utilisateur qui
+réserve un taxi-be via une app :</p>
+<p><strong>Friction 1</strong> : L’utilisateur ne sait pas où attendre
+le taxi <strong>Friction 2</strong> : Le taxi arrive mais l’utilisateur
+ne le voit pas <strong>Friction 3</strong> : L’utilisateur ne connaît
+pas le prix avant la fin</p>
+<h3 id="ta-mission-1">Ta mission</h3>
+<p>Pour chaque friction, propose une solution concrète :</p>
+<table>
+<thead>
+<tr class="header">
+<th>Friction</th>
+<th>Solution proposée</th>
+<th>Comment ça aide ?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Lieu d’attente</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2. Identification taxi</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3. Prix inconnu</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="temps-20-minutes-en-groupe-de-2">Temps : 20 minutes en groupe de
+2</h3>
+<h2 id="les-erreurs-à-éviter">Les Erreurs à Éviter</h2>
+<h3 id="erreur-1-sauter-des-étapes">❌ Erreur 1 : Sauter des étapes</h3>
+<p>“L’utilisateur clique et c’est fini !”</p>
+<p>Non ! Entre le clic et la fin, il y a : - Le temps de chargement - La
+confirmation - L’attente - La vérification</p>
+<h3 id="erreur-2-ignorer-les-émotions">❌ Erreur 2 : Ignorer les
+émotions</h3>
+<p>Un journey sans émotions = juste une liste de tâches.</p>
+<p>Les émotions nous disent <strong>où améliorer</strong>
+l’expérience.</p>
+<h3 id="erreur-3-ne-penser-quau-meilleur-scénario">❌ Erreur 3 : Ne
+penser qu’au meilleur scénario</h3>
+<p>Tout ne se passe pas toujours bien !</p>
+<p>Il faut aussi mapper : - Les erreurs possibles - Les problèmes
+techniques - Les hésitations de l’utilisateur</p>
+<h3 id="erreur-4-créer-un-journey-trop-complexe">❌ Erreur 4 : Créer un
+journey trop complexe</h3>
+<p>Un bon journey est <strong>simple et clair</strong>.</p>
+<ul>
+<li>Maximum 7-8 étapes principales</li>
+<li>Utilise des sous-journeys si nécessaire</li>
+<li>Reste focalisé sur UN objectif</li>
+</ul>
+<h2 id="user-journey-vs-user-flow">User Journey vs User Flow</h2>
+<h3 id="user-journey">User Journey</h3>
+<ul>
+<li><strong>Focus</strong> : Émotions et expérience</li>
+<li><strong>Question</strong> : “Que ressent l’utilisateur ?”</li>
+<li><strong>Format</strong> : Histoire narrative</li>
+<li><strong>Usage</strong> : Comprendre l’expérience globale</li>
+</ul>
+<h3 id="user-flow">User Flow</h3>
+<ul>
+<li><strong>Focus</strong> : Actions et écrans</li>
+<li><strong>Question</strong> : “Que fait l’utilisateur ?”</li>
+<li><strong>Format</strong> : Diagramme technique</li>
+<li><strong>Usage</strong> : Concrétiser le parcours dans l’app</li>
+</ul>
+<h3 id="ils-sont-complémentaires">Ils sont complémentaires !</h3>
+<pre><code>User Journey (Stratégie) → User Flow (Tactique) → Wireframes (Design)</code></pre>
+<h2 id="récapitulatif-de-la-leçon">Récapitulatif de la Leçon</h2>
+<h3 id="les-3-éléments-du-user-journey-1">Les 3 éléments du User
+Journey</h3>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│              USER JOURNEY EN RÉSUMÉ                     │
+├────────────────────────────────────────────────────────┤
+│                                                         │
+│  📍 ÉTAPES     →  Les grandes phases du voyage         │
+│  👆 ACTIONS    →  Ce que fait l&#39;utilisateur            │
+│  ❤️ ÉMOTIONS  →  Ce que ressent l&#39;utilisateur         │
+│                                                         │
+│  ⚠️ FRICTIONS  →  Les moments où ça coince             │
+│                                                         │
+└────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="les-5-étapes-pour-créer-un-user-journey">Les 5 étapes pour créer
+un User Journey</h3>
+<ol type="1">
+<li>Définir le persona</li>
+<li>Identifier le but</li>
+<li>Lister toutes les étapes</li>
+<li>Ajouter les émotions</li>
+<li>Identifier les frictions</li>
+</ol>
+<h3 id="phrases-à-retenir">Phrases à retenir</h3>
+<ul>
+<li><em>“Le User Journey est l’histoire de l’utilisateur”</em></li>
+<li><em>“Les émotions révèlent les points d’amélioration”</em></li>
+<li><em>“Une friction identifiée = une opportunité
+d’amélioration”</em></li>
+</ul>
+<h2 id="quiz-quiz-user-journey">📝 Quiz: Quiz : User Journey</h2>
+<p><strong>1.</strong> Quels sont les 3 éléments principaux d’un User
+Journey ?</p>
+<p>✅ Étapes, Actions, Émotions ⬜ Écrans, Boutons, Textes ⬜ Design,
+Code, Test ⬜ Utilisateur, App, Serveur</p>
+<p><em>Un User Journey se compose des Étapes (phases), Actions (ce qu’on
+fait) et Émotions (ce qu’on ressent).</em></p>
+<p><strong>2.</strong> Dans le journey de Tiana utilisant MVola,
+pourquoi est-il anxieux lors de l’inscription ?</p>
+<p>⬜ Il ne connaît pas l’app ✅ Le SMS de confirmation met du temps à
+arriver ⬜ Il n’a pas de crédit ⬜ L’app est lente</p>
+<p><em>Tiana est anxieux car le code SMS met 2 minutes à arriver, ce qui
+crée une friction dans son expérience.</em></p>
+<p><strong>3.</strong> Qu’est-ce qu’une ‘friction’ dans un User Journey
+?</p>
+<p>⬜ Une étape obligatoire ✅ Un moment où l’expérience est difficile
+⬜ Un type d’émotion positive ⬜ Une action répétée</p>
+<p><em>Une friction est un moment où l’utilisateur rencontre une
+difficulté ou un obstacle dans son parcours.</em></p>
+<p><strong>4.</strong> Pourquoi est-il important d’inclure les émotions
+dans un User Journey ?</p>
+<p>⬜ Pour faire joli ✅ Pour identifier les points d’amélioration ⬜
+Pour remplir le document ⬜ Ce n’est pas important</p>
+<p><em>Les émotions révèlent les moments où l’utilisateur est frustré ou
+confus, ce qui nous permet d’améliorer l’expérience.</em></p>
+<p><strong>5.</strong> Combien d’étapes principales devrait avoir un bon
+User Journey ?</p>
+<p>⬜ 2-3 étapes ✅ 5-8 étapes ⬜ 15-20 étapes ⬜ Autant que
+possible</p>
+<p><em>Un bon User Journey a généralement 5-8 étapes principales pour
+rester clair et focalisé.</em></p>
+<h2 id="devoirs-pour-demain">Devoirs pour demain</h2>
+<ol type="1">
+<li><strong>Observer</strong> quelqu’un utiliser une app (WhatsApp,
+Facebook, MVola)</li>
+<li><strong>Noter</strong> chaque étape de son interaction</li>
+<li><strong>Identifier</strong> 2 frictions qu’il a rencontrées</li>
+<li><strong>Proposer</strong> une solution pour chaque friction</li>
+</ol>
+<p><strong>Format</strong> : 1 page A4 avec le journey dessiné</p>
+<p><strong>Durée estimée</strong> : 30 minutes</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
