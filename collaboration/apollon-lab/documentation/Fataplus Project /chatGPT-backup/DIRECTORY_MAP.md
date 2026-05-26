@@ -1,0 +1,77 @@
+# Map of `chatGPT-backup`
+
+This file maps the immediate contents of this directory to help recognize what it contains.
+
+## Subdirectories
+- 📁 `680404ae-6b14-8008-b8ce-6f08fabfea08/`
+- 📁 `682596fe-c018-8008-ad43-f6c063c005bd/`
+- 📁 `6831701c-e1ac-8008-b936-810a64cbbcc7/`
+- 📁 `683385d7-2450-8008-ab61-7280e831fe62/`
+- 📁 `683589db-5778-8008-af70-9be09701f886/`
+
+## Files
+- 📄 `extract_conversation_titles.py`
+- 📄 `file-14uuHAYKr7ms2ZiNs1wRAB-494969014_122113392650838002_5962250183713870119_n.jpg`
+- 📄 `file-1k2kThbB3dHpmHq2EfHL5Q-20949110-B8BF-4FD7-AFEA-4F8A3AE55E08.png`
+- 📄 `file-1srKMy2HRzU7ZzRRyaqXVC-499506800_122189006720055943_5712308745480128849_n.jpg`
+- 📄 `file-2ZBMimKnhiepRMDbsU68SN-1746431614194.png`
+- 📄 `file-3AhnX74FP1kFT1WsSHmsLR-Mozi ios Jan 2025 5.jpeg`
+- 📄 `file-3UWBBFhvrqDCgVD7X8aaTV-6668e5e2-9acf-46a5-9da4-ec2ab3cb3dde.png`
+- 📄 `file-3doPS19bBuvfoJnBCXptx4-190731713-agriculteur-utilisant-une-tablette-numérique-et-examinant-la-paille-après-une-récolte-réussie.jpg`
+- 📄 `file-3v9VnmEMcy4McPmxcXnHK5-CleanShot 2025-06-30 at 02.41.52@2x.png`
+- 📄 `file-4XoXpTsbJ4tJRS9x2RWDyi-CleanShot 2025-05-27 at 15.32.49@2x.png`
+- 📄 `file-4eBye13KHqDfWqTLeYrmGd-Capture d'écran 2025-06-05 163018.png`
+- 📄 `file-4n9cGPnfeKgbr6EZE5N7v2-CleanShot 2025-06-04 at 22.44.56@2x.png`
+- 📄 `file-6Dy1paxV3m2UG44PYcgcdm-301dd94f-dbe0-4639-a87f-d93caa843743.png`
+- 📄 `file-6UiPTivPYkKWcCi4HQCwk5-Mozi ios Jan 2025 4.jpeg`
+- 📄 `file-6bipKn5ECavHfjDFLnaz2e-1000001359.jpg`
+- 📄 `file-7BpH5NupnPKwbxFF9GPuTG-dde1b731-eff2-4db5-9b33-4be33c250dc3.png`
+- 📄 `file-7H1vhba6ojmhw3Kc81FYRn-Mozi ios Jan 2025 3.jpeg`
+- 📄 `file-8MiCg4hfRTbYTQrmWzQxPc-492953222_122196426638114122_8425749497471438266_n.jpg`
+- 📄 `file-A3fXQ8rgMKHMJScVKNadY8-6431b60e-16ee-455a-9d1d-8e2a1f60ec81.png`
+- 📄 `file-AyNsEjNFB7UY6ZYE2hzjwU-depositphotos_438165394-stock-photo-smart-digital-agriculture-technology-futuristic.jpg`
+- 📄 `file-BBPR6Myh7uEXmGV2ivUNHd-check.png`
+- 📄 `file-BZ9LnU6GmUdcMRe9YTbK7v-5fc7207a-6eaf-4abf-9124-040fb0f95752.png`
+- 📄 `file-Bpj6CfpksJJ8TEaQ3neYX9-logomark-2.svg.png`
+- 📄 `file-CCXHCEcSwb2UqJA8PPGuxQ-762E6611-C534-42EC-9BFB-D0D32E48032D.jpeg`
+- 📄 `file-EdA1qNgCcofhEd6qzv5maU-803c2bd5-a086-405c-b842-208b4306c0f4.png`
+- 📄 `file-F3Vvc75qubBieXRqtmFfNm-CleanShot 2025-05-03 at 17.26.56@2x.png`
+- 📄 `file-FYzeHLuvEoFa6BG9KCEs23-1000028900.jpg`
+- 📄 `file-FafeAehe5xXrcTrxv84fFo-Mozi ios Jan 2025 1.jpeg`
+- 📄 `file-HR1H5gDB1TiXCK9UgXxATe-Logo.png`
+- 📄 `file-HyLGQCkaQzC9uKDnmYT7iU-1745516124264.jpg`
+- 📄 `file-JJQAxvvGaTBV35mwRjjXdA-CleanShot 2025-05-06 at 22.41.40@2x.png`
+- 📄 `file-JUZeW6J8Yihnb3MFiYTHDm-Mozi ios Jan 2025 7.jpeg`
+- 📄 `file-JroXEp3HUptm3yYXdQXMX7-Mozi ios Jan 2025 9.jpeg`
+- 📄 `file-JsWf1SwadqWfnkTKTJFfUn-a99c8da2-b0fe-4db7-bcd1-c0925cc9035d.png`
+- 📄 `file-K2AwUx443sZevJU3FLAzrF-Mozi ios Jan 2025 8.jpeg`
+- 📄 `file-L48i2oLcyTLaq5yBC5yJyo-Cool Guy.png`
+- 📄 `file-LUrG7jvgmYVY4ehCCeCTqn-CleanShot 2025-06-30 at 02.41.52@2x.png`
+- 📄 `file-NJnksHXr75eKNX5WuBSTiU-sauv.png`
+- 📄 `file-Q2xCv8qGM9ZCwgdvzwWMah-CleanShot 2025-05-27 at 16.41.12@2x.png`
+- 📄 `file-QBAH156JxGzyxnB1rvFDTY-1000031052.jpg`
+- 📄 `file-R7m4Z2GpjG8rUTHy83sawb-CleanShot 2025-05-18 at 21.59.40@2x.png`
+- 📄 `file-SSgyEytYFEVJzwrfDmbwKJ-c97a833ac408c0003494e7daee70b912.jpg`
+- 📄 `file-SdrcxGK863KdFsXpfK9MMm-photo_5093776826341371486_y.jpg`
+- 📄 `file-U4ppgEcFztvFXTnoukch9c-6dc04533-91e3-449c-a349-f1913cf71727.png`
+- 📄 `file-UGWNU2fRNHzqi3NyxFAC1g-473618121_122236758044007926_5304442068190578539_n.jpg`
+- 📄 `file-ULwgxJuazBwKhasCM84rWX-1000001391.jpg`
+- 📄 `file-UNi3AeMFn1jBsm8GwrgXXD-logomark-2.svg.png`
+- 📄 `file-UoEg1rWC8waHquiH9CfXWK-d8fae12c-7868-4036-b683-18612cbb2441.png`
+- 📄 `file-UwHqgvM7e4N4AaAAjUMQh5-29012b1e-038e-4d58-8fae-a4044008d6da.png`
+- 📄 `file-UxAxoS5YYnnuJ8sCDT1o2n-1000001361.jpg`
+- 📄 `file-V8JUaSrtLwYULZv3Ms7doR-46D0BB8E-8502-4F23-B1AD-1EEF4E83AAED.png`
+- 📄 `file-VXUFFcTRyStNgojrWvNYip-flux idées.png`
+- 📄 `file-WJzUC4hv7bcsmZnhVjw6Ld-0D225273-F48A-43E9-86E6-4A650FBBF948.png`
+- 📄 `file-Wqz9bc89WqDhD1BRWvBBbp-Mozi ios Jan 2025 2.jpeg`
+- 📄 `file-XDkDML4kmajkRfu72XHXNk-Mozi ios Jan 2025 6.jpeg`
+- 📄 `file-XJW5PidLtFcT2MTHPLEKtT-C03C386C-E7BD-4E51-9841-C7B5749B1C94.png`
+- 📄 `file-YBvKZrfyn6i5nwEEQ5CzG7-Capture d'écran 2025-06-05 163018.png`
+- 📄 `message_feedback.json`
+- 📄 `requirements.txt`
+- 📄 `shared_conversations.json`
+- 📄 `split_conversations.py`
+- 📄 `split_conversations_auto.py`
+- 📄 `split_conversations_sample.py`
+- 📄 `split_conversations_simple.py`
+- 📄 `user.json`

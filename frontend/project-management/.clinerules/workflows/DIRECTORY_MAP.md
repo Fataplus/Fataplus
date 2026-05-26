@@ -1,0 +1,64 @@
+# Map of `workflows`
+
+This file maps the immediate contents of this directory to help recognize what it contains.
+
+## Files
+- 📄 `bmad-bmb-agents-bmad-builder.md`
+- 📄 `bmad-bmb-workflows-README.md`
+- 📄 `bmad-bmb-workflows-audit-workflow.md`
+- 📄 `bmad-bmb-workflows-convert-legacy.md`
+- 📄 `bmad-bmb-workflows-create-agent.md`
+- 📄 `bmad-bmb-workflows-create-module.md`
+- 📄 `bmad-bmb-workflows-create-workflow.md`
+- 📄 `bmad-bmb-workflows-edit-agent.md`
+- 📄 `bmad-bmb-workflows-edit-module.md`
+- 📄 `bmad-bmb-workflows-edit-workflow.md`
+- 📄 `bmad-bmb-workflows-module-brief.md`
+- 📄 `bmad-bmb-workflows-redoc.md`
+- 📄 `bmad-bmm-agents-analyst.md`
+- 📄 `bmad-bmm-agents-architect.md`
+- 📄 `bmad-bmm-agents-dev.md`
+- 📄 `bmad-bmm-agents-pm.md`
+- 📄 `bmad-bmm-agents-sm.md`
+- 📄 `bmad-bmm-agents-tea.md`
+- 📄 `bmad-bmm-agents-tech-writer.md`
+- 📄 `bmad-bmm-agents-ux-designer.md`
+- 📄 `bmad-bmm-workflows-README.md`
+- 📄 `bmad-bmm-workflows-architecture.md`
+- 📄 `bmad-bmm-workflows-brainstorm-project.md`
+- 📄 `bmad-bmm-workflows-code-review.md`
+- 📄 `bmad-bmm-workflows-correct-course.md`
+- 📄 `bmad-bmm-workflows-create-epics-and-stories.md`
+- 📄 `bmad-bmm-workflows-create-story.md`
+- 📄 `bmad-bmm-workflows-create-ux-design.md`
+- 📄 `bmad-bmm-workflows-dev-story.md`
+- 📄 `bmad-bmm-workflows-document-project.md`
+- 📄 `bmad-bmm-workflows-domain-research.md`
+- 📄 `bmad-bmm-workflows-epic-tech-context.md`
+- 📄 `bmad-bmm-workflows-prd.md`
+- 📄 `bmad-bmm-workflows-product-brief.md`
+- 📄 `bmad-bmm-workflows-research.md`
+- 📄 `bmad-bmm-workflows-retrospective.md`
+- 📄 `bmad-bmm-workflows-solutioning-gate-check.md`
+- 📄 `bmad-bmm-workflows-sprint-planning.md`
+- 📄 `bmad-bmm-workflows-story-context.md`
+- 📄 `bmad-bmm-workflows-story-done.md`
+- 📄 `bmad-bmm-workflows-story-ready.md`
+- 📄 `bmad-bmm-workflows-tech-spec.md`
+- 📄 `bmad-bmm-workflows-workflow-init.md`
+- 📄 `bmad-bmm-workflows-workflow-status.md`
+- 📄 `bmad-cis-agents-README.md`
+- 📄 `bmad-cis-agents-brainstorming-coach.md`
+- 📄 `bmad-cis-agents-creative-problem-solver.md`
+- 📄 `bmad-cis-agents-design-thinking-coach.md`
+- 📄 `bmad-cis-agents-innovation-strategist.md`
+- 📄 `bmad-cis-agents-storyteller.md`
+- 📄 `bmad-cis-workflows-README.md`
+- 📄 `bmad-cis-workflows-design-thinking.md`
+- 📄 `bmad-cis-workflows-innovation-strategy.md`
+- 📄 `bmad-cis-workflows-problem-solving.md`
+- 📄 `bmad-cis-workflows-storytelling.md`
+- 📄 `bmad-core-agents-bmad-master.md`
+- 📄 `bmad-core-workflows-README.md`
+- 📄 `bmad-core-workflows-brainstorming.md`
+- 📄 `bmad-core-workflows-party-mode.md`
